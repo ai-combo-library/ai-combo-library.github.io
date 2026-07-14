@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "description": "评分规则共享配置。Python 和 JS 共用此文件作为唯一数据源。",
+    "version": "1.0",
+    "lastUpdated": "2026-06-11"
+  },
+  "fiveDimWeights": {
+    "代码活跃度": 0.25,
+    "项目健康度": 0.2,
+    "社区真实性": 0.2,
+    "可安装性": 0.2,
+    "功能声称": 0.15
+  },
+  "candidateScoreRules": [
+    {
+      "name": "输入输出清晰",
+      "strong": [
+        "input",
+        "output",
+        "markdown",
+        "json",
+        "api",
+        "输入",
+        "输出"
+      ],
+      "weak": [
+        "pdf",
+        "url",
+        "text",
+        "csv",
+        "html",
+        "diff"
+      ]
+    },
+    {
+      "name": "可接入性",
+      "strong": [
+        "cli",
+        "api",
+        "sdk",
+        "docker",
+        "mcp",
+        "webhook"
+      ],
+      "weak": [
+        "pip install",
+        "npm install",
+        "uvx",
+        "github action"
+      ]
+    },
+    {
+      "name": "文档证据",
+      "strong": [
+        "quickstart",
+        "installation",
+        "usage",
+        "example",
+        "demo"
+      ],
+      "weak": [
+        "readme",
+        "docs",
+        "sample",
+        "getting started"
+      ]
+    },
+    {
+      "name": "组合潜力",
+      "strong": [
+        "markdown",
+        "json",
+        "api",
+        "webhook",
+        "openapi",
+        "mcp"
+      ],
+      "weak": [
+        "rag",
+        "workflow",
+        "agent",
+        "pipeline",
+        "knowledge"
+      ]
+    },
+    {
+      "name": "重复任务价值",
+      "strong": [
+        "monitor",
+        "batch",
+        "automation",
+        "workflow",
+        "pipeline",
+        "daily"
+      ],
+      "weak": [
+        "report",
+        "review",
+        "support",
+        "research",
+        "knowledge",
+        "客服",
+        "日报",
+        "监控"
+      ]
+    }
+  ],
+  "formatCompatibility": {
+    "softGroups": [
+      [
+        "markdown",
+        "text",
+        "html",
+        "pdf"
+      ],
+      [
+        "json",
+        "api",
+        "webhook",
+        "openapi"
+      ],
+      [
+        "cli",
+        "docker",
+        "mcp"
+      ],
+      [
+        "csv",
+        "sqlite",
+        "postgres"
+      ],
+      [
+        "srt",
+        "subtitle",
+        "caption"
+      ],
+      [
+        "vtt",
+        "wav",
+        "mp3",
+        "aac",
+        "mp4",
+        "avi",
+        "mkv",
+        "mov",
+        "png",
+        "jpg",
+        "jpeg",
+        "gif",
+        "webp",
+        "bmp"
+      ]
+    ],
+    "formatSpecificity": {
+      "pdf": 3,
+      "image": 3,
+      "audio": 3,
+      "video": 3,
+      "docx": 3,
+      "odt": 3,
+      "srt": 3,
+      "wav": 3,
+      "mp4": 3,
+      "png": 3,
+      "jpg": 3,
+      "markdown": 2,
+      "html": 2,
+      "csv": 2,
+      "sqlite": 2,
+      "diff": 2,
+      "code": 2,
+      "url": 2,
+      "browser": 2,
+      "notion": 2,
+      "obsidian": 2,
+      "json": 1,
+      "text": 1,
+      "api": 1,
+      "webhook": 1,
+      "cli": 1,
+      "openapi": 1,
+      "mcp": 1,
+      "docker": 1,
+      "github": 1,
+      "postgres": 3,
+      "vtt": 4,
+      "mp3": 3,
+      "aac": 3,
+      "avi": 3,
+      "mkv": 3,
+      "mov": 3,
+      "jpeg": 3,
+      "gif": 3,
+      "webp": 3,
+      "bmp": 3
+    },
+    "tooGenericFormats": [
+      "json",
+      "text",
+      "api",
+      "webhook",
+      "openapi"
+    ]
+  },
+  "evidenceLevels": {
+    "description": "实测证据等级。等级越高，评分中 '功能声称' 字段权重越大。",
+    "levels": {
+      "L0": {
+        "name": "仅文档 · 待验证",
+        "weight": 1.0,
+        "desc": "仅有 README/文档推断，还没有真实运行证据"
+      },
+      "L1": {
+        "name": "可安装",
+        "weight": 1.1,
+        "desc": "能 pip/npm install 成功，有依赖文件"
+      },
+      "L2": {
+        "name": "Smoke 通过 · 待闭环",
+        "weight": 1.25,
+        "desc": "安装或最小运行通过，等待组合闭环"
+      },
+      "L2-caveat": {
+        "name": "Smoke 通过 · 有限制",
+        "weight": 1.2,
+        "desc": "单点样本或 smoke 跑通过，但存在明确配置、输出或样本限制"
+      },
+      "L3": {
+        "name": "已实测可用",
+        "weight": 1.4,
+        "desc": "真实闭环跑通，有输入、执行和输出证据"
+      },
+      "L3-caveat": {
+        "name": "实测通过 · 有限制",
+        "weight": 1.32,
+        "desc": "组合闭环跑通，但存在明确 caveat，需按适用条件使用"
+      },
+      "L4": {
+        "name": "稳定复测",
+        "weight": 1.55,
+        "desc": "多样本、多环境、多次复测稳定；当前作为未来等级保留"
+      }
+    },
+    "defaultLevel": "L0",
+    "boostFields": [
+      "功能声称"
+    ]
+  }
+}

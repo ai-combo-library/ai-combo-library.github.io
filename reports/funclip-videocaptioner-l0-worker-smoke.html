@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FunClip + VideoCaptioner</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=funclip-videocaptioner-l0-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>FunClip + VideoCaptioner</h1>
+      <p class="lead">识别与成片环节彼此独立，既能保留 SRT 中间文件供人工校对，也能批量生成带字幕的视频。</p>
+      <div class="meta">
+        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>FunClip</span><span>VideoCaptioner</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要处理访谈、课程、会议录像或口播视频，并愿意保留人工校对环节的内容创作者和小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>只处理一两个短视频、希望在单一图形界面中立即完成全部操作，或需要本轮未验证的翻译与配音能力的人。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 5/5。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>复用本机已有 FunClip 模型环境，并用 20 秒样本验证；首次下载模型、长视频和批量吞吐仍需单独测试。；复用本机已有 VideoCaptioner 环境，以软字幕和低画质完成 20 秒样本验证；硬字幕、翻译、配音和长视频未覆盖。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>识别与成片环节彼此独立，既能保留 SRT 中间文件供人工校对，也能批量生成带字幕的视频。</p>
+      <h2>我们怎么测</h2>
+      <p>使用 20 秒本地视频样本让 FunClip 生成 SRT，再把字幕和原视频交给 VideoCaptioner 生成软字幕视频，最后检查输出的字幕轨。</p>
+      <h2>实际结果</h2>
+      <p>FunClip 生成了非空字幕，VideoCaptioner 正确消费并生成带字幕轨的视频，5 项断言通过；长视频、翻译、配音和硬字幕样式未覆盖。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. FunClip（处理/理解）：接收 downloaded video file with audio，产出 recognized subtitles, clip video, clip srt, timestamps。</li><li>2. VideoCaptioner（输出/交付）：接收 video file, srt/ass subtitle, optional target language/tts config，产出 video with subtitle track, translated subtitles, dubbed audio/video。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre># FunClip + VideoCaptioner 轻量视频字幕实测
+
+## 结论
+
+组合链路跑通。
+
+本轮在本机完成了：
+
+1. 生成 9.6 秒测试视频，包含英文语音音轨。
+2. FunClip 对视频做 ASR，输出 `total.srt`、原始识别文本、句子时间戳。
+3. VideoCaptioner 读取 FunClip 产出的 `total.srt`，把字幕软合成进 mp4。
+4. `ffprobe` 确认最终视频包含 `mov_text` 字幕轨。
+
+因此这条组合可以从 L0 理论匹配升级到 L3 最小闭环实测。
+
+## 实测结果
+
+### 输入视频
+
+- 路径：`input/sample-video.mp4`
+- 时长：9.6 秒
+- 视频：H.264, 1280x720, 25fps
+- 音频：AAC, mono
+
+### FunClip 输出
+
+- `output/funclip/total.srt`
+- `output/funclip/recog_res_raw`
+- `output/funclip/sentences`
+- `output/funclip/timestamp`
+
+FunClip 识别结果可用，但质量一般：
+
+```text
+this be the short test video for AI subtite workflow.
+```
+
+其中 `this is` 被识别成 `this be`，`subtitle` 被识别成 `subtite`。
+
+### VideoCaptioner 输出
+
+- 直接转录测试：`output/videocaptioner/sample-video.srt`
+- 用自己转录结果合成：`output/videocaptioner/sample-video-captioned-soft.mp4`
+- 用 FunClip SRT 合成：`output/videocaptioner/funclip-srt-captioned-soft.mp4`
+
+最终 `ffprobe` 显示输出视频包含第三条字幕流：
+
+```text
+codec_name: mov_text
+codec_type: subtitle
+duration: 9.660000
+```
+
+## 关键发现
+
+### 1. 链路真实成立
+
+`FunClip → SRT → VideoCaptioner → 带字幕视频` 这条链路成立。
+
+格式衔接没有问题，SRT 是标准连接点。
+
+### 2. 安装成本比原先评分更高
+
+原先记录里写“pip 安装即用”不准确。
+
+- FunClip 不是 PyPI 包，`pip install funclip` 不存在。
+- FunClip 需要 GitHub clone 后安装 `requirements.txt`。
+- VideoCaptioner 只支持 Python `&gt;=3.10,&lt;3.13`，本机默认 Python 3.14 不能安装。
+- 本轮额外通过 Homebrew 安装了 Python 3.12。
+- FunClip 会下载约 823MB 的英文 ASR 模型。
+
+### 3. 两个工具不建议放在同一个 Python 环境
+
+FunClip requirements 会把 `pillow` 降到 `10.4.0`，而 VideoCaptioner 需要 `pillow&gt;=12.0.0`。
+
+本轮虽然 VideoCaptioner 的软字幕合成仍能跑通，但正式测试协议应使用两个独立 venv：
+
+- `venv-funclip`
+- `venv-videocaptioner`
+
+### 4. VideoCaptioner CLI 比预期成熟
+
+VideoCaptioner 提供完整 CLI：
+
+- `transcribe`
+- `subtitle`
+- `synthesize`
+- `process`
+- `dub`
+- `download`
+- `doctor`
+
+这比只依赖 GUI 更适合作为组合技的一环。
+
+## 评分建议
+
+- 输入输出衔接：95
+- 文档/API 证据：82
+- 搭建成本：55
+- 流程完整：88
+- 效率证据：86
+
+综合建议分：86。
+
+定位应从“S 级格式强匹配”调整为：
+
+&gt; A 级：本机最小闭环已实测，适合短视频字幕/翻译/合成工作流，但首次安装和模型下载成本较高，ASR 质量需要按语言和音频质量复测。
+
+## 证据路径
+
+- 测试视频：`input/sample-video.mp4`
+- FunClip SRT：`output/funclip/total.srt`
+- FunClip 原始识别：`output/funclip/recog_res_raw`
+- VideoCaptioner 自转录 SRT：`output/videocaptioner/sample-video.srt`
+- FunClip SRT 合成视频：`output/videocaptioner/funclip-srt-captioned-soft.mp4`
+- 合成视频探测：`output/videocaptioner/funclip-srt-captioned-soft-ffprobe.json`
+- 安装日志：`logs/pip312-install-videocaptioner.log`
+- FunClip 运行日志：`logs/funclip-stage1.log`</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

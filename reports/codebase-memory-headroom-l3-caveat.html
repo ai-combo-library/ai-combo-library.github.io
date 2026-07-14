@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>codebase-memory-mcp + Headroom</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=codebase-memory-headroom-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>codebase-memory-mcp + Headroom</h1>
+      <p class="lead">在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。</p>
+      <div class="meta">
+        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>codebase-memory-mcp</span><span>Headroom</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合机器配置较低、网络受限或不愿承担部署成本的用户。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。</p>
+      <h2>我们怎么测</h2>
+      <p>让 codebase-memory-mcp 对真实项目执行大范围图搜索，把返回的大 JSON 交给 Headroom ContentRouter 压缩，再比较压缩前后大小并检查组合、发布和证据等关键词。</p>
+      <h2>实际结果</h2>
+      <p>图谱结果成功进入 Headroom，输出缩小约 23.7%，关键业务信号仍然存在，4 项检查通过；短小或高度结构化结果不一定获得同等收益。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. codebase-memory-mcp（处理/理解）：接收 local repository, source code, project path，产出 knowledge graph, MCP search results, code snippets, architecture summary, JSON。</li><li>2. Headroom（处理/理解）：接收 MCP JSON output, tool output, logs, code search results, RAG chunks，产出 compressed context, structured compressed JSON, retained retrieval signals。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre># codebase-memory-mcp + Headroom ordered rerun
+
+时间：2026-07-03T23:53:00.066311+08:00
+
+## 结论
+
+状态：`passed`  
+证据等级：`L3-caveat`  
+检查：4/4
+
+## 检查项
+
+- codebaseMemoryLargeSearchExists: True
+- headroomCompressionRan: True
+- keySignalsKept: True
+- meaningfulCompressionGainMeasured: True
+
+## 命令摘要
+
+- headroomRouter: returncode=0 timeout=False
+
+## Caveat
+
+复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。
+
+## 沙箱产物
+
+- summary: `summary.json`
+- 测试输出：已保留关键结果</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

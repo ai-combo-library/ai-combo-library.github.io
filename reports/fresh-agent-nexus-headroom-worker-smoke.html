@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Headroom + Agent Nexus</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=fresh-agent-nexus-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>Headroom + Agent Nexus</h1>
+      <p class="lead">80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。</p>
+      <div class="meta">
+        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>Headroom</span><span>Agent Nexus</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 8/8。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。</p>
+      <h2>我们怎么测</h2>
+      <p>准备 80 条含 INFO、WARN 和 SQLSTATE 42703 ERROR 的结构化日志，先用 Headroom 压缩并按严重度排序，再把 16 条优先日志交给 Agent Nexus，使用本地 gemma4:12b 生成事件报告。</p>
+      <h2>实际结果</h2>
+      <p>Headroom 保留了 SQLSTATE 错误和请求编号；Agent Nexus 最终指出出错组件、缺失字段、受影响请求和修复方向。8 项断言全部通过，但原始日志或未排序压缩日志会让模型漏掉核心错误。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. Headroom（处理/理解）：接收 structured logs；tool output；json，产出 prioritized compressed logs；structured json。</li><li>2. Agent Nexus（自动执行）：接收 prompt；tool configuration；structured context，产出 agent run；run trace；incident report。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre># Headroom + Agent Nexus 实测报告
+
+## 一句话结论
+
+这套组合适合把一批杂乱的服务日志先压缩成“优先查看的异常”，再交给本地 Agent 判断故障原因。它不是开箱即用的日志平台，但在不使用付费 API 的前提下，确实能减少 Agent 被普通日志带偏的概率。
+
+## 它解决什么问题
+
+服务日志通常包含大量正常请求和少量真正故障。直接把整批日志交给模型，不仅浪费上下文，还可能让模型只盯住最先出现的警告，漏掉后面的严重错误。
+
+本次组合采用两步处理：
+
+1. Headroom 压缩结构化日志，同时保护错误码和 ERROR 记录。
+2. 将压缩结果按严重度排序后交给 Agent Nexus，由本地 Ollama 模型生成根因与处置建议。
+
+## 实际怎么测
+
+我们生成了 80 条确定性服务日志，其中包含普通 INFO、重复 WARN，以及两条位于中段的真实 ERROR：`SQLSTATE 42703`，原因是 `tools.category` 字段缺失。
+
+测试不是只检查安装或 README，而是实际启动并调用了两个工具：
+
+- Headroom 0.31.0 的 SmartCrusher 真实处理 80 条日志，输出 16 条优先记录。
+- Headroom 输出中保留了 `SQLSTATE 42703`，并把 ERROR 排到最前面。
+- Agent Nexus 真实启动 PostgreSQL 与 API 服务，并通过本地 Ollama `gemma4:12b` 分析 Headroom 的交接文件。
+- 最终报告正确识别了 ERROR 级别、`agent-nexus-api` 组件、缺少 `tools.category` 的根因，以及新增字段的修复方向。
+
+本轮共执行 8 项断言，8 项全部通过。两个工具均为本轮新鲜执行，交接物和最终业务结果均经过核验。
+
+## 为什么不是只用 Agent Nexus
+
+我们先做了两个对照：让 Agent Nexus 直接读取原始 80 条日志，以及读取没有按严重度排序的压缩日志。两次都只关注了最先出现的 WARN，漏掉了真正的 SQLSTATE ERROR。
+
+只有当 Headroom 保护错误模式，并在交接前按严重度排序后，Agent Nexus 才稳定找到真实故障。这说明 Headroom 在这里不是装饰性前处理，而是决定分析是否准确的必要适配层。
+
+## 推荐使用方式
+
+最稳妥的流程是：
+
+1. 将日志整理为包含时间、级别、组件、请求 ID 和消息的结构化记录。
+2. 用 Headroom 压缩日志，并保护 `ERROR`、错误码和业务关键字。
+3. 在交接给模型前按 ERROR、WARN、INFO 排序。
+4. 让 Agent Nexus 输出固定字段：严重度、根因、受影响组件、证据和建议动作。
+5. 保留压缩前日志、交接文件和最终报告，方便人工复核。
+
+## 适合谁
+
+- 已经使用 Docker，并愿意在本机运行 Ollama 的开发者或小团队。
+- 希望日志分析留在本地、不把内部日志发给付费模型服务的团队。
+- 需要先减少日志噪音，再让 Agent 做事件摘要和初步根因判断的场景。
+
+## 不适合谁
+
+- 只想安装一个桌面应用立即查看日志的普通用户。
+- 需要成熟告警、仪表盘、审计和跨服务追踪的生产运维团队。
+- 尚未建立结构化日志，也不愿维护 Docker 与本地模型的团队。
+
+## 已知限制
+
+- Headroom 0.31.0 的 SmartCrusher 会使用 `httpx`，但当前安装包没有完整声明该依赖；实测 Runner 已显式补装并预检。
+- Agent Nexus 首次启动需要 PostgreSQL、API 容器和本地模型，准备成本较高。
+- Agent Nexus 当前存在一个上游数据库字段问题：原生工具种子写入会因缺少 `tools.category` 失败。本次无工具调用的日志分析不受影响，但原生工具能力尚不能视为已验证。
+- 本轮只验证了 80 条确定性日志，尚未覆盖百万行日志、实时流、高并发和多服务关联。
+
+## 最终评价
+
+证据等级为 **L3-caveat**。组合的核心衔接与最终结果真实跑通，且对照实验证明 Headroom 能改善 Agent Nexus 的故障识别；但安装成本、上游数据库缺陷和规模化能力仍需明确提醒。适合有本地模型环境的开发者试用，不应替代成熟日志平台直接用于生产告警。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

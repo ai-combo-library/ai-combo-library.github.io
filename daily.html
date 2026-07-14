@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 工具组合实测库</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css?v=taxonomy-20260712">
+</head>
+<body class="daily-page public-daily resource-home library-app">
+  <header class="public-header">
+    <div class="wrap public-topbar">
+      <a class="brand" href="daily.html">AI 工具组合实测库</a>
+      <nav class="public-nav" aria-label="前台导航">
+        <a class="active" href="daily.html">组合库</a>
+        <a href="evidence.html">证据中心</a>
+        <a href="#about">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap public-main">
+    <section class="local-entry-alert" id="localEntryAlert" hidden>
+      <div>
+        <strong>请通过本地服务打开</strong>
+        <p>当前是文件直开模式，动态数据可能不完整。</p>
+      </div>
+      <a href="http://127.0.0.1:8767/daily.html">打开本地服务</a>
+    </section>
+
+    <section class="library-intro" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">开源 AI 工具组合资源库</p>
+        <h1 id="pageTitle">找到真正跑通过的工具组合</h1>
+        <p>按场景、证据和上手成本筛选。完整结论、限制和报告都在组合详情页。</p>
+      </div>
+      <div class="library-metrics" aria-label="资源库指标">
+        <span><b id="statPublished">—</b>组合</span>
+        <span><b id="statVerified">—</b>L3 实测</span>
+        <span><b id="statProduction">—</b>升级路径</span>
+        <span><b id="statTools">—</b>工具</span>
+      </div>
+    </section>
+
+    <section class="resource-browser" id="library" aria-labelledby="libraryTitle">
+      <aside class="facet-sidebar" id="libraryFilters" aria-label="组合筛选">
+        <div class="facet-heading">
+          <strong>筛选组合</strong>
+          <button id="resetFilters" type="button">重置</button>
+        </div>
+
+        <section class="facet-group">
+          <h2>使用场景</h2>
+          <div class="facet-options" id="categoryFilters"></div>
+        </section>
+
+        <section class="facet-group">
+          <h2>快捷集合</h2>
+          <div class="facet-options" id="collectionFilters"></div>
+        </section>
+
+        <section class="facet-group">
+          <label for="taskFilter">任务能力</label>
+          <select id="taskFilter"><option value="all">全部任务</option></select>
+        </section>
+
+        <section class="facet-group">
+          <label for="audienceFilter">适合谁</label>
+          <select id="audienceFilter"><option value="all">全部人群</option></select>
+        </section>
+
+        <section class="facet-group">
+          <h2>证据状态</h2>
+          <div class="facet-options" id="evidenceFilters"></div>
+        </section>
+
+        <section class="facet-group">
+          <label for="frictionFilter">上手成本</label>
+          <select id="frictionFilter">
+            <option value="all">全部成本</option>
+            <option value="low">低摩擦 · 0–35</option>
+            <option value="medium">中摩擦 · 36–59</option>
+            <option value="high">高摩擦 · 60–100</option>
+          </select>
+        </section>
+
+        <label class="facet-check">
+          <input id="localOnly" type="checkbox">
+          <span>优先本地、无付费 API</span>
+        </label>
+
+        <details class="facet-guide">
+          <summary>标签怎么读？</summary>
+          <p><b>L3</b> 表示工具在同一次实测中完成真实交接。</p>
+          <p><b>已验证升级</b> 表示补齐步骤已经复测。</p>
+        </details>
+      </aside>
+
+      <div class="library-results">
+        <div class="result-toolbar">
+          <div class="result-title">
+            <h2 id="libraryTitle">组合库</h2>
+            <p id="resultCount">正在读取公开组合。</p>
+          </div>
+          <div class="result-controls">
+            <button class="mobile-filter-toggle" id="mobileFilterToggle" type="button" aria-expanded="false" aria-controls="libraryFilters">筛选</button>
+            <label class="library-search" for="searchInput">
+              <span>搜索</span>
+              <input id="searchInput" type="search" placeholder="工具名、场景或问题">
+            </label>
+            <label class="sort-control" for="sortMode">
+              <span>排序</span>
+              <select id="sortMode">
+                <option value="recommended">综合推荐</option>
+                <option value="latest">最近实测</option>
+                <option value="friction">上手成本最低</option>
+                <option value="evidence">证据分最高</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="active-filters" id="activeFilters" aria-live="polite"></div>
+        <div class="combo-grid library-result-grid" id="comboGrid">
+          <article class="resource-combo-card result-skeleton">
+            <div class="empty">正在读取组合库。</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-panel compact-about" id="about" aria-labelledby="aboutTitle">
+      <div>
+        <h2 id="aboutTitle">关于这个资源库</h2>
+        <p>这里只公开真实运行过的组合。每条都附有适用场景、使用边界和可追溯的实测报告。</p>
+      </div>
+      <a href="evidence.html">查看证据中心</a>
+    </section>
+  </main>
+
+  <script src="shared.js"></script>
+  <script>
+    let records = [];
+    let tools = [];
+    let summary = {};
+    let activeCategory = "全部";
+    let activeCollection = "all";
+    let activeTask = "all";
+    let activeAudience = "all";
+    let evidenceFilter = "all";
+    let frictionFilterValue = "all";
+    let localOnlyValue = false;
+    let sortModeValue = "recommended";
+    let query = "";
+    let restoreScroll = false;
+
+    let categories = ["全部"];
+    let collections = [];
+    let tasks = [];
+    let audiences = [];
+    const categoryOrder = ["获取与监测", "内容与媒体", "文档与知识", "数据与分析", "自动化与业务流程", "设计与创意", "开发与 Agent", "部署运维与安全", "团队协作与沟通", "个人生活与财务", "科研与教育", "其他 / 待识别"];
+    const evidenceOptions = [
+      { id: "all", label: "全部证据" },
+      { id: "l3", label: "L3 实测" },
+      { id: "production", label: "已验证升级" },
+    ];
+
+    const categoryFilters = document.querySelector("#categoryFilters");
+    const collectionFilters = document.querySelector("#collectionFilters");
+    const taskFilter = document.querySelector("#taskFilter");
+    const audienceFilter = document.querySelector("#audienceFilter");
+    const evidenceFilters = document.querySelector("#evidenceFilters");
+    const frictionFilter = document.querySelector("#frictionFilter");
+    const localOnly = document.querySelector("#localOnly");
+    const sortMode = document.querySelector("#sortMode");
+    const searchInput = document.querySelector("#searchInput");
+    const resetFilters = document.querySelector("#resetFilters");
+    const resultCount = document.querySelector("#resultCount");
+    const activeFilters = document.querySelector("#activeFilters");
+    const comboGrid = document.querySelector("#comboGrid");
+    const libraryFilters = document.querySelector("#libraryFilters");
+    const mobileFilterToggle = document.querySelector("#mobileFilterToggle");
+
+    if (location.protocol === "file:") {
+      document.querySelector("#localEntryAlert").hidden = false;
+    }
+
+    function readUrlState() {
+      const params = new URLSearchParams(location.search);
+      const category = params.get("category");
+      activeCategory = category || "全部";
+      activeCollection = params.get("collection") || "all";
+      activeTask = params.get("task") || "all";
+      activeAudience = params.get("audience") || "all";
+      evidenceFilter = ["all", "l3", "production"].includes(params.get("evidence")) ? params.get("evidence") : "all";
+      frictionFilterValue = ["all", "low", "medium", "high"].includes(params.get("friction")) ? params.get("friction") : "all";
+      sortModeValue = ["recommended", "latest", "friction", "evidence"].includes(params.get("sort")) ? params.get("sort") : "recommended";
+      localOnlyValue = params.get("local") === "1";
+      query = params.get("q") || "";
+      restoreScroll = params.get("restore") === "1";
+      searchInput.value = query;
+      frictionFilter.value = frictionFilterValue;
+      sortMode.value = sortModeValue;
+      localOnly.checked = localOnlyValue;
+    }
+
+    function deriveFacets() {
+      const unique = field => [...new Set(records.flatMap(record => Array.isArray(record[field]) ? record[field] : []).filter(Boolean))];
+      const presentCategories = [...new Set(records.map(record => record.primaryCategory || record.category || "其他 / 待识别"))];
+      presentCategories.sort((a, b) => {
+        const ai = categoryOrder.indexOf(a);
+        const bi = categoryOrder.indexOf(b);
+        return (ai < 0 ? 999 : ai) - (bi < 0 ? 999 : bi) || a.localeCompare(b, "zh-CN");
+      });
+      categories = ["全部", ...presentCategories];
+      collections = unique("collections");
+      tasks = unique("tasks");
+      audiences = unique("audiences");
+      if (!categories.includes(activeCategory)) activeCategory = "全部";
+      if (activeCollection !== "all" && !collections.includes(activeCollection)) activeCollection = "all";
+      if (activeTask !== "all" && !tasks.includes(activeTask)) activeTask = "all";
+      if (activeAudience !== "all" && !audiences.includes(activeAudience)) activeAudience = "all";
+      taskFilter.innerHTML = `<option value="all">全部任务</option>${tasks.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("")}`;
+      audienceFilter.innerHTML = `<option value="all">全部人群</option>${audiences.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("")}`;
+      taskFilter.value = activeTask;
+      audienceFilter.value = activeAudience;
+    }
+
+    function writeUrlState({ push = false } = {}) {
+      const params = new URLSearchParams();
+      if (activeCategory !== "全部") params.set("category", activeCategory);
+      if (activeCollection !== "all") params.set("collection", activeCollection);
+      if (activeTask !== "all") params.set("task", activeTask);
+      if (activeAudience !== "all") params.set("audience", activeAudience);
+      if (evidenceFilter !== "all") params.set("evidence", evidenceFilter);
+      if (frictionFilterValue !== "all") params.set("friction", frictionFilterValue);
+      if (localOnlyValue) params.set("local", "1");
+      if (sortModeValue !== "recommended") params.set("sort", sortModeValue);
+      if (query.trim()) params.set("q", query.trim());
+      const next = `${location.pathname}${params.toString() ? `?${params}` : ""}#library`;
+      history[push ? "pushState" : "replaceState"](null, "", next);
+    }
+
+    function publicText(value) {
+      return String(value || "")
+        .replace(new RegExp(["发布", "闸门"].join(""), "g"), "公开发布流程")
+        .replace(/published\.json|combo-records\.json/gi, "公开实测记录")
+        .replace(/worker[- ]smoke|smoke/gi, "小样本初测")
+        .replace(/runtime/gi, "运行环境")
+        .replace(/production[- ]upgrade|\bproduction\b/gi, "生产级补齐")
+        .replace(/deep[- ]rerun|\brerun\b/gi, "复测")
+        .replace(/L3-caveat/gi, "实测通过但有限制")
+        .replace(/L2-caveat/gi, "初测通过但有限制")
+        .replace(/caveat/gi, "限制条件");
+    }
+
+    function comboChain(record) {
+      return (record.tools || []).map(tool => tool.name).filter(Boolean);
+    }
+
+    function evidenceLabel(record) {
+      const raw = String(record.evidenceLevel || "").toLowerCase();
+      if (raw.includes("l3") && raw.includes("caveat")) return "L3 实测 · 有限制";
+      if (raw === "l3") return "L3 实测可用";
+      if (raw.includes("l2")) return "L2 初测通过";
+      if (raw === "l1") return "L1 可安装";
+      return "待验证";
+    }
+
+    function frictionScore(record) {
+      return Number(record.installFrictionIndex?.score ?? 100);
+    }
+
+    function frictionLabel(record) {
+      const friction = record.installFrictionIndex || {};
+      return friction.level ? `${friction.level} ${frictionScore(record)}/100` : "成本待补";
+    }
+
+    function hasProductionPath(record) {
+      return Array.isArray(record.upgradePath) && record.upgradePath.some(path => path?.level === "verified");
+    }
+
+    function latestDate(record) {
+      const value = record.verification?.testedAt || record.verifiedAt;
+      if (!value) return "";
+      const date = new Date(value);
+      return Number.isNaN(date.getTime()) ? String(value).slice(0, 10) : date.toISOString().slice(0, 10);
+    }
+
+    function recordText(record) {
+      return [
+        record.title, record.category, record.primaryCategory, record.summary, record.useCase, record.maxBenefit,
+        record.suitableFor, record.notFor, record.recommendationLevel,
+        ...(record.domains || []), ...(record.tasks || []), ...(record.audiences || []),
+        ...(record.traits || []), ...(record.collections || []),
+        ...(record.caveatTags || []),
+        ...(record.tools || []).flatMap(tool => [tool.name, tool.role, tool.inputs, tool.outputs]),
+      ].join(" ").toLowerCase();
+    }
+
+    function qualityRank(record) {
+      const recommendation = { "强推荐": 500, "适合特定人群": 360, "可关注": 220, "仅工程参考": 120 }[record.recommendationLevel] || 0;
+      return Number(record.evidenceScore || 0) * 10 + recommendation + (hasProductionPath(record) ? 180 : 0) + Math.max(0, 100 - frictionScore(record));
+    }
+
+    function isLocalFriendly(record) {
+      const text = recordText(record);
+      return !/(外部\s*api\s*key|付费\s*api|openai_api_key|anthropic_api_key|需要[^。；,]*(密钥|token))/.test(text);
+    }
+
+    function matchesFriction(record) {
+      const score = frictionScore(record);
+      if (frictionFilterValue === "low") return score <= 35;
+      if (frictionFilterValue === "medium") return score >= 36 && score <= 59;
+      if (frictionFilterValue === "high") return score >= 60;
+      return true;
+    }
+
+    function filteredRecords() {
+      const visible = records.filter(record => {
+        const primaryCategory = record.primaryCategory || record.category || "其他 / 待识别";
+        if (activeCategory !== "全部" && primaryCategory !== activeCategory) return false;
+        if (activeCollection !== "all" && !(record.collections || []).includes(activeCollection)) return false;
+        if (activeTask !== "all" && !(record.tasks || []).includes(activeTask)) return false;
+        if (activeAudience !== "all" && !(record.audiences || []).includes(activeAudience)) return false;
+        if (evidenceFilter === "l3" && !String(record.evidenceLevel || "").toLowerCase().startsWith("l3")) return false;
+        if (evidenceFilter === "production" && !hasProductionPath(record)) return false;
+        if (!matchesFriction(record)) return false;
+        if (localOnlyValue && !isLocalFriendly(record)) return false;
+        return !query.trim() || recordText(record).includes(query.trim().toLowerCase());
+      });
+      const sorters = {
+        latest: (a, b) => String(latestDate(b)).localeCompare(String(latestDate(a))),
+        friction: (a, b) => frictionScore(a) - frictionScore(b),
+        evidence: (a, b) => Number(b.evidenceScore || 0) - Number(a.evidenceScore || 0),
+        recommended: (a, b) => qualityRank(b) - qualityRank(a),
+      };
+      return visible.sort(sorters[sortModeValue]);
+    }
+
+    function categoryCount(category) {
+      return category === "全部" ? records.length : records.filter(record => (record.primaryCategory || record.category || "其他 / 待识别") === category).length;
+    }
+
+    function closeMobileFilters() {
+      libraryFilters.classList.remove("mobile-open");
+      mobileFilterToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function renderFacets() {
+      taskFilter.value = activeTask;
+      audienceFilter.value = activeAudience;
+      categoryFilters.innerHTML = categories.map(category => `
+        <button type="button" class="${category === activeCategory ? "active" : ""}" data-category="${escapeHtml(category)}">
+          <span>${escapeHtml(category)}</span><em>${categoryCount(category)}</em>
+        </button>
+      `).join("");
+      evidenceFilters.innerHTML = evidenceOptions.map(option => `
+        <button type="button" class="${option.id === evidenceFilter ? "active" : ""}" data-evidence="${option.id}">
+          <span>${option.label}</span>
+        </button>
+      `).join("");
+      collectionFilters.innerHTML = collections.length ? ["all", ...collections].map(value => `
+        <button type="button" class="${value === activeCollection ? "active" : ""}" data-collection="${escapeHtml(value)}">
+          <span>${escapeHtml(value === "all" ? "全部集合" : value)}</span>
+        </button>
+      `).join("") : `<span class="muted">暂无集合</span>`;
+      categoryFilters.querySelectorAll("[data-category]").forEach(button => {
+        button.addEventListener("click", () => {
+          activeCategory = button.dataset.category;
+          writeUrlState({ push: true });
+          render();
+          closeMobileFilters();
+        });
+      });
+      evidenceFilters.querySelectorAll("[data-evidence]").forEach(button => {
+        button.addEventListener("click", () => {
+          evidenceFilter = button.dataset.evidence;
+          writeUrlState({ push: true });
+          render();
+          closeMobileFilters();
+        });
+      });
+      collectionFilters.querySelectorAll("[data-collection]").forEach(button => {
+        button.addEventListener("click", () => {
+          activeCollection = button.dataset.collection;
+          writeUrlState({ push: true });
+          render();
+          closeMobileFilters();
+        });
+      });
+    }
+
+    function returnUrl() {
+      const params = new URLSearchParams(location.search);
+      params.delete("restore");
+      params.set("restore", "1");
+      return `daily.html?${params.toString()}#library`;
+    }
+
+    function renderComboCard(record) {
+      const chain = comboChain(record);
+      const primaryCategory = record.primaryCategory || record.category || "其他 / 待识别";
+      const href = `combo.html?id=${encodeURIComponent(record.id)}&from=${encodeURIComponent(returnUrl())}`;
+      return `
+        <a class="resource-combo-card combo-library-card" data-category-tone="${categoryTone(primaryCategory)}" href="${escapeHtml(href)}" data-combo-link="1" aria-label="查看 ${escapeHtml(record.title)} 详情">
+          <div class="combo-card-head">
+            <div class="combo-card-identity">
+              <i class="combo-mark" aria-hidden="true"></i>
+              <div><span>${escapeHtml(primaryCategory)}</span><h3>${escapeHtml(record.title)}</h3></div>
+            </div>
+            <em>${escapeHtml(evidenceLabel(record))}</em>
+          </div>
+          <p>${escapeHtml(publicText(record.maxBenefit || record.useCase || record.summary || "查看这组工具的真实使用结论。"))}</p>
+          <div class="combo-card-tags" aria-label="工具链">
+            ${chain.slice(0, 4).map(name => `<span>${escapeHtml(name)}</span>`).join("")}
+            ${chain.length > 4 ? `<span>+${chain.length - 4}</span>` : ""}
+          </div>
+          ${(record.tasks || []).length ? `<div class="combo-capabilities">${record.tasks.slice(0, 3).map(task => `<span>${escapeHtml(task)}</span>`).join("")}</div>` : ""}
+          <div class="combo-card-meta">
+            <span>${chain.length} 个工具</span>
+            <span>${escapeHtml(frictionLabel(record))}</span>
+            <span>${hasProductionPath(record) ? "已验证升级" : "完整交接已验证"}</span>
+            <span>${escapeHtml(latestDate(record) || "日期待补")}</span>
+          </div>
+        </a>
+      `;
+    }
+
+    function categoryTone(category) {
+      if (["个人生活与财务", "团队协作与沟通"].includes(category)) return "people";
+      if (["内容与媒体", "设计与创意"].includes(category)) return "content";
+      if (["文档与知识", "科研与教育"].includes(category)) return "knowledge";
+      if (["获取与监测", "数据与分析", "自动化与业务流程"].includes(category)) return "data";
+      if (["部署运维与安全"].includes(category)) return "ops";
+      if (category === "其他 / 待识别") return "other";
+      return "developer";
+    }
+
+    function renderActiveFilters() {
+      const labels = [];
+      if (activeCategory !== "全部") labels.push(activeCategory);
+      if (activeCollection !== "all") labels.push(activeCollection);
+      if (activeTask !== "all") labels.push(`任务：${activeTask}`);
+      if (activeAudience !== "all") labels.push(`适合：${activeAudience}`);
+      if (evidenceFilter !== "all") labels.push(evidenceOptions.find(item => item.id === evidenceFilter)?.label);
+      if (frictionFilterValue !== "all") labels.push(frictionFilter.options[frictionFilter.selectedIndex].text);
+      if (localOnlyValue) labels.push("本地无付费 API");
+      if (query.trim()) labels.push(`“${query.trim()}”`);
+      activeFilters.innerHTML = labels.length ? labels.map(label => `<span class="filter-chip">${escapeHtml(label)}</span>`).join("") : `<span class="muted">全部组合</span>`;
+    }
+
+    function renderResults() {
+      const visible = filteredRecords();
+      resultCount.textContent = `找到 ${visible.length} 条`;
+      renderActiveFilters();
+      comboGrid.innerHTML = visible.length
+        ? visible.map(renderComboCard).join("")
+        : `<article class="resource-combo-card"><div class="empty">没有匹配组合，请减少筛选条件。</div></article>`;
+    }
+
+    function renderStats() {
+      document.querySelector("#statPublished").textContent = records.length;
+      document.querySelector("#statVerified").textContent = records.filter(record => String(record.evidenceLevel || "").toLowerCase().startsWith("l3")).length;
+      document.querySelector("#statProduction").textContent = records.filter(hasProductionPath).length;
+      document.querySelector("#statTools").textContent = Number(summary.tools || tools.length || 0);
+    }
+
+    function render() {
+      renderFacets();
+      renderResults();
+      renderStats();
+    }
+
+    function resetAll() {
+      activeCategory = "全部";
+      activeCollection = "all";
+      activeTask = "all";
+      activeAudience = "all";
+      evidenceFilter = "all";
+      frictionFilterValue = "all";
+      localOnlyValue = false;
+      sortModeValue = "recommended";
+      query = "";
+      searchInput.value = "";
+      frictionFilter.value = "all";
+      localOnly.checked = false;
+      sortMode.value = "recommended";
+      taskFilter.value = "all";
+      audienceFilter.value = "all";
+      writeUrlState({ push: true });
+      render();
+    }
+
+    function restoreListPosition() {
+      if (!restoreScroll) return;
+      const saved = Number(sessionStorage.getItem("combo-library-scroll") || 0);
+      requestAnimationFrame(() => window.scrollTo({ top: saved, behavior: "auto" }));
+      const params = new URLSearchParams(location.search);
+      params.delete("restore");
+      history.replaceState(null, "", `${location.pathname}${params.toString() ? `?${params}` : ""}#library`);
+    }
+
+    async function init() {
+      await loadScoringRules();
+      readUrlState();
+      try {
+        const data = await loadPublishedData();
+        records = Array.isArray(data.records) ? data.records : [];
+        tools = Array.isArray(data.tools) ? data.tools : [];
+        summary = data.summary || {};
+        deriveFacets();
+        render();
+        restoreListPosition();
+      } catch (error) {
+        comboGrid.innerHTML = `<article class="resource-combo-card"><div class="empty">组合库暂时无法读取，请稍后刷新。</div></article>`;
+        resultCount.textContent = "加载失败";
+      }
+    }
+
+    searchInput.addEventListener("input", () => {
+      query = searchInput.value;
+      writeUrlState();
+      renderResults();
+    });
+    frictionFilter.addEventListener("change", () => {
+      frictionFilterValue = frictionFilter.value;
+      writeUrlState({ push: true });
+      render();
+    });
+    taskFilter.addEventListener("change", () => {
+      activeTask = taskFilter.value;
+      writeUrlState({ push: true });
+      render();
+    });
+    audienceFilter.addEventListener("change", () => {
+      activeAudience = audienceFilter.value;
+      writeUrlState({ push: true });
+      render();
+    });
+    localOnly.addEventListener("change", () => {
+      localOnlyValue = localOnly.checked;
+      writeUrlState({ push: true });
+      render();
+    });
+    sortMode.addEventListener("change", () => {
+      sortModeValue = sortMode.value;
+      writeUrlState({ push: true });
+      renderResults();
+    });
+    resetFilters.addEventListener("click", resetAll);
+    mobileFilterToggle.addEventListener("click", () => {
+      const open = libraryFilters.classList.toggle("mobile-open");
+      mobileFilterToggle.setAttribute("aria-expanded", String(open));
+      if (open) requestAnimationFrame(() => libraryFilters.scrollIntoView({ behavior: "smooth", block: "start" }));
+    });
+    comboGrid.addEventListener("click", event => {
+      if (event.target.closest("[data-combo-link]")) sessionStorage.setItem("combo-library-scroll", String(window.scrollY));
+    });
+    window.addEventListener("popstate", () => {
+      readUrlState();
+      render();
+    });
+
+    init();
+  </script>
+</body>
+</html>

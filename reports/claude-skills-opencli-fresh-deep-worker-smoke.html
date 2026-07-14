@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>claude-skills + OpenCLI</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=claude-skills-opencli-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>claude-skills + OpenCLI</h1>
+      <p class="lead">用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。</p>
+      <div class="meta">
+        <span>自动化与业务流程 · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>claude-skills</span><span>OpenCLI</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要跨 Agent、跨会话传递任务状态的开发者和自动化团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>完全不使用命令行，或只在单次对话中完成简单任务的用户。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本轮验证的是一个 handoff Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。</p>
+      <h2>我们怎么测</h2>
+      <p>运行 handoff Skill 生成包含目标、当前状态、待决事项、所需 Skills 和产物的五段式 Markdown，再由真实 OpenCLI 本地扩展读取该文件并解析关键字段。</p>
+      <h2>实际结果</h2>
+      <p>OpenCLI 成功读到交接目标、5 个结构段和产物区，最终输出被判定为可继续执行的有效交接，而不是只有一份无法调用的文档。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. claude-skills（处理/理解）：接收 task；source material，产出 skill instructions；cli command。</li><li>2. OpenCLI（自动执行）：接收 cli command；skill instructions，产出 execution result；file。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre>用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。
+用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。
+用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。
+本轮验证的是一个 handoff Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。
+本轮验证的是一个 handoff Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

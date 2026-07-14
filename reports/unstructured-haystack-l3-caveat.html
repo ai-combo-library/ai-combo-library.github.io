@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>unstructured + Haystack</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=unstructured-haystack-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>unstructured + Haystack</h1>
+      <p class="lead">HTML / document-like source -&gt; structured elements -&gt; local BM25 search.</p>
+      <div class="meta">
+        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>unstructured</span><span>Haystack</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>希望先用本地工具跑通清晰输入输出，再决定是否升级为重型知识库或 Agent 系统的人。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合马上要求生产级 SLA、复杂权限、多用户 UI 或大规模批处理的人。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>目前只验证了本地 HTML；PDF、扫描件、复杂表格、向量检索和大模型回答生成不在本次测试范围内。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>HTML / document-like source -&gt; structured elements -&gt; local BM25 search.</p>
+      <h2>我们怎么测</h2>
+      <p>用 unstructured 解析含标题和价格信息的本地 HTML，把结构化文本元素转成 Haystack Documents，写入内存文档库后执行 BM25 查询。</p>
+      <h2>实际结果</h2>
+      <p>关键文本被正确抽取，Haystack 成功索引并返回预期命中，4 项检查通过；扫描 PDF、复杂表格和 embedding 未覆盖。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. unstructured（处理/理解）：接收 HTML；PDF；Text，产出 Text elements；JSON-like elements。</li><li>2. Haystack（存储/检索）：接收 Text；Document，产出 BM25 retrieval result。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre># unstructured + Haystack 生产化补齐 deep rerun
+
+时间：2026-07-03T00:11:01.634093+08:00
+
+## 结论
+
+状态：`passed`  
+检查：4/4
+
+## 检查项
+
+- unstructuredExtractedText: True
+- unstructuredKeptPricingSignal: True
+- haystackIndexedDocuments: True
+- haystackExpectedHit: True
+
+## 命令摘要
+
+- unstructured: returncode=0 timeout=False
+- haystack: returncode=0 timeout=False
+
+## 生产化 caveat
+
+HTML 到结构化文本再到本地 BM25 检索跑通；未覆盖扫描 PDF、复杂表格、embedding、LLM 生成或高并发检索。
+
+## 沙箱产物
+
+- summary: `summary.json`
+- 测试输出：已保留关键结果</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

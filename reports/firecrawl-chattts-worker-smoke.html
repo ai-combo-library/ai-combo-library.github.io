@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firecrawl + ChatTTS</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=firecrawl-chattts-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>Firecrawl + ChatTTS</h1>
+      <p class="lead">把网页正文转成音频文件，适合文章播报、资料复听和批量音频草稿。</p>
+      <div class="meta">
+        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>firecrawl</span><span>ChatTTS</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要快速筛选 AI 工具组合的个人用户和小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合追求一键成片、完全不想调参或处理素材质量的人。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 3/3。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>把网页正文转成音频文件，适合文章播报、资料复听和批量音频草稿。</p>
+      <h2>我们怎么测</h2>
+      <p>先用 Firecrawl 抓取公开网页正文并整理成可朗读文本，再加载本地 ChatTTS 模型生成 WAV，最后检查音频文件是否存在且可读取。</p>
+      <h2>实际结果</h2>
+      <p>网页正文成功进入 ChatTTS 并生成非空 WAV，3 项检查通过；首次模型下载、长文分段和发布级音质没有覆盖。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. firecrawl（采集/输入）：接收 URL, PDF, DOCX, 网页内容，产出 Markdown, JSON, 截图, API。</li><li>2. ChatTTS（自动执行）：接收 text，产出 audio, wav。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre># Firecrawl + ChatTTS 生产化补齐 deep rerun
+
+时间：2026-07-03T00:47:20.546997+08:00
+
+## 结论
+
+状态：`passed`  
+检查：3/3
+
+## 检查项
+
+- firecrawlReturnedMarkdown: True
+- chatttsGeneratedWav: True
+- wavArtifactExists: True
+
+## 命令摘要
+
+- firecrawl: returncode=0 timeout=False
+- chattts: returncode=0 timeout=False
+
+## 生产化 caveat
+
+网页正文可采集并合成为 wav；依赖 Firecrawl API、ChatTTS 模型缓存和本地音频依赖，未覆盖长文批处理、音色稳定性、版权审查或发布级音频质检。
+
+## 沙箱产物
+
+- summary: `summary.json`
+- 测试输出：已保留关键结果</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

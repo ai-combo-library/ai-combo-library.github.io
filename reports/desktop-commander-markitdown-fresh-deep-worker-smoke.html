@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DesktopCommanderMCP + MarkItDown</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=desktop-commander-markitdown-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>DesktopCommanderMCP + MarkItDown</h1>
+      <p class="lead">让 Desktop Commander 在授权目录中定位并读取文件，再由 MarkItDown 统一转换成适合检索、总结和交给 Agent 的 Markdown。</p>
+      <div class="meta">
+        <span>文档与知识 · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>DesktopCommanderMCP</span><span>MarkItDown</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要整理本机文档、批量建立 Markdown 资料入口的个人和知识工作者。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>主要处理扫描件 OCR，或不愿向 MCP 工具开放任何本机目录的用户。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本轮仅允许读取沙箱目录，未覆盖大型扫描 PDF、OCR 和复杂表格还原。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>让 Desktop Commander 在授权目录中定位并读取文件，再由 MarkItDown 统一转换成适合检索、总结和交给 Agent 的 Markdown。</p>
+      <h2>我们怎么测</h2>
+      <p>在隔离目录放入一份真实文档，使用 Desktop Commander MCP 列出目录并读取目标文件，再把读取到的文件路径交给 MarkItDown 转换。</p>
+      <h2>实际结果</h2>
+      <p>Desktop Commander 只访问了授权目录，MarkItDown 成功生成非空 Markdown，标题与正文关键内容均被保留，handoff 和最终内容断言通过。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. DesktopCommanderMCP（采集/输入）：接收 filesystem request；search query，产出 file；file list。</li><li>2. MarkItDown（处理/理解）：接收 file；document，产出 markdown；text。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre>让 Desktop Commander 在授权目录中定位并读取文件，再由 MarkItDown 统一转换成适合检索、总结和交给 Agent 的 Markdown。
+让 Desktop Commander 在授权目录中定位并读取文件，再由 MarkItDown 统一转换成适合检索、总结和交给 Agent 的 Markdown。
+让 Desktop Commander 在授权目录中定位并读取文件，再由 MarkItDown 统一转换成适合检索、总结和交给 Agent 的 Markdown。
+本轮仅允许读取沙箱目录，未覆盖大型扫描 PDF、OCR 和复杂表格还原。
+本轮仅允许读取沙箱目录，未覆盖大型扫描 PDF、OCR 和复杂表格还原。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

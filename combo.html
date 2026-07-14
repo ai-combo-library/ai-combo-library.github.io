@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>组合详情 - AI 工具组合实测库</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="app.css?v=taxonomy-20260712">
+</head>
+<body class="daily-page public-daily resource-home combo-detail-page">
+  <header class="public-header">
+    <div class="wrap public-topbar">
+      <a class="brand" href="daily.html">AI 工具组合实测库</a>
+      <nav class="public-nav" aria-label="前台导航">
+        <a class="active" href="daily.html">组合库</a>
+        <a href="evidence.html">证据中心</a>
+        <a href="daily.html#about">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap public-main">
+    <nav class="detail-breadcrumb" aria-label="面包屑">
+      <a id="backToLibrary" href="daily.html">组合库</a>
+      <span>/</span>
+      <span id="breadcrumbTitle">组合详情</span>
+    </nav>
+
+    <section class="combo-detail-shell" id="detailShell">
+      <div class="empty">正在读取组合详情。</div>
+    </section>
+  </main>
+
+  <script src="shared.js"></script>
+  <script>
+    let records = [];
+    let record = null;
+    let activeTab = "overview";
+
+    const detailShell = document.querySelector("#detailShell");
+    const breadcrumbTitle = document.querySelector("#breadcrumbTitle");
+    const backToLibrary = document.querySelector("#backToLibrary");
+
+    function getId() {
+      return new URLSearchParams(location.search).get("id") || "";
+    }
+
+    function readTab() {
+      const tab = new URLSearchParams(location.search).get("tab") || location.hash.replace("#", "");
+      return ["overview", "evidence", "report"].includes(tab) ? tab : "overview";
+    }
+
+    function returnUrl() {
+      const value = new URLSearchParams(location.search).get("from") || "daily.html#library";
+      return /^(?:\.\/)?daily\.html(?:[?#]|$)/.test(value) ? value : "daily.html#library";
+    }
+
+    function categoryTone(category) {
+      if (["个人生活与财务", "团队协作与沟通"].includes(category)) return "people";
+      if (["内容与媒体", "设计与创意"].includes(category)) return "content";
+      if (["文档与知识", "科研与教育"].includes(category)) return "knowledge";
+      if (["获取与监测", "数据与分析", "自动化与业务流程"].includes(category)) return "data";
+      if (category === "部署运维与安全") return "ops";
+      if (category === "其他 / 待识别") return "other";
+      return "developer";
+    }
+
+    function publicText(value) {
+      return String(value || "")
+        .replace(new RegExp(["发布", "闸门"].join(""), "g"), "公开发布流程")
+        .replace(/published\.json/gi, "公开实测记录")
+        .replace(/combo-records\.json/gi, "实测记录")
+        .replace(/pipelines?/gi, "流程")
+        .replace(/worker[- ]smoke/gi, "小样本初测")
+        .replace(/smoke/gi, "小样本初测")
+        .replace(/runtime/gi, "运行环境")
+        .replace(/production[- ]upgrade/gi, "生产级补齐")
+        .replace(/\bproduction\b/gi, "生产级")
+        .replace(/deep[- ]rerun/gi, "深度复测")
+        .replace(/\brerun\b/gi, "复测")
+        .replace(/L3-caveat/gi, "实测通过但有限制")
+        .replace(/L2-caveat/gi, "初测通过但有限制")
+        .replace(/caveat/gi, "限制条件");
+    }
+
+    function chain(item) {
+      return (item.tools || []).map(tool => tool.name || tool).filter(Boolean);
+    }
+
+    function evidenceLabel(item) {
+      const raw = String(item.evidenceLevel || "").toLowerCase();
+      if (raw.includes("l3") && raw.includes("caveat")) return "L3 实测 · 有限制";
+      if (raw === "l3") return "L3 实测可用";
+      if (raw.includes("l2") && raw.includes("caveat")) return "L2 初测 · 有限制";
+      if (raw === "l2") return "L2 初测通过";
+      if (raw === "l1") return "L1 可安装";
+      return "待验证";
+    }
+
+    function frictionLabel(item) {
+      const friction = item.installFrictionIndex || {};
+      if (!friction.level) return "成本待补";
+      return `${friction.level} ${Number(friction.score || 0)}/100`;
+    }
+
+    function latestDate(item) {
+      const value = item.verification?.testedAt || item.verifiedAt || item.retestFreshness?.lastTestedAt;
+      if (!value) return "";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return String(value).slice(0, 10);
+      return date.toISOString().slice(0, 10);
+    }
+
+    function toolLink(tool) {
+      const url = String(tool?.url || "");
+      if (!/^https?:\/\//.test(url)) return `<span>${escapeHtml(tool?.name || tool || "未知工具")}</span>`;
+      return `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(tool.name || "查看工具")}</a>`;
+    }
+
+    function list(items, fallback) {
+      const values = (Array.isArray(items) ? items : []).filter(Boolean);
+      if (!values.length) return `<p>${escapeHtml(fallback)}</p>`;
+      return `<ul>${values.map(item => `<li>${escapeHtml(publicText(item))}</li>`).join("")}</ul>`;
+    }
+
+    function renderToolChain(item) {
+      const tools = item.tools || [];
+      if (!tools.length) return `<p>工具链信息待补。</p>`;
+      return `
+        <p class="detail-tool-hub-guide">枢纽指数只统计本站已经完成的实测：连接过多少搭档、覆盖多少场景、深测成功率和平均上手成本。</p>
+        <div class="detail-tool-chain">
+          ${tools.map((tool, index) => `
+            <article>
+              <span>${index + 1}</span>
+              <div class="detail-tool-title">
+                <strong>${escapeHtml(tool.name || tool)}</strong>
+                ${tool.hub?.score !== undefined ? `<em title="只统计已经公开的真实实测组合">枢纽 ${Number(tool.hub.score)}/100</em>` : ""}
+              </div>
+              <p>${escapeHtml(publicText(tool.role || "角色待补"))}</p>
+              <small>${escapeHtml(publicText([tool.inputs, tool.outputs].filter(Boolean).join(" → ") || "输入输出待补"))}</small>
+              ${tool.hub?.summary ? `
+                <div class="detail-tool-hub">
+                  <b>${escapeHtml(tool.hub.level || "已验证节点")}</b>
+                  <small>${escapeHtml(tool.hub.summary)}</small>
+                  <small>深测成功率 ${Number(tool.hub.deepTestSuccessRate || 0)}% · 平均上手成本 ${Number(tool.hub.averageFriction || 0)}/100</small>
+                </div>
+              ` : ""}
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderOverview(item) {
+      const preparation = (item.tools || []).map(tool => {
+        const input = [tool.inputs, tool.interface].filter(Boolean).join("；");
+        return input ? `${tool.name || "工具"}：${input}` : "";
+      }).filter(Boolean);
+      return `
+        <div class="detail-two-column">
+          <article class="detail-panel">
+            <h2>它帮你完成什么</h2>
+            <p>${escapeHtml(publicText(item.maxBenefit || item.summary || item.useCase || "这是一组已经公开记录的工具组合。"))}</p>
+          </article>
+          <article class="detail-panel">
+            <h2>适合谁</h2>
+            <p>${escapeHtml(publicText(item.suitableFor || item.audience || "适合希望把多个工具串成稳定流程的用户。"))}</p>
+          </article>
+          <article class="detail-panel">
+            <h2>为什么要搭配使用</h2>
+            <p>${escapeHtml(publicText(item.whyComboStillMatters || item.summary || "这组工具分别负责不同步骤，组合后减少手工搬运。"))}</p>
+          </article>
+          <article class="detail-panel">
+            <h2>不适合谁</h2>
+            <p>${escapeHtml(publicText(item.notFor || "不适合完全不想配置、不想维护的人。"))}</p>
+          </article>
+        </div>
+        <article class="detail-panel">
+          <h2>实际怎么走</h2>
+          <p>${escapeHtml(publicText(item.useCase || "按下方工具链依次处理输入、生成中间结果并完成交付。"))}</p>
+          ${renderToolChain(item)}
+        </article>
+        <article class="detail-panel">
+          <h2>开始前准备</h2>
+          ${list(preparation, "工具的输入方式尚未补齐，请先查看对应项目主页。")}
+        </article>
+        <article class="detail-panel">
+          <h2>任务与适用范围</h2>
+          <div class="combo-capabilities">
+            ${(item.tasks || []).map(task => `<span>${escapeHtml(task)}</span>`).join("") || "<span>待识别</span>"}
+            ${(item.audiences || []).map(audience => `<span>${escapeHtml(audience)}</span>`).join("")}
+          </div>
+        </article>
+        <article class="detail-panel">
+          <h2>同类替代</h2>
+          ${list((item.alternatives || []).map(alt => `${alt.name || "替代方案"}：${alt.tradeoff || alt.fit || ""}`), "暂无明确替代方案记录。")}
+        </article>
+      `;
+    }
+
+    function renderEvidence(item) {
+      const factors = item.installFrictionIndex?.factors || [];
+      return `
+        <div class="detail-two-column">
+          <article class="detail-panel">
+            <h2>这次实际确认了什么</h2>
+            <p>${escapeHtml(publicText(item.evidenceExplanation || "已记录这组工具的真实交接结果。"))}</p>
+            <p>${escapeHtml(`最近一次实测完成 ${Number(item.verification?.checksPassed || 0)}/${Number(item.verification?.checksTotal || 0)} 项关键检查。`)}</p>
+          </article>
+          <article class="detail-panel">
+            <h2>这次还没有覆盖什么</h2>
+            <p>${escapeHtml(publicText(item.maxLimit || item.experiment?.caveat || "仍需要更多真实任务复测。"))}</p>
+          </article>
+          <article class="detail-panel">
+            <h2>首次使用成本</h2>
+            <p>${escapeHtml(frictionLabel(item))}</p>
+            ${list(factors.map(factor => factor.label), "暂无额外成本拆解。")}
+          </article>
+          <article class="detail-panel">
+            <h2>最近一次实测</h2>
+            <p>${escapeHtml(latestDate(item) || "日期待补")}</p>
+          </article>
+        </div>
+      `;
+    }
+
+    function renderReport(item) {
+      const reportUrl = String(item.reportUrl || "");
+      if (!reportUrl) {
+        return `
+          <article class="detail-panel">
+            <h2>实测报告</h2>
+            <p>这条组合暂时没有可公开阅读的完整报告。</p>
+          </article>
+        `;
+      }
+      return `
+        <section class="report-frame-shell">
+          <div class="report-frame-head">
+            <div>
+              <span>自然语言实测报告</span>
+              <strong>${escapeHtml(item.title)}</strong>
+            </div>
+            <a href="${escapeHtml(reportUrl)}" target="_blank" rel="noreferrer">打开完整报告</a>
+          </div>
+          <div class="natural-report">
+            <article>
+              <h2>一句话结论</h2>
+              <p>${escapeHtml(publicText(item.recommendationExplanation || item.maxBenefit || item.summary))}</p>
+            </article>
+            <article>
+              <h2>实际怎么测</h2>
+              <p>${escapeHtml(publicText(item.testMethod || "把前一个工具的真实输出交给后一个工具，并核验最终结果。"))}</p>
+              <p>本次完成 ${Number(item.verification?.checksPassed || 0)}/${Number(item.verification?.checksTotal || 0)} 项关键检查，最近实测于 ${escapeHtml(latestDate(item) || "日期待补")}。</p>
+            </article>
+            <article>
+              <h2>实际结果</h2>
+              <p>${escapeHtml(publicText(item.testOutcome || item.evidenceExplanation || item.summary))}</p>
+            </article>
+            <article>
+              <h2>使用前要知道</h2>
+              <p>${escapeHtml(publicText(item.maxLimit || "仍需要更多真实任务复测。"))}</p>
+              <p><b>上手成本：</b>${escapeHtml(frictionLabel(item))}</p>
+            </article>
+            <article>
+              <h2>适合与不适合</h2>
+              <p><b>适合：</b>${escapeHtml(publicText(item.suitableFor || item.audience || "需要把多个工具串成工作流的用户。"))}</p>
+              <p><b>不适合：</b>${escapeHtml(publicText(item.notFor || "不适合完全不想配置和维护的人。"))}</p>
+            </article>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderTabContent(item) {
+      if (activeTab === "evidence") return renderEvidence(item);
+      if (activeTab === "report") return renderReport(item);
+      return renderOverview(item);
+    }
+
+    function renderDecisionSidebar(item) {
+      return `
+        <aside class="decision-sidebar" aria-label="组合决策信息">
+          <section>
+            <span>推荐结论</span>
+            <strong>${escapeHtml(item.recommendationLevel || "推荐等级待补")}</strong>
+            <p>${escapeHtml(publicText(item.recommendationExplanation || item.evidenceExplanation || "使用前请结合场景和限制判断。"))}</p>
+          </section>
+          <section class="decision-facts">
+            <div><span>实测状态</span><b>${escapeHtml(evidenceLabel(item))}</b></div>
+            <div><span>上手成本</span><b>${escapeHtml(frictionLabel(item))}</b></div>
+            <div><span>最近实测</span><b>${escapeHtml(latestDate(item) || "日期待补")}</b></div>
+          </section>
+          <section>
+            <span>工具入口</span>
+            <div class="decision-tool-links">${(item.tools || []).map(toolLink).join("") || "暂无工具链接"}</div>
+          </section>
+          <a class="decision-back" href="${escapeHtml(returnUrl())}">返回筛选结果</a>
+        </aside>
+      `;
+    }
+
+    function renderShell(item) {
+      const primaryCategory = item.primaryCategory || item.category || "其他 / 待识别";
+      document.title = `${item.title} - AI 工具组合实测库`;
+      breadcrumbTitle.textContent = item.title;
+      backToLibrary.href = returnUrl();
+      detailShell.dataset.categoryTone = categoryTone(primaryCategory);
+      const tabs = [
+        ["overview", "使用指南"],
+        ["evidence", "实测范围"],
+      ];
+      if (item.reportUrl) tabs.push(["report", "实测报告"]);
+      detailShell.innerHTML = `
+        <section class="combo-detail-hero">
+          <div>
+            <p class="eyebrow">${escapeHtml(primaryCategory)}</p>
+            <h1>${escapeHtml(item.title)}</h1>
+            <p>${escapeHtml(publicText(item.summary || item.useCase || "这是一组已公开记录的工具组合。"))}</p>
+            <div class="combo-card-tags">
+              ${chain(item).map(name => `<span>${escapeHtml(name)}</span>`).join("")}
+            </div>
+          </div>
+          <div class="detail-hero-meta" aria-label="组合摘要">
+            <strong>${escapeHtml(evidenceLabel(item))}</strong>
+            <span>${chain(item).length} 个工具</span>
+            <span>${escapeHtml(item.recommendationLevel || "推荐等级待补")}</span>
+          </div>
+        </section>
+
+        <div class="detail-resource-layout">
+          <div class="detail-main-column">
+            <section class="detail-tabs" aria-label="详情分栏">
+              ${tabs.map(([id, label]) => `<button type="button" class="${id === activeTab ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
+            </section>
+            <section class="detail-tab-content" id="detailTabContent">${renderTabContent(item)}</section>
+          </div>
+          ${renderDecisionSidebar(item)}
+        </div>
+      `;
+      detailShell.querySelectorAll("[data-tab]").forEach(button => {
+        button.addEventListener("click", () => {
+          activeTab = button.dataset.tab;
+          const params = new URLSearchParams(location.search);
+          params.set("id", item.id);
+          if (activeTab === "overview") params.delete("tab");
+          else params.set("tab", activeTab);
+          history.replaceState(null, "", `${location.pathname}?${params}`);
+          updateTab(item);
+        });
+      });
+    }
+
+    function updateTab(item) {
+      detailShell.querySelectorAll("[data-tab]").forEach(button => {
+        button.classList.toggle("active", button.dataset.tab === activeTab);
+      });
+      const content = document.querySelector("#detailTabContent");
+      if (content) content.innerHTML = renderTabContent(item);
+    }
+
+    async function init() {
+      const id = getId();
+      activeTab = readTab();
+      if (!id) {
+        detailShell.innerHTML = `<div class="empty">缺少组合 ID，请从组合库进入详情页。</div>`;
+        return;
+      }
+      try {
+        const data = await loadPublishedData();
+        records = Array.isArray(data.records) ? data.records : [];
+        record = records.find(item => item.id === id);
+        if (!record) {
+          detailShell.innerHTML = `<div class="empty">没有找到这个组合。请回到组合库重新选择。</div>`;
+          return;
+        }
+        renderShell(record);
+      } catch (error) {
+        detailShell.innerHTML = `<div class="empty">组合详情加载失败：${escapeHtml(error.message)}。请通过本地服务打开页面。</div>`;
+      }
+    }
+
+    window.addEventListener("popstate", () => {
+      activeTab = readTab();
+      if (record) updateTab(record);
+    });
+
+    init();
+  </script>
+</body>
+</html>

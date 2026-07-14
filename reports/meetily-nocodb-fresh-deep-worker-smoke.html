@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meetily + NocoDB</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=meetily-nocodb-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
+      <p class="eyebrow">自然语言实测报告</p>
+      <h1>Meetily + NocoDB</h1>
+      <p class="lead">把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。</p>
+      <div class="meta">
+        <span>团队协作与沟通 · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>Meetily</span><span>NocoDB</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>会议较多、需要持续追踪决策和行动项的小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>只偶尔开会，或要求企业级实时转写、权限审计和合规托管的组织。</span></div>
+        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本轮使用确定性会议转写样本和临时 NocoDB 容器，未覆盖实时录音质量、多人权限与长期备份。</span></div>
+      </section>
+      <h2>一句话结论</h2>
+      <p>把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。</p>
+      <h2>我们怎么测</h2>
+      <p>让 Meetily 处理一份确定性会议转写样本，产出会议标题、摘要、决定和行动项 JSON；随后启动临时 NocoDB，把这份 JSON 通过接口写入会议台账并重新查询。</p>
+      <h2>实际结果</h2>
+      <p>NocoDB 中成功生成可查询记录，会议摘要、决定和行动项与 Meetily 输出一致，证明内容不是停留在文件里，而是进入了可筛选台账。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. Meetily（采集/输入）：接收 audio；meeting recording，产出 transcript；json；summary。</li><li>2. NocoDB（存储/检索）：接收 json；summary；transcript，产出 database record；table。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看原始测试摘录</summary>
+        <pre>把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。
+把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。
+把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。
+本轮使用确定性会议转写样本和临时 NocoDB 容器，未覆盖实时录音质量、多人权限与长期备份。
+本轮使用确定性会议转写样本和临时 NocoDB 容器，未覆盖实时录音质量、多人权限与长期备份。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>
