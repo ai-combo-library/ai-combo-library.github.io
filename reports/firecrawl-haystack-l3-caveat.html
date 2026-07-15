@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=firecrawl-haystack-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=firecrawl-haystack-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Firecrawl + Haystack</h1>
-      <p class="lead">低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 embedding、向量库或完整问答 UI。</p>
+      <p class="lead">低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 语义向量服务、向量库或完整问答 UI。</p>
       <div class="meta">
-        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Firecrawl</span><span>Haystack</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>想把产品文档、帮助中心、网页资料先变成可检索文本的小团队；正在评估 RAG/知识库原型，但不想一开始部署重系统的人；需要保留采集端和检索端可替换空间的开发者</span></div>
         <div class="summary-card"><b>不适合谁</b><span>需要现成聊天 UI、权限协作和后台运营的团队；需要抓登录态、复杂反爬或高并发网页采集的场景；已经明确需要生产级向量库和多模型评估的项目</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 3/3。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>本轮只覆盖单个公开小网页和 BM25 内存检索；未验证复杂站点、登录页、批量抓取、embedding 成本、向量库持久化和 LLM 回答质量。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本轮只覆盖单个公开小网页和 BM25 内存检索；未验证复杂站点、登录页、批量抓取、语义向量服务 成本、向量库持久化和 LLM 回答质量。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 embedding、向量库或完整问答 UI。</p>
       <h2>我们怎么测</h2>
       <p>使用 Firecrawl API 抓取一个公开网页并取得 Markdown，把该文本写入 Haystack 内存文档库，建立 BM25 索引后用预设关键词查询。</p>
       <h2>实际结果</h2>
       <p>Firecrawl 返回了有效 Markdown，Haystack 成功索引并把预期文档排在检索结果中，3 项检查通过；结论只适用于小样本 BM25 原型。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Firecrawl（采集/输入）：接收 URL, website, sitemap，产出 markdown, html, json。</li><li>2. Haystack（工作流节点）：接收 上一步结果，产出 下一步可用结果。</li></ol>
+      <ol><li>1. Firecrawl：获取原始资料，并把内容交给下一步。</li><li>2. Haystack：接收上一步结果，并完成这一环节的处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Firecrawl + Haystack 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Firecrawl + Haystack 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:11:01.634093+08:00
 
@@ -161,15 +158,15 @@
 - haystackIndexedDocuments: True
 - haystackExpectedHit: True
 
-## 命令摘要
+## 执行记录
 
-- rerun: returncode=0 timeout=False
+- 用同样样本重新跑一遍完整流程: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
-依赖 Firecrawl API；本轮验证公开网页采集到 Markdown 并进入 Haystack BM25 检索，未覆盖登录页、反爬页面、embedding 或生产问答质量。
+依赖 Firecrawl API；本轮验证公开网页采集到 Markdown 并进入 Haystack BM25 检索，未覆盖登录页、反爬页面、语义向量服务 或生产问答质量。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=ui5-mcp-playwright-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=ui5-mcp-playwright-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>UI5 MCP Server + Playwright</h1>
       <p class="lead">让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>UI5 MCP Server</span><span>Playwright</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。</p>
       <h2>我们怎么测</h2>
       <p>通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。</p>
       <h2>实际结果</h2>
       <p>应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. UI5 MCP Server（处理/理解）：接收 ui5 project spec；source code，产出 web app；url；validation report。</li><li>2. Playwright（输出/交付）：接收 web app；url，产出 test result；screenshot；console log。</li></ol>
+      <ol><li>1. UI5 MCP Server：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. Playwright：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。
 让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。
 让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。

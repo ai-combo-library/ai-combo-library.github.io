@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=mdpdf-baserow-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=mdpdf-baserow-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>mdpdf + baserow</h1>
       <p class="lead">既保留不可随意修改的 PDF 版本，又能在数据库中按负责人、状态和时间持续筛选追踪。</p>
       <div class="meta">
-        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>mdpdf</span><span>baserow</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要管理 SOP、检查表、报告和交付记录，并愿意运行本地 Docker 服务的小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>希望 Baserow 自动理解任意复杂 PDF，或不愿维护本地数据库服务的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 7/7。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>既保留不可随意修改的 PDF 版本，又能在数据库中按负责人、状态和时间持续筛选追踪。</p>
       <h2>我们怎么测</h2>
       <p>用 mdpdf 把包含标题、负责人和状态的 Markdown 检查表生成 PDF 与元数据，再启动临时 Baserow，把元数据写入数据行并重新读取。</p>
       <h2>实际结果</h2>
       <p>PDF 和结构化元数据均成功生成，Baserow 创建并读回了对应行，7 项断言通过；没有覆盖复杂 CSS、持久卷迁移和多人权限。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. mdpdf（采集/输入）：接收 Markdown file，产出 PDF document；extractable PDF text。</li><li>2. baserow（存储/检索）：接收 structured record；CSV/table rows；API payload；PDF metadata，产出 database table；grid records；API rows。</li></ol>
+      <ol><li>1. mdpdf：获取原始资料，并把内容交给下一步。</li><li>2. baserow：保存整理后的内容，方便以后查找和继续使用。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 rerun</li><li>记录 caveat</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>记录 使用限制</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># mdpdf + baserow 生产化补齐 rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># mdpdf + baserow 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T23:26:14.383905+08:00
 
@@ -164,15 +161,15 @@
 - historicalPdfExtractPassed: True
 - historicalExtractRowCountAtLeastTwo: True
 
-## 命令摘要
+## 执行记录
 
 - mdpdf: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 重新生成 mdpdf PDF，并复核历史 Baserow API 写入/读回与 PDF 抽取记录；本轮未重新启动 Baserow 容器或通过 API 再写新行，PDF 结构化抽取仍需专用解析器增强。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

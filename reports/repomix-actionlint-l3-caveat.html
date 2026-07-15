@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=repomix-actionlint-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=repomix-actionlint-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Repomix + actionlint</h1>
       <p class="lead">把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Repomix</span><span>actionlint</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 3/3。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。</p>
       <h2>我们怎么测</h2>
       <p>让 Repomix 把 GitHub Actions workflow 与说明文件打成审查包，再对包内同一份 workflow 运行 actionlint 确定性校验。</p>
       <h2>实际结果</h2>
       <p>审查包包含目标 YAML，actionlint 对该文件返回通过，3 项检查完成；未覆盖大型 monorepo、私有 Action 和矩阵构建。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Repomix（采集/输入）：接收 repository files；include globs，产出 Agent context pack；XML/text bundle。</li><li>2. actionlint（处理/理解）：接收 GitHub Actions YAML，产出 lint diagnostics；exit code。</li></ol>
+      <ol><li>1. Repomix：获取原始资料，并把内容交给下一步。</li><li>2. actionlint：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Repomix + actionlint 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Repomix + actionlint 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:11:01.634093+08:00
 
@@ -161,16 +158,16 @@
 - packContainsWorkflowYaml: True
 - actionlintClean: True
 
-## 命令摘要
+## 执行记录
 
 - repomix: returncode=0 timeout=False
 - actionlint: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

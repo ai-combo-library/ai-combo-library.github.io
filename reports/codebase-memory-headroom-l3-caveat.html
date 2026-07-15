@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=codebase-memory-headroom-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=codebase-memory-headroom-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>codebase-memory-mcp + Headroom</h1>
       <p class="lead">在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>codebase-memory-mcp</span><span>Headroom</span>
@@ -131,29 +131,26 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合机器配置较低、网络受限或不愿承担部署成本的用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。</p>
       <h2>我们怎么测</h2>
       <p>让 codebase-memory-mcp 对真实项目执行大范围图搜索，把返回的大 JSON 交给 Headroom ContentRouter 压缩，再比较压缩前后大小并检查组合、发布和证据等关键词。</p>
       <h2>实际结果</h2>
       <p>图谱结果成功进入 Headroom，输出缩小约 23.7%，关键业务信号仍然存在，4 项检查通过；短小或高度结构化结果不一定获得同等收益。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. codebase-memory-mcp（处理/理解）：接收 local repository, source code, project path，产出 knowledge graph, MCP search results, code snippets, architecture summary, JSON。</li><li>2. Headroom（处理/理解）：接收 MCP JSON output, tool output, logs, code search results, RAG chunks，产出 compressed context, structured compressed JSON, retained retrieval signals。</li></ol>
+      <ol><li>1. codebase-memory-mcp：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. Headroom：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># codebase-memory-mcp + Headroom ordered rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># codebase-memory-mcp + Headroom ordered 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T23:53:00.066311+08:00
 
 ## 结论
 
 状态：`passed`  
-证据等级：`L3-caveat`  
+测试结论：`实测通过，但有使用限制`  
 检查：4/4
 
 ## 检查项
@@ -163,15 +160,15 @@
 - keySignalsKept: True
 - meaningfulCompressionGainMeasured: True
 
-## 命令摘要
+## 执行记录
 
 - headroomRouter: returncode=0 timeout=False
 
-## Caveat
+## 使用限制
 
 复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

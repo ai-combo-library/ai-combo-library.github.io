@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=mdpdf-unstructured-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=mdpdf-unstructured-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>mdpdf + unstructured</h1>
-      <p class="lead">Markdown notes -&gt; PDF handoff file -&gt; machine-readable text elements.</p>
+      <p class="lead">Markdown notes -&gt; PDF 结果交接 file -&gt; machine-readable text elements.</p>
       <div class="meta">
-        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>mdpdf</span><span>unstructured</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>希望先用本地工具跑通清晰输入输出，再决定是否升级为重型知识库或 Agent 系统的人。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合马上要求生产级 SLA、复杂权限、多用户 UI 或大规模批处理的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>Markdown notes -&gt; PDF handoff file -&gt; machine-readable text elements.</p>
       <h2>我们怎么测</h2>
       <p>用 mdpdf 把包含价格与备份说明的 Markdown 生成 PDF，再让 unstructured 解析同一 PDF，并检查两个关键信息是否仍存在。</p>
       <h2>实际结果</h2>
       <p>PDF 成功生成，unstructured 提取出非空文本并保留价格和备份信息，4 项检查通过；扫描件、图片和复杂表格未测试。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. mdpdf（输出/交付）：接收 Markdown，产出 PDF。</li><li>2. unstructured（处理/理解）：接收 PDF，产出 Text elements；JSON-like elements。</li></ol>
+      <ol><li>1. mdpdf：生成最终可查看、下载或交付的结果。</li><li>2. unstructured：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># mdpdf + unstructured 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># mdpdf + unstructured 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:41:49.409711+08:00
 
@@ -162,16 +159,16 @@
 - unstructuredKeptPricing: True
 - unstructuredKeptBackup: True
 
-## 命令摘要
+## 执行记录
 
 - mdpdf: returncode=0 timeout=False
 - unstructured: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 Markdown 生成 PDF，再用 unstructured 反向解析出关键信息可复跑；未覆盖复杂 PDF 表格、扫描件、图片内容和批量目录。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

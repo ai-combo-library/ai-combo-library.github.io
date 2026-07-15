@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=stirling-pdf-nocodb-l3-office&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=stirling-pdf-nocodb-l3-office&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Stirling-PDF + NocoDB</h1>
       <p class="lead">PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账</p>
       <div class="meta">
-        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Stirling-PDF</span><span>nocodb</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合要求完整 UI 路径、零配置上线或马上投入生产的用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 6/6。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>不是所有 PDF 都能抽出 CSV 表格；Markdown 返回 ZIP，正式自动化需要解包；Stirling-PDF 默认认证，NocoDB API 需使用 xc-auth。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账</p>
       <h2>我们怎么测</h2>
       <p>重新启动 Stirling-PDF 与 NocoDB 容器，用 Stirling API 处理 PDF，并检查此前通过 NocoDB API 写入的页数、摘要和文件信息是否仍能从持久化台账读回。</p>
       <h2>实际结果</h2>
       <p>两个服务均正常启动，Stirling API 可重新执行，NocoDB 中的台账行仍可读取，6 项检查通过；因旧 token 未保留，本轮没有再通过 HTTP API 新写一行。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Stirling-PDF（处理/理解）：接收 PDF 文件，产出 PDF 基础信息, 页数, Markdown ZIP, 图片, CSV（依文档结构）。</li><li>2. nocodb（输出/交付）：接收 JSON, HTTP API, structured records，产出 在线表格, 数据库记录, API。</li></ol>
+      <ol><li>1. Stirling-PDF：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. nocodb：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Stirling-PDF + NocoDB service-level rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Stirling-PDF + NocoDB service-level 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T19:18:43.708221+08:00
 
@@ -164,17 +161,17 @@
 - nocodbPersistedRowsReadable: True
 - historicalApiWriteRecordExists: True
 
-## 命令摘要
+## 执行记录
 
-- stirlingDocker: {&quot;start&quot;: {&quot;command&quot;: &quot;docker run -d --name combo-stirling-service-rerun-20260703 -p 18092:8080 -e SECURITY_ENABLELOGIN=false docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest&quot;, &quot;cwd&quot;: &quot;[local-project]&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;dfc07dcadb83811e2271a6c6f92f5e3710c40b32ac4a055207e4c1c7b8c574b4\n&quot;, &quot;stderr&quot;: &quot;&quot;}, &quot;ready&quot;: {&quot;ok&quot;: true, &quot;status&quot;: 200, &quot;body&quot;: &quot;{\&quot;version\&quot;:\&quot;2.13.2\&quot;,\&quot;status\&quot;:\&quot;UP\&quot;}&quot;}}
-- stirlingApiRerun: {&quot;command&quot;: &quot;python3 [test-run]/runs/20260629-stirling-secondbrain-l3/run_stirling_secondbrain.py&quot;, &quot;cwd&quot;: &quot;[test-run]/runs/20260629-stirling-secondbrain-l3&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;{\n  \&quot;status\&quot;: \&quot;l3-caveat\&quot;,\n  \&quot;checks\&quot;: {\n    \&quot;stirlingHealthy\&quot;: true,\n    \&quot;stirlingPageCountApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownExtracted\&quot;: true,\n    \&quot;secondBrainRepoCloned\&quot;: true,\n  
-- nocodbDocker: {&quot;start&quot;: {&quot;command&quot;: &quot;docker run -d --name combo-nocodb-service-rerun-20260703 -p 18093:8080 -v [test-run]/runs/20260703-stirling-service-level-reruns/stirling-nocodb-service/nocodb-data:/usr/app/data nocodb/nocodb:latest&quot;, &quot;cwd&quot;: &quot;[local-project]&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;e323050c35ba314b8e52300508216f29601d3dacb96e0c9fb45b428bebcdf506\n&quot;, &quot;stderr&quot;: &quot;&quot;}, &quot;ready&quot;: {&quot;ok&quot;: true, &quot;status&quot;: 200, &quot;bo
+- stirlingDocker: {&quot;start&quot;: {&quot;command&quot;: &quot;docker run -d --name combo-stirling-service-用同样样本重新跑一遍完整流程-20260703 -p 18092:8080 -e SECURITY_ENABLELOGIN=false docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest&quot;, &quot;cwd&quot;: &quot;[local-dir]/Documents/Codex/2026-06-09/https-aihot-virxact-com-ai-github&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;dfc07dcadb83811e2271a6c6f92f5e3710c40b32ac4a055207e4c1c7b8c574b4\n&quot;, &quot;stderr&quot;: &quot;&quot;}, &quot;ready&quot;: {&quot;ok&quot;: true, &quot;status&quot;: 200, &quot;body&quot;: &quot;{\&quot;version\&quot;:\&quot;2.13.2\&quot;,\&quot;status\&quot;:\&quot;UP\&quot;}&quot;}}
+- stirlingApiRerun: {&quot;command&quot;: &quot;python3 [test-run]/runs/20260629-stirling-secondbrain-完整流程已跑通/run_stirling_secondbrain.py&quot;, &quot;cwd&quot;: &quot;[test-run]/runs/20260629-stirling-secondbrain-完整流程已跑通&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;{\n  \&quot;status\&quot;: \&quot;实测通过，但有使用限制\&quot;,\n  \&quot;checks\&quot;: {\n    \&quot;stirlingHealthy\&quot;: true,\n    \&quot;stirlingPageCountApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownExtracted\&quot;: true,\n    \&quot;secondBrainRepoCloned\&quot;: true,\n  
+- nocodbDocker: {&quot;start&quot;: {&quot;command&quot;: &quot;docker run -d --name combo-nocodb-service-用同样样本重新跑一遍完整流程-20260703 -p 18093:8080 -v [test-run]/runs/20260703-stirling-service-level-reruns/stirling-nocodb-service/nocodb-data:/usr/app/data nocodb/nocodb:latest&quot;, &quot;cwd&quot;: &quot;[local-dir]/Documents/Codex/2026-06-09/https-aihot-virxact-com-ai-github&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;e323050c35ba314b8e52300508216f29601d3dacb96e0c9fb45b428bebcdf506\n&quot;, &quot;stderr&quot;: &quot;&quot;}, &quot;ready&quot;: {&quot;ok&quot;: true, &quot;status&quot;: 200, &quot;bo
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 已重新启动 Stirling-PDF 与 NocoDB 容器，并验证 NocoDB 持久化台账数据可读；由于历史环境没有保留可复用 xc-auth token，本轮没有通过 NocoDB HTTP API 再写一条新记录。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=actionlint-codex-plugin-cc-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=actionlint-codex-plugin-cc-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>actionlint + codex-plugin-cc</h1>
       <p class="lead">让 actionlint 先精确指出 GitHub Actions 错误，再交给 Codex 插件修复同一文件并复检，形成可验证的 CI 配置修复闭环。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>actionlint</span><span>codex-plugin-cc</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>维护 GitHub Actions、希望 Agent 修复后仍有确定性校验的开发者。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>没有 Codex 登录态，或 CI 系统并非 GitHub Actions 的团队。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要本机 Codex app-server 登录态；本轮只验证一类工作流字段错误，没有覆盖密钥、权限和真实云端执行失败。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>让 actionlint 先精确指出 GitHub Actions 错误，再交给 Codex 插件修复同一文件并复检，形成可验证的 CI 配置修复闭环。</p>
       <h2>我们怎么测</h2>
       <p>先向 actionlint 提交一份含有 `runz` 错误字段的真实 workflow，保存其非零退出报告；再让 codex-plugin-cc 读取同一报告、修改同一文件，并重新运行 actionlint。</p>
       <h2>实际结果</h2>
       <p>actionlint 首次准确发现错误，Codex 插件把 `runz` 修正为合法字段，第二次 actionlint 返回通过；不是生成替代文件，而是在原工作区完成修复。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. actionlint（处理/理解）：接收 workflow yaml，产出 lint report；workflow yaml。</li><li>2. codex-plugin-cc（自动执行）：接收 lint report；workflow yaml；source code，产出 patch；review result。</li></ol>
+      <ol><li>1. actionlint：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. codex-plugin-cc：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>让 actionlint 先精确指出 GitHub Actions 错误，再交给 Codex 插件修复同一文件并复检，形成可验证的 CI 配置修复闭环。
 让 actionlint 先精确指出 GitHub Actions 错误，再交给 Codex 插件修复同一文件并复检，形成可验证的 CI 配置修复闭环。
 让 actionlint 先精确指出 GitHub Actions 错误，再交给 Codex 插件修复同一文件并复检，形成可验证的 CI 配置修复闭环。

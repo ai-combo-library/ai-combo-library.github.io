@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=playwright-mcp-chrome-devtools-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=playwright-mcp-chrome-devtools-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>@playwright/mcp + chrome-devtools-mcp</h1>
       <p class="lead">让 Playwright MCP 重放真实页面交互，再由 Chrome DevTools MCP 接手同一页面的网络与性能证据，适合 Agent 自动验收网页。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>@playwright/mcp</span><span>chrome-devtools-mcp</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>让 Agent 执行网页回归、排查性能和网络问题的开发者与测试团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只需要简单截图，或目标站点禁止自动化访问的用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>本轮使用本地诊断页，未覆盖登录站点、跨域限制、验证码和长时间性能采样。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>让 Playwright MCP 重放真实页面交互，再由 Chrome DevTools MCP 接手同一页面的网络与性能证据，适合 Agent 自动验收网页。</p>
       <h2>我们怎么测</h2>
       <p>Playwright MCP 先打开本地诊断页并完成按钮交互，再把页面 URL 和执行轨迹交给 Chrome DevTools MCP；后者连接同一页面，读取网络与性能信息。</p>
       <h2>实际结果</h2>
       <p>两个 MCP 服务都通过官方协议真实启动，交互轨迹成功交接，DevTools 侧拿到页面诊断结果，功能断言与最终诊断断言均通过。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. @playwright/mcp（采集/输入）：接收 url；browser action，产出 url；browser session；test result。</li><li>2. chrome-devtools-mcp（处理/理解）：接收 url；browser session，产出 performance report；network log；console log。</li></ol>
+      <ol><li>1. @playwright/mcp：获取原始资料，并把内容交给下一步。</li><li>2. chrome-devtools-mcp：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>让 Playwright MCP 重放真实页面交互，再由 Chrome DevTools MCP 接手同一页面的网络与性能证据，适合 Agent 自动验收网页。
 让 Playwright MCP 重放真实页面交互，再由 Chrome DevTools MCP 接手同一页面的网络与性能证据，适合 Agent 自动验收网页。
 让 Playwright MCP 重放真实页面交互，再由 Chrome DevTools MCP 接手同一页面的网络与性能证据，适合 Agent 自动验收网页。

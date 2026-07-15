@@ -1,12 +1,17 @@
 {
-  "generatedAt": "2026-07-14T23:59:46.115478+08:00",
-  "records": 35,
+  "generatedAt": "2026-07-16T01:08:57.440269+08:00",
+  "records": 37,
+  "assetVersions": {
+    "app.css": "d179f99a6c1a",
+    "shared.js": "54836c51eae8"
+  },
   "files": [
     "app.css",
     "combo.html",
     "daily.html",
     "evidence.html",
     "favicon.svg",
+    "index.html",
     "published.json",
     "reports/actionlint-codex-plugin-cc-fresh-deep-worker-smoke.html",
     "reports/agent-reach-headroom-l3-caveat.html",
@@ -17,6 +22,7 @@
     "reports/crawlee-stirling-pdf-l1.html",
     "reports/crawlee-unstructured-bookstack-light-l3.html",
     "reports/desktop-commander-markitdown-fresh-deep-worker-smoke.html",
+    "reports/excalidraw-markitdown-l3-caveat.html",
     "reports/firecrawl-chattts-worker-smoke.html",
     "reports/firecrawl-haystack-l3-caveat.html",
     "reports/fresh-agent-nexus-headroom-worker-smoke.html",
@@ -41,6 +47,7 @@
     "reports/supabase-agent-skills-cli-fresh-deep-worker-smoke.html",
     "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
     "reports/unstructured-haystack-l3-caveat.html",
+    "reports/yt-dlp-chattts-public-seed-worker-smoke.html",
     "reports/yt-dlp-videocaptioner-l3-caveat.html",
     "reports/ytdlp-funclip-l3-caveat.html",
     "scoring-rules.json",

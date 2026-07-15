@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=funclip-videocaptioner-l0-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=funclip-videocaptioner-l0-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>FunClip + VideoCaptioner</h1>
       <p class="lead">识别与成片环节彼此独立，既能保留 SRT 中间文件供人工校对，也能批量生成带字幕的视频。</p>
       <div class="meta">
-        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>FunClip</span><span>VideoCaptioner</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要处理访谈、课程、会议录像或口播视频，并愿意保留人工校对环节的内容创作者和小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只处理一两个短视频、希望在单一图形界面中立即完成全部操作，或需要本轮未验证的翻译与配音能力的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 5/5。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>复用本机已有 FunClip 模型环境，并用 20 秒样本验证；首次下载模型、长视频和批量吞吐仍需单独测试。；复用本机已有 VideoCaptioner 环境，以软字幕和低画质完成 20 秒样本验证；硬字幕、翻译、配音和长视频未覆盖。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>识别与成片环节彼此独立，既能保留 SRT 中间文件供人工校对，也能批量生成带字幕的视频。</p>
       <h2>我们怎么测</h2>
       <p>使用 20 秒本地视频样本让 FunClip 生成 SRT，再把字幕和原视频交给 VideoCaptioner 生成软字幕视频，最后检查输出的字幕轨。</p>
       <h2>实际结果</h2>
       <p>FunClip 生成了非空字幕，VideoCaptioner 正确消费并生成带字幕轨的视频，5 项断言通过；长视频、翻译、配音和硬字幕样式未覆盖。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. FunClip（处理/理解）：接收 downloaded video file with audio，产出 recognized subtitles, clip video, clip srt, timestamps。</li><li>2. VideoCaptioner（输出/交付）：接收 video file, srt/ass subtitle, optional target language/tts config，产出 video with subtitle track, translated subtitles, dubbed audio/video。</li></ol>
+      <ol><li>1. FunClip：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. VideoCaptioner：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre># FunClip + VideoCaptioner 轻量视频字幕实测
 
 ## 结论
@@ -155,11 +152,11 @@
 本轮在本机完成了：
 
 1. 生成 9.6 秒测试视频，包含英文语音音轨。
-2. FunClip 对视频做 ASR，输出 `total.srt`、原始识别文本、句子时间戳。
+2. FunClip 对视频做 语音识别，输出 `total.srt`、原始识别文本、句子时间戳。
 3. VideoCaptioner 读取 FunClip 产出的 `total.srt`，把字幕软合成进 mp4。
 4. `ffprobe` 确认最终视频包含 `mov_text` 字幕轨。
 
-因此这条组合可以从 L0 理论匹配升级到 L3 最小闭环实测。
+因此这条组合可以从 尚未实测 理论匹配升级到 完整流程已跑通 最小闭环实测。
 
 ## 实测结果
 
@@ -215,7 +212,7 @@ duration: 9.660000
 - FunClip 需要 GitHub clone 后安装 `requirements.txt`。
 - VideoCaptioner 只支持 Python `&gt;=3.10,&lt;3.13`，本机默认 Python 3.14 不能安装。
 - 本轮额外通过 Homebrew 安装了 Python 3.12。
-- FunClip 会下载约 823MB 的英文 ASR 模型。
+- FunClip 会下载约 823MB 的英文 语音识别 模型。
 
 ### 3. 两个工具不建议放在同一个 Python 环境
 
@@ -252,7 +249,7 @@ VideoCaptioner 提供完整 CLI：
 
 定位应从“S 级格式强匹配”调整为：
 
-&gt; A 级：本机最小闭环已实测，适合短视频字幕/翻译/合成工作流，但首次安装和模型下载成本较高，ASR 质量需要按语言和音频质量复测。
+&gt; A 级：本机最小闭环已实测，适合短视频字幕/翻译/合成工作流，但首次安装和模型下载成本较高，语音识别 质量需要按语言和音频质量复测。
 
 ## 证据路径
 

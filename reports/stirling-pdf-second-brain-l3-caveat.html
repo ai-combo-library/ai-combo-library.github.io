@@ -118,35 +118,32 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=stirling-pdf-second-brain-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=stirling-pdf-second-brain-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Stirling-PDF + second-brain</h1>
-      <p class="lead">把 PDF 从静态文件变成可被本地 AI 运行环境 读取、引用和继续处理的知识资产。</p>
+      <p class="lead">把 PDF 从静态文件变成可被本地 AI 助手读取、引用和继续处理的知识资产。</p>
       <div class="meta">
-        <span>个人生活与财务 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>个人生活与财务 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Stirling-PDF</span><span>second-brain</span>
       </div>
       <section class="summary-grid">
-        <div class="summary-card"><b>适合谁</b><span>适合希望把 PDF 资料先处理成可读文本，再沉淀进本地 AI 运行环境 的个人或小团队。</span></div>
+        <div class="summary-card"><b>适合谁</b><span>适合希望把 PDF 资料先处理成可读文本，再沉淀进本地 AI 助手的个人或小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合完全不想部署 Docker、需要企业级权限审计，或要求马上完成语义索引检索的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 6/6。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>本轮验证的是 Stirling-PDF Docker API 将 PDF 转 Markdown ZIP，并通过 second-brain kernel 的 attachment parser 接入 LLM 可读 parsed_text；未安装 second-brain full bundle、未跑语义索引/embedding/长期知识库检索，也未测试复...</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本轮验证的是 Stirling-PDF 本地服务接口将 PDF 转 Markdown 压缩包，并通过 second-brain 核心程序的附件解析功能接入 AI 可读取的文本；未安装 second-brain 完整功能包、未测试语义搜索和长期资料检索，也未测试复杂表格 PDF。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>把 PDF 从静态文件变成可被本地 AI 运行环境 读取、引用和继续处理的知识资产。</p>
       <h2>我们怎么测</h2>
-      <p>启动 Stirling-PDF Docker 服务，把两页 PDF 通过 API 转成 Markdown ZIP；解包后分别把 Markdown 和原 PDF 交给 second-brain 附件解析层，并检查生成的 parsed_text 与 LLM 上下文后缀。</p>
+      <p>启动 Stirling-PDF Docker 服务，把两页 PDF 通过 API 转成 Markdown 压缩包；解包后分别把 Markdown 和原 PDF 交给 second-brain 附件解析层，并检查生成的 解析后的文本 与 LLM 上下文后缀。</p>
       <h2>实际结果</h2>
-      <p>Stirling-PDF 生成了非空 Markdown，second-brain 同时接收 Markdown/PDF 并产出 LLM 可读内容，6 项检查通过；本轮没有继续验证 embedding 和长期检索。</p>
+      <p>Stirling-PDF 生成了非空 Markdown，second-brain 同时接收 Markdown/PDF 并产出 LLM 可读内容，6 项检查通过；本轮没有继续验证 语义向量服务 和长期检索。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Stirling-PDF（处理/理解）：接收 pdf，产出 pdf。</li><li>2. second-brain（自动执行）：接收 markdown, pdf, slides, spreadsheets, archives, images, audio, video, url，产出 json, markdown, api。</li></ol>
+      <ol><li>1. Stirling-PDF：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. second-brain：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Stirling-PDF + second-brain service-level rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Stirling-PDF + second-brain service-level 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T19:18:43.708221+08:00
 
@@ -164,16 +161,16 @@
 - freshMarkdownOutputExists: True
 - secondBrainLlmSuffixExists: True
 
-## 命令摘要
+## 执行记录
 
-- docker: {&quot;start&quot;: {&quot;command&quot;: &quot;docker run -d --name combo-stirling-service-rerun-20260703 -p 18092:8080 -e SECURITY_ENABLELOGIN=false docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest&quot;, &quot;cwd&quot;: &quot;[local-project]&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;466efc2ea2a1a72c7efa482d54fb248bece70e13da442aead7cffb4665c6bdd9\n&quot;, &quot;stderr&quot;: &quot;&quot;}, &quot;ready&quot;: {&quot;ok&quot;: true, &quot;status&quot;: 200, &quot;body&quot;: &quot;{\&quot;version\&quot;:\&quot;2.13.2\&quot;,\&quot;status\&quot;:\&quot;UP\&quot;}&quot;}}
-- rerun: {&quot;command&quot;: &quot;python3 [test-run]/runs/20260629-stirling-secondbrain-l3/run_stirling_secondbrain.py&quot;, &quot;cwd&quot;: &quot;[test-run]/runs/20260629-stirling-secondbrain-l3&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;{\n  \&quot;status\&quot;: \&quot;l3-caveat\&quot;,\n  \&quot;checks\&quot;: {\n    \&quot;stirlingHealthy\&quot;: true,\n    \&quot;stirlingPageCountApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownExtracted\&quot;: true,\n    \&quot;secondBrainRepoCloned\&quot;: true,\n  
+- docker: {&quot;start&quot;: {&quot;command&quot;: &quot;docker run -d --name combo-stirling-service-用同样样本重新跑一遍完整流程-20260703 -p 18092:8080 -e SECURITY_ENABLELOGIN=false docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest&quot;, &quot;cwd&quot;: &quot;[local-dir]/Documents/Codex/2026-06-09/https-aihot-virxact-com-ai-github&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;466efc2ea2a1a72c7efa482d54fb248bece70e13da442aead7cffb4665c6bdd9\n&quot;, &quot;stderr&quot;: &quot;&quot;}, &quot;ready&quot;: {&quot;ok&quot;: true, &quot;status&quot;: 200, &quot;body&quot;: &quot;{\&quot;version\&quot;:\&quot;2.13.2\&quot;,\&quot;status\&quot;:\&quot;UP\&quot;}&quot;}}
+- 用同样样本重新跑一遍完整流程: {&quot;command&quot;: &quot;python3 [test-run]/runs/20260629-stirling-secondbrain-完整流程已跑通/run_stirling_secondbrain.py&quot;, &quot;cwd&quot;: &quot;[test-run]/runs/20260629-stirling-secondbrain-完整流程已跑通&quot;, &quot;returncode&quot;: 0, &quot;timeout&quot;: false, &quot;stdout&quot;: &quot;{\n  \&quot;status\&quot;: \&quot;实测通过，但有使用限制\&quot;,\n  \&quot;checks\&quot;: {\n    \&quot;stirlingHealthy\&quot;: true,\n    \&quot;stirlingPageCountApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownApiReturned\&quot;: true,\n    \&quot;stirlingMarkdownExtracted\&quot;: true,\n    \&quot;secondBrainRepoCloned\&quot;: true,\n  
 
-## 生产化 caveat
+## 长期使用 使用限制
 
-已重新启动 Stirling-PDF Docker 服务并跑通 second-brain parser 接入；仍未覆盖 second-brain 完整知识库、embedding、长期检索和复杂表格 PDF。
+已重新启动 Stirling-PDF Docker 服务并跑通 second-brain parser 接入；仍未覆盖 second-brain 完整知识库、语义向量服务、长期检索和复杂表格 PDF。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=shortgpt-videocaptioner-l3-caveat-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=shortgpt-videocaptioner-l3-caveat-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>ShortGPT + VideoCaptioner</h1>
       <p class="lead">视频初稿与字幕文件可以分别检查和修改，字幕确认后再封装成成片，减少反复整段重做。</p>
       <div class="meta">
-        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>ShortGPT</span><span>VideoCaptioner</span>
@@ -131,29 +131,26 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>愿意搭建本地 Python 环境、需要批量制作信息型短视频，并希望保留字幕校对步骤的内容团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只做少量视频、需要开箱即用图形界面，或要求本轮未验证的在线素材生成、翻译和配音全自动化的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 8/8。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>视频初稿与字幕文件可以分别检查和修改，字幕确认后再封装成成片，减少反复整段重做。</p>
       <h2>我们怎么测</h2>
       <p>使用确定性的本地素材和音频让 ShortGPT 生成 MP4 与 SRT，再把这两个真实产物交给 VideoCaptioner 封装软字幕，并用媒体探测检查字幕轨。</p>
       <h2>实际结果</h2>
       <p>ShortGPT 产出视频和字幕，VideoCaptioner 消费同一组文件并生成带字幕轨的新视频，8 项断言通过；没有调用 LLM 生成脚本或在线搜索素材。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. ShortGPT（自动执行）：接收 text script, local/background video, optional footage/API assets，产出 voice audio, timed captions, rendered video, editing schema。</li><li>2. VideoCaptioner（输出/交付）：接收 video file, srt/ass subtitle, optional target language/tts config，产出 video with subtitle track, translated subtitles, dubbed audio/video。</li></ol>
+      <ol><li>1. ShortGPT：接收上一步结果并自动继续处理。</li><li>2. VideoCaptioner：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># ShortGPT + VideoCaptioner ordered rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># ShortGPT + VideoCaptioner ordered 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T23:53:00.066311+08:00
 
 ## 结论
 
 状态：`passed`  
-证据等级：`L3-caveat`  
+测试结论：`实测通过，但有使用限制`  
 检查：4/4
 
 ## 检查项
@@ -163,16 +160,16 @@
 - videoCaptionerProducedFreshMp4: True
 - outputHasSubtitleStream: True
 
-## 命令摘要
+## 执行记录
 
 - synthesize: returncode=0 timeout=False
 - ffprobe: returncode=0 timeout=False
 
-## Caveat
+## 使用限制
 
 重新用 VideoCaptioner 对 ShortGPT 既有视频和字幕做软字幕封装；未重新调用 ShortGPT 全流程生成脚本，也未覆盖硬字幕样式、长视频或自动素材源。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=shadcn-ui-playwright-skill-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=shadcn-ui-playwright-skill-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>shadcn/ui + playwright-skill</h1>
       <p class="lead">用 shadcn/ui 快速搭出真实可操作的界面，再让 Playwright Skill 自动验证表单、弹窗和不同屏幕宽度。</p>
       <div class="meta">
-        <span>设计与创意 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>设计与创意 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>shadcn/ui</span><span>playwright-skill</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>使用 React 构建后台、工具页或原型，并希望快速补上浏览器验收的前端团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不使用 React，或要求本轮就覆盖复杂登录、支付和全站视觉回归的项目。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>用 shadcn/ui 快速搭出真实可操作的界面，再让 Playwright Skill 自动验证表单、弹窗和不同屏幕宽度。</p>
       <h2>我们怎么测</h2>
       <p>用 shadcn/ui 组件生成带表单和对话框的测试页面，启动本地应用后让 Playwright Skill 在桌面和手机宽度分别填写表单、点击按钮并检查弹窗。</p>
       <h2>实际结果</h2>
       <p>两种视口都完成了真实交互，表单值、按钮响应和对话框状态符合预期，同时保存了浏览器验收产物。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. shadcn/ui（处理/理解）：接收 component spec；react；typescript，产出 web app；url；tsx。</li><li>2. playwright-skill（输出/交付）：接收 web app；url；test request，产出 screenshot；test result；console log。</li></ol>
+      <ol><li>1. shadcn/ui：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. playwright-skill：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>用 shadcn/ui 快速搭出真实可操作的界面，再让 Playwright Skill 自动验证表单、弹窗和不同屏幕宽度。
 用 shadcn/ui 快速搭出真实可操作的界面，再让 Playwright Skill 自动验证表单、弹窗和不同屏幕宽度。
 用 shadcn/ui 快速搭出真实可操作的界面，再让 Playwright Skill 自动验证表单、弹窗和不同屏幕宽度。

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=firecrawl-chattts-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=firecrawl-chattts-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Firecrawl + ChatTTS</h1>
       <p class="lead">把网页正文转成音频文件，适合文章播报、资料复听和批量音频草稿。</p>
       <div class="meta">
-        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>firecrawl</span><span>ChatTTS</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要快速筛选 AI 工具组合的个人用户和小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合追求一键成片、完全不想调参或处理素材质量的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 3/3。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>把网页正文转成音频文件，适合文章播报、资料复听和批量音频草稿。</p>
       <h2>我们怎么测</h2>
       <p>先用 Firecrawl 抓取公开网页正文并整理成可朗读文本，再加载本地 ChatTTS 模型生成 WAV，最后检查音频文件是否存在且可读取。</p>
       <h2>实际结果</h2>
       <p>网页正文成功进入 ChatTTS 并生成非空 WAV，3 项检查通过；首次模型下载、长文分段和发布级音质没有覆盖。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. firecrawl（采集/输入）：接收 URL, PDF, DOCX, 网页内容，产出 Markdown, JSON, 截图, API。</li><li>2. ChatTTS（自动执行）：接收 text，产出 audio, wav。</li></ol>
+      <ol><li>1. firecrawl：获取原始资料，并把内容交给下一步。</li><li>2. ChatTTS：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Firecrawl + ChatTTS 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Firecrawl + ChatTTS 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:47:20.546997+08:00
 
@@ -161,16 +158,16 @@
 - chatttsGeneratedWav: True
 - wavArtifactExists: True
 
-## 命令摘要
+## 执行记录
 
 - firecrawl: returncode=0 timeout=False
 - chattts: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 网页正文可采集并合成为 wav；依赖 Firecrawl API、ChatTTS 模型缓存和本地音频依赖，未覆盖长文批处理、音色稳定性、版权审查或发布级音频质检。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

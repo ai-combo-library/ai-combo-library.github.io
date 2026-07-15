@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=ytdlp-funclip-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=ytdlp-funclip-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>yt-dlp + FunClip</h1>
-      <p class="lead">公开视频 URL -&gt; 下载视频 -&gt; ASR 字幕 -&gt; 按文本切出短片段</p>
+      <p class="lead">公开视频 URL -&gt; 下载视频 -&gt; 语音识别生成字幕 -&gt; 按文本切出短片段</p>
       <div class="meta">
-        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>yt-dlp</span><span>FunClip</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要把公开视频、课程、访谈、演讲回放拆成短片段的内容运营、知识整理者和视频创作者。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合要求完整 UI 路径、零配置上线或马上投入生产的用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>能完成公开视频下载、20 秒截取、FunClip 语音识别与字幕输出；本轮未自动产出剪辑 mp4，stage 2 精剪仍需额外关键词/时间段参数，首次运行还需下载较大的 ASR 模型。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>能完成公开视频下载、20 秒截取、FunClip 语音识别与字幕输出；本轮未自动产出剪辑 mp4，stage 2 精剪仍需额外关键词/时间段参数，首次运行还需下载较大的 语音识别 模型。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>公开视频 URL -&gt; 下载视频 -&gt; ASR 字幕 -&gt; 按文本切出短片段</p>
       <h2>我们怎么测</h2>
-      <p>用 yt-dlp 下载公开视频，借助 ffmpeg 截取短样本，再把样本交给 FunClip stage 1 做 ASR，并检查生成的 SRT 字幕。</p>
+      <p>用 yt-dlp 下载公开视频，借助 ffmpeg 截取短样本，再把样本交给 FunClip stage 1 做 语音识别，并检查生成的 SRT 字幕。</p>
       <h2>实际结果</h2>
       <p>视频下载、样本截取、FunClip 识别和 SRT 生成均成功，4 项检查通过；stage 2 关键词精剪没有完成，因此不能宣称整条自动剪辑链已跑通。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. yt-dlp（采集/输入）：接收 video URL, media page URL, direct media URL，产出 downloaded video file, metadata JSON。</li><li>2. FunClip（处理/理解）：接收 downloaded video file with audio，产出 recognized subtitles, clip video, clip srt, timestamps。</li></ol>
+      <ol><li>1. yt-dlp：获取原始资料，并把内容交给下一步。</li><li>2. FunClip：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># yt-dlp + FunClip 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># yt-dlp + FunClip 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:11:01.634093+08:00
 
@@ -162,17 +159,17 @@
 - funclipGeneratedSrt: True
 - funclipStage1Completed: True
 
-## 命令摘要
+## 执行记录
 
 - ytDlp: returncode=0 timeout=False
 - ffmpegTrim: returncode=0 timeout=False
 - funclipStage1: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
-下载、截取、FunClip stage 1 字幕输出可复跑；stage 2 精剪、关键词选择、长视频批量和 ASR 首次模型下载成本仍需单独说明。
+下载、截取、FunClip stage 1 字幕输出可复跑；stage 2 精剪、关键词选择、长视频批量和 语音识别 首次模型下载成本仍需单独说明。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

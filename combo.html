@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>组合详情 - AI 工具组合实测库</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="app.css?v=taxonomy-20260712">
+  <link rel="stylesheet" href="app.css?v=d179f99a6c1a">
 </head>
 <body class="daily-page public-daily resource-home combo-detail-page">
   <header class="public-header">
@@ -13,7 +13,7 @@
       <a class="brand" href="daily.html">AI 工具组合实测库</a>
       <nav class="public-nav" aria-label="前台导航">
         <a class="active" href="daily.html">组合库</a>
-        <a href="evidence.html">证据中心</a>
+        <a href="evidence.html">实测档案</a>
         <a href="daily.html#about">关于</a>
       </nav>
     </div>
@@ -31,7 +31,7 @@
     </section>
   </main>
 
-  <script src="shared.js"></script>
+  <script src="shared.js?v=54836c51eae8"></script>
   <script>
     let records = [];
     let record = null;
@@ -65,42 +65,8 @@
       return "developer";
     }
 
-    function publicText(value) {
-      return String(value || "")
-        .replace(new RegExp(["发布", "闸门"].join(""), "g"), "公开发布流程")
-        .replace(/published\.json/gi, "公开实测记录")
-        .replace(/combo-records\.json/gi, "实测记录")
-        .replace(/pipelines?/gi, "流程")
-        .replace(/worker[- ]smoke/gi, "小样本初测")
-        .replace(/smoke/gi, "小样本初测")
-        .replace(/runtime/gi, "运行环境")
-        .replace(/production[- ]upgrade/gi, "生产级补齐")
-        .replace(/\bproduction\b/gi, "生产级")
-        .replace(/deep[- ]rerun/gi, "深度复测")
-        .replace(/\brerun\b/gi, "复测")
-        .replace(/L3-caveat/gi, "实测通过但有限制")
-        .replace(/L2-caveat/gi, "初测通过但有限制")
-        .replace(/caveat/gi, "限制条件");
-    }
-
     function chain(item) {
       return (item.tools || []).map(tool => tool.name || tool).filter(Boolean);
-    }
-
-    function evidenceLabel(item) {
-      const raw = String(item.evidenceLevel || "").toLowerCase();
-      if (raw.includes("l3") && raw.includes("caveat")) return "L3 实测 · 有限制";
-      if (raw === "l3") return "L3 实测可用";
-      if (raw.includes("l2") && raw.includes("caveat")) return "L2 初测 · 有限制";
-      if (raw === "l2") return "L2 初测通过";
-      if (raw === "l1") return "L1 可安装";
-      return "待验证";
-    }
-
-    function frictionLabel(item) {
-      const friction = item.installFrictionIndex || {};
-      if (!friction.level) return "成本待补";
-      return `${friction.level} ${Number(friction.score || 0)}/100`;
     }
 
     function latestDate(item) {
@@ -113,8 +79,9 @@
 
     function toolLink(tool) {
       const url = String(tool?.url || "");
-      if (!/^https?:\/\//.test(url)) return `<span>${escapeHtml(tool?.name || tool || "未知工具")}</span>`;
-      return `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(tool.name || "查看工具")}</a>`;
+      const name = escapeHtml(tool?.name || tool || "未知工具");
+      if (!/^https?:\/\//.test(url)) return `<span class="tool-link-disabled">${name}<small>入口待补</small></span>`;
+      return `<a class="tool-link-button" href="${escapeHtml(url)}" target="_blank" rel="noreferrer" title="在新窗口打开 ${name}"><span>${name}</span><b aria-hidden="true">↗</b></a>`;
     }
 
     function list(items, fallback) {
@@ -125,26 +92,17 @@
 
     function renderToolChain(item) {
       const tools = item.tools || [];
-      if (!tools.length) return `<p>工具链信息待补。</p>`;
+      if (!tools.length) return `<p>组合步骤待补。</p>`;
       return `
-        <p class="detail-tool-hub-guide">枢纽指数只统计本站已经完成的实测：连接过多少搭档、覆盖多少场景、深测成功率和平均上手成本。</p>
         <div class="detail-tool-chain">
           ${tools.map((tool, index) => `
             <article>
               <span>${index + 1}</span>
               <div class="detail-tool-title">
                 <strong>${escapeHtml(tool.name || tool)}</strong>
-                ${tool.hub?.score !== undefined ? `<em title="只统计已经公开的真实实测组合">枢纽 ${Number(tool.hub.score)}/100</em>` : ""}
               </div>
               <p>${escapeHtml(publicText(tool.role || "角色待补"))}</p>
               <small>${escapeHtml(publicText([tool.inputs, tool.outputs].filter(Boolean).join(" → ") || "输入输出待补"))}</small>
-              ${tool.hub?.summary ? `
-                <div class="detail-tool-hub">
-                  <b>${escapeHtml(tool.hub.level || "已验证节点")}</b>
-                  <small>${escapeHtml(tool.hub.summary)}</small>
-                  <small>深测成功率 ${Number(tool.hub.deepTestSuccessRate || 0)}% · 平均上手成本 ${Number(tool.hub.averageFriction || 0)}/100</small>
-                </div>
-              ` : ""}
             </article>
           `).join("")}
         </div>
@@ -176,7 +134,7 @@
           </article>
         </div>
         <article class="detail-panel">
-          <h2>实际怎么走</h2>
+          <h2>组合起来怎么用</h2>
           <p>${escapeHtml(publicText(item.useCase || "按下方工具链依次处理输入、生成中间结果并完成交付。"))}</p>
           ${renderToolChain(item)}
         </article>
@@ -187,10 +145,17 @@
         <article class="detail-panel">
           <h2>任务与适用范围</h2>
           <div class="combo-capabilities">
-            ${(item.tasks || []).map(task => `<span>${escapeHtml(task)}</span>`).join("") || "<span>待识别</span>"}
+            ${(item.tasks || []).map(task => `<span>${escapeHtml(publicTaskLabel(task))}</span>`).join("") || "<span>待识别</span>"}
             ${(item.audiences || []).map(audience => `<span>${escapeHtml(audience)}</span>`).join("")}
           </div>
         </article>
+        ${item.longTermUse?.summary || (item.longTermUse?.steps || []).length ? `
+          <article class="detail-panel">
+            <h2>想长期使用，还需要做什么</h2>
+            <p>${escapeHtml(publicText(item.longTermUse?.summary || "根据实测限制补齐监控、备份和异常处理。"))}</p>
+            ${list(item.longTermUse?.steps || [], "暂无额外步骤。")}
+          </article>
+        ` : ""}
         <article class="detail-panel">
           <h2>同类替代</h2>
           ${list((item.alternatives || []).map(alt => `${alt.name || "替代方案"}：${alt.tradeoff || alt.fit || ""}`), "暂无明确替代方案记录。")}
@@ -213,7 +178,7 @@
           </article>
           <article class="detail-panel">
             <h2>首次使用成本</h2>
-            <p>${escapeHtml(frictionLabel(item))}</p>
+            <p>${escapeHtml(publicSetupDifficultyLabel(item))}</p>
             ${list(factors.map(factor => factor.label), "暂无额外成本拆解。")}
           </article>
           <article class="detail-panel">
@@ -238,7 +203,7 @@
         <section class="report-frame-shell">
           <div class="report-frame-head">
             <div>
-              <span>自然语言实测报告</span>
+              <span>完整实测报告</span>
               <strong>${escapeHtml(item.title)}</strong>
             </div>
             <a href="${escapeHtml(reportUrl)}" target="_blank" rel="noreferrer">打开完整报告</a>
@@ -260,7 +225,7 @@
             <article>
               <h2>使用前要知道</h2>
               <p>${escapeHtml(publicText(item.maxLimit || "仍需要更多真实任务复测。"))}</p>
-              <p><b>上手成本：</b>${escapeHtml(frictionLabel(item))}</p>
+              <p><b>上手难度：</b>${escapeHtml(publicSetupDifficultyLabel(item))}</p>
             </article>
             <article>
               <h2>适合与不适合</h2>
@@ -287,8 +252,8 @@
             <p>${escapeHtml(publicText(item.recommendationExplanation || item.evidenceExplanation || "使用前请结合场景和限制判断。"))}</p>
           </section>
           <section class="decision-facts">
-            <div><span>实测状态</span><b>${escapeHtml(evidenceLabel(item))}</b></div>
-            <div><span>上手成本</span><b>${escapeHtml(frictionLabel(item))}</b></div>
+            <div><span>测试结论</span><b>${escapeHtml(publicTestStatusLabel(item.evidenceLevel))}</b></div>
+            <div title="上手难度按 0–100 计算，数字越高代表安装、配置和维护越复杂。"><span>上手难度</span><b>${escapeHtml(publicSetupDifficultyLabel(item))} · ${Number(item.installFrictionIndex?.score ?? 100)}/100</b></div>
             <div><span>最近实测</span><b>${escapeHtml(latestDate(item) || "日期待补")}</b></div>
           </section>
           <section>
@@ -307,10 +272,10 @@
       backToLibrary.href = returnUrl();
       detailShell.dataset.categoryTone = categoryTone(primaryCategory);
       const tabs = [
-        ["overview", "使用指南"],
-        ["evidence", "实测范围"],
+        ["overview", "使用指南", "怎么搭、适合谁"],
+        ["evidence", "实测范围", "测了哪些场景"],
       ];
-      if (item.reportUrl) tabs.push(["report", "实测报告"]);
+      if (item.reportUrl) tabs.push(["report", "实测报告", "具体跑通记录"]);
       detailShell.innerHTML = `
         <section class="combo-detail-hero">
           <div>
@@ -322,7 +287,7 @@
             </div>
           </div>
           <div class="detail-hero-meta" aria-label="组合摘要">
-            <strong>${escapeHtml(evidenceLabel(item))}</strong>
+            <strong>${escapeHtml(publicTestStatusLabel(item.evidenceLevel))}</strong>
             <span>${chain(item).length} 个工具</span>
             <span>${escapeHtml(item.recommendationLevel || "推荐等级待补")}</span>
           </div>
@@ -331,7 +296,7 @@
         <div class="detail-resource-layout">
           <div class="detail-main-column">
             <section class="detail-tabs" aria-label="详情分栏">
-              ${tabs.map(([id, label]) => `<button type="button" class="${id === activeTab ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
+              ${tabs.map(([id, label, description]) => `<button type="button" class="${id === activeTab ? "active" : ""}" data-tab="${id}"><strong>${label}</strong><small>${description}</small></button>`).join("")}
             </section>
             <section class="detail-tab-content" id="detailTabContent">${renderTabContent(item)}</section>
           </div>

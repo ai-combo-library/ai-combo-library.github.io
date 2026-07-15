@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=claude-skills-opencli-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=claude-skills-opencli-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>claude-skills + OpenCLI</h1>
       <p class="lead">用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。</p>
       <div class="meta">
-        <span>自动化与业务流程 · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+        <span>自动化与业务流程 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>claude-skills</span><span>OpenCLI</span>
@@ -131,26 +131,23 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要跨 Agent、跨会话传递任务状态的开发者和自动化团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>完全不使用命令行，或只在单次对话中完成简单任务的用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>本轮验证的是一个 handoff Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本轮验证的是一个 结果交接 Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。</p>
       <h2>我们怎么测</h2>
-      <p>运行 handoff Skill 生成包含目标、当前状态、待决事项、所需 Skills 和产物的五段式 Markdown，再由真实 OpenCLI 本地扩展读取该文件并解析关键字段。</p>
+      <p>运行 结果交接 Skill 生成包含目标、当前状态、待决事项、所需 Skills 和产物的五段式 Markdown，再由真实 OpenCLI 本地扩展读取该文件并解析关键字段。</p>
       <h2>实际结果</h2>
       <p>OpenCLI 成功读到交接目标、5 个结构段和产物区，最终输出被判定为可继续执行的有效交接，而不是只有一份无法调用的文档。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. claude-skills（处理/理解）：接收 task；source material，产出 skill instructions；cli command。</li><li>2. OpenCLI（自动执行）：接收 cli command；skill instructions，产出 execution result；file。</li></ol>
+      <ol><li>1. claude-skills：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. OpenCLI：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。
 用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。
 用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。
-本轮验证的是一个 handoff Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。
-本轮验证的是一个 handoff Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。</pre>
+本轮验证的是一个 结果交接 Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。
+本轮验证的是一个 结果交接 Skill 与本地 OpenCLI 扩展，不能代表任意 Skill 都能直接接入。</pre>
       </details>
     </div>
   </main>

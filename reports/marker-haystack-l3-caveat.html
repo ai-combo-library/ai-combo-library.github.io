@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=marker-haystack-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=marker-haystack-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Marker + Haystack</h1>
       <p class="lead">PDF -&gt; Markdown -&gt; local BM25 retrieval.</p>
       <div class="meta">
-        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Marker</span><span>Haystack</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>希望先用本地工具跑通清晰输入输出，再决定是否升级为重型知识库或 Agent 系统的人。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合马上要求生产级 SLA、复杂权限、多用户 UI 或大规模批处理的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>测试时复用了已缓存的 Marker 模型，首次安装会更慢；扫描件、复杂表格和语义问答尚未验证。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>PDF -&gt; Markdown -&gt; local BM25 retrieval.</p>
       <h2>我们怎么测</h2>
       <p>用 Marker 处理一份包含价格信息的本地文字 PDF，检查生成的 Markdown，再写入 Haystack 内存文档库并执行 BM25 查询。</p>
       <h2>实际结果</h2>
       <p>Marker 生成了保留关键信息的 Markdown，Haystack 成功索引并召回预期文档，4 项检查通过；OCR、复杂表格和语义问答未覆盖。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Marker（采集/输入）：接收 PDF，产出 Markdown；JSON。</li><li>2. Haystack（存储/检索）：接收 Text；Markdown，产出 BM25 retrieval result。</li></ol>
+      <ol><li>1. Marker：获取原始资料，并把内容交给下一步。</li><li>2. Haystack：保存整理后的内容，方便以后查找和继续使用。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Marker + Haystack 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Marker + Haystack 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:11:01.634093+08:00
 
@@ -162,16 +159,16 @@
 - haystackIndexedDocuments: True
 - haystackExpectedHit: True
 
-## 命令摘要
+## 执行记录
 
 - marker: returncode=0 timeout=False
 - haystack: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
-PDF 到 Markdown 再到 BM25 检索跑通；未覆盖 OCR、复杂表格、版面还原、多文件目录和 embedding 问答质量。
+PDF 到 Markdown 再到 BM25 检索跑通；未覆盖 OCR、复杂表格、版面还原、多文件目录和 语义向量服务 问答质量。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

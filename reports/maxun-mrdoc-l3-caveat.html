@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=maxun-mrdoc-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=maxun-mrdoc-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>maxun + MrDoc</h1>
       <p class="lead">把网页资料从一次性复制粘贴变成可读回、可检索、可继续编辑的长期知识资产。</p>
       <div class="meta">
-        <span>文档与知识 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>maxun</span><span>MrDoc</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>适合经常收集网页教程、产品资料、研究材料，并希望沉淀到私有文档库的小团队或个人。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合完全不想接触 API、也不想维护文档库服务的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 8/8。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>本轮验证了 Maxun Python SDK/API 合同输出 Markdown，并通过 MrDoc 官方 Token API 创建文集与文档、再读回和检索；未登录真实 app.maxun.dev，也未通过浏览器人工操作 MrDoc UI。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>把网页资料从一次性复制粘贴变成可读回、可检索、可继续编辑的长期知识资产。</p>
       <h2>我们怎么测</h2>
       <p>通过 Maxun Python SDK/API 合同执行采集任务并取得 Markdown，再调用 MrDoc Token API 创建文集和文档，随后读回文档并按正文关键词检索。</p>
       <h2>实际结果</h2>
       <p>Markdown 被 MrDoc 正确渲染、保存、读回并可按内容检索，8 项检查全部通过；本轮没有登录 Maxun 云端控制台或人工操作 MrDoc UI。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. maxun（采集/输入）：接收 URL, 自然语言描述, 网页元素，产出 HTML, Markdown, JSON, API。</li><li>2. MrDoc（存储/检索）：接收 Markdown, URL, 文档正文，产出 Markdown 文档, 文集, 检索结果, HTML 渲染。</li></ol>
+      <ol><li>1. maxun：获取原始资料，并把内容交给下一步。</li><li>2. MrDoc：保存整理后的内容，方便以后查找和继续使用。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 production rerun</li><li>保留 caveat</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>运行 production 用同样样本重新跑一遍完整流程</li><li>保留 使用限制</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># maxun + MrDoc 生产化补齐 rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># maxun + MrDoc 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T23:26:14.383905+08:00
 
@@ -166,15 +163,15 @@
 - markdownRendered: True
 - searchableByContent: True
 
-## 命令摘要
+## 执行记录
 
-- rerun: returncode=0 timeout=False
+- 用同样样本重新跑一遍完整流程: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 本轮验证了 Maxun Python SDK/API 合同输出 Markdown，并通过 MrDoc 官方 Token API 创建文集与文档、再读回和检索；未登录真实 app.maxun.dev，也未通过浏览器人工操作 MrDoc UI。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

@@ -13,6 +13,81 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+// ---- 公开页面用语 ----
+// 后台保留 L0-L3、runner、handoff 等精确协议；公开页只呈现用户需要的结论。
+
+function publicText(value) {
+  return String(value || "")
+    .replace(/本地\s*AI\s*(?:full[- ]|declarative[- ])?runtime\s*/gi, "本地 AI 助手")
+    .replace(/L3-caveat/gi, "实测通过，但有使用限制")
+    .replace(/L2-caveat/gi, "基础测试通过，但有使用限制")
+    .replace(/\bL3\b/gi, "完整流程已跑通")
+    .replace(/\bL2\b/gi, "基础能力已确认")
+    .replace(/\bL1\b/gi, "可以安装运行")
+    .replace(/\bL0\b/gi, "尚未实测")
+    .replace(/deep[- ]rerun|\brerun\b/gi, "重新完整测试")
+    .replace(/worker[- ]smoke|\bsmoke(?:[- ]test)?\b/gi, "小样本测试")
+    .replace(/full[- ]runtime|declarative[- ]runtime|\bruntime\b/gi, "实际运行环境")
+    .replace(/production[- ]upgrade|生产化补齐/gi, "长期使用完善")
+    .replace(/生产化组合|生产级组合/g, "可长期使用的方案")
+    .replace(/生产化/g, "长期使用")
+    .replace(/可跑通样例/g, "已经跑通的样例")
+    .replace(/可复测、可解释、可维护/g, "能够稳定重跑、说明结果并持续维护")
+    .replace(/运行\s*(?:deep[- ]rerun|重新完整测试)|重新完整测试/gi, "用同样样本重新跑一遍完整流程")
+    .replace(/固定输入输出/g, "固定测试样本和最终产物")
+    .replace(/进入证据中心|进入实测档案/g, "保存完整实测记录")
+    .replace(/定期复测/g, "定期重新确认是否仍然可用")
+    .replace(/\bproduction\b/gi, "长期使用")
+    .replace(/\bhandoff\b|交接断言/gi, "结果交接")
+    .replace(/\boutcome\b/gi, "最终结果")
+    .replace(/\bassertions?\b/gi, "检查项")
+    .replace(/\brunners?\b/gi, "自动测试程序")
+    .replace(/\bpipelines?\b/gi, "流程")
+    .replace(/\bcaveats?\b/gi, "使用限制")
+    .replace(/证据中心/g, "实测档案")
+    .replace(/在公开发布流程\/实测档案问题中/g, "在整理和发布实测资料时")
+    .replace(/LLM\s*可读上下文/gi, "AI 能读取的内容")
+    .replace(/\bASR\b\s*字幕/gi, "语音识别生成字幕")
+    .replace(/\bASR\b/gi, "语音识别")
+    .replace(new RegExp(["发布", "闸门"].join(""), "g"), "公开发布流程")
+    .replace(/published\.json|combo-records\.json/gi, "公开实测记录")
+    .replace(/\bfirecrawl\b/gi, "Firecrawl")
+    .replace(/\bheadroom\b/gi, "Headroom")
+    .replace(/\bnocodb\b/gi, "NocoDB")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+function publicTestStatusLabel(value) {
+  const raw = String(value || "").toLowerCase();
+  if (raw.includes("l3") && raw.includes("caveat")) return "实测通过 · 有使用限制";
+  if (raw === "l3" || raw.includes("passed")) return "实测通过";
+  if (raw.includes("l2") && raw.includes("caveat")) return "基础测试通过 · 有使用限制";
+  if (raw.includes("l2")) return "基础测试通过";
+  if (raw.includes("l1")) return "可以安装运行";
+  return "尚未实测";
+}
+
+function publicSetupDifficultyLabel(item) {
+  const friction = item?.installFrictionIndex || {};
+  const score = Number(friction.score ?? 100);
+  if (score <= 35) return "容易上手";
+  if (score <= 59) return "需要一些配置";
+  return "配置和维护较多";
+}
+
+function publicTaskLabel(value) {
+  const labels = {
+    "测试": "质量检查",
+    "交付": "结果交付",
+    "采集": "资料获取",
+    "存储": "资料保存",
+    "编排": "流程自动化",
+    "部署": "安装部署",
+  };
+  return labels[String(value || "")] || String(value || "");
+}
+
 function normalize(text) {
   return String(text || "").toLowerCase();
 }

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=marker-chattts-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=marker-chattts-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Marker + ChatTTS</h1>
       <p class="lead">同时保留 PDF、Markdown、朗读文本和 WAV，任何一步都能人工检查或单独重做。</p>
       <div class="meta">
-        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Marker</span><span>ChatTTS</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>愿意运行本地模型、需要把讲义或报告批量转为音频草稿的学习者和内容团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只想偶尔朗读一篇 PDF、要求开箱即用界面，或需要专业播音质量和长文稳定分段的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>使用本机已安装的 Marker 和模型缓存重新解析固定文字 PDF；扫描件、复杂表格、长文档与批量吞吐未覆盖。；复用本机 ChatTTS 环境和模型缓存，只验证短篇文字 PDF 的音频草稿；长文分段、音色一致性、发音质量和批量并发未覆盖。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>同时保留 PDF、Markdown、朗读文本和 WAV，任何一步都能人工检查或单独重做。</p>
       <h2>我们怎么测</h2>
-      <p>在全新的运行目录复制固定文字 PDF，重新调用 Marker 生成 Markdown；确认目标句子存在后，把当次 Markdown 清理为朗读文本，再由 ChatTTS 加载本地模型生成 WAV，并读取音频头、采样率和时长。</p>
+      <p>在全新的测试输出复制固定文字 PDF，重新调用 Marker 生成 Markdown；确认目标句子存在后，把当次 Markdown 清理为朗读文本，再由 ChatTTS 加载本地模型生成 WAV，并读取音频头、采样率和时长。</p>
       <h2>实际结果</h2>
       <p>Marker 与 ChatTTS 都在本轮真实执行，Markdown 交接文件、朗读文本和 WAV 均为当次生成；4 项断言全部通过，音频可正常读取。测试未覆盖扫描件、长文分段和专业音质。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Marker（采集/输入）：接收 上一步结果，产出 下一步可用结果。</li><li>2. ChatTTS（自动执行）：接收 text，产出 audio, wav。</li></ol>
+      <ol><li>1. Marker：获取原始资料，并把内容交给下一步。</li><li>2. ChatTTS：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># Marker + ChatTTS 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># Marker + ChatTTS 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T17:54:05.741088+08:00
 
@@ -161,15 +158,15 @@
 - chatttsGeneratedFreshWav: True
 - wavArtifactExists: True
 
-## 命令摘要
+## 执行记录
 
 - chattts: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 复核 Marker Markdown 产物并重新生成 ChatTTS wav；本轮未重新跑 Marker PDF 解析，也未覆盖长文音频质量、音色稳定性或批量任务。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>

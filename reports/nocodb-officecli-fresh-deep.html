@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=nocodb-officecli-fresh-deep&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=nocodb-officecli-fresh-deep&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>NocoDB + OfficeCLI</h1>
       <p class="lead">团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。</p>
       <div class="meta">
-        <span>数据与分析 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>数据与分析 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>NocoDB</span><span>OfficeCLI</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只维护很小的一张本地表格，或完全不愿运行 Docker 服务的人。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。</p>
       <h2>我们怎么测</h2>
-      <p>把前一个工具的真实输出交给后一个工具，并核验最终结果。</p>
+      <p>我们准备了真实样本，先交给 NocoDB 处理，再把它产生的结果原样交给 OfficeCLI，最后检查内容是否完整、能否继续使用。</p>
       <h2>实际结果</h2>
-      <p>两个工具在同一次实测中都已运行，交接断言通过 2/2。</p>
+      <p>两个工具在同一次测试中都实际运行，前一个工具的结果被后一个工具成功读取并继续处理。共检查 2 个关键结果，通过 2 个。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. NocoDB（存储/检索）：接收 structured rows，产出 database readback。</li><li>2. OfficeCLI（输出/交付）：接收 csv；json，产出 xlsx；validation report。</li></ol>
+      <ol><li>1. NocoDB：保存整理后的内容，方便以后查找和继续使用。</li><li>2. OfficeCLI：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>把 NocoDB 中的运营台账读回后自动生成并校验 Excel 报告，适合需要数据库协作与 Office 交付并存的小团队。
 项目台账、内容排期、客户清单和运营数据的数据库管理与 Excel 交付。
 团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Playwright + shadcn/ui</title>
+  <title>Excalidraw + MarkItDown</title>
   <style>
     body {
       margin: 0;
@@ -118,29 +118,29 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=playwright-shadcn-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="note"><a href="../combo.html?id=excalidraw-markitdown-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
-      <h1>Playwright + shadcn/ui</h1>
-      <p class="lead">shadcn/ui 风格组件先生成页面，Playwright 再做 DOM 和截图验收，适合 Agent 生成前端后的回归验证。</p>
+      <h1>Excalidraw + MarkItDown</h1>
+      <p class="lead">保留原白板作为视觉材料，同时得到一份能搜索、编辑和继续写作的 Markdown 文本。</p>
       <div class="meta">
-        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
-        <span>shadcn/ui</span><span>Playwright</span>
+        <span>Excalidraw</span><span>MarkItDown</span>
       </div>
       <section class="summary-grid">
-        <div class="summary-card"><b>适合谁</b><span>让 Agent 或脚本生成前端组件，并需要自动确认页面可见的人。</span></div>
-        <div class="summary-card"><b>不适合谁</b><span>不适合完全不做前端工程、或需要完整设计系统治理的团队。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>目前只验证了一个生成的 Vite 应用、一个页面路径和 Chromium 浏览器；复杂组件、跨浏览器兼容性与完整回归套件仍需另行测试。</span></div>
+        <div class="summary-card"><b>适合谁</b><span>经常用白板讨论或规划，并希望把其中的文字沉淀进笔记库、项目文档或写作流程的人。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>希望 Markdown 完整复原白板布局、箭头关系、颜色和图片，或只需要保存一张白板截图的人。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>使用固定的小型文字白板验证导出；手绘线条、图片、复杂连接关系、多人协作和大画布性能未覆盖。；Markdown 能保留白板文字，但空间位置、箭头关系、颜色和图形语义不会完整保留。</span></div>
       </section>
       <h2>我们怎么测</h2>
-      <p>生成一组 shadcn/ui 风格组件并导入 Vite 应用，启动页面后用 Playwright 执行浏览器交互、DOM 断言和截图。</p>
+      <p>用 Excalidraw 0.18.1 创建一张包含标题和两项行动任务的文字白板，通过官方转换与 SVG 导出接口生成 HTML，再让 MarkItDown 0.1.6 直接读取这份 HTML。</p>
       <h2>实际结果</h2>
-      <p>组件成功进入真实应用，Playwright 验收路径通过并生成截图，4 项检查通过；只覆盖 Chromium 和一个页面路径。</p>
+      <p>Excalidraw 成功导出含 Research backlog、Verify source 和 Publish report 三段文字的白板；MarkItDown 读取同一文件后生成 Markdown，三段文字全部保留，4 项交接与结果检查全部通过。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. shadcn/ui：生成最终可查看、下载或交付的结果。</li><li>2. Playwright：获取原始资料，并把内容交给下一步。</li></ol>
+      <ol><li>1. Excalidraw：获取原始资料，并把内容交给下一步。</li><li>2. MarkItDown：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
         <pre># 2026-07-06 公开候选按序实测

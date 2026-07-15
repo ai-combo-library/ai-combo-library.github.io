@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=meetily-nocodb-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=meetily-nocodb-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Meetily + NocoDB</h1>
       <p class="lead">把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。</p>
       <div class="meta">
-        <span>团队协作与沟通 · L3-caveat · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+        <span>团队协作与沟通 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Meetily</span><span>NocoDB</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>会议较多、需要持续追踪决策和行动项的小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只偶尔开会，或要求企业级实时转写、权限审计和合规托管的组织。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>本轮使用确定性会议转写样本和临时 NocoDB 容器，未覆盖实时录音质量、多人权限与长期备份。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。</p>
       <h2>我们怎么测</h2>
       <p>让 Meetily 处理一份确定性会议转写样本，产出会议标题、摘要、决定和行动项 JSON；随后启动临时 NocoDB，把这份 JSON 通过接口写入会议台账并重新查询。</p>
       <h2>实际结果</h2>
       <p>NocoDB 中成功生成可查询记录，会议摘要、决定和行动项与 Meetily 输出一致，证明内容不是停留在文件里，而是进入了可筛选台账。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Meetily（采集/输入）：接收 audio；meeting recording，产出 transcript；json；summary。</li><li>2. NocoDB（存储/检索）：接收 json；summary；transcript，产出 database record；table。</li></ol>
+      <ol><li>1. Meetily：获取原始资料，并把内容交给下一步。</li><li>2. NocoDB：保存整理后的内容，方便以后查找和继续使用。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。
 把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。
 把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。

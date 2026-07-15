@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marker + LlamaIndex</title>
+  <title>yt-dlp + ChatTTS</title>
   <style>
     body {
       margin: 0;
@@ -118,60 +118,36 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=marker-llamaindex-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="note"><a href="../combo.html?id=yt-dlp-chattts-public-seed-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
-      <h1>Marker + LlamaIndex</h1>
-      <p class="lead">转换和检索彼此解耦，Markdown 可以先校对，索引也能持久化并在后续工作流中复用。</p>
+      <h1>yt-dlp + ChatTTS</h1>
+      <p class="lead">同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。</p>
       <div class="meta">
-        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
-        <span>Marker</span><span>LlamaIndex</span>
+        <span>yt-dlp</span><span>ChatTTS</span>
       </div>
       <section class="summary-grid">
-        <div class="summary-card"><b>适合谁</b><span>需要搭建可控文档检索流程、愿意维护 Python 环境并理解索引边界的开发者和知识团队。</span></div>
-        <div class="summary-card"><b>不适合谁</b><span>只需搜索几份简单文本、完全不想部署环境，或把本轮本地 MockEmbedding 结果当作完整语义问答质量的人。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>使用本机已安装的 Marker 和模型缓存重新解析固定文字 PDF；扫描件、复杂表格、长文档与批量吞吐未覆盖。；使用 LlamaIndex 本地 MockEmbedding 验证索引、持久化和检索交接，不代表真实语义 语义向量服务、LLM 回答质量或多文档规模性能。</span></div>
+        <div class="summary-card"><b>适合谁</b><span>需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>需要绕过登录或版权限制、只想在线播放，或要求专业配音质量和自动生成完整视频字幕的人。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。</span></div>
       </section>
       <h2>我们怎么测</h2>
-      <p>在全新的测试输出重新调用 Marker 处理固定文字 PDF，把当次生成的 Markdown 直接交给 LlamaIndex；使用本地 MockEmbedding 建立向量索引、持久化存储，再查询文档中的唯一目标句子。</p>
+      <p>先用 yt-dlp 2026.7.4 从本地确定性视频页下载视频和说明文字，再把当次下载得到的文字交给 ChatTTS 合成为 WAV 音频。</p>
       <h2>实际结果</h2>
-      <p>Marker 与 LlamaIndex 都在本轮真实执行，Markdown 交接、索引持久化和检索读回 4 项断言全部通过，目标句子可从索引结果中找回。该结果证明工具链可衔接，不代表真实语义模型或多文档问答质量。</p>
+      <p>yt-dlp 成功生成视频、元数据和文字交接文件，ChatTTS 成功读取该文字并生成 WAV；4 项交接与结果检查全部通过。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Marker：获取原始资料，并把内容交给下一步。</li><li>2. LlamaIndex：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
+      <ol><li>1. yt-dlp：获取原始资料，并把内容交给下一步。</li><li>2. ChatTTS：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre># Marker + LlamaIndex 长期使用完善 用同样样本重新跑一遍完整流程
-
-时间：2026-07-03T00:41:49.409711+08:00
-
-## 结论
-
-状态：`partial`  
-检查：1/4
-
-## 检查项
-
-- markerProducedMarkdown: False
-- markerKeptPricing: False
-- llamaIndexPersistedIndex: True
-- llamaIndexRetrievalHits: False
-
-## 执行记录
-
-- marker: returncode=0 timeout=False
-- llamaindex: returncode=1 timeout=False
-
-## 长期使用 使用限制
-
-PDF 到 Markdown 再到 LlamaIndex 本地索引可复跑；未覆盖 OCR、复杂版式、表格、真实 语义向量服务、LLM 回答质量和大文件。
-
-## 测试产物
-
-- summary: `summary.json`
-- 测试输出：已保留关键结果</pre>
+        <pre>下载视频及其说明文字后生成一份可听的语音复习稿，适合课程、访谈和公开视频资料的二次整理。
+公开视频资料下载、说明文字留档和语音复习稿生成。
+同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。
+使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。
+使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。</pre>
       </details>
     </div>
   </main>

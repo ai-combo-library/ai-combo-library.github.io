@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=codebase-memory-repomix-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=codebase-memory-repomix-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>codebase-memory-mcp + Repomix</h1>
-      <p class="lead">在公开发布流程/证据中心问题中，把上下文从 620524 字符缩到 168155 字符，减少 72.9%。</p>
+      <p class="lead">在整理和发布实测资料时，把上下文从 620524 字符缩到 168155 字符，减少 72.9%。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>codebase-memory-mcp</span><span>Repomix</span>
@@ -131,45 +131,42 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>需要让 Agent 审查代码、定位影响范围、压缩上下文的开发者和小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>一次性小脚本或没有建立代码图谱的项目。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 3/3。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>图谱索引质量决定召回质量；Repomix 只负责打包，不替代测试和人工判断。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>在公开发布流程/证据中心问题中，把上下文从 620524 字符缩到 168155 字符，减少 72.9%。</p>
       <h2>我们怎么测</h2>
       <p>先用 codebase-memory-mcp 图搜索定位与发布、证据相关的函数和文件，再只把命中的影响范围交给 Repomix 打包，并比较与全仓上下文的大小。</p>
       <h2>实际结果</h2>
       <p>Repomix 打包结果保留了目标函数和依赖上下文，同时把输入从约 62 万字符缩到约 17 万字符，减少约 72.9%；索引新鲜度仍决定定位质量。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. codebase-memory-mcp（采集/输入）：接收 代码库、符号查询、自然语言问题，产出 相关函数、文件、图搜索结果。</li><li>2. Repomix（输出/交付）：接收 文件路径列表、代码库，产出 Agent 可读的压缩上下文包。</li></ol>
+      <ol><li>1. codebase-memory-mcp：获取原始资料，并把内容交给下一步。</li><li>2. Repomix：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定索引模式、忽略目录和最大仓库大小，避免依赖目录污染图谱。</li><li>沉淀查询模板：入口函数、调用链、配置、热点文件和安全边界。</li><li>用 codebase-memory 选取文件，再由 Repomix 打包上下文。</li><li>加入密钥/本机路径/大文件脱敏检查。</li><li>用已知问题仓库做回归，验证上下文是否足够支持审查。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre># codebase-memory-mcp + Repomix 复测报告
 
 ## 结论
 
-证据等级：L3-caveat deep rerun
+测试结论：实测通过，但有使用限制 用同样样本重新跑一遍完整流程
 
 这次复测继续证明：`codebase-memory-mcp` 适合作为“先找影响范围”的图谱层，`Repomix` 适合作为“把命中的文件打成 Agent 上下文包”的交付层。相比把全部脚本和测试打包，图谱选文件后再打包能明显减少上下文体积。
 
 ## 实测环境
 
 - 时间：2026-07-01
-- 沙箱：`[test-run]/runs/20260701-light-dev-agent/codebase-repomix-rerun`
+- 测试输出：已保留关键结果
 - codebase-memory-mcp 查询：`daily homepage published evidence gate frontend combo cards`
 - Repomix：`npx repomix@latest`
 
 ## 实测步骤
 
-1. 用 codebase-memory-mcp 搜索公开发布流程、证据中心、首页发布相关符号。
+1. 用 codebase-memory-mcp 搜索公开发布流程、实测档案、首页发布相关符号。
 2. 根据图谱命中的核心符号选出 7 个文件：
    - `outputs/scripts/publish_check.py`
    - `outputs/scripts/combo_record_enrichment.py`
    - `outputs/scripts/build_published.py`
    - `outputs/scripts/pipeline_daily.py`
-   - `outputs/scripts/agent_test_worker.py`
+   - `outputs/scripts/agent_test_自动测试程序.py`
    - `outputs/scripts/evidence_center.py`
    - `outputs/tests/test_pipeline_daily.py`
 3. 用 Repomix 打包这 7 个文件。
@@ -184,9 +181,9 @@
 
 ## 使用价值
 
-适合本项目内部的 Agent 工程：在改公开发布流程、证据中心、自动实测流程 之前，先用图谱定位影响范围，再把较小的上下文包交给 Agent 或代码审查工具。
+适合本项目内部的 Agent 工程：在改公开发布流程、实测档案、自动实测流程 之前，先用图谱定位影响范围，再把较小的上下文包交给 Agent 或代码审查工具。
 
-## Caveat
+## 使用限制
 
 - 这个组合依赖 codebase-memory-mcp 图谱索引的新鲜度。索引过期时，选文件可能遗漏新模块。
 - Repomix 只负责上下文打包，不会判断代码正确性；还需要测试、静态检查或人工审阅。</pre>

@@ -3,19 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>证据中心 - AI 工具组合实测库</title>
+  <title>实测档案 - AI 工具组合实测库</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app.css?v=d179f99a6c1a">
 </head>
 <body class="daily-page public-daily evidence-page resource-home">
   <header class="public-header">
     <div class="wrap public-topbar">
       <a class="brand" href="daily.html">AI 工具组合实测库</a>
       <nav class="public-nav" aria-label="前台导航">
-        <a href="daily.html">首页</a>
-        <a href="daily.html#library">组合库</a>
-        <a href="daily.html#scenes">场景分类</a>
-        <a class="active" href="evidence.html">证据中心</a>
+        <a href="daily.html">组合库</a>
+        <a class="active" href="evidence.html">实测档案</a>
         <a href="daily.html#about">关于</a>
       </nav>
     </div>
@@ -24,45 +22,45 @@
   <main class="wrap public-main">
     <section class="resource-hero evidence-library-hero" aria-labelledby="pageTitle">
       <div class="hero-copy-block">
-        <p class="eyebrow">公开证据库</p>
+        <p class="eyebrow">公开实测档案</p>
         <h1 id="pageTitle">每条推荐背后的实测依据</h1>
         <p class="hero-copy">这里不只告诉你“能不能跑”，也说明适合谁、限制在哪里、怎样补成更稳定的方案。</p>
         <div class="hero-actions">
-          <a href="#evidenceLibrary">浏览证据</a>
-          <a href="daily.html">回到首页</a>
+          <a href="#evidenceLibrary">浏览实测记录</a>
+          <a href="daily.html">回到组合库</a>
         </div>
       </div>
       <div class="search-panel" role="search">
         <label for="searchInput">搜索组合、工具或限制条件</label>
         <div class="search-control">
-          <input id="searchInput" type="search" placeholder="例如：Docker、PDF、低摩擦、Agent、外部 API">
+          <input id="searchInput" type="search" placeholder="例如：Docker、PDF、容易上手、Agent、外部 API">
           <button id="clearSearch" type="button" aria-label="清空搜索">清空</button>
         </div>
         <div class="quick-searches" id="quickSearches"></div>
       </div>
     </section>
 
-    <section class="metric-strip" aria-label="证据指标">
-      <span><b id="statTotal">0</b> 条证据</span>
+    <section class="metric-strip" aria-label="档案概览">
+      <span><b id="statTotal">0</b> 条实测</span>
       <span><b id="statReports">0</b> 份报告</span>
-      <span><b id="statL3">0</b> 条 L3</span>
-      <span><b id="statFriction">0</b> 条成本说明</span>
+      <span><b id="statL3">0</b> 条完整流程</span>
+      <span><b id="statFriction">0</b> 条上手说明</span>
     </section>
 
     <section class="resource-section evidence-guide" aria-labelledby="guideTitle">
       <div class="section-title">
-        <h2 id="guideTitle">如何看证据</h2>
+        <h2 id="guideTitle">如何看实测结果</h2>
         <span>先看结论，再看限制，最后看报告</span>
       </div>
       <div class="weekly-grid">
         <article class="weekly-card">
-          <span>证据等级</span>
-          <strong>L3 代表组合跑通过</strong>
-          <p>L3 不是完美无坑，而是已经有可追溯实测。有限制时会明确标出。</p>
+          <span>测试结论</span>
+          <strong>“实测通过”代表完整流程跑通</strong>
+          <p>它不代表完美无坑；没有覆盖到的情况和使用限制会单独写明。</p>
         </article>
         <article class="weekly-card">
           <span>上手成本</span>
-          <strong>低摩擦不等于零配置</strong>
+          <strong>“容易上手”不等于零配置</strong>
           <p>Docker、模型、账号和 API Key 会影响冷启动成本，报告里会写清楚。</p>
         </article>
         <article class="weekly-card">
@@ -71,8 +69,8 @@
           <p>同一组合可能适合个人资料整理，但不适合企业权限审计。</p>
         </article>
         <article class="weekly-card">
-          <span>补齐路径</span>
-          <strong>把 caveat 变成行动</strong>
+          <span>长期使用</span>
+          <strong>把使用限制变成改进清单</strong>
           <p>限制不是失败，而是告诉你要补监控、样本、备份或复测。</p>
         </article>
       </div>
@@ -81,15 +79,15 @@
     <section class="library-section" id="evidenceLibrary" aria-labelledby="libraryTitle">
       <div class="library-head">
         <div>
-          <h2 id="libraryTitle">证据库</h2>
-          <p id="evidenceResultCount">正在读取证据。</p>
+          <h2 id="libraryTitle">实测记录</h2>
+          <p id="evidenceResultCount">正在读取实测记录。</p>
         </div>
-        <div class="compact-filters evidence-resource-filters" aria-label="证据筛选">
+        <div class="compact-filters evidence-resource-filters" aria-label="实测筛选">
           <select id="categoryFilter" aria-label="场景分类">
             <option value="全部">全部场景</option>
           </select>
-          <select id="evidenceFilter" aria-label="证据等级">
-            <option value="全部">全部证据</option>
+          <select id="evidenceFilter" aria-label="测试结论">
+            <option value="全部">全部结论</option>
           </select>
           <select id="recommendationFilter" aria-label="推荐等级">
             <option value="全部">全部推荐</option>
@@ -101,13 +99,13 @@
       </div>
       <div class="evidence-resource-grid" id="evidenceList">
         <article class="evidence-resource-card">
-          <div class="empty">正在读取证据中心。</div>
+          <div class="empty">正在读取实测档案。</div>
         </article>
       </div>
     </section>
   </main>
 
-  <script src="shared.js"></script>
+  <script src="shared.js?v=54836c51eae8"></script>
   <script>
     let evidenceItems = [];
     let query = "";
@@ -116,7 +114,7 @@
     let activeRecommendation = "全部";
     let activeFriction = "全部";
 
-    const quickTerms = ["L3", "低摩擦", "Docker", "PDF", "Agent", "生产级"];
+    const quickTerms = ["容易上手", "Docker", "PDF", "Agent", "本地运行", "长期使用"];
     const searchInput = document.querySelector("#searchInput");
     const clearSearch = document.querySelector("#clearSearch");
     const quickSearches = document.querySelector("#quickSearches");
@@ -148,40 +146,6 @@
       history[replace ? "replaceState" : "pushState"](null, "", next);
     }
 
-    function publicText(value) {
-      return String(value || "")
-        .replace(new RegExp(["发布", "闸门"].join(""), "g"), "公开发布流程")
-        .replace(/published\.json/gi, "公开实测记录")
-        .replace(/combo-records\.json/gi, "实测记录")
-        .replace(/pipelines?/gi, "流程")
-        .replace(/worker[- ]smoke/gi, "小样本初测")
-        .replace(/smoke/gi, "小样本初测")
-        .replace(/runtime/gi, "运行环境")
-        .replace(/production[- ]upgrade/gi, "生产级补齐")
-        .replace(/\bproduction\b/gi, "生产级")
-        .replace(/deep[- ]rerun/gi, "深度复测")
-        .replace(/\brerun\b/gi, "复测")
-        .replace(/L3-caveat/gi, "实测通过但有限制")
-        .replace(/L2-caveat/gi, "初测通过但有限制")
-        .replace(/caveat/gi, "限制条件");
-    }
-
-    function evidenceLabel(value) {
-      const raw = String(value || "").toLowerCase();
-      if (raw.includes("l3") && raw.includes("caveat")) return "L3 实测 · 有限制";
-      if (raw === "l3") return "L3 实测可用";
-      if (raw.includes("l2") && raw.includes("caveat")) return "L2 初测 · 有限制";
-      if (raw === "l2") return "L2 初测通过";
-      if (raw === "l1") return "L1 可安装";
-      return "待验证";
-    }
-
-    function frictionLabel(item) {
-      const friction = item.installFrictionIndex || {};
-      if (!friction.level) return "成本待补";
-      return `${friction.level} ${Number(friction.score || 0)}/100`;
-    }
-
     function chain(item) {
       return (item.tools || []).filter(Boolean);
     }
@@ -194,7 +158,7 @@
       const value = item.verifiedAt || item.retestFreshness?.lastTestedAt || "";
       if (!value) return "";
       const date = new Date(value);
-      if (Number.isNaN(date.getTime())) return String(value).slice(0, 10);
+      if (Number.isNaN(date.getTime())) return /^\d{4}-\d{2}-\d{2}/.test(String(value)) ? String(value).slice(0, 10) : "";
       return date.toISOString().slice(0, 10);
     }
 
@@ -205,6 +169,8 @@
         item.category,
         item.recommendationLevel,
         item.evidenceLevel,
+        publicTestStatusLabel(item.evidenceLevel),
+        publicSetupDifficultyLabel(item),
         item.maxBenefit,
         item.maxLimit,
         item.suitableFor,
@@ -213,6 +179,8 @@
         ...(item.caveatTags || []),
         ...(item.caveats || []),
         ...(item.installFriction || []),
+        item.longTermUse?.summary,
+        ...(item.longTermUse?.steps || []),
         ...(item.upgradePath || []).flatMap(path => [path.label, path.target, ...(path.components || [])])
       ].join(" ").toLowerCase();
     }
@@ -253,9 +221,13 @@
       const recommendations = [...new Set(evidenceItems.map(item => item.recommendationLevel).filter(Boolean))].sort();
       const frictions = [...new Set(evidenceItems.map(item => item.installFrictionIndex?.level).filter(Boolean))].sort();
       fillSelect(categoryFilter, categories, "全部场景", activeCategory);
-      fillSelect(evidenceFilter, levels, "全部证据", activeEvidence, evidenceLabel);
+      fillSelect(evidenceFilter, levels, "全部结论", activeEvidence, publicTestStatusLabel);
       fillSelect(recommendationFilter, recommendations, "全部推荐", activeRecommendation);
-      fillSelect(frictionFilter, frictions, "全部成本", activeFriction);
+      fillSelect(frictionFilter, frictions, "全部成本", activeFriction, value => ({
+        "低摩擦": "容易上手",
+        "中摩擦": "需要一些配置",
+        "高摩擦": "配置和维护较多",
+      }[value] || value));
       activeCategory = categoryFilter.value;
       activeEvidence = evidenceFilter.value;
       activeRecommendation = recommendationFilter.value;
@@ -270,7 +242,6 @@
     }
 
     function renderEvidenceCard(item) {
-      const path = Array.isArray(item.upgradePath) ? item.upgradePath[0] : null;
       const report = reportHref(item);
       return `
         <article class="evidence-resource-card" id="combo-${escapeHtml(item.id)}">
@@ -279,7 +250,7 @@
               <span>${escapeHtml(item.category || "未分类")}</span>
               <h3>${escapeHtml(item.title)}</h3>
             </div>
-            <a href="${escapeHtml(report || `#combo-${item.id}`)}" ${report ? `target="_blank" rel="noreferrer"` : ""}>证据 ${Number(item.evidenceScore || 0)}/100</a>
+            <a href="${escapeHtml(report || `combo.html?id=${encodeURIComponent(item.id)}`)}" ${report ? `target="_blank" rel="noreferrer"` : ""}>${report ? "查看报告" : "查看详情"}</a>
           </div>
           <p>${escapeHtml(publicText(item.maxBenefit || item.useCase || "这条证据说明组合在固定样本下的实际表现。"))}</p>
           <div class="chain chain-primary">
@@ -287,21 +258,21 @@
           </div>
           <dl class="combo-facts">
             <div><dt>适合谁</dt><dd>${escapeHtml(publicText(item.suitableFor || item.audience || "需要把工具组合成工作流的用户。"))}</dd></div>
-            <div><dt>证据等级</dt><dd>${escapeHtml(evidenceLabel(item.evidenceLevel))}</dd></div>
-            <div><dt>上手成本</dt><dd>${escapeHtml(frictionLabel(item))}</dd></div>
-            <div><dt>最近实测</dt><dd>${escapeHtml(latestDate(item) || item.retestFreshness?.status || "待补")}</dd></div>
+            <div><dt>测试结论</dt><dd>${escapeHtml(publicTestStatusLabel(item.evidenceLevel))}</dd></div>
+            <div><dt>上手难度</dt><dd>${escapeHtml(publicSetupDifficultyLabel(item))}</dd></div>
+            <div><dt>最近实测</dt><dd>${escapeHtml(latestDate(item) || "日期待补")}</dd></div>
           </dl>
           <div class="evidence-reader-note">
             <b>一句话判断</b>
             <span>${escapeHtml(publicText(item.recommendationExplanation || item.evidenceExplanation || "证据已记录，使用前仍需看限制条件。"))}</span>
           </div>
           <details class="evidence-box">
-            <summary>看限制和补齐建议</summary>
+            <summary>看限制和长期使用建议</summary>
             <div class="evidence-content">
               <p><b>不适合：</b>${escapeHtml(publicText(item.notFor || "不适合完全不想配置、不想维护的人。"))}</p>
               <p><b>主要限制：</b>${escapeHtml(publicText((item.caveats || []).join("；") || item.maxLimit || "仍需要更多真实任务复测。"))}</p>
-              <p><b>安装成本：</b>${escapeHtml(publicText((item.installFriction || []).join("；") || "暂无额外安装成本记录。"))}</p>
-              <p><b>生产化补齐：</b>${escapeHtml(publicText(path?.target || "暂无明确补齐路径。"))}</p>
+              <p><b>安装准备：</b>${escapeHtml(publicText((item.installFriction || []).join("；") || "暂无额外安装准备记录。"))}</p>
+              <p><b>想长期使用：</b>${escapeHtml(publicText(item.longTermUse?.summary || "建议用更多真实数据和异常场景再次测试，并按限制补齐备份、监控和权限设置。"))}</p>
             </div>
           </details>
           <div class="combo-actions">
@@ -315,9 +286,9 @@
     function renderList() {
       const items = filteredItems();
       const suffix = query.trim() ? ` · “${query.trim()}”` : "";
-      evidenceResultCount.textContent = `找到 ${items.length} 条证据${suffix}`;
+      evidenceResultCount.textContent = `找到 ${items.length} 条实测记录${suffix}`;
       if (!items.length) {
-        evidenceList.innerHTML = `<article class="evidence-resource-card"><div class="empty">没有匹配的证据记录。</div></article>`;
+        evidenceList.innerHTML = `<article class="evidence-resource-card"><div class="empty">没有匹配的实测记录。</div></article>`;
         return;
       }
       evidenceList.innerHTML = items.map(renderEvidenceCard).join("");
@@ -341,7 +312,7 @@
         renderStats(evidence.summary || {});
         render();
       } catch (error) {
-        evidenceList.innerHTML = `<article class="evidence-resource-card"><div class="empty">证据中心加载失败：${escapeHtml(error.message)}</div></article>`;
+        evidenceList.innerHTML = `<article class="evidence-resource-card"><div class="empty">实测档案加载失败：${escapeHtml(error.message)}</div></article>`;
       }
     }
 

@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=fresh-agent-nexus-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=fresh-agent-nexus-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>Headroom + Agent Nexus</h1>
       <p class="lead">80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>Headroom</span><span>Agent Nexus</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 8/8。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。</p>
       <h2>我们怎么测</h2>
       <p>准备 80 条含 INFO、WARN 和 SQLSTATE 42703 ERROR 的结构化日志，先用 Headroom 压缩并按严重度排序，再把 16 条优先日志交给 Agent Nexus，使用本地 gemma4:12b 生成事件报告。</p>
       <h2>实际结果</h2>
       <p>Headroom 保留了 SQLSTATE 错误和请求编号；Agent Nexus 最终指出出错组件、缺失字段、受影响请求和修复方向。8 项断言全部通过，但原始日志或未排序压缩日志会让模型漏掉核心错误。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. Headroom（处理/理解）：接收 structured logs；tool output；json，产出 prioritized compressed logs；structured json。</li><li>2. Agent Nexus（自动执行）：接收 prompt；tool configuration；structured context，产出 agent run；run trace；incident report。</li></ol>
+      <ol><li>1. Headroom：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li><li>2. Agent Nexus：接收上一步结果并自动继续处理。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre># Headroom + Agent Nexus 实测报告
 
 ## 一句话结论
@@ -204,14 +201,14 @@
 
 ## 已知限制
 
-- Headroom 0.31.0 的 SmartCrusher 会使用 `httpx`，但当前安装包没有完整声明该依赖；实测 Runner 已显式补装并预检。
+- Headroom 0.31.0 的 SmartCrusher 会使用 `httpx`，但当前安装包没有完整声明该依赖；实测 自动测试程序 已显式补装并预检。
 - Agent Nexus 首次启动需要 PostgreSQL、API 容器和本地模型，准备成本较高。
 - Agent Nexus 当前存在一个上游数据库字段问题：原生工具种子写入会因缺少 `tools.category` 失败。本次无工具调用的日志分析不受影响，但原生工具能力尚不能视为已验证。
 - 本轮只验证了 80 条确定性日志，尚未覆盖百万行日志、实时流、高并发和多服务关联。
 
 ## 最终评价
 
-证据等级为 **L3-caveat**。组合的核心衔接与最终结果真实跑通，且对照实验证明 Headroom 能改善 Agent Nexus 的故障识别；但安装成本、上游数据库缺陷和规模化能力仍需明确提醒。适合有本地模型环境的开发者试用，不应替代成熟日志平台直接用于生产告警。</pre>
+测试结论为 **实测通过，但有使用限制**。组合的核心衔接与最终结果真实跑通，且对照实验证明 Headroom 能改善 Agent Nexus 的故障识别；但安装成本、上游数据库缺陷和规模化能力仍需明确提醒。适合有本地模型环境的开发者试用，不应替代成熟日志平台直接用于生产告警。</pre>
       </details>
     </div>
   </main>

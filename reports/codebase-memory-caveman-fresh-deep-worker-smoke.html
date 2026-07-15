@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=codebase-memory-caveman-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=codebase-memory-caveman-fresh-deep-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>codebase-memory-mcp + caveman</h1>
       <p class="lead">先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。</p>
       <div class="meta">
-        <span>开发与 Agent · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>codebase-memory-mcp</span><span>caveman</span>
@@ -131,21 +131,18 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>维护中大型代码库、经常让 Agent 参与审查或交接的开发者和技术团队。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>只处理少量文件，或无法提供 Claude CLI 登录态的用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 2/2。</span></div>
         <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。</p>
       <h2>我们怎么测</h2>
       <p>在同一次运行中先让 codebase-memory-mcp 索引测试仓库并导出节点、依赖、入口和模块信息，再把这份报告交给 Caveman 压缩；最后逐项检查项目名、节点数、边数、语言、核心目录和入口函数是否仍然存在。</p>
       <h2>实际结果</h2>
       <p>架构报告成功被压缩，输出体积小于原文，6 项关键架构事实全部保留，两个工具的交接与最终结果断言均通过。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. codebase-memory-mcp（存储/检索）：接收 source code；query，产出 json；report；source code context。</li><li>2. caveman（输出/交付）：接收 json；report；draft response，产出 compressed response；token metrics。</li></ol>
+      <ol><li>1. codebase-memory-mcp：保存整理后的内容，方便以后查找和继续使用。</li><li>2. caveman：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
+        <summary>查看技术记录（供复核）</summary>
         <pre>先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。
 先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。
 先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。

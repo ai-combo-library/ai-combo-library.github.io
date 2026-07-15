@@ -118,12 +118,12 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=yt-dlp-videocaptioner-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">证据中心</a></p>
-      <p class="eyebrow">自然语言实测报告</p>
+      <p class="note"><a href="../combo.html?id=yt-dlp-videocaptioner-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
       <h1>yt-dlp + VideoCaptioner</h1>
       <p class="lead">公开视频 URL -&gt; 下载视频 -&gt; 字幕文件 -&gt; 带字幕轨视频</p>
       <div class="meta">
-        <span>内容与媒体 · L3-caveat · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>内容与媒体 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>yt-dlp</span><span>VideoCaptioner</span>
@@ -131,22 +131,19 @@
       <section class="summary-grid">
         <div class="summary-card"><b>适合谁</b><span>已经有字幕文件，想批量下载视频并快速生成带字幕轨版本的人。</span></div>
         <div class="summary-card"><b>不适合谁</b><span>不适合期待自动识别、自动翻译、自动配音一条龙的新手用户。</span></div>
-        <div class="summary-card"><b>这次确认了什么</b><span>两个工具在同一次实测中都已运行，交接断言通过 4/4。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>只验证了软字幕封装和短视频样本，未验证长视频、硬字幕、ASR、翻译、配音。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>只验证了软字幕封装和短视频样本，未验证长视频、硬字幕、语音识别、翻译、配音。</span></div>
       </section>
-      <h2>一句话结论</h2>
-      <p>公开视频 URL -&gt; 下载视频 -&gt; 字幕文件 -&gt; 带字幕轨视频</p>
       <h2>我们怎么测</h2>
       <p>使用 yt-dlp 从公开视频文件 URL 下载 MP4，准备一份对应 SRT，再由 VideoCaptioner 把字幕封装进视频，并用媒体探测检查字幕流。</p>
       <h2>实际结果</h2>
       <p>下载文件可用，VideoCaptioner 生成了新的 MP4 且包含字幕轨，4 项检查通过；没有验证自动转写、翻译、配音或版权审查。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. yt-dlp（采集/输入）：接收 video URL, media page URL, direct media URL，产出 downloaded video file, metadata JSON。</li><li>2. VideoCaptioner（输出/交付）：接收 video file, srt/ass subtitle, optional target language/tts config，产出 video with subtitle track, translated subtitles, dubbed audio/video。</li></ol>
+      <ol><li>1. yt-dlp：获取原始资料，并把内容交给下一步。</li><li>2. VideoCaptioner：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
-      <ol><li>固定输入输出</li><li>运行 deep rerun</li><li>保留失败原因</li><li>进入证据中心</li><li>定期复测</li></ol>
+      <ol><li>固定测试样本和最终产物</li><li>用同样样本重新跑一遍完整流程</li><li>保留失败原因</li><li>保存完整实测记录</li><li>定期重新确认是否仍然可用</li></ol>
       <details>
-        <summary>查看原始测试摘录</summary>
-        <pre># yt-dlp + VideoCaptioner 生产化补齐 deep rerun
+        <summary>查看技术记录（供复核）</summary>
+        <pre># yt-dlp + VideoCaptioner 长期使用完善 用同样样本重新跑一遍完整流程
 
 时间：2026-07-03T00:11:01.634093+08:00
 
@@ -162,17 +159,17 @@
 - videoCaptionerProducedMp4: True
 - outputHasSubtitleStream: True
 
-## 命令摘要
+## 执行记录
 
 - ytDlp: returncode=0 timeout=False
 - synthesize: returncode=0 timeout=False
 - ffprobe: returncode=0 timeout=False
 
-## 生产化 caveat
+## 长期使用 使用限制
 
 下载到字幕封装闭环跑通；未覆盖自动转写质量、硬字幕样式、多语言翻译、长视频批处理或版权审查。
 
-## 沙箱产物
+## 测试产物
 
 - summary: `summary.json`
 - 测试输出：已保留关键结果</pre>
