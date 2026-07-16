@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI 工具组合实测库</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="app.css?v=d179f99a6c1a">
+  <link rel="stylesheet" href="app.css?v=2a6d4c0b5804">
 </head>
 <body class="daily-page public-daily resource-home library-app">
   <header class="public-header">
@@ -135,10 +135,10 @@
 
     <section class="about-panel compact-about" id="about" aria-labelledby="aboutTitle">
       <div>
-        <h2 id="aboutTitle">关于这个资源库</h2>
-        <p>这里只公开真实运行过的组合。每条都附有适用场景、使用边界和可追溯的实测报告。</p>
+        <h2 id="aboutTitle">每条推荐都有真实测试依据</h2>
+        <p>查看完整测试过程、适用范围和使用限制，判断它是否适合你的工作流。</p>
       </div>
-      <a href="evidence.html">查看实测档案</a>
+      <a href="evidence.html">查看实测档案 <span aria-hidden="true">→</span></a>
     </section>
   </main>
 
@@ -406,7 +406,7 @@
               <div><span>${escapeHtml(primaryCategory)}</span><h3>${escapeHtml(record.title)}</h3></div>
             </div>
             <span class="friction-badge" data-level="${frictionLevel(record)}" title="上手难度按 0–100 计算，数字越高代表安装、配置和维护越复杂。">
-              ${escapeHtml(publicSetupDifficultyLabel(record))} · ${frictionScore(record)}/100
+              ${escapeHtml(publicSetupDifficultyLabel(record))}<b>${frictionScore(record)}</b>
             </span>
           </div>
           <p>${escapeHtml(publicText(record.maxBenefit || record.useCase || record.summary || "查看这组工具的真实使用结论。"))}</p>

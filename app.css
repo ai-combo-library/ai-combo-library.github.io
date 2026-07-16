@@ -3510,7 +3510,7 @@ code {
 /* Resource browser: dense library navigation and persistent detail context. */
 body.library-app,
 body.combo-detail-page {
-  background: #f4f6f9;
+  background: #f7f8fa;
 }
 
 .library-app .wrap,
@@ -3524,8 +3524,8 @@ body.combo-detail-page {
   top: 0;
   z-index: 30;
   background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid #e7eaf0;
-  box-shadow: 0 1px 8px rgba(16, 24, 40, 0.035);
+  border-bottom: 1px solid #e6e9ef;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.025);
   backdrop-filter: blur(10px);
 }
 
@@ -3541,15 +3541,14 @@ body.combo-detail-page {
   content: "";
   width: 22px;
   height: 22px;
-  border: 6px solid #2f7cf6;
-  border-top-color: #17a589;
-  border-radius: 6px;
+  border: 5px solid #2468e5;
+  border-radius: 5px;
   box-sizing: border-box;
   transform: rotate(12deg);
 }
 
 .resource-home .public-nav a {
-  min-height: 58px;
+  min-height: 56px;
   display: inline-flex;
   align-items: center;
   border: 0;
@@ -3577,7 +3576,7 @@ body.combo-detail-page {
   gap: 2rem;
   align-items: end;
   justify-content: space-between;
-  padding: 2.35rem 0 1.65rem;
+  padding: 1.85rem 0 1.3rem;
   overflow: visible;
   border: 0;
   border-bottom: 1px solid #dfe3e8;
@@ -3589,7 +3588,7 @@ body.combo-detail-page {
 .library-intro h1 {
   margin: 0.35rem 0 0.45rem;
   color: #182230;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-size: clamp(1.7rem, 3vw, 2.05rem);
   line-height: 1.2;
   letter-spacing: 0;
 }
@@ -3597,19 +3596,20 @@ body.combo-detail-page {
 .library-intro > div > p:not(.eyebrow) {
   margin: 0;
   color: #697586;
-  font-size: 0.96rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 .hero-library-search {
   display: flex;
   align-items: center;
   width: min(100%, 620px);
-  min-height: 46px;
+  min-height: 44px;
   margin-top: 1rem;
   border: 1px solid #cfd6e2;
   border-radius: 8px;
   background: #fff;
-  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.04);
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.035);
 }
 
 .hero-library-search:focus-within {
@@ -3626,7 +3626,7 @@ body.combo-detail-page {
 
 .hero-library-search input {
   width: 100%;
-  min-height: 44px;
+  min-height: 42px;
   border: 0;
   outline: 0;
   background: transparent;
@@ -3645,7 +3645,7 @@ body.combo-detail-page {
 
 .library-metrics span {
   min-width: 82px;
-  padding: 0.45rem 1rem;
+  padding: 0.35rem 0.85rem;
   color: #7a8597;
   font-size: 0.72rem;
   white-space: nowrap;
@@ -3659,15 +3659,15 @@ body.combo-detail-page {
   display: block;
   margin-bottom: 0.15rem;
   color: #182230;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .resource-browser {
   display: grid;
-  grid-template-columns: 224px minmax(0, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: 216px minmax(0, 1fr);
+  gap: 2rem;
   align-items: start;
-  padding: 1.35rem 0 2.5rem;
+  padding: 1.3rem 0 2.25rem;
   overflow: visible;
   border: 0;
   border-radius: 0;
@@ -3679,13 +3679,14 @@ body.combo-detail-page {
   position: sticky;
   top: 74px;
   display: grid;
-  gap: 1.25rem;
-  padding: 1rem;
+  gap: 1.05rem;
+  padding: 0 1.3rem 0 0;
   overflow: visible;
-  border: 1px solid #e2e7ee;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 3px 12px rgba(16, 24, 40, 0.035);
+  border: 0;
+  border-right: 1px solid #e5e8ee;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
   scroll-margin-top: 72px;
 }
 
@@ -3698,7 +3699,7 @@ body.combo-detail-page {
 
 .facet-heading strong {
   color: #182230;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .facet-heading button {
@@ -3745,8 +3746,8 @@ body.combo-detail-page {
 .facet-group > h2,
 .facet-group > label {
   margin: 0;
-  color: #475467;
-  font-size: 0.76rem;
+  color: #344054;
+  font-size: 0.74rem;
   font-weight: 700;
 }
 
@@ -3761,12 +3762,13 @@ body.combo-detail-page {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 36px;
+  min-height: 34px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 5px;
   background: transparent;
   color: #566174;
-  padding: 0.42rem 0.55rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
   text-align: left;
   cursor: pointer;
 }
@@ -3777,8 +3779,8 @@ body.combo-detail-page {
 }
 
 .facet-options button.active {
-  background: #edf4ff;
-  color: #175cd3;
+  background: #eaf2ff;
+  color: #1859c9;
   font-weight: 700;
 }
 
@@ -3790,12 +3792,13 @@ body.combo-detail-page {
 
 .facet-group select {
   width: 100%;
-  min-height: 36px;
+  min-height: 34px;
   border: 1px solid #d0d5dd;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #fff;
   color: #344054;
-  padding: 0 0.55rem;
+  padding: 0 0.5rem;
+  font-size: 0.78rem;
 }
 
 .facet-check {
@@ -3817,7 +3820,7 @@ body.combo-detail-page {
 }
 
 .facet-guide {
-  padding-top: 0.9rem;
+  padding-top: 0.75rem;
   border-top: 1px solid #edf0f4;
   color: #667085;
   font-size: 0.75rem;
@@ -3839,14 +3842,14 @@ body.combo-detail-page {
   gap: 1rem;
   align-items: end;
   justify-content: space-between;
-  padding: 0.15rem 0 0.95rem;
+  padding: 0 0 0.8rem;
   border-bottom: 0;
 }
 
 .result-title h2 {
   margin: 0;
   color: #182230;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   letter-spacing: 0;
 }
 
@@ -3883,9 +3886,9 @@ body.combo-detail-page {
 
 .library-search input,
 .sort-control select {
-  min-height: 40px;
+  min-height: 36px;
   border: 1px solid #d7dce5;
-  border-radius: 7px;
+  border-radius: 5px;
   background: #fff;
   color: #344054;
   padding: 0 0.7rem;
@@ -3903,8 +3906,8 @@ body.combo-detail-page {
   display: flex;
   gap: 0.4rem;
   align-items: center;
-  min-height: 36px;
-  padding: 0 0 0.7rem;
+  min-height: 30px;
+  padding: 0 0 0.55rem;
   overflow-x: auto;
 }
 
@@ -3927,28 +3930,31 @@ body.combo-detail-page {
 .library-app .library-result-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.85rem;
 }
 
 .library-app .combo-library-card {
-  --tone: #2f7cf6;
-  --tone-soft: #edf4ff;
+  --tone: #2468e5;
+  --tone-soft: #eff5ff;
   position: relative;
-  min-height: 240px;
+  min-height: 214px;
   border: 1px solid #e1e6ed;
-  border-top: 3px solid var(--tone);
-  border-radius: 8px;
+  border-radius: 7px;
   background: #fff;
-  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.035);
-  padding: 1.1rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.025);
+  padding: 1rem;
   transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 
 .library-app .combo-library-card:hover {
-  border-color: color-mix(in srgb, var(--tone) 45%, #d7dde6);
-  border-top-color: var(--tone);
-  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.08);
-  transform: translateY(-2px);
+  border-color: #b8cef2;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.065);
+  transform: translateY(-1px);
+}
+
+.library-app .combo-library-card[data-category-tone] {
+  --tone: #2468e5;
+  --tone-soft: #eff5ff;
 }
 
 .combo-library-card[data-category-tone="people"],
@@ -3995,7 +4001,7 @@ body.combo-detail-page {
 
 .combo-card-identity {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.65rem;
   align-items: flex-start;
   min-width: 0;
 }
@@ -4003,12 +4009,12 @@ body.combo-detail-page {
 .combo-mark {
   position: relative;
   display: block;
-  flex: 0 0 38px;
-  width: 38px;
-  height: 38px;
-  border: 1px solid color-mix(in srgb, var(--tone) 25%, #e5e7eb);
-  border-radius: 8px;
-  background: var(--tone-soft);
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d9e4f7;
+  border-radius: 7px;
+  background: #f6f9ff;
   color: var(--tone);
 }
 
@@ -4040,21 +4046,35 @@ body.combo-detail-page {
 
 .friction-badge {
   flex: 0 0 auto;
-  max-width: 146px;
+  display: inline-flex;
+  gap: 0.38rem;
+  align-items: center;
+  max-width: 150px;
   border: 1px solid #d7dde6;
-  border-radius: 999px;
+  border-radius: 5px;
   background: #f8fafc;
   color: #475467;
-  padding: 0.32rem 0.55rem;
-  font-size: 0.68rem;
+  padding: 0.28rem 0.45rem;
+  font-size: 0.66rem;
   line-height: 1.3;
   text-align: center;
 }
 
+.friction-badge b {
+  color: inherit;
+  font-size: 0.7rem;
+}
+
+.friction-badge b::before {
+  content: "难度 ";
+  font-weight: 500;
+  opacity: 0.72;
+}
+
 .friction-badge[data-level="low"] {
-  border-color: #b7dec8;
-  background: #effaf3;
-  color: #18794e;
+  border-color: #cfe2d7;
+  background: #f3faf6;
+  color: #23724c;
 }
 
 .friction-badge[data-level="medium"] {
@@ -4071,21 +4091,37 @@ body.combo-detail-page {
 
 .library-app .combo-card-head span {
   color: var(--tone);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
+}
+
+.library-app .combo-card-head .friction-badge {
+  color: #475467;
+}
+
+.library-app .combo-card-head .friction-badge[data-level="low"] {
+  color: #23724c;
+}
+
+.library-app .combo-card-head .friction-badge[data-level="medium"] {
+  color: #8a5b00;
+}
+
+.library-app .combo-card-head .friction-badge[data-level="high"] {
+  color: #a63a32;
 }
 
 .library-app .combo-library-card h3 {
   margin-top: 0.25rem;
   color: #202939;
-  font-size: 1.02rem;
+  font-size: 0.98rem;
   line-height: 1.4;
   letter-spacing: 0;
 }
 
 .library-app .combo-library-card p {
   color: #697586;
-  font-size: 0.82rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
+  line-height: 1.55;
 }
 
 .library-app .combo-card-tags span {
@@ -4093,23 +4129,24 @@ body.combo-detail-page {
   border-radius: 5px;
   background: #f2f4f7;
   color: #4b5565;
-  padding: 0.3rem 0.5rem;
+  padding: 0.26rem 0.45rem;
+  font-size: 0.69rem;
 }
 
 .combo-capabilities {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  margin-top: 0.65rem;
+  margin-top: 0.45rem;
 }
 
 .combo-capabilities span {
-  border: 1px solid color-mix(in srgb, var(--tone) 22%, #e1e6ed);
+  border: 1px solid #dbe6f8;
   border-radius: 5px;
   background: var(--tone-soft);
   color: var(--tone);
-  padding: 0.22rem 0.42rem;
-  font-size: 0.7rem;
+  padding: 0.2rem 0.38rem;
+  font-size: 0.67rem;
   font-weight: 650;
 }
 
@@ -4129,24 +4166,43 @@ body.combo-detail-page {
   gap: 1.5rem;
   align-items: center;
   justify-content: space-between;
-  margin: 0 0 2rem;
-  padding: 1.25rem 0;
-  border: 0;
-  border-top: 1px solid #dfe3e8;
-  border-radius: 0;
-  background: transparent;
+  margin: 0 0 1.75rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid #e2e7ee;
+  border-radius: 7px;
+  background: #fff;
   box-shadow: none;
 }
 
 .compact-about h2 {
   margin: 0 0 0.25rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .compact-about p {
   margin: 0;
   color: #667085;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+}
+
+.compact-about > a {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  min-height: 34px;
+  border: 1px solid #cddcf4;
+  border-radius: 5px;
+  background: #f5f8fe;
+  color: #1859c9;
+  padding: 0 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.compact-about > a:hover {
+  border-color: #9ebbec;
+  background: #edf4ff;
 }
 
 /* Combo detail: stable document tabs with a persistent decision rail. */
@@ -4634,6 +4690,31 @@ body.combo-detail-page {
   .library-app .wrap,
   .combo-detail-page .wrap {
     width: min(calc(100% - 24px), 1280px);
+  }
+
+  .library-app .public-topbar {
+    min-height: 56px;
+    padding: 0;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .library-app .brand {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+
+  .library-app .public-nav {
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+  }
+
+  .library-app .public-nav a {
+    min-height: 56px;
+    padding: 0;
+    font-size: 0.72rem;
+    white-space: nowrap;
   }
 
   .library-intro {

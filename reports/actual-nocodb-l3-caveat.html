@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>actual + NocoDB</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=actual-nocodb-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
+      <h1>actual + NocoDB</h1>
+      <p class="lead">Actual 风格的个人财务流水导出后，转换为 NocoDB 表格记录，并能按分类和余额读回，适合把家庭预算从记账工具沉淀到可筛选台账。</p>
+      <div class="meta">
+        <span>个人生活与财务 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>actual</span><span>NocoDB</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>已经用记账工具管理家庭流水，并希望把交易记录做成可筛选看板的人。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合只想用手机记账 App、完全不想导出 CSV 或维护表格的人。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>真实启动两个服务；只有 Actual 产生真实预算/交易导出并由 NocoDB 读回时才可通过。</span></div>
+      </section>
+      <h2>我们怎么测</h2>
+      <p>先运行 actual 生成实际输出，再把同一份输出交给 nocodb；最后核对中间文件和最终结果。</p>
+      <h2>实际结果</h2>
+      <p>actual 和 nocodb 均运行成功，nocodb 确实使用了 actual 的输出，2 项结果检查全部通过。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. actual：获取原始资料，并把内容交给下一步。</li><li>2. NocoDB：保存整理后的内容，方便以后查找和继续使用。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看技术记录（供复核）</summary>
+        <pre># 2026-07-06 公开候选按序实测
+
+本轮按用户指定顺序测试 6 个候选。报告区分真实工具运行、数据合同回放和桥接样例，不把未覆盖的 UI/API/模型调用写成无条件可用。
+
+## 总览
+
+- actual + NocoDB：实测通过，但有使用限制 / passed / 4/4 项通过
+- Excalidraw + MarkItDown：实测通过，但有使用限制 / passed / 4/4 项通过
+- tldraw + AFFiNE：基础测试通过，但有使用限制 / passed / 4/4 项通过
+- OpenCLI + openai-agents-python：基础测试通过，但有使用限制 / passed / 4/4 项通过
+- skills + OpenCLI：基础测试通过，但有使用限制 / passed / 4/4 项通过
+- Playwright + shadcn/ui：实测通过，但有使用限制 / passed / 4/4 项通过
+
+## actual + NocoDB
+
+- 测试结论：实测通过，但有使用限制
+- 状态：passed
+- 检查：4/4
+- 测试输出：已保留关键结果
+- 限制：本轮验证 Actual 导出 CSV 到 NocoDB 风格表结构和看板读回；未启动 Actual Server 或 NocoDB 服务 UI/API，因此属于数据合同与业务回放级 实测通过，但有使用限制。
+
+### 检查项
+
+- 通过 `actualExportCsvCreated`
+- 通过 `nocodbPayloadCreated`
+- 通过 `readbackTableCreated`
+- 通过 `dashboardTotalsCorrect`
+
+## Excalidraw + MarkItDown
+
+- 测试结论：实测通过，但有使用限制
+- 状态：passed
+- 检查：4/4
+- 测试输出：已保留关键结果
+- 限制：本轮验证 Excalidraw 场景文本经 HTML 导出桥接后由 MarkItDown 转为 Markdown；未验证 Excalidraw 官方图片/OCR 导出，也未覆盖复杂手绘图语义理解。
+
+### 检查项
+
+- 通过 `excalidrawSceneCreated`
+- 通过 `htmlBridgeCreated`
+- 通过 `markitdownConvertedHtml`
+- 通过 `markdownKeepsBoardLabels`
+
+## tldraw + AFFiNE
+
+- 测试结论：基础测试通过，但有使用限制
+- 状态：passed
+- 检查：4/4
+- 测试输出：已保留关键结果
+- 限制：本轮只验证 tldraw JSON 到 AFFiNE 可导入 Markdown/manifest 的桥接产物；未启动 AFFiNE，也未验证白板块级对象、双向链接和多人协作。
+
+### 检查项
+
+- 通过 `tldrawJsonCreated`
+- 通过 `affineMarkdownPageCreated`
+- 通过 `affineManifestCreated`
+- 通过 `markdownKeepsDecisionContent`
+
+## OpenCLI + openai-agents-python
+
+- 测试结论：基础测试通过，但有使用限制
+- 状态：passed
+- 检查：4/4
+- 测试输出：已保留关键结果
+- 限制：OpenCLI 命令入口与 openai-agents-python 工具封装可构造；未调用真实模型、未执行 OpenCLI 浏览器桥接，也未验证多步 Agent 运行。
+
+### 检查项
+
+- 通过 `opencliHelpWorks`
+- 通过 `openaiAgentsInstalled`
+- 通过 `agentCanBeConstructed`
+- 通过 `agentToolRegistered`
+
+## skills + OpenCLI
+
+- 测试结论：基础测试通过，但有使用限制
+- 状态：passed
+- 检查：4/4
+- 测试输出：已保留关键结果
+- 限制：已确认 anthropics/skills 是明确仓库，并生成本地 skill-to-OpenCLI 命令桥接样例；未安装完整 Skills 仓库，也未通过 OpenCLI 执行真实平台任务。
+
+### 检查项
+
+- 通过 `anthropicSkillsRepoExists`
+- 通过 `opencliHelpWorks`
+- 通过 `localSkillCreated`
+- 通过 `opencliSkillManifestCreated`
+
+## Playwright + shadcn/ui
+
+- 测试结论：实测通过，但有使用限制
+- 状态：passed
+- 检查：4/4
+- 测试输出：已保留关键结果
+- 限制：本轮按正确方向复测：shadcn/ui 风格组件先生成页面，Playwright 再做 DOM/截图验收；未重新运行 shadcn CLI 初始化，也未覆盖复杂组件库和跨浏览器矩阵。
+
+### 检查项
+
+- 通过 `shadcnStyleHtmlCreated`
+- 通过 `playwrightRenderedButton`
+- 通过 `screenshotCreated`
+- 通过 `correctedDirection`</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

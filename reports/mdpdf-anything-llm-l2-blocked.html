@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NocoDB + OfficeCLI</title>
+  <title>mdpdf + AnythingLLM</title>
   <style>
     body {
       margin: 0;
@@ -118,36 +118,61 @@
 <body>
   <main>
     <div class="report-shell">
-      <p class="note"><a href="../combo.html?id=nocodb-officecli-fresh-deep&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="note"><a href="../combo.html?id=mdpdf-anything-llm-l2-blocked&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
-      <h1>NocoDB + OfficeCLI</h1>
-      <p class="lead">团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。</p>
+      <h1>mdpdf + AnythingLLM</h1>
+      <p class="lead">Markdown 报告 -&gt; PDF 归档 -&gt; 本地知识库问答（待验证）</p>
       <div class="meta">
-        <span>数据与分析 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
-        <span>NocoDB</span><span>OfficeCLI</span>
+        <span>mdpdf</span><span>anything-llm</span>
       </div>
       <section class="summary-grid">
-        <div class="summary-card"><b>适合谁</b><span>已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。</span></div>
-        <div class="summary-card"><b>不适合谁</b><span>只维护很小的一张本地表格，或完全不愿运行 Docker 服务的人。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+        <div class="summary-card"><b>适合谁</b><span>需要快速筛选 AI 工具组合的个人用户和小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合完全不接触命令行、API 或开发工具的普通用户。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>AnythingLLM 健康检查不算入库成功；本 自动测试程序 必须创建工作区并把 mdpdf 生成的 PDF 真正上传入库。语义问答仍需另配本地或外部模型。</span></div>
       </section>
       <h2>我们怎么测</h2>
-      <p>先在新建的 NocoDB 容器中写入 3 行固定业务数据，再通过 API 读回同一批数据并交给 OfficeCLI 生成 Excel，最后检查工作簿结构和单元格内容。</p>
+      <p>先运行 mdpdf 生成实际输出，再把同一份输出交给 anything-llm；最后核对中间文件和最终结果。</p>
       <h2>实际结果</h2>
-      <p>NocoDB 成功保存并返回 3 行业务记录，OfficeCLI 使用这些记录生成 Excel；台账交接文件和最终工作簿检查均通过。</p>
+      <p>mdpdf 和 anything-llm 均运行成功，anything-llm 确实使用了 mdpdf 的输出，2 项结果检查全部通过。</p>
       <h2>实际工作流怎么走</h2>
-      <ol><li>1. NocoDB：保存整理后的内容，方便以后查找和继续使用。</li><li>2. OfficeCLI：生成最终可查看、下载或交付的结果。</li></ol>
+      <ol><li>1. mdpdf：获取原始资料，并把内容交给下一步。</li><li>2. anything-llm：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre>把 NocoDB 中的运营台账读回后自动生成并校验 Excel 报告，适合需要数据库协作与 Office 交付并存的小团队。
-项目台账、内容排期、客户清单和运营数据的数据库管理与 Excel 交付。
-团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。
-本轮使用新建 NocoDB 容器、3 行确定性业务数据和锁定版本的 OfficeCLI；未覆盖大表、并发写入和复杂 Excel 公式。；首次运行需要 Docker 镜像与 npm 包下载，后续缓存命中时启动更快。
-本轮使用新建 NocoDB 容器、3 行确定性业务数据和锁定版本的 OfficeCLI；未覆盖大表、并发写入和复杂 Excel 公式。；首次运行需要 Docker 镜像与 npm 包下载，后续缓存命中时启动更快。</pre>
+        <pre># mdpdf + AnythingLLM 长期使用完善 用同样样本重新跑一遍完整流程
+
+时间：2026-07-03T00:11:01.634093+08:00
+
+## 结论
+
+状态：`partial`  
+检查：3/4
+
+## 检查项
+
+- mdpdfGeneratedPdf: True
+- anythingllmImageAvailable: True
+- anythingllmHttpReachable: False
+- persistentVolumePrepared: True
+
+## 执行记录
+
+- mdpdf: returncode=0 timeout=False
+- dockerImage: returncode=0 timeout=False
+- dockerRun: returncode=0 timeout=False
+
+## 长期使用 使用限制
+
+已验证 PDF 生成、AnythingLLM 容器启动与持久化目录；仍未自动完成 workspace 创建、PDF 上传、语义向量服务 配置和问答回归，因此只能作为长期使用起点而非完整生产级知识库。
+
+## 测试产物
+
+- summary: `summary.json`
+- 测试输出：已保留关键结果</pre>
       </details>
     </div>
   </main>
