@@ -1,13 +1,225 @@
 {
-  "generatedAt": "2026-07-25T19:56:54.132241+08:00",
+  "generatedAt": "2026-07-25T20:30:36.026039+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 59,
-    "featured": 59,
-    "evidenceItems": 59,
-    "tools": 65
+    "records": 61,
+    "featured": 61,
+    "evidenceItems": 61,
+    "tools": 67
   },
   "records": [
+    {
+      "id": "project-lifecycle-changedetection-baserow-worker-smoke",
+      "title": "changedetection.io + baserow",
+      "summary": "changedetection-io 先生成可继续使用的中间结果，baserow 随后完成最终处理；这条链路已经用真实样本跑通。",
+      "evidenceScore": 95,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
+      "useCase": "changedetection-io 先生成可继续使用的中间结果，baserow 随后完成最终处理；这条链路已经用真实样本跑通。",
+      "testMethod": "先运行 changedetection-io 生成实际输出，再把同一份输出交给 baserow；最后核对中间文件和最终结果。",
+      "testOutcome": "changedetection-io 和 baserow 均运行成功，baserow 确实使用了 changedetection-io 的输出，6 项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "changedetection.io",
+          "url": "https://github.com/dgtlmoon/changedetection.io",
+          "role": "采集/输入",
+          "inputs": [],
+          "outputs": [],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "获取与监测",
+            "文档与知识",
+            "数据与分析"
+          ],
+          "tasks": [
+            "测试",
+            "采集"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-25T20:17:00.294498+08:00"
+          },
+          "hub": {
+            "score": 36,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 50,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "baserow",
+          "url": "https://github.com/baserow/baserow",
+          "role": "存储/检索",
+          "inputs": [
+            "url",
+            "markdown",
+            "pdf"
+          ],
+          "outputs": [
+            "json",
+            "markdown",
+            "api"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "数据与分析",
+            "获取与监测"
+          ],
+          "tasks": [
+            "测试",
+            "检索",
+            "存储"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-25T20:17:00.294498+08:00"
+          },
+          "hub": {
+            "score": 51,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 2,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 59,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 baserow 并手工准备输入",
+          "type": "手动替代",
+          "fit": "数据量较少且只偶尔处理时",
+          "tradeoff": "部署组件更少，但每次都要人工整理成 baserow 可读取的格式。"
+        }
+      ],
+      "whyComboStillMatters": "changedetection.io 负责前一段数据准备，baserow 负责后一段处理；单独只用 changedetection.io 仍要人工完成后续，单独只用 baserow 又缺少稳定输入，组合后才能连续完成这项工作。",
+      "category": "获取与监测",
+      "primaryCategory": "获取与监测",
+      "domains": [
+        "开发与 Agent",
+        "数据与分析",
+        "获取与监测",
+        "文档与知识"
+      ],
+      "tasks": [
+        "测试",
+        "采集",
+        "交付",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "普通用户",
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "可自托管",
+        "已全链路实测"
+      ],
+      "collections": [
+        "普通人高频",
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "规模未验证",
+        "生产环境未验证",
+        "安装摩擦",
+        "Docker 重",
+        "大文件未验证",
+        "UI 未验证"
+      ],
+      "suitableFor": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
+      "notFor": "要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。",
+      "maxBenefit": "changedetection-io 先生成可继续使用的中间结果，baserow 随后完成最终处理；这条链路已经用真实样本跑通。",
+      "maxLimit": "只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "一体化 SaaS 或桌面工具：更省心，但私有化、可替换性和局部流程接入通常更弱。",
+        "painPoint": "把大型代码库转成可查询图谱，让 Agent 能直接定位关键类、调用关系和源码片段，适合大型工程理解与审查。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 78,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 50,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "Docker 重",
+            "weight": 22
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-25T20:17:00.294498+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 6,
+        "checksTotal": 6
+      },
+      "reportUrl": "reports/project-lifecycle-changedetection-baserow-worker-smoke.html"
+    },
     {
       "id": "ytdlp-funclip-l3-caveat",
       "title": "yt-dlp + FunClip",
@@ -1336,14 +1548,14 @@
             "verifiedAt": "2026-07-21T19:34:37.621839+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -2493,28 +2705,26 @@
       "reportUrl": "reports/marker-llamaindex-l3-caveat.html"
     },
     {
-      "id": "fresh-datafoundry-caveman-worker-smoke",
-      "title": "datafoundry + caveman",
-      "summary": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
+      "id": "fresh-twiligent-headroom-worker-smoke",
+      "title": "twiligent + Headroom",
+      "summary": "twiligent 先生成可继续使用的中间结果，headroom 随后完成最终处理；这条链路已经用真实样本跑通。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
-      "useCase": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
-      "testMethod": "使用 datafoundry 自带的 DataLink CSV 图构建路径生成实际结果，再将同一份输出交给 caveman 处理，最后核对中间文件、最终结果以及前后内容是否确实衔接。",
-      "testOutcome": "两个工具均成功运行，caveman 确实使用了 datafoundry 的输出；共完成 2 项结果检查，2 项全部通过。",
+      "audience": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
+      "useCase": "twiligent 先生成可继续使用的中间结果，headroom 随后完成最终处理；这条链路已经用真实样本跑通。",
+      "testMethod": "先运行 twiligent 生成实际输出，再把同一份输出交给 headroom；最后核对中间文件和最终结果。",
+      "testOutcome": "twiligent 和 headroom 均运行成功，headroom 确实使用了 twiligent 的输出，6 项结果检查全部通过。",
       "tools": [
         {
-          "name": "datafoundry",
-          "url": "https://github.com/datagallery-lab/datafoundry",
+          "name": "twiligent",
+          "url": "https://github.com/spacesdrive/twiligent",
           "role": "采集/输入",
           "inputs": [
-            "prompt",
-            "source code",
+            "configuration",
             "json"
           ],
           "outputs": [
             "json",
-            "report",
             "logs"
           ],
           "interface": "",
@@ -2528,8 +2738,7 @@
           ],
           "tasks": [
             "测试",
-            "采集",
-            "交付"
+            "采集"
           ],
           "audiences": [
             "知识工作者"
@@ -2538,75 +2747,79 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
+            "verifiedAt": "2026-07-25T20:13:59.063896+08:00"
           },
           "hub": {
-            "score": 38,
+            "score": 39,
             "level": "有潜力",
             "verifiedComboCount": 1,
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
+            "averageFriction": 22,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "caveman",
-          "url": "https://github.com/JuliusBrussee/caveman",
-          "role": "输出/交付",
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
           "inputs": [
-            "json",
-            "report",
-            "draft response"
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
           ],
           "outputs": [
-            "compressed response",
-            "token metrics"
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
           ],
-          "interface": "",
+          "interface": "Python library / CLI / proxy / MCP",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
+          "primaryCategory": "开发与 Agent",
           "domains": [
-            "文档与知识",
-            "开发与 Agent"
+            "开发与 Agent",
+            "文档与知识"
           ],
           "tasks": [
             "测试",
-            "交付"
+            "检索"
           ],
           "audiences": [
-            "知识工作者"
+            "开发者"
           ],
           "traits": [
+            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
+            "verifiedAt": "2026-07-25T20:13:59.063896+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 5,
-            "partnerCount": 5,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 datafoundry",
-          "type": "手工衔接",
-          "fit": "适合只需生成 JSON、报告或日志，且愿意自行整理最终内容的用户。",
-          "tradeoff": "需要手工压缩中间结果，并自行统计或处理 token 指标。"
+          "name": "单独使用 headroom 并手工准备输入",
+          "type": "手动替代",
+          "fit": "数据量较少且只偶尔处理时",
+          "tradeoff": "部署组件更少，但每次都要人工整理成 headroom 可读取的格式。"
         }
       ],
-      "whyComboStillMatters": "datafoundry 负责把输入整理成 JSON、报告或日志，caveman 负责将这些结果压缩成便于交付的回复并提供 token 指标。只用 datafoundry，缺少已验证的压缩交付步骤；只用 caveman，则需要另行准备 JSON、报告或回复草稿。",
+      "whyComboStillMatters": "twiligent 负责前一段数据准备，headroom 负责后一段处理；单独只用 twiligent 仍要人工完成后续，单独只用 headroom 又缺少稳定输入，组合后才能连续完成这项工作。",
       "category": "数据与分析",
       "primaryCategory": "数据与分析",
       "domains": [
@@ -2617,7 +2830,7 @@
       ],
       "tasks": [
         "测试",
-        "交付",
+        "检索",
         "采集",
         "分析",
         "协作"
@@ -2636,17 +2849,15 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "仅验证 DataLink CSV 路径",
-        "未启用语义大模型映射",
-        "未进行规模测试",
-        "未在全新环境验证",
+        "规模未验证",
+        "生产环境未验证",
         "安装摩擦",
-        "外部 API Key"
+        "大文件未验证"
       ],
-      "suitableFor": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
-      "notFor": "需要语义大模型映射、已证明的大规模处理能力，或要求在全新环境中已有验证结果的场景。",
-      "maxBenefit": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
-      "maxLimit": "本次只验证了 DataFoundry 自带的 DataLink CSV 图构建路径；为避免凭据依赖并保持结果稳定，语义大模型映射被有意关闭。未进行规模测试，也未在全新环境中验证，因此其他数据规模和环境下的表现尚未得到证明。",
+      "suitableFor": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
+      "notFor": "要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。",
+      "maxBenefit": "twiligent 先生成可继续使用的中间结果，headroom 随后完成最终处理；这条链路已经用真实样本跑通。",
+      "maxLimit": "只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -2668,19 +2879,19 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 28,
-        "level": "中摩擦",
+        "score": 22,
+        "level": "低摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
           },
           {
-            "label": "外部 API Key",
-            "weight": 14
+            "label": "大文件未验证",
+            "weight": 8
           }
         ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
+        "summary": "安装和配置成本相对可控。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -2688,14 +2899,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-23T07:23:39.148828+08:00",
+        "testedAt": "2026-07-25T20:13:59.063896+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 2,
-        "checksTotal": 2
+        "checksPassed": 6,
+        "checksTotal": 6
       },
-      "reportUrl": "reports/fresh-datafoundry-caveman-worker-smoke.html"
+      "reportUrl": "reports/fresh-twiligent-headroom-worker-smoke.html"
     },
     {
       "id": "codebase-memory-caveman-fresh-deep-worker-smoke",
@@ -3766,139 +3977,140 @@
       "reportUrl": "reports/markitdown-llamaindex-l3-caveat.html"
     },
     {
-      "id": "nocodb-officecli-fresh-deep",
-      "title": "NocoDB + OfficeCLI",
-      "summary": "把 NocoDB 中的运营台账读回后自动生成并校验 Excel 报告，适合需要数据库协作与 Office 交付并存的小团队。",
+      "id": "fresh-datafoundry-caveman-worker-smoke",
+      "title": "datafoundry + caveman",
+      "summary": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": null,
-      "useCase": "项目台账、内容排期、客户清单和运营数据的数据库管理与 Excel 交付。",
-      "testMethod": "先在新建的 NocoDB 容器中写入 3 行固定业务数据，再通过 API 读回同一批数据并交给 OfficeCLI 生成 Excel，最后检查工作簿结构和单元格内容。",
-      "testOutcome": "NocoDB 成功保存并返回 3 行业务记录，OfficeCLI 使用这些记录生成 Excel；台账交接文件和最终工作簿检查均通过。",
+      "audience": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
+      "useCase": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
+      "testMethod": "使用 datafoundry 自带的 DataLink CSV 图构建路径生成实际结果，再将同一份输出交给 caveman 处理，最后核对中间文件、最终结果以及前后内容是否确实衔接。",
+      "testOutcome": "两个工具均成功运行，caveman 确实使用了 datafoundry 的输出；共完成 2 项结果检查，2 项全部通过。",
       "tools": [
         {
-          "name": "NocoDB",
-          "url": "https://github.com/nocodb/nocodb",
-          "role": "存储/检索",
+          "name": "datafoundry",
+          "url": "https://github.com/datagallery-lab/datafoundry",
+          "role": "采集/输入",
           "inputs": [
-            "structured rows"
+            "prompt",
+            "source code",
+            "json"
           ],
           "outputs": [
-            "database readback"
+            "json",
+            "report",
+            "logs"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "数据与分析",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "数据与分析",
             "文档与知识",
             "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "存储",
-            "检索"
+            "采集",
+            "交付"
           ],
           "audiences": [
             "知识工作者"
           ],
           "traits": [
-            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-14T19:43:46.948849+08:00"
+            "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 85,
-            "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 4,
+            "score": 38,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "OfficeCLI",
-          "url": "https://github.com/iOfficeAI/OfficeCLI",
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
           "role": "输出/交付",
           "inputs": [
-            "csv",
-            "json"
+            "json",
+            "report",
+            "draft response"
           ],
           "outputs": [
-            "xlsx",
-            "validation report"
+            "compressed response",
+            "token metrics"
           ],
-          "interface": "CLI / MCP / Python SDK",
+          "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "开发与 Agent",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "开发与 Agent",
-            "数据与分析",
-            "文档与知识"
+            "文档与知识",
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
             "交付"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
           "traits": [
-            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-14T19:43:46.948849+08:00"
+            "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 37,
-            "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "直接使用 Excel / Numbers",
-          "type": "轻量替代",
-          "fit": "单人维护、数据量小、无需数据库 API 和自动化交付的场景",
-          "tradeoff": "上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。"
+          "name": "单独使用 datafoundry",
+          "type": "手工衔接",
+          "fit": "适合只需生成 JSON、报告或日志，且愿意自行整理最终内容的用户。",
+          "tradeoff": "需要手工压缩中间结果，并自行统计或处理 token 指标。"
         }
       ],
-      "whyComboStillMatters": "NocoDB 负责多人维护、筛选和持久化台账，OfficeCLI 负责把读回的数据生成标准 Office 文件并自动验证；二者解决协作管理与正式交付两个不同环节。",
+      "whyComboStillMatters": "datafoundry 负责把输入整理成 JSON、报告或日志，caveman 负责将这些结果压缩成便于交付的回复并提供 token 指标。只用 datafoundry，缺少已验证的压缩交付步骤；只用 caveman，则需要另行准备 JSON、报告或回复草稿。",
       "category": "数据与分析",
       "primaryCategory": "数据与分析",
       "domains": [
-        "数据与分析",
         "开发与 Agent",
+        "文档与知识",
         "团队协作与沟通",
-        "文档与知识"
+        "科研与教育"
       ],
       "tasks": [
         "测试",
-        "部署",
-        "存储",
-        "协作",
-        "交付"
+        "交付",
+        "采集",
+        "分析",
+        "协作"
       ],
       "audiences": [
+        "开发者",
         "团队与企业"
       ],
       "traits": [
-        "可自托管",
         "CLI",
         "已全链路实测"
       ],
@@ -3906,28 +4118,32 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
+      "recommendationLevel": "强推荐",
       "caveatTags": [
+        "仅验证 DataLink CSV 路径",
+        "未启用语义大模型映射",
+        "未进行规模测试",
+        "未在全新环境验证",
         "安装摩擦",
-        "Docker 重"
+        "外部 API Key"
       ],
-      "suitableFor": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
-      "notFor": "只维护很小的一张本地表格，或完全不愿运行 Docker 服务的人。",
-      "maxBenefit": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
-      "maxLimit": "本轮使用新建 NocoDB 容器、3 行确定性业务数据和锁定版本的 OfficeCLI；未覆盖大表、并发写入和复杂 Excel 公式。；首次运行需要 Docker 镜像与 npm 包下载，后续缓存命中时启动更快。",
+      "suitableFor": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
+      "notFor": "需要语义大模型映射、已证明的大规模处理能力，或要求在全新环境中已有验证结果的场景。",
+      "maxBenefit": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
+      "maxLimit": "本次只验证了 DataFoundry 自带的 DataLink CSV 图构建路径；为避免凭据依赖并保持结果稳定，语义大模型映射被有意关闭。未进行规模测试，也未在全新环境中验证，因此其他数据规模和环境下的表现尚未得到证明。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
       "demandValidation": {
-        "targetUser": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
-        "currentAlternative": "直接使用 Excel / Numbers：上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。",
-        "painPoint": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
-        "switchingReason": "NocoDB 负责多人维护、筛选和持久化台账，OfficeCLI 负责把读回的数据生成标准 Office 文件并自动验证；二者解决协作管理与正式交付两个不同环节。",
-        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
         "confidence": "需求判断较强",
-        "confidenceScore": 98,
+        "confidenceScore": 86,
         "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
+          "缺少为什么不用单体工具的解释"
         ]
       },
       "longTermUse": {
@@ -3936,7 +4152,7 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 36,
+        "score": 28,
         "level": "中摩擦",
         "factors": [
           {
@@ -3944,8 +4160,8 @@
             "weight": 14
           },
           {
-            "label": "Docker 重",
-            "weight": 22
+            "label": "外部 API Key",
+            "weight": 14
           }
         ],
         "summary": "可试，但建议先按报告准备依赖和配置。"
@@ -3956,14 +4172,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-14T19:43:46.948849+08:00",
+        "testedAt": "2026-07-23T07:23:39.148828+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
         "checksPassed": 2,
         "checksTotal": 2
       },
-      "reportUrl": "reports/nocodb-officecli-fresh-deep.html"
+      "reportUrl": "reports/fresh-datafoundry-caveman-worker-smoke.html"
     },
     {
       "id": "actionlint-codex-plugin-cc-fresh-deep-worker-smoke",
@@ -4274,14 +4490,14 @@
             "verifiedAt": "2026-07-25T18:30:44.014854+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -4794,6 +5010,206 @@
       "reportUrl": "reports/playwright-markitdown-l3-caveat.html"
     },
     {
+      "id": "nocodb-officecli-fresh-deep",
+      "title": "NocoDB + OfficeCLI",
+      "summary": "把 NocoDB 中的运营台账读回后自动生成并校验 Excel 报告，适合需要数据库协作与 Office 交付并存的小团队。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": null,
+      "useCase": "项目台账、内容排期、客户清单和运营数据的数据库管理与 Excel 交付。",
+      "testMethod": "先在新建的 NocoDB 容器中写入 3 行固定业务数据，再通过 API 读回同一批数据并交给 OfficeCLI 生成 Excel，最后检查工作簿结构和单元格内容。",
+      "testOutcome": "NocoDB 成功保存并返回 3 行业务记录，OfficeCLI 使用这些记录生成 Excel；台账交接文件和最终工作簿检查均通过。",
+      "tools": [
+        {
+          "name": "NocoDB",
+          "url": "https://github.com/nocodb/nocodb",
+          "role": "存储/检索",
+          "inputs": [
+            "structured rows"
+          ],
+          "outputs": [
+            "database readback"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "数据与分析",
+          "domains": [
+            "数据与分析",
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "存储",
+            "检索"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-14T19:43:46.948849+08:00"
+          },
+          "hub": {
+            "score": 85,
+            "level": "核心枢纽",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 36,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+          }
+        },
+        {
+          "name": "OfficeCLI",
+          "url": "https://github.com/iOfficeAI/OfficeCLI",
+          "role": "输出/交付",
+          "inputs": [
+            "csv",
+            "json"
+          ],
+          "outputs": [
+            "xlsx",
+            "validation report"
+          ],
+          "interface": "CLI / MCP / Python SDK",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "数据与分析",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-14T19:43:46.948849+08:00"
+          },
+          "hub": {
+            "score": 37,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 36,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "直接使用 Excel / Numbers",
+          "type": "轻量替代",
+          "fit": "单人维护、数据量小、无需数据库 API 和自动化交付的场景",
+          "tradeoff": "上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。"
+        }
+      ],
+      "whyComboStillMatters": "NocoDB 负责多人维护、筛选和持久化台账，OfficeCLI 负责把读回的数据生成标准 Office 文件并自动验证；二者解决协作管理与正式交付两个不同环节。",
+      "category": "数据与分析",
+      "primaryCategory": "数据与分析",
+      "domains": [
+        "数据与分析",
+        "开发与 Agent",
+        "团队协作与沟通",
+        "文档与知识"
+      ],
+      "tasks": [
+        "测试",
+        "部署",
+        "存储",
+        "协作",
+        "交付"
+      ],
+      "audiences": [
+        "团队与企业"
+      ],
+      "traits": [
+        "可自托管",
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "安装摩擦",
+        "Docker 重"
+      ],
+      "suitableFor": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
+      "notFor": "只维护很小的一张本地表格，或完全不愿运行 Docker 服务的人。",
+      "maxBenefit": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
+      "maxLimit": "本轮使用新建 NocoDB 容器、3 行确定性业务数据和锁定版本的 OfficeCLI；未覆盖大表、并发写入和复杂 Excel 公式。；首次运行需要 Docker 镜像与 npm 包下载，后续缓存命中时启动更快。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
+        "currentAlternative": "直接使用 Excel / Numbers：上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。",
+        "painPoint": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
+        "switchingReason": "NocoDB 负责多人维护、筛选和持久化台账，OfficeCLI 负责把读回的数据生成标准 Office 文件并自动验证；二者解决协作管理与正式交付两个不同环节。",
+        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 98,
+        "missingProof": [
+          "还需要真实用户反馈确认是否愿意长期使用"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 36,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "Docker 重",
+            "weight": 22
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-14T19:43:46.948849+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/nocodb-officecli-fresh-deep.html"
+    },
+    {
       "id": "codebase-memory-repomix-l3-caveat",
       "title": "codebase-memory-mcp + Repomix",
       "summary": "codebase-memory-mcp 先用图搜索定位相关函数和文件，Repomix 再只打包命中的影响范围，形成更小的 Agent 代码上下文。",
@@ -5119,14 +5535,14 @@
             "verifiedAt": "2026-07-25T14:32:37.975923+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -8974,14 +9390,14 @@
             "verifiedAt": ""
           },
           "hub": {
-            "score": 34,
-            "level": "已验证节点",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
+            "score": 51,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 68,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 59,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
@@ -9408,14 +9824,14 @@
             "verifiedAt": "2026-07-21T20:43:50.133852+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -10465,14 +10881,14 @@
             "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -11733,14 +12149,14 @@
             "verifiedAt": "2026-07-14T00:55:32.314716+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         },
         {
@@ -12225,14 +12641,14 @@
             "verifiedAt": "2026-06-30"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12455,14 +12871,14 @@
             "verifiedAt": "2026-06-22T20:49:00+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
-            "categoryCount": 3,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12568,15 +12984,134 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-25T19:56:53.847932+08:00",
+    "generatedAt": "2026-07-25T20:30:35.744167+08:00",
     "summary": {
-      "total": 59,
-      "publicFeatured": 59,
-      "withReports": 59,
-      "withCaveatTags": 59,
-      "withInstallFrictionIndex": 59
+      "total": 61,
+      "publicFeatured": 61,
+      "withReports": 61,
+      "withCaveatTags": 61,
+      "withInstallFrictionIndex": 61
     },
     "items": [
+      {
+        "id": "project-lifecycle-changedetection-baserow-worker-smoke",
+        "title": "changedetection.io + baserow",
+        "tools": [
+          "changedetection.io",
+          "baserow"
+        ],
+        "evidenceScore": 95,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "changedetection-io 先生成可继续使用的中间结果，baserow 随后完成最终处理；这条链路已经用真实样本跑通。",
+        "category": "获取与监测",
+        "primaryCategory": "获取与监测",
+        "domains": [
+          "数据与分析",
+          "获取与监测",
+          "开发与 Agent",
+          "部署运维与安全"
+        ],
+        "tasks": [
+          "测试",
+          "交付",
+          "分析",
+          "协作",
+          "部署"
+        ],
+        "audiences": [
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
+        "notFor": "要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。",
+        "maxBenefit": "changedetection-io 先生成可继续使用的中间结果，baserow 随后完成最终处理；这条链路已经用真实样本跑通。",
+        "maxLimit": "只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。",
+        "caveatTags": [
+          "规模未验证",
+          "生产环境未验证",
+          "安装摩擦",
+          "Docker 重",
+          "大文件未验证",
+          "UI 未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 baserow 并手工准备输入",
+            "type": "手动替代",
+            "fit": "数据量较少且只偶尔处理时",
+            "tradeoff": "部署组件更少，但每次都要人工整理成 baserow 可读取的格式。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/project-lifecycle-changedetection-baserow-worker-smoke.html",
+        "verifiedAt": "2026-07-03T23:53:00.066311+08:00",
+        "installFriction": [],
+        "installFrictionIndex": {
+          "score": 50,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "Docker 重",
+              "weight": 22
+            },
+            {
+              "label": "大文件未验证",
+              "weight": 8
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
+          "本轮验证 Maxun 风格结构化采集结果可以落成 Baserow 可导入工具画像表；没有登录真实 Maxun 云端，也没有启动 Baserow 服务写入 API。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "一体化 SaaS 或桌面工具：更省心，但私有化、可替换性和局部流程接入通常更弱。",
+          "painPoint": "把大型代码库转成可查询图谱，让 Agent 能直接定位关键类、调用关系和源码片段，适合大型工程理解与审查。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 78,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
       {
         "id": "ytdlp-funclip-l3-caveat",
         "title": "yt-dlp + FunClip",
@@ -13979,29 +14514,29 @@
         }
       },
       {
-        "id": "fresh-datafoundry-caveman-worker-smoke",
-        "title": "datafoundry + caveman",
+        "id": "fresh-twiligent-headroom-worker-smoke",
+        "title": "twiligent + headroom",
         "tools": [
-          "datafoundry",
-          "caveman"
+          "twiligent",
+          "headroom"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
+        "useCase": "twiligent 先生成可继续使用的中间结果，headroom 随后完成最终处理；这条链路已经用真实样本跑通。",
         "category": "数据与分析",
         "primaryCategory": "数据与分析",
         "domains": [
           "开发与 Agent",
           "部署运维与安全",
-          "数据与分析",
-          "团队协作与沟通"
+          "团队协作与沟通",
+          "数据与分析"
         ],
         "tasks": [
-          "交付",
           "测试",
-          "生成",
+          "交付",
           "分析",
-          "协作"
+          "协作",
+          "生成"
         ],
         "audiences": [
           "团队与企业"
@@ -14015,47 +14550,44 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
-        "notFor": "需要语义大模型映射、已证明的大规模处理能力，或要求在全新环境中已有验证结果的场景。",
-        "maxBenefit": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
-        "maxLimit": "本次只验证了 DataFoundry 自带的 DataLink CSV 图构建路径；为避免凭据依赖并保持结果稳定，语义大模型映射被有意关闭。未进行规模测试，也未在全新环境中验证，因此其他数据规模和环境下的表现尚未得到证明。",
+        "suitableFor": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
+        "notFor": "要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。",
+        "maxBenefit": "twiligent 先生成可继续使用的中间结果，headroom 随后完成最终处理；这条链路已经用真实样本跑通。",
+        "maxLimit": "只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。",
         "caveatTags": [
-          "仅验证 DataLink CSV 路径",
-          "未启用语义大模型映射",
-          "未进行规模测试",
-          "未在全新环境验证",
+          "规模未验证",
+          "生产环境未验证",
           "安装摩擦",
-          "外部 API Key"
+          "大文件未验证"
         ],
         "alternatives": [
           {
-            "name": "单独使用 datafoundry",
-            "type": "手工衔接",
-            "fit": "适合只需生成 JSON、报告或日志，且愿意自行整理最终内容的用户。",
-            "tradeoff": "需要手工压缩中间结果，并自行统计或处理 token 指标。"
+            "name": "单独使用 headroom 并手工准备输入",
+            "type": "手动替代",
+            "fit": "数据量较少且只偶尔处理时",
+            "tradeoff": "部署组件更少，但每次都要人工整理成 headroom 可读取的格式。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-datafoundry-caveman-worker-smoke.html",
+        "reportUrl": "reports/fresh-twiligent-headroom-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "也未在全新环境中验证",
-          "因此其他数据规模和环境下的表现尚未得到证明"
+          "没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境"
         ],
         "installFrictionIndex": {
-          "score": 28,
-          "level": "中摩擦",
+          "score": 22,
+          "level": "低摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
             },
             {
-              "label": "外部 API Key",
-              "weight": 14
+              "label": "大文件未验证",
+              "weight": 8
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
           "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
@@ -14697,65 +15229,71 @@
         }
       },
       {
-        "id": "nocodb-officecli-fresh-deep",
-        "title": "NocoDB + OfficeCLI",
+        "id": "fresh-datafoundry-caveman-worker-smoke",
+        "title": "datafoundry + caveman",
         "tools": [
-          "NocoDB",
-          "OfficeCLI"
+          "datafoundry",
+          "caveman"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "项目台账、内容排期、客户清单和运营数据的数据库管理与 Excel 交付。",
+        "useCase": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
         "category": "数据与分析",
         "primaryCategory": "数据与分析",
         "domains": [
-          "数据与分析",
           "开发与 Agent",
           "部署运维与安全",
+          "数据与分析",
           "团队协作与沟通"
         ],
         "tasks": [
-          "协作",
-          "部署",
           "交付",
           "测试",
-          "生成"
+          "生成",
+          "分析",
+          "协作"
         ],
         "audiences": [
           "团队与企业"
         ],
         "traits": [
           "可自托管",
-          "CLI",
           "已全链路实测"
         ],
         "collections": [
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
-        "notFor": "只维护很小的一张本地表格，或完全不愿运行 Docker 服务的人。",
-        "maxBenefit": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
-        "maxLimit": "本轮使用新建 NocoDB 容器、3 行确定性业务数据和锁定版本的 OfficeCLI；未覆盖大表、并发写入和复杂 Excel 公式。；首次运行需要 Docker 镜像与 npm 包下载，后续缓存命中时启动更快。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
+        "notFor": "需要语义大模型映射、已证明的大规模处理能力，或要求在全新环境中已有验证结果的场景。",
+        "maxBenefit": "datafoundry 先接收提示词、源代码或 JSON，并生成 JSON、报告或日志；caveman 再接收这些中间结果，输出压缩后的回复和 token 指标。适合需要先整理数据或生成报告、再压缩交付内容的场景。",
+        "maxLimit": "本次只验证了 DataFoundry 自带的 DataLink CSV 图构建路径；为避免凭据依赖并保持结果稳定，语义大模型映射被有意关闭。未进行规模测试，也未在全新环境中验证，因此其他数据规模和环境下的表现尚未得到证明。",
         "caveatTags": [
+          "仅验证 DataLink CSV 路径",
+          "未启用语义大模型映射",
+          "未进行规模测试",
+          "未在全新环境验证",
           "安装摩擦",
-          "Docker 重"
+          "外部 API Key"
         ],
         "alternatives": [
           {
-            "name": "直接使用 Excel / Numbers",
-            "type": "轻量替代",
-            "fit": "单人维护、数据量小、无需数据库 API 和自动化交付的场景",
-            "tradeoff": "上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。"
+            "name": "单独使用 datafoundry",
+            "type": "手工衔接",
+            "fit": "适合只需生成 JSON、报告或日志，且愿意自行整理最终内容的用户。",
+            "tradeoff": "需要手工压缩中间结果，并自行统计或处理 token 指标。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/nocodb-officecli-fresh-deep.html",
+        "reportUrl": "reports/fresh-datafoundry-caveman-worker-smoke.html",
         "verifiedAt": "",
-        "installFriction": [],
+        "installFriction": [
+          "也未在全新环境中验证",
+          "因此其他数据规模和环境下的表现尚未得到证明"
+        ],
         "installFrictionIndex": {
-          "score": 36,
+          "score": 28,
           "level": "中摩擦",
           "factors": [
             {
@@ -14763,8 +15301,8 @@
               "weight": 14
             },
             {
-              "label": "Docker 重",
-              "weight": 22
+              "label": "外部 API Key",
+              "weight": 14
             }
           ],
           "summary": "可试，但建议先按报告准备依赖和配置。"
@@ -14779,17 +15317,17 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
-          "currentAlternative": "直接使用 Excel / Numbers：上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。",
-          "painPoint": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
-          "switchingReason": "NocoDB 负责多人维护、筛选和持久化台账，OfficeCLI 负责把读回的数据生成标准 Office 文件并自动验证；二者解决协作管理与正式交付两个不同环节。",
-          "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
           "confidence": "需求判断较强",
-          "confidenceScore": 98,
+          "confidenceScore": 86,
           "missingProof": [
-            "还需要真实用户反馈确认是否愿意长期使用"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -15271,6 +15809,113 @@
             "定期复测"
           ],
           "tested": true
+        }
+      },
+      {
+        "id": "nocodb-officecli-fresh-deep",
+        "title": "NocoDB + OfficeCLI",
+        "tools": [
+          "NocoDB",
+          "OfficeCLI"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "项目台账、内容排期、客户清单和运营数据的数据库管理与 Excel 交付。",
+        "category": "数据与分析",
+        "primaryCategory": "数据与分析",
+        "domains": [
+          "数据与分析",
+          "开发与 Agent",
+          "部署运维与安全",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "协作",
+          "部署",
+          "交付",
+          "测试",
+          "生成"
+        ],
+        "audiences": [
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "CLI",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
+        "notFor": "只维护很小的一张本地表格，或完全不愿运行 Docker 服务的人。",
+        "maxBenefit": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
+        "maxLimit": "本轮使用新建 NocoDB 容器、3 行确定性业务数据和锁定版本的 OfficeCLI；未覆盖大表、并发写入和复杂 Excel 公式。；首次运行需要 Docker 镜像与 npm 包下载，后续缓存命中时启动更快。",
+        "caveatTags": [
+          "安装摩擦",
+          "Docker 重"
+        ],
+        "alternatives": [
+          {
+            "name": "直接使用 Excel / Numbers",
+            "type": "轻量替代",
+            "fit": "单人维护、数据量小、无需数据库 API 和自动化交付的场景",
+            "tradeoff": "上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/nocodb-officecli-fresh-deep.html",
+        "verifiedAt": "",
+        "installFriction": [],
+        "installFrictionIndex": {
+          "score": 36,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "Docker 重",
+              "weight": 22
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "已经用数据库管理运营数据，但仍需定期交付 Excel 文件的个人和小团队。",
+          "currentAlternative": "直接使用 Excel / Numbers：上手更快，但多人协作、结构化查询和自动生成交付文件的能力较弱。",
+          "painPoint": "团队在 NocoDB 中持续维护结构化数据，交付时自动生成经过格式校验的 Excel，减少手工复制和漏项。",
+          "switchingReason": "NocoDB 负责多人维护、筛选和持久化台账，OfficeCLI 负责把读回的数据生成标准 Office 文件并自动验证；二者解决协作管理与正式交付两个不同环节。",
+          "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 98,
+          "missingProof": [
+            "还需要真实用户反馈确认是否愿意长期使用"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
         }
       },
       {
@@ -19703,6 +20348,50 @@
   },
   "tools": [
     {
+      "name": "changedetection.io",
+      "url": "https://github.com/dgtlmoon/changedetection.io",
+      "role": "采集/输入",
+      "inputs": [],
+      "outputs": [],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 36,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 50,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "baserow",
+      "url": "https://github.com/baserow/baserow",
+      "role": "存储/检索",
+      "inputs": [
+        "url",
+        "markdown",
+        "pdf"
+      ],
+      "outputs": [
+        "json",
+        "markdown",
+        "api"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 51,
+        "level": "有潜力",
+        "verifiedComboCount": 2,
+        "partnerCount": 2,
+        "categoryCount": 2,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 59,
+        "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+      }
+    },
+    {
       "name": "yt-dlp",
       "url": "https://github.com/yt-dlp/yt-dlp",
       "role": "采集/输入",
@@ -20004,14 +20693,14 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 92,
+        "score": 97,
         "level": "核心枢纽",
-        "verifiedComboCount": 8,
-        "partnerCount": 8,
-        "categoryCount": 3,
+        "verifiedComboCount": 9,
+        "partnerCount": 9,
+        "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 32,
-        "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+        "averageFriction": 30,
+        "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
       }
     },
     {
@@ -20222,28 +20911,26 @@
       }
     },
     {
-      "name": "datafoundry",
-      "url": "https://github.com/datagallery-lab/datafoundry",
+      "name": "twiligent",
+      "url": "https://github.com/spacesdrive/twiligent",
       "role": "采集/输入",
       "inputs": [
-        "prompt",
-        "source code",
+        "configuration",
         "json"
       ],
       "outputs": [
         "json",
-        "report",
         "logs"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 38,
+        "score": 39,
         "level": "有潜力",
         "verifiedComboCount": 1,
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 28,
+        "averageFriction": 22,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -20347,26 +21034,28 @@
       }
     },
     {
-      "name": "OfficeCLI",
-      "url": "https://github.com/iOfficeAI/OfficeCLI",
-      "role": "输出/交付",
+      "name": "datafoundry",
+      "url": "https://github.com/datagallery-lab/datafoundry",
+      "role": "采集/输入",
       "inputs": [
-        "csv",
+        "prompt",
+        "source code",
         "json"
       ],
       "outputs": [
-        "xlsx",
-        "validation report"
+        "json",
+        "report",
+        "logs"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 37,
+        "score": 38,
         "level": "有潜力",
         "verifiedComboCount": 1,
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 36,
+        "averageFriction": 28,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -20503,6 +21192,30 @@
         "deepTestSuccessRate": 100,
         "averageFriction": 43,
         "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
+      }
+    },
+    {
+      "name": "OfficeCLI",
+      "url": "https://github.com/iOfficeAI/OfficeCLI",
+      "role": "输出/交付",
+      "inputs": [
+        "csv",
+        "json"
+      ],
+      "outputs": [
+        "xlsx",
+        "validation report"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 37,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 36,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
@@ -20940,33 +21653,6 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 6,
-        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-      }
-    },
-    {
-      "name": "baserow",
-      "url": "https://github.com/baserow/baserow",
-      "role": "存储/检索",
-      "inputs": [
-        "structured record",
-        "CSV/table rows",
-        "API payload",
-        "PDF metadata"
-      ],
-      "outputs": [
-        "database table",
-        "grid records",
-        "API rows"
-      ],
-      "evidenceLevel": "L3",
-      "hub": {
-        "score": 34,
-        "level": "已验证节点",
-        "verifiedComboCount": 1,
-        "partnerCount": 1,
-        "categoryCount": 1,
-        "deepTestSuccessRate": 100,
-        "averageFriction": 68,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },

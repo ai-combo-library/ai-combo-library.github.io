@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T19:56:54.222445+08:00",
-  "records": 59,
+  "generatedAt": "2026-07-25T20:30:36.115144+08:00",
+  "records": 61,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -44,6 +44,7 @@
     "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
     "reports/fresh-ryu-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-headroom-worker-smoke.html",
+    "reports/fresh-twiligent-headroom-worker-smoke.html",
     "reports/fresh-whalecloud-pdf2md-paper-qa-worker-smoke.html",
     "reports/fresh-wisp-science-caveman-worker-smoke.html",
     "reports/funclip-videocaptioner-l0-worker-smoke.html",
@@ -61,6 +62,7 @@
     "reports/playwright-markitdown-l3-caveat.html",
     "reports/playwright-mcp-chrome-devtools-fresh-deep-worker-smoke.html",
     "reports/playwright-shadcn-l3-caveat.html",
+    "reports/project-lifecycle-changedetection-baserow-worker-smoke.html",
     "reports/repomix-actionlint-l3-caveat.html",
     "reports/shadcn-ui-playwright-skill-fresh-deep-worker-smoke.html",
     "reports/shortgpt-videocaptioner-l3-caveat-worker-smoke.html",
