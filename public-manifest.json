@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T20:30:36.115144+08:00",
-  "records": 61,
+  "generatedAt": "2026-07-25T20:46:59.498856+08:00",
+  "records": 62,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -51,6 +51,7 @@
     "reports/marker-chattts-worker-smoke.html",
     "reports/marker-haystack-l3-caveat.html",
     "reports/marker-llamaindex-l3-caveat.html",
+    "reports/markitdown-haystack-l3.html",
     "reports/markitdown-llamaindex-l3-caveat.html",
     "reports/maxun-mrdoc-l3-caveat.html",
     "reports/mdpdf-anything-llm-l2-blocked.html",
