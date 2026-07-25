@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-25T19:19:41.589314+08:00",
+  "generatedAt": "2026-07-25T19:22:38.419967+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 54,
-    "featured": 54,
-    "evidenceItems": 54,
-    "tools": 60
+    "records": 56,
+    "featured": 56,
+    "evidenceItems": 56,
+    "tools": 62
   },
   "records": [
     {
@@ -1238,49 +1238,52 @@
       "reportUrl": "reports/codebase-memory-mcp-marlin-worker-smoke.html"
     },
     {
-      "id": "fresh-bluerock-agent-nexus-worker-smoke",
-      "title": "bluerock + Agent Nexus",
-      "summary": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
+      "id": "fresh-deconvolute-headroom-worker-smoke",
+      "title": "deconvolute + Headroom",
+      "summary": "deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
-      "useCase": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
-      "testMethod": "使用 BlueRock OSS 0.2.0 的官方客户端与服务端示例生成实际结果，再将同一份结构化结果交给 Agent Nexus；随后核对事件记录、错误码传递、结果读取和报告生成情况。",
-      "testOutcome": "两个工具均完成了各自步骤，Agent Nexus 确实读取了 bluerock 的输出，并保留了 SQLSTATE 42703；事故报告成功生成，8 项检查全部通过。",
+      "audience": "适合希望把一批服务日志先整理成中间结果，再压缩重点、保留错误代码并按严重程度查看问题的个人用户或小团队。",
+      "useCase": "deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。",
+      "testMethod": "使用 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；先让 deconvolute 生成实际中间结果，再交给 headroom 处理，最后核对危险工具是否被拦截、错误代码是否保留、严重问题是否被优先呈现等 7 项检查。",
+      "testOutcome": "两个工具都成功完成处理，headroom 确实使用了 deconvolute 的输出；危险工具得到拦截，错误代码得到保留，严重问题被优先呈现，7 项检查全部通过。",
       "tools": [
         {
-          "name": "bluerock",
-          "url": "https://github.com/bluerock-io/bluerock",
+          "name": "deconvolute",
+          "url": "https://github.com/deconvolute-labs/deconvolute",
           "role": "采集/输入",
           "inputs": [
-            "tool request",
-            "project context"
+            "prompt",
+            "source code",
+            "json"
           ],
           "outputs": [
-            "structured tool result",
-            "json"
+            "json",
+            "report",
+            "logs"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "开发与 Agent",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "开发与 Agent",
-            "文档与知识"
+            "文档与知识",
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "采集"
+            "采集",
+            "交付"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
           "traits": [
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-21T21:08:11.665061+08:00"
+            "verifiedAt": "2026-07-21T19:34:37.621839+08:00"
           },
           "hub": {
             "score": 37,
@@ -1289,25 +1292,27 @@
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 38,
+            "averageFriction": 44,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "Agent Nexus",
-          "url": "https://github.com/deepaksinghcs14/agent-nexus",
-          "role": "自动执行",
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
           "inputs": [
-            "prompt",
-            "tool configuration",
-            "structured context"
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
           ],
           "outputs": [
-            "agent run",
-            "run trace",
-            "incident report"
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
           ],
-          "interface": "Web UI / REST API",
+          "interface": "Python library / CLI / proxy / MCP",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
@@ -1318,38 +1323,39 @@
           ],
           "tasks": [
             "测试",
-            "交付"
+            "检索"
           ],
           "audiences": [
             "开发者"
           ],
           "traits": [
+            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-21T21:08:11.665061+08:00"
+            "verifiedAt": "2026-07-21T19:34:37.621839+08:00"
           },
           "hub": {
-            "score": 52,
-            "level": "有潜力",
-            "verifiedComboCount": 2,
-            "partnerCount": 2,
-            "categoryCount": 2,
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 50,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 bluerock 并手工分析结果",
-          "type": "手工替代流程",
-          "fit": "适合只需要采集结构化工具结果，且能够自行排序日志、检查错误码和编写报告的用户。",
-          "tradeoff": "省去 Agent Nexus 的部署和模型准备，但中间结果整理、问题分析及报告编写都需要人工完成。"
+          "name": "单独使用 deconvolute 并手工整理结果",
+          "type": "简化流程",
+          "fit": "适合只需要生成日志、报告或 JSON，并愿意人工筛选错误代码和严重问题的场景。",
+          "tradeoff": "减少了一个工具和相关依赖，但失去 headroom 的内容压缩、结构化整理和重点排序。"
         }
       ],
-      "whyComboStillMatters": "bluerock 负责采集信息并输出结构化结果，Agent Nexus 负责读取这些结果、执行分析和生成事故报告。只用 bluerock 会停在数据整理阶段；只用 Agent Nexus，则需要人工准备结构化输入，因此两者组合才能覆盖从采集到报告的完整接力。",
+      "whyComboStillMatters": "deconvolute 负责生成并约束可继续处理的中间结果，headroom 负责压缩内容、保留检索线索并突出重要问题。只用 deconvolute，缺少后续的信息压缩和优先级整理；只用 headroom，则仍需人工准备适合输入的日志或结构化结果。",
       "category": "部署运维与安全",
       "primaryCategory": "部署运维与安全",
       "domains": [
@@ -1360,10 +1366,10 @@
       ],
       "tasks": [
         "测试",
+        "检索",
         "交付",
         "采集",
-        "分析",
-        "协作"
+        "分析"
       ],
       "audiences": [
         "开发者",
@@ -1379,18 +1385,18 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "需部署 PostgreSQL 与本地模型",
-        "日志必须按严重程度排序",
-        "原生工具能力尚未验证",
-        "未做全新环境和规模测试",
+        "仅验证80条日志",
+        "未验证大规模与实时流",
+        "策略模板需要修复",
+        "需要额外安装httpx",
         "安装摩擦",
-        "依赖缺失",
-        "UI 未验证"
+        "业务输出打折",
+        "需要人工修模板"
       ],
-      "suitableFor": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
-      "notFor": "希望轻量安装、直接处理未经整理的大批日志，或依赖 Agent Nexus 原生工具调用能力的用户。",
-      "maxBenefit": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
-      "maxLimit": "本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的压缩日志都会让本地模型只关注第一条 WARN，必须先按严重程度排序，才能稳定识别 SQLSTATE 42703。Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据；本次无工具调用的分析可以完成，但原生工具能力尚未验证。测试并非在全新环境中进行，也没有进行规模测试；其他环境和流量规模均未验证。",
+      "suitableFor": "适合希望把一批服务日志先整理成中间结果，再压缩重点、保留错误代码并按严重程度查看问题的个人用户或小团队。",
+      "notFor": "不适合需要直接处理百万行日志、实时日志流、多服务关联分析，或要求无需修补模板和补装依赖即可运行的场景。",
+      "maxBenefit": "deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。",
+      "maxLimit": "本次只验证了 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未验证百万行日志、实时流、多服务关联或其他规模，也未在全新隔离环境中验证。Deconvolute 0.1.5 生成的策略模板末尾有一个无效逗号，测试流程进行了最小修复并留下记录；其默认兜底规则还允许读取私有路径。Headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包未声明该依赖，因此测试时需要明确安装并提前检查 httpx。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -1401,7 +1407,7 @@
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
         "confidence": "需求判断较强",
-        "confidenceScore": 78,
+        "confidenceScore": 86,
         "missingProof": [
           "缺少为什么不用单体工具的解释"
         ]
@@ -1412,7 +1418,7 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 38,
+        "score": 44,
         "level": "中摩擦",
         "factors": [
           {
@@ -1420,12 +1426,12 @@
             "weight": 14
           },
           {
-            "label": "依赖缺失",
-            "weight": 18
+            "label": "业务输出打折",
+            "weight": 16
           },
           {
-            "label": "UI 未验证",
-            "weight": 6
+            "label": "需要人工修模板",
+            "weight": 14
           }
         ],
         "summary": "可试，但建议先按报告准备依赖和配置。"
@@ -1436,14 +1442,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-21T21:08:11.665061+08:00",
+        "testedAt": "2026-07-21T19:34:37.621839+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 8,
-        "checksTotal": 8
+        "checksPassed": 7,
+        "checksTotal": 7
       },
-      "reportUrl": "reports/fresh-bluerock-agent-nexus-worker-smoke.html"
+      "reportUrl": "reports/fresh-deconvolute-headroom-worker-smoke.html"
     },
     {
       "id": "meetily-nocodb-fresh-deep-worker-smoke",
@@ -1848,6 +1854,207 @@
         "checksTotal": 6
       },
       "reportUrl": "reports/stirling-pdf-second-brain-l3-caveat.html"
+    },
+    {
+      "id": "fresh-arc-caveman-worker-smoke",
+      "title": "arc + caveman",
+      "summary": "arc 先通过 INSPIRE 查询一篇已知的公开 arXiv 论文并生成 JSON、报告或日志，caveman 再接收这些中间结果，输出压缩后的回复和令牌统计；适合验证单篇已知论文查询结果的整理与压缩流程。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要用一篇已知公开论文验证“查询结果生成—回复压缩”流程的个人用户或小团队。",
+      "useCase": "arc 先通过 INSPIRE 查询一篇已知的公开 arXiv 论文并生成 JSON、报告或日志，caveman 再接收这些中间结果，输出压缩后的回复和令牌统计；适合验证单篇已知论文查询结果的整理与压缩流程。",
+      "testMethod": "用 arc 的真实 INSPIRE 数据源查询一篇已知的公开 arXiv 论文，将 arc 生成的实际结果交给 caveman，并核对中间结果与最终输出。",
+      "testOutcome": "arc 和 caveman 均成功完成处理，caveman 使用了 arc 的输出；两项结果检查均通过。",
+      "tools": [
+        {
+          "name": "arc",
+          "url": "https://github.com/tririver/arc",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T19:41:44.989301+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T19:41:44.989301+08:00"
+          },
+          "hub": {
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 3,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 28,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 arc 并手工整理结果",
+          "type": "手工替代流程",
+          "fit": "适合只需要查询已知论文并查看 JSON、报告或日志，不需要自动压缩回复和令牌统计的情况。",
+          "tradeoff": "需要自行整理 arc 的中间结果，无法获得本次组合中由 caveman 生成的压缩回复和令牌统计。"
+        }
+      ],
+      "whyComboStillMatters": "arc 负责查询论文并生成可继续处理的 JSON、报告或日志，caveman 负责把这些结果压缩成回复并提供令牌统计。只用 arc 无法得到已验证的压缩回复，只用 caveman 则缺少本次已验证的论文查询与中间结果来源。",
+      "category": "科研与教育",
+      "primaryCategory": "科研与教育",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业",
+        "研究与教育人员"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅测一篇已知论文",
+        "广泛搜索未验证",
+        "AI 摘要未验证",
+        "规模与全新环境未验证",
+        "外部 API Key"
+      ],
+      "suitableFor": "需要用一篇已知公开论文验证“查询结果生成—回复压缩”流程的个人用户或小团队。",
+      "notFor": "需要广泛检索论文、生成 AI 摘要，或已经要求在全新环境和较大规模下得到验证的用户。",
+      "maxBenefit": "arc 先通过 INSPIRE 查询一篇已知的公开 arXiv 论文并生成 JSON、报告或日志，caveman 再接收这些中间结果，输出压缩后的回复和令牌统计；适合验证单篇已知论文查询结果的整理与压缩流程。",
+      "maxLimit": "目前只测试了通过 arc 的真实 INSPIRE 数据源查询一篇已知的公开 arXiv 论文；广泛搜索和 AI 生成摘要尚未测试。测试并非在全新环境中完成，处理规模及其他环境也未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-21T19:41:44.989301+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-arc-caveman-worker-smoke.html"
     },
     {
       "id": "yt-dlp-chattts-public-seed-worker-smoke",
@@ -2380,14 +2587,14 @@
             "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 76,
+            "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 2,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -2581,14 +2788,14 @@
             "verifiedAt": "2026-07-14T02:20:54.788281+08:00"
           },
           "hub": {
-            "score": 76,
+            "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 2,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -2701,81 +2908,29 @@
       "reportUrl": "reports/codebase-memory-caveman-fresh-deep-worker-smoke.html"
     },
     {
-      "id": "fresh-jat-headroom-worker-smoke",
-      "title": "jat + Headroom",
-      "summary": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
+      "id": "fresh-bluerock-agent-nexus-worker-smoke",
+      "title": "bluerock + Agent Nexus",
+      "summary": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
-      "useCase": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
-      "testMethod": "使用 jat 的本地 SQLite 任务命令行创建 3 个固定的 ERROR、WARN 和 INFO 事件任务，再将包含 80 条 INFO、WARN 和 SQLSTATE ERROR 的服务日志交给 headroom 0.31.0 处理，最后核对中间结果、错误代码保留情况和严重程度排序。",
-      "testOutcome": "jat 和 headroom 均成功完成各自步骤，headroom 确实使用了 jat 生成的中间结果；错误代码得到保留，严重问题被优先呈现，6 项检查全部通过。",
+      "audience": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
+      "useCase": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
+      "testMethod": "使用 BlueRock OSS 0.2.0 的官方客户端与服务端示例生成实际结果，再将同一份结构化结果交给 Agent Nexus；随后核对事件记录、错误码传递、结果读取和报告生成情况。",
+      "testOutcome": "两个工具均完成了各自步骤，Agent Nexus 确实读取了 bluerock 的输出，并保留了 SQLSTATE 42703；事故报告成功生成，8 项检查全部通过。",
       "tools": [
         {
-          "name": "jat",
-          "url": "https://github.com/joewinke/jat",
+          "name": "bluerock",
+          "url": "https://github.com/bluerock-io/bluerock",
           "role": "采集/输入",
           "inputs": [
-            "prompt",
-            "source code",
+            "tool request",
+            "project context"
+          ],
+          "outputs": [
+            "structured tool result",
             "json"
           ],
-          "outputs": [
-            "json",
-            "report",
-            "logs"
-          ],
           "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
-          "domains": [
-            "文档与知识",
-            "开发与 Agent"
-          ],
-          "tasks": [
-            "测试",
-            "采集",
-            "交付"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-25T18:30:44.014854+08:00"
-          },
-          "hub": {
-            "score": 40,
-            "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 14,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "Headroom",
-          "url": "https://github.com/chopratejas/headroom",
-          "role": "处理/理解",
-          "inputs": [
-            "mcp json output",
-            "tool output",
-            "logs",
-            "code search results",
-            "rag chunks"
-          ],
-          "outputs": [
-            "compressed context",
-            "structured compressed json",
-            "retained retrieval signals"
-          ],
-          "interface": "Python library / CLI / proxy / MCP",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
@@ -2786,39 +2941,85 @@
           ],
           "tasks": [
             "测试",
-            "检索"
+            "采集"
           ],
           "audiences": [
             "开发者"
           ],
           "traits": [
-            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-25T18:30:44.014854+08:00"
+            "verifiedAt": "2026-07-21T21:08:11.665061+08:00"
           },
           "hub": {
-            "score": 92,
-            "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
-            "categoryCount": 3,
+            "score": 37,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 38,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Agent Nexus",
+          "url": "https://github.com/deepaksinghcs14/agent-nexus",
+          "role": "自动执行",
+          "inputs": [
+            "prompt",
+            "tool configuration",
+            "structured context"
+          ],
+          "outputs": [
+            "agent run",
+            "run trace",
+            "incident report"
+          ],
+          "interface": "Web UI / REST API",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T21:08:11.665061+08:00"
+          },
+          "hub": {
+            "score": 52,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 2,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 50,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 jat 并手工整理结果",
-          "type": "简化流程",
-          "fit": "只需要生成任务和日志中间结果，不需要自动压缩内容的场景。",
-          "tradeoff": "需要人工筛选关键信息、保留错误代码并排列严重程度。"
+          "name": "单独使用 bluerock 并手工分析结果",
+          "type": "手工替代流程",
+          "fit": "适合只需要采集结构化工具结果，且能够自行排序日志、检查错误码和编写报告的用户。",
+          "tradeoff": "省去 Agent Nexus 的部署和模型准备，但中间结果整理、问题分析及报告编写都需要人工完成。"
         }
       ],
-      "whyComboStillMatters": "jat 负责生成结构化的任务和日志中间结果，headroom 负责压缩这些内容并保留关键检索线索、突出严重问题。只用 jat 缺少后续压缩与优先级整理，只用 headroom 则没有本次已验证的 jat 输入整理步骤。",
+      "whyComboStillMatters": "bluerock 负责采集信息并输出结构化结果，Agent Nexus 负责读取这些结果、执行分析和生成事故报告。只用 bluerock 会停在数据整理阶段；只用 Agent Nexus，则需要人工准备结构化输入，因此两者组合才能覆盖从采集到报告的完整接力。",
       "category": "部署运维与安全",
       "primaryCategory": "部署运维与安全",
       "domains": [
@@ -2829,10 +3030,10 @@
       ],
       "tasks": [
         "测试",
-        "检索",
         "交付",
         "采集",
-        "分析"
+        "分析",
+        "协作"
       ],
       "audiences": [
         "开发者",
@@ -2846,21 +3047,23 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "强推荐",
+      "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "仅验证本地 SQLite 命令行",
-        "未做规模测试",
-        "非全新环境验证",
-        "需另行准备 httpx",
-        "安装摩擦"
+        "需部署 PostgreSQL 与本地模型",
+        "日志必须按严重程度排序",
+        "原生工具能力尚未验证",
+        "未做全新环境和规模测试",
+        "安装摩擦",
+        "依赖缺失",
+        "UI 未验证"
       ],
-      "suitableFor": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
-      "notFor": "需要直接处理百万行日志、实时日志流、多服务关联分析，或依赖 IDE、Postgres、tmux 协作及云端集成的场景。",
-      "maxBenefit": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
-      "maxLimit": "目前只验证了 jat 的本地 SQLite 任务命令行、3 个固定事件任务，以及 80 条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志。IDE、Postgres、tmux 协作、云端集成、百万行日志、实时流和多服务关联均未验证；测试也不是在全新环境中完成，未做规模测试。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但其安装包没有声明该依赖，本次测试环境另行安装并预先检查了 httpx。",
+      "suitableFor": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
+      "notFor": "希望轻量安装、直接处理未经整理的大批日志，或依赖 Agent Nexus 原生工具调用能力的用户。",
+      "maxBenefit": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
+      "maxLimit": "本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的压缩日志都会让本地模型只关注第一条 WARN，必须先按严重程度排序，才能稳定识别 SQLSTATE 42703。Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据；本次无工具调用的分析可以完成，但原生工具能力尚未验证。测试并非在全新环境中进行，也没有进行规模测试；其他环境和流量规模均未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
       "demandValidation": {
         "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
         "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
@@ -2868,7 +3071,7 @@
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
         "confidence": "需求判断较强",
-        "confidenceScore": 86,
+        "confidenceScore": 78,
         "missingProof": [
           "缺少为什么不用单体工具的解释"
         ]
@@ -2879,15 +3082,23 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 14,
-        "level": "低摩擦",
+        "score": 38,
+        "level": "中摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
+          },
+          {
+            "label": "依赖缺失",
+            "weight": 18
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
           }
         ],
-        "summary": "安装和配置成本相对可控。"
+        "summary": "可试，但建议先按报告准备依赖和配置。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -2895,14 +3106,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-25T18:30:44.014854+08:00",
+        "testedAt": "2026-07-21T21:08:11.665061+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 6,
-        "checksTotal": 6
+        "checksPassed": 8,
+        "checksTotal": 8
       },
-      "reportUrl": "reports/fresh-jat-headroom-worker-smoke.html"
+      "reportUrl": "reports/fresh-bluerock-agent-nexus-worker-smoke.html"
     },
     {
       "id": "actual-nocodb-l3-caveat",
@@ -3965,19 +4176,19 @@
       "reportUrl": "reports/actionlint-codex-plugin-cc-fresh-deep-worker-smoke.html"
     },
     {
-      "id": "fresh-adrian-headroom-worker-smoke",
-      "title": "Adrian + Headroom",
-      "summary": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+      "id": "fresh-jat-headroom-worker-smoke",
+      "title": "jat + Headroom",
+      "summary": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
-      "useCase": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
-      "testMethod": "使用 80 条固定的服务日志，先让 Adrian 按其独立个人敏感信息脱敏方式生成结果，再把同一份结果交给 headroom 处理，最后检查两个工具是否成功完成、错误代码是否保留，以及严重程度是否得到优先整理。",
-      "testOutcome": "Adrian 和 headroom 均成功完成处理，headroom 确实使用了 Adrian 生成的结果；错误代码得到保留，严重程度得到优先整理，6 项检查全部通过。",
+      "audience": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
+      "useCase": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
+      "testMethod": "使用 jat 的本地 SQLite 任务命令行创建 3 个固定的 ERROR、WARN 和 INFO 事件任务，再将包含 80 条 INFO、WARN 和 SQLSTATE ERROR 的服务日志交给 headroom 0.31.0 处理，最后核对中间结果、错误代码保留情况和严重程度排序。",
+      "testOutcome": "jat 和 headroom 均成功完成各自步骤，headroom 确实使用了 jat 生成的中间结果；错误代码得到保留，严重问题被优先呈现，6 项检查全部通过。",
       "tools": [
         {
-          "name": "Adrian",
-          "url": "https://github.com/secureagentics/Adrian",
+          "name": "jat",
+          "url": "https://github.com/joewinke/jat",
           "role": "采集/输入",
           "inputs": [
             "prompt",
@@ -3993,10 +4204,10 @@
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "开发与 Agent",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "开发与 Agent",
-            "文档与知识"
+            "文档与知识",
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
@@ -4004,13 +4215,13 @@
             "交付"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
           "traits": [
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-25T14:32:37.975923+08:00"
+            "verifiedAt": "2026-07-25T18:30:44.014854+08:00"
           },
           "hub": {
             "score": 40,
@@ -4060,29 +4271,29 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-25T14:32:37.975923+08:00"
+            "verifiedAt": "2026-07-25T18:30:44.014854+08:00"
           },
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 Adrian 并手工整理结果",
-          "type": "手工替代方案",
-          "fit": "只需要完成个人敏感信息脱敏，且日志数量允许人工查看时。",
-          "tradeoff": "可以省去 headroom 环节，但需要人工压缩内容、保留错误线索并按严重程度整理。"
+          "name": "单独使用 jat 并手工整理结果",
+          "type": "简化流程",
+          "fit": "只需要生成任务和日志中间结果，不需要自动压缩内容的场景。",
+          "tradeoff": "需要人工筛选关键信息、保留错误代码并排列严重程度。"
         }
       ],
-      "whyComboStillMatters": "Adrian 负责先对日志中的个人敏感信息进行脱敏，headroom 负责随后压缩内容并保留重要检索线索。只用 Adrian，无法得到本次验证过的压缩和优先整理结果；只用 headroom，则缺少本次验证过的前置脱敏步骤。",
+      "whyComboStillMatters": "jat 负责生成结构化的任务和日志中间结果，headroom 负责压缩这些内容并保留关键检索线索、突出严重问题。只用 jat 缺少后续压缩与优先级整理，只用 headroom 则没有本次已验证的 jat 输入整理步骤。",
       "category": "部署运维与安全",
       "primaryCategory": "部署运维与安全",
       "domains": [
@@ -4112,16 +4323,16 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "仅测80条日志",
-        "未测大规模与实时流",
-        "非全新空白环境",
-        "需额外确认httpx依赖",
+        "仅验证本地 SQLite 命令行",
+        "未做规模测试",
+        "非全新环境验证",
+        "需另行准备 httpx",
         "安装摩擦"
       ],
-      "suitableFor": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
-      "notFor": "需要验证 Adrian 后端分类器或 WebSocket 集成，或要处理百万行日志、实时日志流及多服务关联分析的人。",
-      "maxBenefit": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
-      "maxLimit": "本次只验证了 Adrian 已记录的独立个人敏感信息脱敏方式，没有验证其后端分类器和 WebSocket 集成。全新安装需要能够获取 Adrian 的公开 Python 依赖。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包当前未声明这一依赖，因此本次测试额外安装并检查了 httpx。测试仅使用 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未在全新空白环境中验证，也未验证百万行日志、实时流、多服务关联或其他规模与环境。",
+      "suitableFor": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
+      "notFor": "需要直接处理百万行日志、实时日志流、多服务关联分析，或依赖 IDE、Postgres、tmux 协作及云端集成的场景。",
+      "maxBenefit": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
+      "maxLimit": "目前只验证了 jat 的本地 SQLite 任务命令行、3 个固定事件任务，以及 80 条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志。IDE、Postgres、tmux 协作、云端集成、百万行日志、实时流和多服务关联均未验证；测试也不是在全新环境中完成，未做规模测试。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但其安装包没有声明该依赖，本次测试环境另行安装并预先检查了 httpx。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -4159,14 +4370,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-25T14:32:37.975923+08:00",
+        "testedAt": "2026-07-25T18:30:44.014854+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
         "checksPassed": 6,
         "checksTotal": 6
       },
-      "reportUrl": "reports/fresh-adrian-headroom-worker-smoke.html"
+      "reportUrl": "reports/fresh-jat-headroom-worker-smoke.html"
     },
     {
       "id": "shortgpt-videocaptioner-l3-caveat-worker-smoke",
@@ -4808,6 +5019,210 @@
         "checksTotal": 3
       },
       "reportUrl": "reports/codebase-memory-repomix-l3-caveat.html"
+    },
+    {
+      "id": "fresh-adrian-headroom-worker-smoke",
+      "title": "Adrian + Headroom",
+      "summary": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
+      "useCase": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+      "testMethod": "使用 80 条固定的服务日志，先让 Adrian 按其独立个人敏感信息脱敏方式生成结果，再把同一份结果交给 headroom 处理，最后检查两个工具是否成功完成、错误代码是否保留，以及严重程度是否得到优先整理。",
+      "testOutcome": "Adrian 和 headroom 均成功完成处理，headroom 确实使用了 Adrian 生成的结果；错误代码得到保留，严重程度得到优先整理，6 项检查全部通过。",
+      "tools": [
+        {
+          "name": "Adrian",
+          "url": "https://github.com/secureagentics/Adrian",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-25T14:32:37.975923+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
+          ],
+          "outputs": [
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
+          ],
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "检索"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-25T14:32:37.975923+08:00"
+          },
+          "hub": {
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
+            "categoryCount": 3,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 Adrian 并手工整理结果",
+          "type": "手工替代方案",
+          "fit": "只需要完成个人敏感信息脱敏，且日志数量允许人工查看时。",
+          "tradeoff": "可以省去 headroom 环节，但需要人工压缩内容、保留错误线索并按严重程度整理。"
+        }
+      ],
+      "whyComboStillMatters": "Adrian 负责先对日志中的个人敏感信息进行脱敏，headroom 负责随后压缩内容并保留重要检索线索。只用 Adrian，无法得到本次验证过的压缩和优先整理结果；只用 headroom，则缺少本次验证过的前置脱敏步骤。",
+      "category": "部署运维与安全",
+      "primaryCategory": "部署运维与安全",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "检索",
+        "交付",
+        "采集",
+        "分析"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅测80条日志",
+        "未测大规模与实时流",
+        "非全新空白环境",
+        "需额外确认httpx依赖",
+        "安装摩擦"
+      ],
+      "suitableFor": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
+      "notFor": "需要验证 Adrian 后端分类器或 WebSocket 集成，或要处理百万行日志、实时日志流及多服务关联分析的人。",
+      "maxBenefit": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+      "maxLimit": "本次只验证了 Adrian 已记录的独立个人敏感信息脱敏方式，没有验证其后端分类器和 WebSocket 集成。全新安装需要能够获取 Adrian 的公开 Python 依赖。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包当前未声明这一依赖，因此本次测试额外安装并检查了 httpx。测试仅使用 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未在全新空白环境中验证，也未验证百万行日志、实时流、多服务关联或其他规模与环境。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-25T14:32:37.975923+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 6,
+        "checksTotal": 6
+      },
+      "reportUrl": "reports/fresh-adrian-headroom-worker-smoke.html"
     },
     {
       "id": "funclip-videocaptioner-l0-worker-smoke",
@@ -7051,14 +7466,14 @@
             "verifiedAt": "2026-07-21T20:39:28.528586+08:00"
           },
           "hub": {
-            "score": 76,
+            "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 2,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -8585,12 +9000,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -9230,14 +9645,14 @@
             "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
           },
           "hub": {
-            "score": 76,
+            "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 2,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 32,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -9652,12 +10067,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -10928,12 +11343,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         },
         {
@@ -11196,12 +11611,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -11426,12 +11841,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
+            "verifiedComboCount": 8,
+            "partnerCount": 8,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -11537,13 +11952,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-25T19:19:41.322912+08:00",
+    "generatedAt": "2026-07-25T19:22:38.145912+08:00",
     "summary": {
-      "total": 54,
-      "publicFeatured": 54,
-      "withReports": 54,
-      "withCaveatTags": 54,
-      "withInstallFrictionIndex": 54
+      "total": 56,
+      "publicFeatured": 56,
+      "withReports": 56,
+      "withCaveatTags": 56,
+      "withInstallFrictionIndex": 56
     },
     "items": [
       {
@@ -12246,29 +12661,29 @@
         }
       },
       {
-        "id": "fresh-bluerock-agent-nexus-worker-smoke",
-        "title": "bluerock + Agent Nexus",
+        "id": "fresh-deconvolute-headroom-worker-smoke",
+        "title": "deconvolute + headroom",
         "tools": [
-          "bluerock",
-          "Agent Nexus"
+          "deconvolute",
+          "headroom"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
+        "useCase": "deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。",
         "category": "部署运维与安全",
         "primaryCategory": "部署运维与安全",
         "domains": [
-          "开发与 Agent",
           "部署运维与安全",
-          "数据与分析",
-          "团队协作与沟通"
+          "开发与 Agent",
+          "团队协作与沟通",
+          "数据与分析"
         ],
         "tasks": [
-          "分析",
           "测试",
           "交付",
           "生成",
-          "采集"
+          "分析",
+          "协作"
         ],
         "audiences": [
           "开发者",
@@ -12276,7 +12691,6 @@
         ],
         "traits": [
           "可自托管",
-          "CLI",
           "已全链路实测"
         ],
         "collections": [
@@ -12284,37 +12698,36 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "适合特定人群",
-        "suitableFor": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
-        "notFor": "希望轻量安装、直接处理未经整理的大批日志，或依赖 Agent Nexus 原生工具调用能力的用户。",
-        "maxBenefit": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
-        "maxLimit": "本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的压缩日志都会让本地模型只关注第一条 WARN，必须先按严重程度排序，才能稳定识别 SQLSTATE 42703。Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据；本次无工具调用的分析可以完成，但原生工具能力尚未验证。测试并非在全新环境中进行，也没有进行规模测试；其他环境和流量规模均未验证。",
+        "suitableFor": "适合希望把一批服务日志先整理成中间结果，再压缩重点、保留错误代码并按严重程度查看问题的个人用户或小团队。",
+        "notFor": "不适合需要直接处理百万行日志、实时日志流、多服务关联分析，或要求无需修补模板和补装依赖即可运行的场景。",
+        "maxBenefit": "deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。",
+        "maxLimit": "本次只验证了 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未验证百万行日志、实时流、多服务关联或其他规模，也未在全新隔离环境中验证。Deconvolute 0.1.5 生成的策略模板末尾有一个无效逗号，测试流程进行了最小修复并留下记录；其默认兜底规则还允许读取私有路径。Headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包未声明该依赖，因此测试时需要明确安装并提前检查 httpx。",
         "caveatTags": [
-          "需部署 PostgreSQL 与本地模型",
-          "日志必须按严重程度排序",
-          "原生工具能力尚未验证",
-          "未做全新环境和规模测试",
+          "仅验证80条日志",
+          "未验证大规模与实时流",
+          "策略模板需要修复",
+          "需要额外安装httpx",
           "安装摩擦",
-          "依赖缺失",
-          "UI 未验证"
+          "业务输出打折",
+          "需要人工修模板"
         ],
         "alternatives": [
           {
-            "name": "单独使用 bluerock 并手工分析结果",
-            "type": "手工替代流程",
-            "fit": "适合只需要采集结构化工具结果，且能够自行排序日志、检查错误码和编写报告的用户。",
-            "tradeoff": "省去 Agent Nexus 的部署和模型准备，但中间结果整理、问题分析及报告编写都需要人工完成。"
+            "name": "单独使用 deconvolute 并手工整理结果",
+            "type": "简化流程",
+            "fit": "适合只需要生成日志、报告或 JSON，并愿意人工筛选错误代码和严重问题的场景。",
+            "tradeoff": "减少了一个工具和相关依赖，但失去 headroom 的内容压缩、结构化整理和重点排序。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-bluerock-agent-nexus-worker-smoke.html",
+        "reportUrl": "reports/fresh-deconvolute-headroom-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据",
-          "测试并非在全新环境中进行",
-          "其他环境和流量规模均未验证"
+          "也未在全新隔离环境中验证",
+          "因此测试时需要明确安装并提前检查 httpx"
         ],
         "installFrictionIndex": {
-          "score": 38,
+          "score": 44,
           "level": "中摩擦",
           "factors": [
             {
@@ -12322,18 +12735,18 @@
               "weight": 14
             },
             {
-              "label": "依赖缺失",
-              "weight": 18
+              "label": "业务输出打折",
+              "weight": 16
             },
             {
-              "label": "UI 未验证",
-              "weight": 6
+              "label": "需要人工修模板",
+              "weight": 14
             }
           ],
           "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的..."
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -12350,7 +12763,7 @@
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
           "confidence": "需求判断较强",
-          "confidenceScore": 78,
+          "confidenceScore": 86,
           "missingProof": [
             "缺少为什么不用单体工具的解释"
           ]
@@ -12589,6 +13002,115 @@
             "定期复测"
           ],
           "tested": true
+        }
+      },
+      {
+        "id": "fresh-arc-caveman-worker-smoke",
+        "title": "arc + caveman",
+        "tools": [
+          "arc",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "arc 先通过 INSPIRE 查询一篇已知的公开 arXiv 论文并生成 JSON、报告或日志，caveman 再接收这些中间结果，输出压缩后的回复和令牌统计；适合验证单篇已知论文查询结果的整理与压缩流程。",
+        "category": "科研与教育",
+        "primaryCategory": "科研与教育",
+        "domains": [
+          "科研与教育",
+          "开发与 Agent",
+          "部署运维与安全",
+          "数据与分析"
+        ],
+        "tasks": [
+          "测试",
+          "交付",
+          "生成",
+          "分析",
+          "检索"
+        ],
+        "audiences": [
+          "研究与教育人员",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "需要用一篇已知公开论文验证“查询结果生成—回复压缩”流程的个人用户或小团队。",
+        "notFor": "需要广泛检索论文、生成 AI 摘要，或已经要求在全新环境和较大规模下得到验证的用户。",
+        "maxBenefit": "arc 先通过 INSPIRE 查询一篇已知的公开 arXiv 论文并生成 JSON、报告或日志，caveman 再接收这些中间结果，输出压缩后的回复和令牌统计；适合验证单篇已知论文查询结果的整理与压缩流程。",
+        "maxLimit": "目前只测试了通过 arc 的真实 INSPIRE 数据源查询一篇已知的公开 arXiv 论文；广泛搜索和 AI 生成摘要尚未测试。测试并非在全新环境中完成，处理规模及其他环境也未验证。",
+        "caveatTags": [
+          "仅测一篇已知论文",
+          "广泛搜索未验证",
+          "AI 摘要未验证",
+          "规模与全新环境未验证",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 arc 并手工整理结果",
+            "type": "手工替代流程",
+            "fit": "适合只需要查询已知论文并查看 JSON、报告或日志，不需要自动压缩回复和令牌统计的情况。",
+            "tradeoff": "需要自行整理 arc 的中间结果，无法获得本次组合中由 caveman 生成的压缩回复和令牌统计。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-arc-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "测试并非在全新环境中完成",
+          "处理规模及其他环境也未验证"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "目前只测试了通过 arc 的真实 INSPIRE 数据源查询一篇已知的公开 arXiv 论文；广泛搜索和 AI 生成摘要尚未测试。测试并非在全新环境中完成，处理规模及其他环境也未验证。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
         }
       },
       {
@@ -13075,29 +13597,29 @@
         }
       },
       {
-        "id": "fresh-jat-headroom-worker-smoke",
-        "title": "jat + headroom",
+        "id": "fresh-bluerock-agent-nexus-worker-smoke",
+        "title": "bluerock + Agent Nexus",
         "tools": [
-          "jat",
-          "headroom"
+          "bluerock",
+          "Agent Nexus"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
+        "useCase": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
         "category": "部署运维与安全",
         "primaryCategory": "部署运维与安全",
         "domains": [
-          "部署运维与安全",
           "开发与 Agent",
-          "文档与知识",
-          "数据与分析"
+          "部署运维与安全",
+          "数据与分析",
+          "团队协作与沟通"
         ],
         "tasks": [
-          "测试",
           "分析",
+          "测试",
           "交付",
-          "协作",
-          "检索"
+          "生成",
+          "采集"
         ],
         "audiences": [
           "开发者",
@@ -13112,46 +13634,57 @@
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "强推荐",
-        "suitableFor": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
-        "notFor": "需要直接处理百万行日志、实时日志流、多服务关联分析，或依赖 IDE、Postgres、tmux 协作及云端集成的场景。",
-        "maxBenefit": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
-        "maxLimit": "目前只验证了 jat 的本地 SQLite 任务命令行、3 个固定事件任务，以及 80 条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志。IDE、Postgres、tmux 协作、云端集成、百万行日志、实时流和多服务关联均未验证；测试也不是在全新环境中完成，未做规模测试。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但其安装包没有声明该依赖，本次测试环境另行安装并预先检查了 httpx。",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
+        "notFor": "希望轻量安装、直接处理未经整理的大批日志，或依赖 Agent Nexus 原生工具调用能力的用户。",
+        "maxBenefit": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
+        "maxLimit": "本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的压缩日志都会让本地模型只关注第一条 WARN，必须先按严重程度排序，才能稳定识别 SQLSTATE 42703。Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据；本次无工具调用的分析可以完成，但原生工具能力尚未验证。测试并非在全新环境中进行，也没有进行规模测试；其他环境和流量规模均未验证。",
         "caveatTags": [
-          "仅验证本地 SQLite 命令行",
-          "未做规模测试",
-          "非全新环境验证",
-          "需另行准备 httpx",
-          "安装摩擦"
+          "需部署 PostgreSQL 与本地模型",
+          "日志必须按严重程度排序",
+          "原生工具能力尚未验证",
+          "未做全新环境和规模测试",
+          "安装摩擦",
+          "依赖缺失",
+          "UI 未验证"
         ],
         "alternatives": [
           {
-            "name": "单独使用 jat 并手工整理结果",
-            "type": "简化流程",
-            "fit": "只需要生成任务和日志中间结果，不需要自动压缩内容的场景。",
-            "tradeoff": "需要人工筛选关键信息、保留错误代码并排列严重程度。"
+            "name": "单独使用 bluerock 并手工分析结果",
+            "type": "手工替代流程",
+            "fit": "适合只需要采集结构化工具结果，且能够自行排序日志、检查错误码和编写报告的用户。",
+            "tradeoff": "省去 Agent Nexus 的部署和模型准备，但中间结果整理、问题分析及报告编写都需要人工完成。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-jat-headroom-worker-smoke.html",
+        "reportUrl": "reports/fresh-bluerock-agent-nexus-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "测试也不是在全新环境中完成",
-          "本次测试环境另行安装并预先检查了 httpx"
+          "Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据",
+          "测试并非在全新环境中进行",
+          "其他环境和流量规模均未验证"
         ],
         "installFrictionIndex": {
-          "score": 14,
-          "level": "低摩擦",
+          "score": 38,
+          "level": "中摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
+            },
+            {
+              "label": "依赖缺失",
+              "weight": 18
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
             }
           ],
-          "summary": "安装和配置成本相对可控。"
+          "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+          "本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的..."
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -13160,7 +13693,7 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
         "demandValidation": {
           "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
@@ -13168,7 +13701,7 @@
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
           "confidence": "需求判断较强",
-          "confidenceScore": 86,
+          "confidenceScore": 78,
           "missingProof": [
             "缺少为什么不用单体工具的解释"
           ]
@@ -13775,29 +14308,29 @@
         }
       },
       {
-        "id": "fresh-adrian-headroom-worker-smoke",
-        "title": "Adrian + headroom",
+        "id": "fresh-jat-headroom-worker-smoke",
+        "title": "jat + headroom",
         "tools": [
-          "Adrian",
+          "jat",
           "headroom"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+        "useCase": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
         "category": "部署运维与安全",
         "primaryCategory": "部署运维与安全",
         "domains": [
           "部署运维与安全",
           "开发与 Agent",
-          "团队协作与沟通",
+          "文档与知识",
           "数据与分析"
         ],
         "tasks": [
           "测试",
           "分析",
           "交付",
-          "生成",
-          "协作"
+          "协作",
+          "检索"
         ],
         "audiences": [
           "开发者",
@@ -13805,6 +14338,7 @@
         ],
         "traits": [
           "可自托管",
+          "CLI",
           "已全链路实测"
         ],
         "collections": [
@@ -13812,32 +14346,31 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
-        "notFor": "需要验证 Adrian 后端分类器或 WebSocket 集成，或要处理百万行日志、实时日志流及多服务关联分析的人。",
-        "maxBenefit": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
-        "maxLimit": "本次只验证了 Adrian 已记录的独立个人敏感信息脱敏方式，没有验证其后端分类器和 WebSocket 集成。全新安装需要能够获取 Adrian 的公开 Python 依赖。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包当前未声明这一依赖，因此本次测试额外安装并检查了 httpx。测试仅使用 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未在全新空白环境中验证，也未验证百万行日志、实时流、多服务关联或其他规模与环境。",
+        "suitableFor": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
+        "notFor": "需要直接处理百万行日志、实时日志流、多服务关联分析，或依赖 IDE、Postgres、tmux 协作及云端集成的场景。",
+        "maxBenefit": "jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。",
+        "maxLimit": "目前只验证了 jat 的本地 SQLite 任务命令行、3 个固定事件任务，以及 80 条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志。IDE、Postgres、tmux 协作、云端集成、百万行日志、实时流和多服务关联均未验证；测试也不是在全新环境中完成，未做规模测试。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但其安装包没有声明该依赖，本次测试环境另行安装并预先检查了 httpx。",
         "caveatTags": [
-          "仅测80条日志",
-          "未测大规模与实时流",
-          "非全新空白环境",
-          "需额外确认httpx依赖",
+          "仅验证本地 SQLite 命令行",
+          "未做规模测试",
+          "非全新环境验证",
+          "需另行准备 httpx",
           "安装摩擦"
         ],
         "alternatives": [
           {
-            "name": "单独使用 Adrian 并手工整理结果",
-            "type": "手工替代方案",
-            "fit": "只需要完成个人敏感信息脱敏，且日志数量允许人工查看时。",
-            "tradeoff": "可以省去 headroom 环节，但需要人工压缩内容、保留错误线索并按严重程度整理。"
+            "name": "单独使用 jat 并手工整理结果",
+            "type": "简化流程",
+            "fit": "只需要生成任务和日志中间结果，不需要自动压缩内容的场景。",
+            "tradeoff": "需要人工筛选关键信息、保留错误代码并排列严重程度。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-adrian-headroom-worker-smoke.html",
+        "reportUrl": "reports/fresh-jat-headroom-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "因此本次测试额外安装并检查了 httpx",
-          "未在全新空白环境中验证",
-          "也未验证百万行日志、实时流、多服务关联或其他规模与环境"
+          "测试也不是在全新环境中完成",
+          "本次测试环境另行安装并预先检查了 httpx"
         ],
         "installFrictionIndex": {
           "score": 14,
@@ -14265,6 +14798,116 @@
             "用已知问题仓库做回归，验证上下文是否足够支持审查。"
           ],
           "tested": true
+        }
+      },
+      {
+        "id": "fresh-adrian-headroom-worker-smoke",
+        "title": "Adrian + headroom",
+        "tools": [
+          "Adrian",
+          "headroom"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+        "category": "部署运维与安全",
+        "primaryCategory": "部署运维与安全",
+        "domains": [
+          "部署运维与安全",
+          "开发与 Agent",
+          "团队协作与沟通",
+          "数据与分析"
+        ],
+        "tasks": [
+          "测试",
+          "分析",
+          "交付",
+          "生成",
+          "协作"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
+        "notFor": "需要验证 Adrian 后端分类器或 WebSocket 集成，或要处理百万行日志、实时日志流及多服务关联分析的人。",
+        "maxBenefit": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+        "maxLimit": "本次只验证了 Adrian 已记录的独立个人敏感信息脱敏方式，没有验证其后端分类器和 WebSocket 集成。全新安装需要能够获取 Adrian 的公开 Python 依赖。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包当前未声明这一依赖，因此本次测试额外安装并检查了 httpx。测试仅使用 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未在全新空白环境中验证，也未验证百万行日志、实时流、多服务关联或其他规模与环境。",
+        "caveatTags": [
+          "仅测80条日志",
+          "未测大规模与实时流",
+          "非全新空白环境",
+          "需额外确认httpx依赖",
+          "安装摩擦"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 Adrian 并手工整理结果",
+            "type": "手工替代方案",
+            "fit": "只需要完成个人敏感信息脱敏，且日志数量允许人工查看时。",
+            "tradeoff": "可以省去 headroom 环节，但需要人工压缩内容、保留错误线索并按严重程度整理。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-adrian-headroom-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "因此本次测试额外安装并检查了 httpx",
+          "未在全新空白环境中验证",
+          "也未验证百万行日志、实时流、多服务关联或其他规模与环境"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
         }
       },
       {
@@ -18335,16 +18978,18 @@
       }
     },
     {
-      "name": "bluerock",
-      "url": "https://github.com/bluerock-io/bluerock",
+      "name": "deconvolute",
+      "url": "https://github.com/deconvolute-labs/deconvolute",
       "role": "采集/输入",
       "inputs": [
-        "tool request",
-        "project context"
+        "prompt",
+        "source code",
+        "json"
       ],
       "outputs": [
-        "structured tool result",
-        "json"
+        "json",
+        "report",
+        "logs"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
@@ -18354,34 +18999,36 @@
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 38,
+        "averageFriction": 44,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
-      "name": "Agent Nexus",
-      "url": "https://github.com/deepaksinghcs14/agent-nexus",
-      "role": "自动执行",
+      "name": "Headroom",
+      "url": "https://github.com/chopratejas/headroom",
+      "role": "处理/理解",
       "inputs": [
-        "prompt",
-        "tool configuration",
-        "structured context"
+        "mcp json output",
+        "tool output",
+        "logs",
+        "code search results",
+        "rag chunks"
       ],
       "outputs": [
-        "agent run",
-        "run trace",
-        "incident report"
+        "compressed context",
+        "structured compressed json",
+        "retained retrieval signals"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 52,
-        "level": "有潜力",
-        "verifiedComboCount": 2,
-        "partnerCount": 2,
-        "categoryCount": 2,
+        "score": 92,
+        "level": "核心枢纽",
+        "verifiedComboCount": 8,
+        "partnerCount": 8,
+        "categoryCount": 3,
         "deepTestSuccessRate": 100,
-        "averageFriction": 50,
-        "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+        "averageFriction": 32,
+        "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 3 类场景。"
       }
     },
     {
@@ -18468,6 +19115,57 @@
         "deepTestSuccessRate": 100,
         "averageFriction": 52,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "arc",
+      "url": "https://github.com/tririver/arc",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "caveman",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "role": "输出/交付",
+      "inputs": [
+        "json",
+        "report",
+        "draft response"
+      ],
+      "outputs": [
+        "compressed response",
+        "token metrics"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 92,
+        "level": "核心枢纽",
+        "verifiedComboCount": 5,
+        "partnerCount": 5,
+        "categoryCount": 3,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 28,
+        "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
       }
     },
     {
@@ -18567,82 +19265,53 @@
       }
     },
     {
-      "name": "caveman",
-      "url": "https://github.com/JuliusBrussee/caveman",
-      "role": "输出/交付",
-      "inputs": [
-        "json",
-        "report",
-        "draft response"
-      ],
-      "outputs": [
-        "compressed response",
-        "token metrics"
-      ],
-      "evidenceLevel": "L3-caveat",
-      "hub": {
-        "score": 76,
-        "level": "核心枢纽",
-        "verifiedComboCount": 4,
-        "partnerCount": 4,
-        "categoryCount": 2,
-        "deepTestSuccessRate": 100,
-        "averageFriction": 32,
-        "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
-      }
-    },
-    {
-      "name": "jat",
-      "url": "https://github.com/joewinke/jat",
+      "name": "bluerock",
+      "url": "https://github.com/bluerock-io/bluerock",
       "role": "采集/输入",
       "inputs": [
-        "prompt",
-        "source code",
-        "json"
+        "tool request",
+        "project context"
       ],
       "outputs": [
-        "json",
-        "report",
-        "logs"
+        "structured tool result",
+        "json"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 40,
+        "score": 37,
         "level": "有潜力",
         "verifiedComboCount": 1,
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 14,
+        "averageFriction": 38,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
-      "name": "Headroom",
-      "url": "https://github.com/chopratejas/headroom",
-      "role": "处理/理解",
+      "name": "Agent Nexus",
+      "url": "https://github.com/deepaksinghcs14/agent-nexus",
+      "role": "自动执行",
       "inputs": [
-        "mcp json output",
-        "tool output",
-        "logs",
-        "code search results",
-        "rag chunks"
+        "prompt",
+        "tool configuration",
+        "structured context"
       ],
       "outputs": [
-        "compressed context",
-        "structured compressed json",
-        "retained retrieval signals"
+        "agent run",
+        "run trace",
+        "incident report"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 92,
-        "level": "核心枢纽",
-        "verifiedComboCount": 7,
-        "partnerCount": 7,
-        "categoryCount": 3,
+        "score": 52,
+        "level": "有潜力",
+        "verifiedComboCount": 2,
+        "partnerCount": 2,
+        "categoryCount": 2,
         "deepTestSuccessRate": 100,
-        "averageFriction": 30,
-        "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+        "averageFriction": 50,
+        "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
       }
     },
     {
@@ -18767,8 +19436,8 @@
       }
     },
     {
-      "name": "Adrian",
-      "url": "https://github.com/secureagentics/Adrian",
+      "name": "jat",
+      "url": "https://github.com/joewinke/jat",
       "role": "采集/输入",
       "inputs": [
         "prompt",
@@ -18869,6 +19538,32 @@
         "deepTestSuccessRate": 100,
         "averageFriction": 55,
         "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "Adrian",
+      "url": "https://github.com/secureagentics/Adrian",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
