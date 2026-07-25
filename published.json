@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-25T18:32:41.666722+08:00",
+  "generatedAt": "2026-07-25T19:06:58.491899+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 49,
-    "featured": 49,
-    "evidenceItems": 49,
-    "tools": 55
+    "records": 52,
+    "featured": 52,
+    "evidenceItems": 52,
+    "tools": 58
   },
   "records": [
     {
@@ -2380,14 +2380,14 @@
             "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 53,
-            "level": "有潜力",
-            "verifiedComboCount": 2,
-            "partnerCount": 2,
+            "score": 76,
+            "level": "核心枢纽",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
             "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 42,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
@@ -2581,14 +2581,14 @@
             "verifiedAt": "2026-07-14T02:20:54.788281+08:00"
           },
           "hub": {
-            "score": 53,
-            "level": "有潜力",
-            "verifiedComboCount": 2,
-            "partnerCount": 2,
+            "score": 76,
+            "level": "核心枢纽",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
             "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 42,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 32,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
@@ -3845,14 +3845,14 @@
             "verifiedAt": "2026-07-14T02:20:56.598003+08:00"
           },
           "hub": {
-            "score": 36,
+            "score": 46,
             "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 52,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 59,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -6957,66 +6957,20 @@
       "reportUrl": "reports/mdpdf-unstructured-l3-caveat.html"
     },
     {
-      "id": "fresh-nexus-godot-demo-projects-worker-smoke",
-      "title": "godot-demo-projects + nexus",
-      "summary": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
+      "id": "fresh-ryu-caveman-worker-smoke",
+      "title": "ryu + caveman",
+      "summary": "ryu 先接收提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再读取这些中间结果，输出压缩后的回复和令牌指标。适合需要把生成结果继续压缩整理的个人用户和小团队。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
-      "useCase": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
-      "testMethod": "取用官方暂停示例的真实源代码包，在无界面模式下运行五帧，再将该代码包交给 nexus；随后核对 nexus 是否读取工作区文件、使用原始代码，并保持代码哈希不变。",
-      "testOutcome": "两个工具均成功运行，nexus 确实读取并使用了 godot-demo-projects 提供的代码包，代码哈希保持不变，六项检查全部通过。",
+      "audience": "需要将提示词、源代码或 JSON 先整理成报告，再压缩为回复并查看令牌指标的个人用户和小团队。",
+      "useCase": "ryu 先接收提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再读取这些中间结果，输出压缩后的回复和令牌指标。适合需要把生成结果继续压缩整理的个人用户和小团队。",
+      "testMethod": "安装 Ryu 0.0.8 的预编译程序，在本地回环地址运行 Gateway，通过本地 Ollama 完成一次结果固定的请求；随后将 ryu 生成的实际报告交给 caveman，并核对中间结果与最终输出。",
+      "testOutcome": "ryu 成功完成本地对话请求并生成报告，caveman 成功使用该报告完成压缩；3 项检查全部通过。",
       "tools": [
         {
-          "name": "godot-demo-projects",
-          "url": "https://github.com/godotengine/godot-demo-projects",
-          "role": "存储/检索",
-          "inputs": [
-            "url",
-            "zip archive"
-          ],
-          "outputs": [
-            "source code",
-            "godot projects"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
-          "domains": [
-            "文档与知识",
-            "开发与 Agent"
-          ],
-          "tasks": [
-            "测试",
-            "存储",
-            "检索"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-21T20:52:36.908454+08:00"
-          },
-          "hub": {
-            "score": 40,
-            "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 6,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "nexus",
-          "url": "https://github.com/nexus-research-lab/nexus",
-          "role": "自动执行",
+          "name": "ryu",
+          "url": "https://github.com/amajorai/ryu",
+          "role": "采集/输入",
           "inputs": [
             "prompt",
             "source code",
@@ -7034,12 +6988,11 @@
           "primaryCategory": "文档与知识",
           "domains": [
             "文档与知识",
-            "开发与 Agent",
-            "科研与教育"
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "检索",
+            "采集",
             "交付"
           ],
           "audiences": [
@@ -7049,43 +7002,89 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-21T20:52:36.908454+08:00"
+            "verifiedAt": "2026-07-21T20:39:28.528586+08:00"
           },
           "hub": {
-            "score": 40,
+            "score": 38,
             "level": "有潜力",
             "verifiedComboCount": 1,
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 6,
+            "averageFriction": 28,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T20:39:28.528586+08:00"
+          },
+          "hub": {
+            "score": 76,
+            "level": "核心枢纽",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 2,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 32,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 godot-demo-projects",
-          "type": "手工处理",
-          "fit": "只需要获取和检查 Godot 示例项目，不需要 nexus 自动处理时。",
-          "tradeoff": "需要自行读取源代码、整理中间结果并记录检查情况。"
+          "name": "单独使用 ryu 并手工压缩结果",
+          "type": "手工替代流程",
+          "fit": "只需要 ryu 生成 JSON、报告或日志，且可以自行整理最终回复时。",
+          "tradeoff": "无需接入 caveman，但压缩结果和令牌指标需要手工处理或放弃。"
         }
       ],
-      "whyComboStillMatters": "godot-demo-projects 提供可实际运行的 Godot 示例项目，nexus 负责读取和自动处理这些源代码。只用 godot-demo-projects 只能获得示例代码；只用 nexus 则缺少这次已验证的真实 Godot 代码输入。",
+      "whyComboStillMatters": "ryu 负责接收原始输入并生成 JSON、报告或日志，caveman 负责把 JSON、报告或回复草稿压缩成最终回复并给出令牌指标。只用 ryu 缺少已经验证的后续压缩处理，只用 caveman 则仍需另行准备可供处理的中间结果。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
         "文档与知识",
-        "科研与教育",
-        "团队协作与沟通"
+        "团队协作与沟通",
+        "科研与教育"
       ],
       "tasks": [
         "测试",
-        "检索",
-        "存储",
         "交付",
-        "分析"
+        "采集",
+        "分析",
+        "协作"
       ],
       "audiences": [
         "开发者",
@@ -7101,16 +7100,17 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "仅测试一个示例",
-        "未测试画面与交互",
-        "未调用付费大模型",
-        "规模与干净环境未验证",
-        "UI 未验证"
+        "仅测 Ryu 0.0.8",
+        "仅测本地 Ollama 单次请求",
+        "Core、CLI、多模态及远程提供方未测",
+        "规模与全新环境未验证",
+        "安装摩擦",
+        "外部 API Key"
       ],
-      "suitableFor": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
-      "notFor": "需要确认画面渲染、键盘或鼠标交互、完整示例库表现、付费大模型调用或多轮对话效果的人。",
-      "maxBenefit": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
-      "maxLimit": "目前只验证了官方暂停示例在无界面模式下运行五帧，以及 nexus 对真实 Godot 源代码包的读取和工作区结果留存。画面渲染、输入交互、其余示例项目、付费大模型服务和多轮对话均未测试；干净环境与更大规模也未验证。",
+      "suitableFor": "需要将提示词、源代码或 JSON 先整理成报告，再压缩为回复并查看令牌指标的个人用户和小团队。",
+      "notFor": "需要使用 Ryu Core、CLI、多模态线路或远程模型提供方，或者要求已有大规模、全新环境验证依据的场景。",
+      "maxBenefit": "ryu 先接收提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再读取这些中间结果，输出压缩后的回复和令牌指标。适合需要把生成结果继续压缩整理的个人用户和小团队。",
+      "maxLimit": "目前只验证了 Ryu 0.0.8 预编译程序、在本地回环地址运行的 Gateway，以及通过本地 Ollama 完成的一次结果固定的请求。Ryu Core、CLI、多模态线路和远程模型提供方均未验证；大规模使用未验证，测试也不是在全新环境中进行。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -7119,12 +7119,11 @@
         "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
         "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
-        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
-        "confidence": "需求判断中等",
-        "confidenceScore": 66,
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
         "missingProof": [
-          "缺少为什么不用单体工具的解释",
-          "上手成本较高，需要确认用户是否愿意折腾"
+          "缺少为什么不用单体工具的解释"
         ]
       },
       "longTermUse": {
@@ -7133,15 +7132,19 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 6,
-        "level": "低摩擦",
+        "score": 28,
+        "level": "中摩擦",
         "factors": [
           {
-            "label": "UI 未验证",
-            "weight": 6
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "外部 API Key",
+            "weight": 14
           }
         ],
-        "summary": "安装和配置成本相对可控。"
+        "summary": "可试，但建议先按报告准备依赖和配置。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -7149,14 +7152,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-21T20:52:36.908454+08:00",
+        "testedAt": "2026-07-21T20:39:28.528586+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 6,
-        "checksTotal": 6
+        "checksPassed": 3,
+        "checksTotal": 3
       },
-      "reportUrl": "reports/fresh-nexus-godot-demo-projects-worker-smoke.html"
+      "reportUrl": "reports/fresh-ryu-caveman-worker-smoke.html"
     },
     {
       "id": "excalidraw-markitdown-l3-caveat",
@@ -7365,20 +7368,66 @@
       "reportUrl": "reports/excalidraw-markitdown-l3-caveat.html"
     },
     {
-      "id": "fresh-llm4ad-next-headroom-worker-smoke",
-      "title": "LLM4AD_Next + Headroom",
-      "summary": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "id": "fresh-nexus-godot-demo-projects-worker-smoke",
+      "title": "godot-demo-projects + nexus",
+      "summary": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
-      "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
-      "testMethod": "使用仓库提供的确定性模拟服务运行 LLM4AD_Next，执行一代、一个岛和两个个体的旅行商问题任务；随后把生成的日志交给 headroom 0.31.0 处理，并核对输出是否保留错误代码、是否按严重程度排序。",
-      "testOutcome": "两款工具均成功完成各自环节，headroom 确实处理了 LLM4AD_Next 生成的结果；共检查7项，全部通过。处理样本包含80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR。",
+      "audience": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
+      "useCase": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
+      "testMethod": "取用官方暂停示例的真实源代码包，在无界面模式下运行五帧，再将该代码包交给 nexus；随后核对 nexus 是否读取工作区文件、使用原始代码，并保持代码哈希不变。",
+      "testOutcome": "两个工具均成功运行，nexus 确实读取并使用了 godot-demo-projects 提供的代码包，代码哈希保持不变，六项检查全部通过。",
       "tools": [
         {
-          "name": "LLM4AD_Next",
-          "url": "https://github.com/Optima-CityU/LLM4AD_Next",
-          "role": "采集/输入",
+          "name": "godot-demo-projects",
+          "url": "https://github.com/godotengine/godot-demo-projects",
+          "role": "存储/检索",
+          "inputs": [
+            "url",
+            "zip archive"
+          ],
+          "outputs": [
+            "source code",
+            "godot projects"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "存储",
+            "检索"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T20:52:36.908454+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 6,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "nexus",
+          "url": "https://github.com/nexus-research-lab/nexus",
+          "role": "自动执行",
           "inputs": [
             "prompt",
             "source code",
@@ -7396,11 +7445,12 @@
           "primaryCategory": "文档与知识",
           "domains": [
             "文档与知识",
-            "开发与 Agent"
+            "开发与 Agent",
+            "科研与教育"
           ],
           "tasks": [
             "测试",
-            "采集",
+            "检索",
             "交付"
           ],
           "audiences": [
@@ -7410,7 +7460,7 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
+            "verifiedAt": "2026-07-21T20:52:36.908454+08:00"
           },
           "hub": {
             "score": 40,
@@ -7419,83 +7469,33 @@
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 14,
+            "averageFriction": 6,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "Headroom",
-          "url": "https://github.com/chopratejas/headroom",
-          "role": "处理/理解",
-          "inputs": [
-            "mcp json output",
-            "tool output",
-            "logs",
-            "code search results",
-            "rag chunks"
-          ],
-          "outputs": [
-            "compressed context",
-            "structured compressed json",
-            "retained retrieval signals"
-          ],
-          "interface": "Python library / CLI / proxy / MCP",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "开发与 Agent",
-          "domains": [
-            "开发与 Agent",
-            "文档与知识"
-          ],
-          "tasks": [
-            "测试",
-            "检索"
-          ],
-          "audiences": [
-            "开发者"
-          ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
-          },
-          "hub": {
-            "score": 92,
-            "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
-            "categoryCount": 3,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 LLM4AD_Next 并手工整理结果",
-          "type": "手工替代流程",
-          "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
-          "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
+          "name": "单独使用 godot-demo-projects",
+          "type": "手工处理",
+          "fit": "只需要获取和检查 Godot 示例项目，不需要 nexus 自动处理时。",
+          "tradeoff": "需要自行读取源代码、整理中间结果并记录检查情况。"
         }
       ],
-      "whyComboStillMatters": "LLM4AD_Next 负责执行上游任务并生成 JSON、报告或日志，headroom 负责压缩和整理这些结果，同时保留重要检索线索。只用 LLM4AD_Next，需要人工整理输出；只用 headroom，则没有这次验证中的上游任务结果可供处理。",
+      "whyComboStillMatters": "godot-demo-projects 提供可实际运行的 Godot 示例项目，nexus 负责读取和自动处理这些源代码。只用 godot-demo-projects 只能获得示例代码；只用 nexus 则缺少这次已验证的真实 Godot 代码输入。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
         "文档与知识",
-        "团队协作与沟通",
-        "科研与教育"
+        "科研与教育",
+        "团队协作与沟通"
       ],
       "tasks": [
         "测试",
         "检索",
+        "存储",
         "交付",
-        "采集",
         "分析"
       ],
       "audiences": [
@@ -7512,16 +7512,16 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "仅验证80条日志",
-        "未做规模测试",
-        "依赖 Python 3.12",
-        "需额外安装 httpx",
-        "安装摩擦"
+        "仅测试一个示例",
+        "未测试画面与交互",
+        "未调用付费大模型",
+        "规模与干净环境未验证",
+        "UI 未验证"
       ],
-      "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
-      "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
-      "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
-      "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
+      "suitableFor": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
+      "notFor": "需要确认画面渲染、键盘或鼠标交互、完整示例库表现、付费大模型调用或多轮对话效果的人。",
+      "maxBenefit": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
+      "maxLimit": "目前只验证了官方暂停示例在无界面模式下运行五帧，以及 nexus 对真实 Godot 源代码包的读取和工作区结果留存。画面渲染、输入交互、其余示例项目、付费大模型服务和多轮对话均未测试；干净环境与更大规模也未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -7530,11 +7530,12 @@
         "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
         "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
-        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 86,
+        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+        "confidence": "需求判断中等",
+        "confidenceScore": 66,
         "missingProof": [
-          "缺少为什么不用单体工具的解释"
+          "缺少为什么不用单体工具的解释",
+          "上手成本较高，需要确认用户是否愿意折腾"
         ]
       },
       "longTermUse": {
@@ -7543,12 +7544,12 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 14,
+        "score": 6,
         "level": "低摩擦",
         "factors": [
           {
-            "label": "安装摩擦",
-            "weight": 14
+            "label": "UI 未验证",
+            "weight": 6
           }
         ],
         "summary": "安装和配置成本相对可控。"
@@ -7559,14 +7560,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-24T09:24:27.893397+08:00",
+        "testedAt": "2026-07-21T20:52:36.908454+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 7,
-        "checksTotal": 7
+        "checksPassed": 6,
+        "checksTotal": 6
       },
-      "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html"
+      "reportUrl": "reports/fresh-nexus-godot-demo-projects-worker-smoke.html"
     },
     {
       "id": "crawlee-unstructured-bookstack-light-l3",
@@ -7838,33 +7839,34 @@
       "reportUrl": "reports/crawlee-unstructured-bookstack-light-l3.html"
     },
     {
-      "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
-      "title": "UI5 MCP Server + Playwright",
-      "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "id": "fresh-kimi-cli-codex-plugin-cc-worker-smoke",
+      "title": "kimi-cli + codex-plugin-cc",
+      "summary": "kimi-cli 先检查一处格式错误的 GitHub Actions 步骤并生成诊断报告，codex-plugin-cc 再读取该报告和工作流文件，完成修改与复核。适合处理已有检查报告的单个工作流配置问题。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-      "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-      "testMethod": "通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。",
-      "testOutcome": "应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。",
+      "audience": "需要检查并修改单个 GitHub Actions 工作流配置问题，且能够查看诊断报告和修改结果的开发者或小团队。",
+      "useCase": "kimi-cli 先检查一处格式错误的 GitHub Actions 步骤并生成诊断报告，codex-plugin-cc 再读取该报告和工作流文件，完成修改与复核。适合处理已有检查报告的单个工作流配置问题。",
+      "testMethod": "通过 Ollama 在本地使用 Gemma 4 12B，让 kimi-cli 诊断一个格式错误的 GitHub Actions 步骤；随后将生成的报告交给 codex-plugin-cc，并检查它是否读取该报告、处理工作流文件，以及修改后的文件能否通过 actionlint 检查。",
+      "testOutcome": "kimi-cli 找出了无效字段并生成了后续可用的工作流检查报告；codex-plugin-cc 成功读取该报告，处理后的工作流通过 actionlint 检查。4 项检查全部通过，但首次后续处理因多次重新连接仍失败，重新开始后才成功。",
       "tools": [
         {
-          "name": "UI5 MCP Server",
-          "url": "https://github.com/UI5/mcp-server",
-          "role": "处理/理解",
+          "name": "kimi-cli",
+          "url": "https://github.com/MoonshotAI/kimi-cli",
+          "role": "采集/输入",
           "inputs": [
-            "ui5 project spec",
-            "source code"
+            "prompt",
+            "source code",
+            "json"
           ],
           "outputs": [
-            "web app",
-            "url",
-            "validation report"
+            "json",
+            "report",
+            "logs"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L2",
+          "evidenceLevel": "L3-caveat",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
@@ -7872,93 +7874,103 @@
           ],
           "tasks": [
             "测试",
+            "采集",
             "交付"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
           "testResults": {
-            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+            "verifiedAt": "2026-07-21T20:26:26.172566+08:00"
           },
           "hub": {
-            "score": 38,
-            "level": "有潜力",
+            "score": 34,
+            "level": "已验证节点",
             "verifiedComboCount": 1,
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
+            "averageFriction": 66,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "Playwright",
-          "url": "https://github.com/microsoft/playwright",
-          "role": "输出/交付",
+          "name": "codex-plugin-cc",
+          "url": "https://github.com/openai/codex-plugin-cc",
+          "role": "自动执行",
           "inputs": [
-            "web app",
-            "url"
+            "lint report",
+            "workflow yaml",
+            "source code"
           ],
           "outputs": [
-            "test result",
-            "screenshot",
-            "console log"
+            "patch",
+            "review result"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L2",
+          "evidenceLevel": "L3-caveat",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
-            "文档与知识"
+            "文档与知识",
+            "自动化与业务流程"
           ],
           "tasks": [
-            "测试"
+            "测试",
+            "编排",
+            "交付"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
           "testResults": {
-            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+            "verifiedAt": "2026-07-21T20:26:26.172566+08:00"
           },
           "hub": {
-            "score": 64,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
-            "categoryCount": 2,
+            "score": 46,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 43,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 59,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "SAP Fiori tools + 人工浏览器测试",
-          "type": "官方替代",
-          "fit": "已经使用 SAP IDE 插件并由人工完成验收",
-          "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+          "name": "kimi-cli 加人工修改",
+          "type": "单工具加手工处理",
+          "fit": "先用 kimi-cli 生成诊断报告，再由人工修改工作流 YAML 并复核结果。",
+          "tradeoff": "不依赖 codex-plugin-cc 完成后续处理，但修改和检查需要人工完成。"
         }
       ],
-      "whyComboStillMatters": "UI5 MCP Server 负责遵循 UI5 工程规范生成代码，Playwright 负责验证浏览器中的真实结果；组合后可以及时发现“项目生成成功但页面不可用”的问题。",
+      "whyComboStillMatters": "kimi-cli 负责发现问题并形成诊断报告，codex-plugin-cc 负责依据报告修改和复核工作流。只用 kimi-cli 时，报告之后仍需人工处理；只用 codex-plugin-cc，则缺少本次已经验证过的前置诊断结果。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
         "文档与知识",
-        "团队协作与沟通",
-        "科研与教育"
+        "自动化与业务流程",
+        "团队协作与沟通"
       ],
       "tasks": [
         "测试",
         "交付",
+        "采集",
         "分析",
-        "协作",
-        "采集"
+        "编排"
       ],
       "audiences": [
         "开发者",
@@ -7972,32 +7984,35 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "强推荐",
+      "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "首次下载较大",
-        "仅验证示例应用",
+        "仅验证单个错误步骤",
+        "未在全新环境验证",
+        "未做规模测试",
+        "首次处理失败后重试成功",
         "安装摩擦",
-        "外部账号",
-        "UI 未验证"
+        "外部 API Key",
+        "大文件未验证",
+        "业务输出打折",
+        "需要人工修模板"
       ],
-      "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-      "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
-      "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-      "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+      "suitableFor": "需要检查并修改单个 GitHub Actions 工作流配置问题，且能够查看诊断报告和修改结果的开发者或小团队。",
+      "notFor": "需要大规模批量处理、已证明可在全新环境中直接运行，或不能接受失败后重新开始的场景。",
+      "maxBenefit": "kimi-cli 先检查一处格式错误的 GitHub Actions 步骤并生成诊断报告，codex-plugin-cc 再读取该报告和工作流文件，完成修改与复核。适合处理已有检查报告的单个工作流配置问题。",
+      "maxLimit": "目前只验证了通过 Ollama 在本地使用 Gemma 4 12B，诊断并处理一个格式错误的 GitHub Actions 步骤。首次后续处理在多次重新连接后仍未成功，重新开始后才完成。没有在全新环境中验证，也未验证批量任务、更大项目规模或其他运行环境。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
       "demandValidation": {
         "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
         "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
         "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断中等",
-        "confidenceScore": 65,
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
         "missingProof": [
-          "缺少为什么不用单体工具的解释",
-          "缺少完整组合闭环证据"
+          "缺少为什么不用单体工具的解释"
         ]
       },
       "longTermUse": {
@@ -8006,23 +8021,31 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 30,
-        "level": "中摩擦",
+        "score": 66,
+        "level": "高摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
           },
           {
-            "label": "外部账号",
-            "weight": 10
+            "label": "外部 API Key",
+            "weight": 14
           },
           {
-            "label": "UI 未验证",
-            "weight": 6
+            "label": "大文件未验证",
+            "weight": 8
+          },
+          {
+            "label": "业务输出打折",
+            "weight": 16
+          },
+          {
+            "label": "需要人工修模板",
+            "weight": 14
           }
         ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
+        "summary": "需要预留安装、账号、依赖或机器配置成本。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -8030,14 +8053,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-14T18:20:16.846346+08:00",
+        "testedAt": "2026-07-21T20:26:26.172566+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 2,
-        "checksTotal": 2
+        "checksPassed": 4,
+        "checksTotal": 4
       },
-      "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
+      "reportUrl": "reports/fresh-kimi-cli-codex-plugin-cc-worker-smoke.html"
     },
     {
       "id": "mdpdf-baserow-l3-caveat",
@@ -8265,6 +8288,1256 @@
       "reportUrl": "reports/mdpdf-baserow-l3-caveat.html"
     },
     {
+      "id": "fresh-wisp-science-caveman-worker-smoke",
+      "title": "wisp-science + caveman",
+      "summary": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
+      "useCase": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+      "testMethod": "先用真实样本运行 wisp-science 生成输出，再把同一份输出交给 caveman，最后核对中间文件、最终结果以及后者是否实际使用了前者的输出。",
+      "testOutcome": "两个工具均成功完成处理，caveman 确实使用了 wisp-science 的输出，2 项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "wisp-science",
+          "url": "https://github.com/xuzhougeng/wisp-science",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "科研与教育",
+          "domains": [
+            "科研与教育",
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "研究与教育人员"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "科研与教育",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
+          },
+          "hub": {
+            "score": 76,
+            "level": "核心枢纽",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 2,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 32,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 wisp-science 并手工整理结果",
+          "type": "手工替代流程",
+          "fit": "只需要生成 JSON、报告或日志，不要求自动压缩最终回复或统计令牌时。",
+          "tradeoff": "需要人工处理中间结果，且不会获得本次已验证的 caveman 压缩输出与令牌指标。"
+        }
+      ],
+      "whyComboStillMatters": "wisp-science 负责生成 JSON、报告或日志，caveman 负责将这些内容压缩成最终回复并提供令牌指标。只用 wisp-science，缺少已经验证的压缩交付步骤；只用 caveman，则仍需另行准备可供处理的 JSON、报告或回复草稿。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "科研与教育",
+        "文档与知识",
+        "团队协作与沟通"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "依赖内置 Python 内核",
+        "完整代理流程需要凭据",
+        "未在全新环境验证",
+        "未做规模测试",
+        "外部 API Key"
+      ],
+      "suitableFor": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
+      "notFor": "需要凭据支持的完整代理流程、要求在全新环境中直接使用，或需要处理能力已经过规模验证的场景。",
+      "maxBenefit": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+      "maxLimit": "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-25T19:04:44.476265+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-wisp-science-caveman-worker-smoke.html"
+    },
+    {
+      "id": "fresh-scholar-rag-headroom-worker-smoke",
+      "title": "scholar-rag + Headroom",
+      "summary": "scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要验证 scholar-rag 局部论文节点输出能否交给 headroom 压缩整理，并希望保留错误代码、严重程度等排查线索的个人或小团队。",
+      "useCase": "scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。",
+      "testMethod": "运行 scholar-rag 的真实论文节点生成逻辑及错误分支，将生成的实际输出交给 headroom 处理，再逐项核对错误信息、错误代码和严重程度是否保留并得到合理排序。测试样本为 80 条固定服务日志，包含 INFO、WARN 和 SQLSTATE ERROR。",
+      "testOutcome": "scholar-rag 与 headroom 均成功完成本次处理，headroom 确实使用了前者的输出，并保留了原始错误和错误代码、按严重程度突出关键信息；7 项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "scholar-rag",
+          "url": "https://github.com/PangHu1020/scholar-rag",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "检索",
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T20:43:50.133852+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
+          ],
+          "outputs": [
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
+          ],
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "检索",
+            "测试"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-21T20:43:50.133852+08:00"
+          },
+          "hub": {
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 3,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 scholar-rag 并手工整理输出",
+          "type": "单工具人工流程",
+          "fit": "适合只需要生成论文节点结果或日志、处理量较小且可以人工筛选的情况。",
+          "tradeoff": "无需接入 headroom，但需要手工压缩内容、筛选错误代码并判断信息优先级。"
+        }
+      ],
+      "whyComboStillMatters": "scholar-rag 负责产生论文处理过程中的结构化结果和日志，headroom 负责压缩、整理并保留其中的重要线索。只用 scholar-rag，需要自行筛选和压缩输出；只用 headroom，则没有 scholar-rag 生成的论文节点结果可供处理，因此两者承担的是前后衔接的不同环节。",
+      "category": "文档与知识",
+      "primaryCategory": "文档与知识",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "检索",
+        "交付",
+        "采集",
+        "分析"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅验证局部论文节点",
+        "需额外确认 httpx 依赖",
+        "仅测 80 条固定日志",
+        "未验证全新环境与大规模数据",
+        "安装摩擦"
+      ],
+      "suitableFor": "需要验证 scholar-rag 局部论文节点输出能否交给 headroom 压缩整理，并希望保留错误代码、严重程度等排查线索的个人或小团队。",
+      "notFor": "需要完整处理 PDF、连接 Milvus 或 PostgreSQL、执行向量生成与检索、多智能体回答，或者处理百万行日志、实时数据流和多服务关联分析的用户；这些场景均未验证。",
+      "maxBenefit": "scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。",
+      "maxLimit": "目前只验证了 scholar-rag 的真实论文节点生成逻辑和错误分支，没有覆盖完整 PDF、Milvus、PostgreSQL、向量生成、检索或多智能体回答流程。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，本次测试额外安装并预先检查了 httpx。规模仅覆盖 80 条固定服务日志，未验证百万行日志、实时流或多服务关联，也未进行规模测试和全新环境验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-21T20:43:50.133852+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 7,
+        "checksTotal": 7
+      },
+      "reportUrl": "reports/fresh-scholar-rag-headroom-worker-smoke.html"
+    },
+    {
+      "id": "fresh-llm4ad-next-headroom-worker-smoke",
+      "title": "LLM4AD_Next + Headroom",
+      "summary": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
+      "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "testMethod": "使用仓库提供的确定性模拟服务运行 LLM4AD_Next，执行一代、一个岛和两个个体的旅行商问题任务；随后把生成的日志交给 headroom 0.31.0 处理，并核对输出是否保留错误代码、是否按严重程度排序。",
+      "testOutcome": "两款工具均成功完成各自环节，headroom 确实处理了 LLM4AD_Next 生成的结果；共检查7项，全部通过。处理样本包含80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR。",
+      "tools": [
+        {
+          "name": "LLM4AD_Next",
+          "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
+          ],
+          "outputs": [
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
+          ],
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "检索"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
+          },
+          "hub": {
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 3,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 LLM4AD_Next 并手工整理结果",
+          "type": "手工替代流程",
+          "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
+          "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
+        }
+      ],
+      "whyComboStillMatters": "LLM4AD_Next 负责执行上游任务并生成 JSON、报告或日志，headroom 负责压缩和整理这些结果，同时保留重要检索线索。只用 LLM4AD_Next，需要人工整理输出；只用 headroom，则没有这次验证中的上游任务结果可供处理。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "检索",
+        "交付",
+        "采集",
+        "分析"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅验证80条日志",
+        "未做规模测试",
+        "依赖 Python 3.12",
+        "需额外安装 httpx",
+        "安装摩擦"
+      ],
+      "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
+      "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
+      "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-24T09:24:27.893397+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 7,
+        "checksTotal": 7
+      },
+      "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html"
+    },
+    {
+      "id": "mdpdf-paperqa-l2-caveat-worker-smoke",
+      "title": "mdpdf + paper-qa",
+      "summary": "把 Markdown 资料生成 PDF 后交给 paper-qa 建立本地检索索引，适合既要保留归档文件、又要继续检索资料的研究工作。",
+      "evidenceScore": 95,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要把 Markdown/PDF 报告放进问答检索流程的研究和文档用户。",
+      "useCase": "把 Markdown 转成 PDF，并验证 paper-qa 可摄入文档文本进入问答准备流程。",
+      "testMethod": "先用 mdpdf 把固定 Markdown 样本生成非空 PDF，再让 paper-qa 读取同一份资料、建立本地向量索引，并用固定问题检索验证词。",
+      "testOutcome": "mdpdf 成功生成 PDF，paper-qa 成功完成资料摄入、索引和检索，并返回样本中的固定验证词；2 项关键检查全部通过。",
+      "tools": [
+        {
+          "name": "mdpdf",
+          "url": "https://github.com/elliotblackburn/mdpdf",
+          "role": "采集/输入",
+          "inputs": [
+            "markdown file"
+          ],
+          "outputs": [
+            "pdf document"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent",
+            "科研与教育"
+          ],
+          "tasks": [
+            "检索",
+            "测试",
+            "采集",
+            "生成"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-16T01:52:05.655889+08:00"
+          },
+          "hub": {
+            "score": 68,
+            "level": "高适配",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 60,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "paper-qa",
+          "url": "https://github.com/Future-House/paper-qa",
+          "role": "存储/检索",
+          "inputs": [
+            "pdf",
+            "text documents"
+          ],
+          "outputs": [
+            "document chunks",
+            "qa session",
+            "cited answer with configured llm"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "科研与教育",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "检索",
+            "测试",
+            "生成",
+            "存储"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-16T01:52:05.655889+08:00"
+          },
+          "hub": {
+            "score": 34,
+            "level": "已验证节点",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 70,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "ChatGPT 文件上传",
+          "tradeoff": "ChatGPT 更适合单次问答；mdpdf + paper-qa 更适合把 Markdown 报告转换成固定文档后进入可复查的论文/资料问答流程。"
+        }
+      ],
+      "whyComboStillMatters": "它把 Markdown、PDF 和文档问答拆成可复现步骤，适合需要保存中间产物和引用依据的研究工作。",
+      "category": "文档与知识",
+      "primaryCategory": "文档与知识",
+      "domains": [
+        "文档与知识",
+        "科研与教育",
+        "开发与 Agent",
+        "团队协作与沟通"
+      ],
+      "tasks": [
+        "检索",
+        "测试",
+        "交付",
+        "采集",
+        "生成"
+      ],
+      "audiences": [
+        "普通用户",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "普通人高频",
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "外部 API Key",
+        "模型下载大",
+        "PDF 表格风险",
+        "大文件未验证",
+        "业务输出打折"
+      ],
+      "suitableFor": "需要把 Markdown 笔记、会议记录、研究材料归档成 PDF，并进一步进入文档问答/RAG 的个人用户和小团队。",
+      "notFor": "不适合机器配置较低、网络受限或不愿承担部署成本的用户。",
+      "maxBenefit": "Markdown 笔记/报告 -> PDF 归档 -> 文档入库 -> 带引用问答",
+      "maxLimit": "mdpdf 真实生成 PDF，paper-qa 使用同一份源文本进行本地入库与检索断言。；本轮不调用付费 LLM，不评价生成式回答和引用措辞。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要把 Markdown 笔记、会议记录、研究材料归档成 PDF，并进一步进入文档问答/RAG 的个人用户和小团队。",
+        "currentAlternative": "ChatGPT 文件上传：ChatGPT 更适合单次问答；mdpdf + paper-qa 更适合把 Markdown 报告转换成固定文档后进入可复查的论文/资料问答流程。",
+        "painPoint": "Markdown 笔记/报告 -> PDF 归档 -> 文档入库 -> 带引用问答",
+        "switchingReason": "它把 Markdown、PDF 和文档问答拆成可复现步骤，适合需要保存中间产物和引用依据的研究工作。",
+        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 80,
+        "missingProof": [
+          "上手成本较高，需要确认用户是否愿意折腾"
+        ]
+      },
+      "longTermUse": {
+        "summary": "把单文档摄入样例升级成带引用、可复测的研究资料问答库。",
+        "steps": [
+          "固定 paper-qa 版本、模型配置和文档目录。",
+          "把 mdpdf 输出目录接入 paper-qa 批量摄入脚本。",
+          "准备 20-50 条基准问题，记录答案、引用来源和失败原因。",
+          "定期复跑问题集，低于命中率阈值时降级为待复查。"
+        ],
+        "tested": true
+      },
+      "installFrictionIndex": {
+        "score": 70,
+        "level": "高摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          },
+          {
+            "label": "模型下载大",
+            "weight": 24
+          },
+          {
+            "label": "PDF 表格风险",
+            "weight": 8
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          },
+          {
+            "label": "业务输出打折",
+            "weight": 16
+          }
+        ],
+        "summary": "需要预留安装、账号、依赖或机器配置成本。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-16T01:52:05.655889+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/mdpdf-paperqa-l2-caveat-worker-smoke.html"
+    },
+    {
+      "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
+      "title": "UI5 MCP Server + Playwright",
+      "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+      "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "testMethod": "通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。",
+      "testOutcome": "应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。",
+      "tools": [
+        {
+          "name": "UI5 MCP Server",
+          "url": "https://github.com/UI5/mcp-server",
+          "role": "处理/理解",
+          "inputs": [
+            "ui5 project spec",
+            "source code"
+          ],
+          "outputs": [
+            "web app",
+            "url",
+            "validation report"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L2",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [],
+          "testResults": {
+            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+          },
+          "hub": {
+            "score": 38,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Playwright",
+          "url": "https://github.com/microsoft/playwright",
+          "role": "输出/交付",
+          "inputs": [
+            "web app",
+            "url"
+          ],
+          "outputs": [
+            "test result",
+            "screenshot",
+            "console log"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L2",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [],
+          "testResults": {
+            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+          },
+          "hub": {
+            "score": 64,
+            "level": "高适配",
+            "verifiedComboCount": 3,
+            "partnerCount": 3,
+            "categoryCount": 2,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 43,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "SAP Fiori tools + 人工浏览器测试",
+          "type": "官方替代",
+          "fit": "已经使用 SAP IDE 插件并由人工完成验收",
+          "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+        }
+      ],
+      "whyComboStillMatters": "UI5 MCP Server 负责遵循 UI5 工程规范生成代码，Playwright 负责验证浏览器中的真实结果；组合后可以及时发现“项目生成成功但页面不可用”的问题。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "分析",
+        "协作",
+        "采集"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "首次下载较大",
+        "仅验证示例应用",
+        "安装摩擦",
+        "外部账号",
+        "UI 未验证"
+      ],
+      "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+      "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
+      "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断中等",
+        "confidenceScore": 65,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释",
+          "缺少完整组合闭环证据"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 30,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-14T18:20:16.846346+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
+    },
+    {
+      "id": "mdpdf-anything-llm-l2-blocked",
+      "title": "mdpdf + AnythingLLM",
+      "summary": "mdpdf 已将 Markdown 转成可抽取文本的 PDF，AnythingLLM Docker 服务可启动并返回 HTTP 200；本轮未验证文档上传、embedding 和检索问答。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "想把 Markdown/PDF 文档导入本地知识库问答界面的用户。",
+      "useCase": "把 Markdown 转成 PDF，并验证 AnythingLLM 本地容器可启动到 Web 服务。",
+      "testMethod": "先运行 mdpdf 生成实际输出，再把同一份输出交给 anything-llm；最后核对中间文件和最终结果。",
+      "testOutcome": "mdpdf 和 anything-llm 均运行成功，anything-llm 确实使用了 mdpdf 的输出，2 项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "mdpdf",
+          "url": "https://github.com/elliotblackburn/mdpdf",
+          "role": "采集/输入",
+          "inputs": [
+            "markdown file"
+          ],
+          "outputs": [
+            "pdf document"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent",
+            "部署运维与安全"
+          ],
+          "tasks": [
+            "检索",
+            "测试",
+            "采集",
+            "生成",
+            "部署"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "可自托管",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-16T16:15:47.687264+08:00"
+          },
+          "hub": {
+            "score": 68,
+            "level": "高适配",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 60,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "anything-llm",
+          "url": "https://github.com/Mintplex-Labs/anything-llm",
+          "role": "处理/理解",
+          "inputs": [
+            "pdf",
+            "markdown",
+            "docx",
+            "url"
+          ],
+          "outputs": [
+            "markdown",
+            "json",
+            "api"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent",
+            "部署运维与安全"
+          ],
+          "tasks": [
+            "检索",
+            "测试",
+            "生成",
+            "部署",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "可自托管",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-16T16:15:47.687264+08:00"
+          },
+          "hub": {
+            "score": 37,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 44,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "RAGFlow",
+          "tradeoff": "RAGFlow 更完整但部署更重；mdpdf + AnythingLLM 更偏个人本地知识库界面，适合轻量文档导入尝试。"
+        }
+      ],
+      "whyComboStillMatters": "AnythingLLM 的价值在于本地 UI 和个人知识库体验，mdpdf 则补上 Markdown 到 PDF 的稳定输入格式。",
+      "category": "文档与知识",
+      "primaryCategory": "文档与知识",
+      "domains": [
+        "文档与知识",
+        "部署运维与安全",
+        "开发与 Agent",
+        "数据与分析"
+      ],
+      "tasks": [
+        "测试",
+        "检索",
+        "存储",
+        "部署",
+        "交付"
+      ],
+      "audiences": [
+        "团队与企业"
+      ],
+      "traits": [
+        "可自托管",
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "Docker 重",
+        "UI 未验证",
+        "业务输出打折"
+      ],
+      "suitableFor": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+      "notFor": "不适合完全不接触命令行、API 或开发工具的普通用户。",
+      "maxBenefit": "Markdown 报告 -> PDF 归档 -> 本地知识库问答（待验证）",
+      "maxLimit": "AnythingLLM 健康检查不算入库成功；本 Runner 必须创建工作区并把 mdpdf 生成的 PDF 真正上传入库。语义问答仍需另配本地或外部模型。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "RAGFlow：RAGFlow 更完整但部署更重；mdpdf + AnythingLLM 更偏个人本地知识库界面，适合轻量文档导入尝试。",
+        "painPoint": "Markdown 报告 -> PDF 归档 -> 本地知识库问答（待验证）",
+        "switchingReason": "AnythingLLM 的价值在于本地 UI 和个人知识库体验，mdpdf 则补上 Markdown 到 PDF 的稳定输入格式。",
+        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 84,
+        "missingProof": [
+          "还需要真实用户反馈确认是否愿意长期使用"
+        ]
+      },
+      "longTermUse": {
+        "summary": "把本地服务启动样例升级成个人/小团队可长期使用的文档知识库。",
+        "steps": [
+          "把 mdpdf 输出 PDF 固定到导入目录，并保留源 Markdown。",
+          "固定 AnythingLLM Docker volume、workspace 和 embedding provider。",
+          "用 API 或受控 UI 流程完成文档上传、索引和检索问答验证。",
+          "定时备份 storage volume，并记录模型、配置和测试日期。"
+        ],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 44,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "Docker 重",
+            "weight": 22
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          },
+          {
+            "label": "业务输出打折",
+            "weight": 16
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-16T16:15:47.687264+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/mdpdf-anything-llm-l2-blocked.html"
+    },
+    {
       "id": "repomix-actionlint-l3-caveat",
       "title": "Repomix + actionlint",
       "summary": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
@@ -8484,194 +9757,229 @@
       "reportUrl": "reports/repomix-actionlint-l3-caveat.html"
     },
     {
-      "id": "fresh-scholar-rag-headroom-worker-smoke",
-      "title": "scholar-rag + Headroom",
-      "summary": "scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。",
-      "evidenceScore": 85,
+      "id": "firecrawl-haystack-l3-caveat",
+      "title": "Firecrawl + Haystack",
+      "summary": "把公开网页先用 Firecrawl 转成 Markdown，再交给 Haystack 建轻量检索索引，适合快速验证网页资料库原型。",
+      "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要验证 scholar-rag 局部论文节点输出能否交给 headroom 压缩整理，并希望保留错误代码、严重程度等排查线索的个人或小团队。",
-      "useCase": "scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。",
-      "testMethod": "运行 scholar-rag 的真实论文节点生成逻辑及错误分支，将生成的实际输出交给 headroom 处理，再逐项核对错误信息、错误代码和严重程度是否保留并得到合理排序。测试样本为 80 条固定服务日志，包含 INFO、WARN 和 SQLSTATE ERROR。",
-      "testOutcome": "scholar-rag 与 headroom 均成功完成本次处理，headroom 确实使用了前者的输出，并保留了原始错误和错误代码、按严重程度突出关键信息；7 项结果检查全部通过。",
+      "audience": "需要快速验证网页资料检索/RAG 原型的开发者和知识库搭建者。",
+      "useCase": "用 Firecrawl 抓取网页 Markdown，再进入 Haystack 文档管线，形成轻量网页到检索原型。",
+      "testMethod": "使用 Firecrawl API 抓取一个公开网页并取得 Markdown，把该文本写入 Haystack 内存文档库，建立 BM25 索引后用预设关键词查询。",
+      "testOutcome": "Firecrawl 返回了有效 Markdown，Haystack 成功索引并把预期文档排在检索结果中，3 项检查通过；结论只适用于小样本 BM25 原型。",
       "tools": [
         {
-          "name": "scholar-rag",
-          "url": "https://github.com/PangHu1020/scholar-rag",
+          "name": "Firecrawl",
+          "url": "https://github.com/firecrawl/firecrawl",
           "role": "采集/输入",
-          "inputs": [
-            "prompt",
-            "source code",
-            "json"
-          ],
-          "outputs": [
-            "json",
-            "report",
-            "logs"
-          ],
+          "inputs": "URL, website, sitemap",
+          "outputs": "markdown, html, json",
           "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
+          "primaryCategory": "获取与监测",
           "domains": [
+            "获取与监测",
             "文档与知识",
             "开发与 Agent"
           ],
           "tasks": [
-            "检索",
-            "测试",
             "采集",
-            "交付"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-21T20:43:50.133852+08:00"
-          },
-          "hub": {
-            "score": 40,
-            "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 14,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "Headroom",
-          "url": "https://github.com/chopratejas/headroom",
-          "role": "处理/理解",
-          "inputs": [
-            "mcp json output",
-            "tool output",
-            "logs",
-            "code search results",
-            "rag chunks"
-          ],
-          "outputs": [
-            "compressed context",
-            "structured compressed json",
-            "retained retrieval signals"
-          ],
-          "interface": "Python library / CLI / proxy / MCP",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
-          "domains": [
-            "文档与知识",
-            "开发与 Agent"
-          ],
-          "tasks": [
             "检索",
+            "存储",
             "测试"
           ],
           "audiences": [
             "知识工作者"
           ],
           "traits": [
-            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-21T20:43:50.133852+08:00"
+            "verifiedAt": "2026-06-30T22:55:49.743719+08:00"
           },
           "hub": {
-            "score": 92,
-            "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
-            "categoryCount": 3,
+            "score": 49,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 76,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+          }
+        },
+        {
+          "name": "Haystack",
+          "url": "",
+          "role": "",
+          "inputs": "",
+          "outputs": "",
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "获取与监测",
+          "domains": [
+            "获取与监测",
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "采集",
+            "检索",
+            "存储",
+            "测试"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-06-30T22:55:49.743719+08:00"
+          },
+          "hub": {
+            "score": 55,
+            "level": "高适配",
+            "verifiedComboCount": 3,
+            "partnerCount": 3,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 77,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 scholar-rag 并手工整理输出",
-          "type": "单工具人工流程",
-          "fit": "适合只需要生成论文节点结果或日志、处理量较小且可以人工筛选的情况。",
-          "tradeoff": "无需接入 headroom，但需要手工压缩内容、筛选错误代码并判断信息优先级。"
+          "name": "RAGFlow",
+          "type": "重系统替代",
+          "fit": "需要完整知识库后台、解析管线和问答 UI 的团队",
+          "tradeoff": "功能更完整，但部署和调试成本明显高于 Firecrawl + Haystack 的轻量原型。"
+        },
+        {
+          "name": "Dify Knowledge Base",
+          "type": "平台替代",
+          "fit": "希望低代码配置知识库问答应用的人",
+          "tradeoff": "更容易交付给非工程成员使用，但采集、解析和检索组件的可替换性更弱。"
+        },
+        {
+          "name": "NotebookLM",
+          "type": "SaaS 替代",
+          "fit": "只需要把少量网页或文档交给现成 AI 阅读的个人用户",
+          "tradeoff": "使用门槛更低，但自动采集、私有部署和管线可控性较弱。"
         }
       ],
-      "whyComboStillMatters": "scholar-rag 负责产生论文处理过程中的结构化结果和日志，headroom 负责压缩、整理并保留其中的重要线索。只用 scholar-rag，需要自行筛选和压缩输出；只用 headroom，则没有 scholar-rag 生成的论文节点结果可供处理，因此两者承担的是前后衔接的不同环节。",
+      "whyComboStillMatters": "Firecrawl 负责把网页采集和正文清洗做成稳定 Markdown，Haystack 负责后续检索、RAG 管线和组件替换；两者组合比直接上重型知识库更轻，也比单独抓网页更接近可问答资料库。",
       "category": "文档与知识",
       "primaryCategory": "文档与知识",
       "domains": [
-        "开发与 Agent",
         "文档与知识",
-        "团队协作与沟通",
-        "科研与教育"
+        "获取与监测",
+        "开发与 Agent",
+        "部署运维与安全"
       ],
       "tasks": [
-        "测试",
-        "检索",
-        "交付",
         "采集",
-        "分析"
+        "检索",
+        "测试",
+        "存储",
+        "部署"
       ],
       "audiences": [
-        "开发者",
         "团队与企业"
       ],
       "traits": [
-        "CLI",
+        "可自托管",
         "已全链路实测"
       ],
       "collections": [
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "强推荐",
+      "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "仅验证局部论文节点",
-        "需额外确认 httpx 依赖",
-        "仅测 80 条固定日志",
-        "未验证全新环境与大规模数据",
-        "安装摩擦"
+        "安装摩擦",
+        "外部账号",
+        "Docker 重",
+        "大文件未验证",
+        "UI 未验证",
+        "业务输出打折"
       ],
-      "suitableFor": "需要验证 scholar-rag 局部论文节点输出能否交给 headroom 压缩整理，并希望保留错误代码、严重程度等排查线索的个人或小团队。",
-      "notFor": "需要完整处理 PDF、连接 Milvus 或 PostgreSQL、执行向量生成与检索、多智能体回答，或者处理百万行日志、实时数据流和多服务关联分析的用户；这些场景均未验证。",
-      "maxBenefit": "scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。",
-      "maxLimit": "目前只验证了 scholar-rag 的真实论文节点生成逻辑和错误分支，没有覆盖完整 PDF、Milvus、PostgreSQL、向量生成、检索或多智能体回答流程。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，本次测试额外安装并预先检查了 httpx。规模仅覆盖 80 条固定服务日志，未验证百万行日志、实时流或多服务关联，也未进行规模测试和全新环境验证。",
+      "suitableFor": [
+        "想把产品文档、帮助中心、网页资料先变成可检索文本的小团队",
+        "正在评估 RAG/知识库原型，但不想一开始部署重系统的人",
+        "需要保留采集端和检索端可替换空间的开发者"
+      ],
+      "notFor": [
+        "需要现成聊天 UI、权限协作和后台运营的团队",
+        "需要抓登录态、复杂反爬或高并发网页采集的场景",
+        "已经明确需要生产级向量库和多模型评估的项目"
+      ],
+      "maxBenefit": "低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 embedding、向量库或完整问答 UI。",
+      "maxLimit": "本轮只覆盖单个公开小网页和 BM25 内存检索；未验证复杂站点、登录页、批量抓取、embedding 成本、向量库持久化和 LLM 回答质量。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
       "demandValidation": {
-        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
-        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
-        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
-        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "targetUser": [
+          "想把产品文档、帮助中心、网页资料先变成可检索文本的小团队",
+          "正在评估 RAG/知识库原型，但不想一开始部署重系统的人",
+          "需要保留采集端和检索端可替换空间的开发者"
+        ],
+        "currentAlternative": "RAGFlow：功能更完整，但部署和调试成本明显高于 Firecrawl + Haystack 的轻量原型。",
+        "painPoint": "低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 embedding、向量库或完整问答 UI。",
+        "switchingReason": "Firecrawl 负责把网页采集和正文清洗做成稳定 Markdown，Haystack 负责后续检索、RAG 管线和组件替换；两者组合比直接上重型知识库更轻，也比单独抓网页更接近可问答资料库。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
         "confidence": "需求判断较强",
-        "confidenceScore": 86,
+        "confidenceScore": 98,
         "missingProof": [
-          "缺少为什么不用单体工具的解释"
+          "还需要真实用户反馈确认是否愿意长期使用"
         ]
       },
       "longTermUse": {
-        "summary": "",
-        "steps": [],
-        "tested": false
+        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+        "steps": [
+          "固定输入输出",
+          "运行 deep rerun",
+          "保留失败原因",
+          "进入证据中心",
+          "定期复测"
+        ],
+        "tested": true
       },
       "installFrictionIndex": {
-        "score": 14,
-        "level": "低摩擦",
+        "score": 76,
+        "level": "高摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
+          },
+          {
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "Docker 重",
+            "weight": 22
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          },
+          {
+            "label": "业务输出打折",
+            "weight": 16
           }
         ],
-        "summary": "安装和配置成本相对可控。"
+        "summary": "需要预留安装、账号、依赖或机器配置成本。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -8679,14 +9987,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-21T20:43:50.133852+08:00",
+        "testedAt": "2026-07-03T00:11:01.634093+08:00",
         "method": "全链路实测",
-        "cleanEnvironment": false,
+        "cleanEnvironment": true,
         "scaleTested": false,
-        "checksPassed": 7,
-        "checksTotal": 7
+        "checksPassed": 3,
+        "checksTotal": 3
       },
-      "reportUrl": "reports/fresh-scholar-rag-headroom-worker-smoke.html"
+      "reportUrl": "reports/firecrawl-haystack-l3-caveat.html"
     },
     {
       "id": "fresh-agent-nexus-headroom-worker-smoke",
@@ -8911,140 +10219,139 @@
       "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html"
     },
     {
-      "id": "mdpdf-paperqa-l2-caveat-worker-smoke",
-      "title": "mdpdf + paper-qa",
-      "summary": "把 Markdown 资料生成 PDF 后交给 paper-qa 建立本地检索索引，适合既要保留归档文件、又要继续检索资料的研究工作。",
+      "id": "stirling-pdf-nocodb-l3-office",
+      "title": "Stirling-PDF + NocoDB",
+      "summary": "Stirling-PDF 负责 PDF 基础信息、页数、Markdown 转换，NocoDB 负责把处理结果写入办公台账。本轮 Docker 实测完成 PDF→Markdown ZIP→解包→台账记录闭环。",
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要把 Markdown/PDF 报告放进问答检索流程的研究和文档用户。",
-      "useCase": "把 Markdown 转成 PDF，并验证 paper-qa 可摄入文档文本进入问答准备流程。",
-      "testMethod": "先用 mdpdf 把固定 Markdown 样本生成非空 PDF，再让 paper-qa 读取同一份资料、建立本地向量索引，并用固定问题检索验证词。",
-      "testOutcome": "mdpdf 成功生成 PDF，paper-qa 成功完成资料摄入、索引和检索，并返回样本中的固定验证词；2 项关键检查全部通过。",
+      "audience": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
+      "useCase": "PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账",
+      "testMethod": "重新启动 Stirling-PDF 与 NocoDB 容器，用 Stirling API 处理 PDF，并检查此前通过 NocoDB API 写入的页数、摘要和文件信息是否仍能从持久化台账读回。",
+      "testOutcome": "两个服务均正常启动，Stirling API 可重新执行，NocoDB 中的台账行仍可读取，6 项检查通过；因旧 token 未保留，本轮没有再通过 HTTP API 新写一行。",
       "tools": [
         {
-          "name": "mdpdf",
-          "url": "https://github.com/elliotblackburn/mdpdf",
-          "role": "采集/输入",
-          "inputs": [
-            "markdown file"
-          ],
-          "outputs": [
-            "pdf document"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
+          "name": "Stirling-PDF",
+          "url": "https://github.com/Stirling-Tools/Stirling-PDF",
+          "role": "处理/理解",
+          "inputs": "PDF 文件",
+          "outputs": "PDF 基础信息, 页数, Markdown ZIP, 图片, CSV（依文档结构）",
+          "interface": "Docker / Web UI / API",
+          "setup": "中",
+          "readme": "Self-hosted PDF all-in-one tool. Supports PDF analysis, conversion, OCR, compression and other document automation actions.",
+          "evidenceLevel": "L3",
           "primaryCategory": "文档与知识",
           "domains": [
             "文档与知识",
-            "开发与 Agent",
-            "科研与教育"
+            "数据与分析",
+            "部署运维与安全",
+            "自动化与业务流程"
           ],
           "tasks": [
-            "检索",
-            "测试",
-            "采集",
-            "生成"
+            "部署",
+            "转换",
+            "编排",
+            "测试"
           ],
           "audiences": [
             "知识工作者"
           ],
           "traits": [
+            "可自托管",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-16T01:52:05.655889+08:00"
+            "verifiedAt": ""
           },
           "hub": {
-            "score": 68,
+            "score": 60,
             "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 1,
+            "verifiedComboCount": 3,
+            "partnerCount": 3,
+            "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 60,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 75,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
           }
         },
         {
-          "name": "paper-qa",
-          "url": "https://github.com/Future-House/paper-qa",
-          "role": "存储/检索",
-          "inputs": [
-            "pdf",
-            "text documents"
-          ],
-          "outputs": [
-            "document chunks",
-            "qa session",
-            "cited answer with configured llm"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
+          "name": "NocoDB",
+          "url": "https://github.com/nocodb/nocodb",
+          "role": "输出/交付",
+          "inputs": "JSON, HTTP API, structured records",
+          "outputs": "在线表格, 数据库记录, API",
+          "interface": "Docker / Web UI / API",
+          "setup": "中",
+          "readme": "Open-source Airtable alternative. Turns databases into collaborative spreadsheets with REST APIs.",
+          "evidenceLevel": "L3",
+          "primaryCategory": "数据与分析",
           "domains": [
-            "文档与知识",
-            "科研与教育",
+            "数据与分析",
+            "部署运维与安全",
             "开发与 Agent"
           ],
           "tasks": [
-            "检索",
-            "测试",
-            "生成",
-            "存储"
+            "存储",
+            "部署",
+            "测试"
           ],
           "audiences": [
             "知识工作者"
           ],
           "traits": [
+            "可自托管",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-16T01:52:05.655889+08:00"
+            "verifiedAt": ""
           },
           "hub": {
-            "score": 34,
-            "level": "已验证节点",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
+            "score": 85,
+            "level": "核心枢纽",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 70,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 36,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "ChatGPT 文件上传",
-          "tradeoff": "ChatGPT 更适合单次问答；mdpdf + paper-qa 更适合把 Markdown 报告转换成固定文档后进入可复查的论文/资料问答流程。"
+          "name": "NocoDB 文件附件字段 + 人工登记",
+          "type": "轻量替代",
+          "fit": "PDF 数量少，只需要记录文件名、负责人和状态的人",
+          "tradeoff": "更轻，但少了自动页数、Markdown 摘要和处理状态证据。"
+        },
+        {
+          "name": "Airtable + 手工 PDF 摘要",
+          "type": "商业替代",
+          "fit": "已经在 Airtable 做团队台账的人",
+          "tradeoff": "协作体验更成熟，但 PDF 处理仍要靠手工或额外自动化。"
         }
       ],
-      "whyComboStillMatters": "它把 Markdown、PDF 和文档问答拆成可复现步骤，适合需要保存中间产物和引用依据的研究工作。",
+      "whyComboStillMatters": "Stirling-PDF 解决 PDF 的页数、基础信息和 Markdown 转换，NocoDB 解决处理结果的登记、筛选和协作；组合起来适合把零散 PDF 处理动作变成可追踪的办公台账。",
       "category": "文档与知识",
       "primaryCategory": "文档与知识",
       "domains": [
         "文档与知识",
-        "科研与教育",
-        "开发与 Agent",
-        "团队协作与沟通"
+        "数据与分析",
+        "部署运维与安全",
+        "开发与 Agent"
       ],
       "tasks": [
-        "检索",
         "测试",
+        "部署",
+        "协作",
         "交付",
-        "采集",
-        "生成"
+        "转换"
       ],
       "audiences": [
         "普通用户",
         "团队与企业"
       ],
       "traits": [
-        "CLI",
+        "可自托管",
         "已全链路实测"
       ],
       "collections": [
@@ -9054,64 +10361,80 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "适合特定人群",
       "caveatTags": [
+        "安装摩擦",
+        "外部账号",
         "外部 API Key",
-        "模型下载大",
+        "Docker 重",
         "PDF 表格风险",
+        "OCR 未验证",
         "大文件未验证",
-        "业务输出打折"
+        "UI 未验证"
       ],
-      "suitableFor": "需要把 Markdown 笔记、会议记录、研究材料归档成 PDF，并进一步进入文档问答/RAG 的个人用户和小团队。",
-      "notFor": "不适合机器配置较低、网络受限或不愿承担部署成本的用户。",
-      "maxBenefit": "Markdown 笔记/报告 -> PDF 归档 -> 文档入库 -> 带引用问答",
-      "maxLimit": "mdpdf 真实生成 PDF，paper-qa 使用同一份源文本进行本地入库与检索断言。；本轮不调用付费 LLM，不评价生成式回答和引用措辞。",
+      "suitableFor": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
+      "notFor": "不适合要求完整 UI 路径、零配置上线或马上投入生产的用户。",
+      "maxBenefit": "PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账",
+      "maxLimit": "不是所有 PDF 都能抽出 CSV 表格；Markdown 返回 ZIP，正式自动化需要解包；Stirling-PDF 默认认证，NocoDB API 需使用 xc-auth。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
       "demandValidation": {
-        "targetUser": "需要把 Markdown 笔记、会议记录、研究材料归档成 PDF，并进一步进入文档问答/RAG 的个人用户和小团队。",
-        "currentAlternative": "ChatGPT 文件上传：ChatGPT 更适合单次问答；mdpdf + paper-qa 更适合把 Markdown 报告转换成固定文档后进入可复查的论文/资料问答流程。",
-        "painPoint": "Markdown 笔记/报告 -> PDF 归档 -> 文档入库 -> 带引用问答",
-        "switchingReason": "它把 Markdown、PDF 和文档问答拆成可复现步骤，适合需要保存中间产物和引用依据的研究工作。",
+        "targetUser": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
+        "currentAlternative": "NocoDB 文件附件字段 + 人工登记：更轻，但少了自动页数、Markdown 摘要和处理状态证据。",
+        "painPoint": "PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账",
+        "switchingReason": "Stirling-PDF 解决 PDF 的页数、基础信息和 Markdown 转换，NocoDB 解决处理结果的登记、筛选和协作；组合起来适合把零散 PDF 处理动作变成可追踪的办公台账。",
         "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
         "confidence": "需求判断较强",
-        "confidenceScore": 80,
+        "confidenceScore": 78,
         "missingProof": [
           "上手成本较高，需要确认用户是否愿意折腾"
         ]
       },
       "longTermUse": {
-        "summary": "把单文档摄入样例升级成带引用、可复测的研究资料问答库。",
+        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
         "steps": [
-          "固定 paper-qa 版本、模型配置和文档目录。",
-          "把 mdpdf 输出目录接入 paper-qa 批量摄入脚本。",
-          "准备 20-50 条基准问题，记录答案、引用来源和失败原因。",
-          "定期复跑问题集，低于命中率阈值时降级为待复查。"
+          "固定输入输出",
+          "运行 deep rerun",
+          "保留失败原因",
+          "进入证据中心",
+          "定期复测"
         ],
         "tested": true
       },
       "installFrictionIndex": {
-        "score": 70,
+        "score": 88,
         "level": "高摩擦",
         "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "外部账号",
+            "weight": 10
+          },
           {
             "label": "外部 API Key",
             "weight": 14
           },
           {
-            "label": "模型下载大",
-            "weight": 24
+            "label": "Docker 重",
+            "weight": 22
           },
           {
             "label": "PDF 表格风险",
             "weight": 8
           },
           {
+            "label": "OCR 未验证",
+            "weight": 6
+          },
+          {
             "label": "大文件未验证",
             "weight": 8
           },
           {
-            "label": "业务输出打折",
-            "weight": 16
+            "label": "UI 未验证",
+            "weight": 6
           }
         ],
         "summary": "需要预留安装、账号、依赖或机器配置成本。"
@@ -9122,14 +10445,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-16T01:52:05.655889+08:00",
+        "testedAt": "2026-07-03T19:18:43.708221+08:00",
         "method": "全链路实测",
-        "cleanEnvironment": false,
+        "cleanEnvironment": true,
         "scaleTested": false,
-        "checksPassed": 2,
-        "checksTotal": 2
+        "checksPassed": 6,
+        "checksTotal": 6
       },
-      "reportUrl": "reports/mdpdf-paperqa-l2-caveat-worker-smoke.html"
+      "reportUrl": "reports/stirling-pdf-nocodb-l3-office.html"
     },
     {
       "id": "agent-reach-headroom-l3-caveat",
@@ -9378,889 +10701,6 @@
       "reportUrl": "reports/agent-reach-headroom-l3-caveat.html"
     },
     {
-      "id": "mdpdf-anything-llm-l2-blocked",
-      "title": "mdpdf + AnythingLLM",
-      "summary": "mdpdf 已将 Markdown 转成可抽取文本的 PDF，AnythingLLM Docker 服务可启动并返回 HTTP 200；本轮未验证文档上传、embedding 和检索问答。",
-      "evidenceScore": 85,
-      "evidenceLevel": "L3-caveat",
-      "audience": "想把 Markdown/PDF 文档导入本地知识库问答界面的用户。",
-      "useCase": "把 Markdown 转成 PDF，并验证 AnythingLLM 本地容器可启动到 Web 服务。",
-      "testMethod": "先运行 mdpdf 生成实际输出，再把同一份输出交给 anything-llm；最后核对中间文件和最终结果。",
-      "testOutcome": "mdpdf 和 anything-llm 均运行成功，anything-llm 确实使用了 mdpdf 的输出，2 项结果检查全部通过。",
-      "tools": [
-        {
-          "name": "mdpdf",
-          "url": "https://github.com/elliotblackburn/mdpdf",
-          "role": "采集/输入",
-          "inputs": [
-            "markdown file"
-          ],
-          "outputs": [
-            "pdf document"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
-          "domains": [
-            "文档与知识",
-            "开发与 Agent",
-            "部署运维与安全"
-          ],
-          "tasks": [
-            "检索",
-            "测试",
-            "采集",
-            "生成",
-            "部署"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "可自托管",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-16T16:15:47.687264+08:00"
-          },
-          "hub": {
-            "score": 68,
-            "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 60,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "anything-llm",
-          "url": "https://github.com/Mintplex-Labs/anything-llm",
-          "role": "处理/理解",
-          "inputs": [
-            "pdf",
-            "markdown",
-            "docx",
-            "url"
-          ],
-          "outputs": [
-            "markdown",
-            "json",
-            "api"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
-          "domains": [
-            "文档与知识",
-            "开发与 Agent",
-            "部署运维与安全"
-          ],
-          "tasks": [
-            "检索",
-            "测试",
-            "生成",
-            "部署",
-            "交付"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "可自托管",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-16T16:15:47.687264+08:00"
-          },
-          "hub": {
-            "score": 37,
-            "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 44,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-          }
-        }
-      ],
-      "alternatives": [
-        {
-          "name": "RAGFlow",
-          "tradeoff": "RAGFlow 更完整但部署更重；mdpdf + AnythingLLM 更偏个人本地知识库界面，适合轻量文档导入尝试。"
-        }
-      ],
-      "whyComboStillMatters": "AnythingLLM 的价值在于本地 UI 和个人知识库体验，mdpdf 则补上 Markdown 到 PDF 的稳定输入格式。",
-      "category": "文档与知识",
-      "primaryCategory": "文档与知识",
-      "domains": [
-        "文档与知识",
-        "部署运维与安全",
-        "开发与 Agent",
-        "数据与分析"
-      ],
-      "tasks": [
-        "测试",
-        "检索",
-        "存储",
-        "部署",
-        "交付"
-      ],
-      "audiences": [
-        "团队与企业"
-      ],
-      "traits": [
-        "可自托管",
-        "CLI",
-        "已全链路实测"
-      ],
-      "collections": [
-        "已实测"
-      ],
-      "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
-      "caveatTags": [
-        "Docker 重",
-        "UI 未验证",
-        "业务输出打折"
-      ],
-      "suitableFor": "需要快速筛选 AI 工具组合的个人用户和小团队。",
-      "notFor": "不适合完全不接触命令行、API 或开发工具的普通用户。",
-      "maxBenefit": "Markdown 报告 -> PDF 归档 -> 本地知识库问答（待验证）",
-      "maxLimit": "AnythingLLM 健康检查不算入库成功；本 Runner 必须创建工作区并把 mdpdf 生成的 PDF 真正上传入库。语义问答仍需另配本地或外部模型。",
-      "retestStatus": "",
-      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
-      "demandValidation": {
-        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
-        "currentAlternative": "RAGFlow：RAGFlow 更完整但部署更重；mdpdf + AnythingLLM 更偏个人本地知识库界面，适合轻量文档导入尝试。",
-        "painPoint": "Markdown 报告 -> PDF 归档 -> 本地知识库问答（待验证）",
-        "switchingReason": "AnythingLLM 的价值在于本地 UI 和个人知识库体验，mdpdf 则补上 Markdown 到 PDF 的稳定输入格式。",
-        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 84,
-        "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
-        ]
-      },
-      "longTermUse": {
-        "summary": "把本地服务启动样例升级成个人/小团队可长期使用的文档知识库。",
-        "steps": [
-          "把 mdpdf 输出 PDF 固定到导入目录，并保留源 Markdown。",
-          "固定 AnythingLLM Docker volume、workspace 和 embedding provider。",
-          "用 API 或受控 UI 流程完成文档上传、索引和检索问答验证。",
-          "定时备份 storage volume，并记录模型、配置和测试日期。"
-        ],
-        "tested": false
-      },
-      "installFrictionIndex": {
-        "score": 44,
-        "level": "中摩擦",
-        "factors": [
-          {
-            "label": "Docker 重",
-            "weight": 22
-          },
-          {
-            "label": "UI 未验证",
-            "weight": 6
-          },
-          {
-            "label": "业务输出打折",
-            "weight": 16
-          }
-        ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
-      },
-      "retestFreshness": {
-        "status": "新鲜",
-        "daysSinceTest": 0,
-        "summary": "距最近一次测试约 0 天。"
-      },
-      "verification": {
-        "testedAt": "2026-07-16T16:15:47.687264+08:00",
-        "method": "全链路实测",
-        "cleanEnvironment": false,
-        "scaleTested": false,
-        "checksPassed": 2,
-        "checksTotal": 2
-      },
-      "reportUrl": "reports/mdpdf-anything-llm-l2-blocked.html"
-    },
-    {
-      "id": "codebase-memory-headroom-l3-caveat",
-      "title": "codebase-memory-mcp + Headroom",
-      "summary": "codebase-memory-mcp 把代码库变成可查询图谱，Headroom 把较长的图谱 JSON 输出压缩成更适合 Agent 继续阅读的上下文。",
-      "evidenceScore": 95,
-      "evidenceLevel": "L3-caveat",
-      "audience": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
-      "useCase": "代码库知识图谱搜索 → MCP JSON 结果 → 上下文压缩 → LLM/Agent 阅读",
-      "testMethod": "让 codebase-memory-mcp 对真实项目执行大范围图搜索，把返回的大 JSON 交给 Headroom ContentRouter 压缩，再比较压缩前后大小并检查组合、发布和证据等关键词。",
-      "testOutcome": "图谱结果成功进入 Headroom，输出缩小约 23.7%，关键业务信号仍然存在，4 项检查通过；短小或高度结构化结果不一定获得同等收益。",
-      "tools": [
-        {
-          "name": "codebase-memory-mcp",
-          "url": "https://github.com/DeusData/codebase-memory-mcp",
-          "role": "处理/理解",
-          "inputs": "local repository, source code, project path",
-          "outputs": "knowledge graph, MCP search results, code snippets, architecture summary, JSON",
-          "interface": "MCP stdio server / CLI",
-          "setup": "中",
-          "readme": "MCP codebase knowledge graph server for indexing repositories and querying code structure.",
-          "evidenceLevel": "L3",
-          "primaryCategory": "开发与 Agent",
-          "domains": [
-            "开发与 Agent"
-          ],
-          "tasks": [
-            "检索",
-            "测试"
-          ],
-          "audiences": [
-            "开发者"
-          ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-06-22T20:49:00+08:00"
-          },
-          "hub": {
-            "score": 69,
-            "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 48,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "Headroom",
-          "url": "https://github.com/chopratejas/headroom",
-          "role": "处理/理解",
-          "inputs": "MCP JSON output, tool output, logs, code search results, RAG chunks",
-          "outputs": "compressed context, structured compressed JSON, retained retrieval signals",
-          "interface": "Python library / CLI / proxy / MCP",
-          "setup": "中",
-          "readme": "Compression layer for AI context and tool outputs. PyPI package name is headroom-ai.",
-          "evidenceLevel": "L3",
-          "primaryCategory": "开发与 Agent",
-          "domains": [
-            "开发与 Agent",
-            "文档与知识"
-          ],
-          "tasks": [
-            "检索",
-            "测试"
-          ],
-          "audiences": [
-            "开发者"
-          ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-06-22T20:49:00+08:00"
-          },
-          "hub": {
-            "score": 92,
-            "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
-            "categoryCount": 3,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
-          }
-        }
-      ],
-      "alternatives": [
-        {
-          "name": "IDE / Agent 平台内置代码搜索",
-          "type": "平台替代",
-          "fit": "只需要快速定位函数和文件的人",
-          "tradeoff": "更直接，但不具备持久知识图谱和跨 Agent 复用视角。"
-        },
-        {
-          "name": "Repomix + 手工摘要",
-          "type": "轻量替代",
-          "fit": "中小仓库一次性投喂给 LLM 的场景",
-          "tradeoff": "更简单，但缺少图谱查询和输出压缩的组合能力。"
-        }
-      ],
-      "whyComboStillMatters": "这条组合很适合后台工程流：先用 codebase-memory-mcp 找到结构化代码证据，再用 Headroom 压缩长输出。本轮对 35KB 图谱结果压缩约 23.7%，并保留 combo/publish/evidence 关键信号。",
-      "category": "开发与 Agent",
-      "primaryCategory": "开发与 Agent",
-      "domains": [
-        "开发与 Agent",
-        "文档与知识",
-        "自动化与业务流程",
-        "数据与分析"
-      ],
-      "tasks": [
-        "交付",
-        "测试",
-        "检索",
-        "分析",
-        "编排"
-      ],
-      "audiences": [
-        "开发者"
-      ],
-      "traits": [
-        "CLI",
-        "已全链路实测"
-      ],
-      "collections": [
-        "已实测"
-      ],
-      "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
-      "caveatTags": [
-        "安装摩擦",
-        "外部 API Key"
-      ],
-      "suitableFor": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
-      "notFor": "不适合机器配置较低、网络受限或不愿承担部署成本的用户。",
-      "maxBenefit": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
-      "maxLimit": "复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。",
-      "retestStatus": "",
-      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
-      "demandValidation": {
-        "targetUser": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
-        "currentAlternative": "IDE / Agent 平台内置代码搜索：更直接，但不具备持久知识图谱和跨 Agent 复用视角。",
-        "painPoint": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
-        "switchingReason": "这条组合很适合后台工程流：先用 codebase-memory-mcp 找到结构化代码证据，再用 Headroom 压缩长输出。本轮对 35KB 图谱结果压缩约 23.7%，并保留 combo/publish/evidence 关键信号。",
-        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 90,
-        "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
-        ]
-      },
-      "longTermUse": {
-        "summary": "",
-        "steps": [],
-        "tested": false
-      },
-      "installFrictionIndex": {
-        "score": 28,
-        "level": "中摩擦",
-        "factors": [
-          {
-            "label": "安装摩擦",
-            "weight": 14
-          },
-          {
-            "label": "外部 API Key",
-            "weight": 14
-          }
-        ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
-      },
-      "retestFreshness": {
-        "status": "新鲜",
-        "daysSinceTest": 0,
-        "summary": "距最近一次测试约 0 天。"
-      },
-      "verification": {
-        "testedAt": "2026-07-04T00:00:24.717403+08:00",
-        "method": "全链路实测",
-        "cleanEnvironment": true,
-        "scaleTested": false,
-        "checksPassed": 4,
-        "checksTotal": 4
-      },
-      "reportUrl": "reports/codebase-memory-headroom-l3-caveat.html"
-    },
-    {
-      "id": "firecrawl-haystack-l3-caveat",
-      "title": "Firecrawl + Haystack",
-      "summary": "把公开网页先用 Firecrawl 转成 Markdown，再交给 Haystack 建轻量检索索引，适合快速验证网页资料库原型。",
-      "evidenceScore": 95,
-      "evidenceLevel": "L3-caveat",
-      "audience": "需要快速验证网页资料检索/RAG 原型的开发者和知识库搭建者。",
-      "useCase": "用 Firecrawl 抓取网页 Markdown，再进入 Haystack 文档管线，形成轻量网页到检索原型。",
-      "testMethod": "使用 Firecrawl API 抓取一个公开网页并取得 Markdown，把该文本写入 Haystack 内存文档库，建立 BM25 索引后用预设关键词查询。",
-      "testOutcome": "Firecrawl 返回了有效 Markdown，Haystack 成功索引并把预期文档排在检索结果中，3 项检查通过；结论只适用于小样本 BM25 原型。",
-      "tools": [
-        {
-          "name": "Firecrawl",
-          "url": "https://github.com/firecrawl/firecrawl",
-          "role": "采集/输入",
-          "inputs": "URL, website, sitemap",
-          "outputs": "markdown, html, json",
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "获取与监测",
-          "domains": [
-            "获取与监测",
-            "文档与知识",
-            "开发与 Agent"
-          ],
-          "tasks": [
-            "采集",
-            "检索",
-            "存储",
-            "测试"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-06-30T22:55:49.743719+08:00"
-          },
-          "hub": {
-            "score": 49,
-            "level": "有潜力",
-            "verifiedComboCount": 2,
-            "partnerCount": 2,
-            "categoryCount": 2,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 76,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
-          }
-        },
-        {
-          "name": "Haystack",
-          "url": "",
-          "role": "",
-          "inputs": "",
-          "outputs": "",
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3-caveat",
-          "primaryCategory": "获取与监测",
-          "domains": [
-            "获取与监测",
-            "文档与知识",
-            "开发与 Agent"
-          ],
-          "tasks": [
-            "采集",
-            "检索",
-            "存储",
-            "测试"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-06-30T22:55:49.743719+08:00"
-          },
-          "hub": {
-            "score": 55,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
-            "categoryCount": 1,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 77,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
-          }
-        }
-      ],
-      "alternatives": [
-        {
-          "name": "RAGFlow",
-          "type": "重系统替代",
-          "fit": "需要完整知识库后台、解析管线和问答 UI 的团队",
-          "tradeoff": "功能更完整，但部署和调试成本明显高于 Firecrawl + Haystack 的轻量原型。"
-        },
-        {
-          "name": "Dify Knowledge Base",
-          "type": "平台替代",
-          "fit": "希望低代码配置知识库问答应用的人",
-          "tradeoff": "更容易交付给非工程成员使用，但采集、解析和检索组件的可替换性更弱。"
-        },
-        {
-          "name": "NotebookLM",
-          "type": "SaaS 替代",
-          "fit": "只需要把少量网页或文档交给现成 AI 阅读的个人用户",
-          "tradeoff": "使用门槛更低，但自动采集、私有部署和管线可控性较弱。"
-        }
-      ],
-      "whyComboStillMatters": "Firecrawl 负责把网页采集和正文清洗做成稳定 Markdown，Haystack 负责后续检索、RAG 管线和组件替换；两者组合比直接上重型知识库更轻，也比单独抓网页更接近可问答资料库。",
-      "category": "文档与知识",
-      "primaryCategory": "文档与知识",
-      "domains": [
-        "文档与知识",
-        "获取与监测",
-        "开发与 Agent",
-        "部署运维与安全"
-      ],
-      "tasks": [
-        "采集",
-        "检索",
-        "测试",
-        "存储",
-        "部署"
-      ],
-      "audiences": [
-        "团队与企业"
-      ],
-      "traits": [
-        "可自托管",
-        "已全链路实测"
-      ],
-      "collections": [
-        "已实测"
-      ],
-      "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
-      "caveatTags": [
-        "安装摩擦",
-        "外部账号",
-        "Docker 重",
-        "大文件未验证",
-        "UI 未验证",
-        "业务输出打折"
-      ],
-      "suitableFor": [
-        "想把产品文档、帮助中心、网页资料先变成可检索文本的小团队",
-        "正在评估 RAG/知识库原型，但不想一开始部署重系统的人",
-        "需要保留采集端和检索端可替换空间的开发者"
-      ],
-      "notFor": [
-        "需要现成聊天 UI、权限协作和后台运营的团队",
-        "需要抓登录态、复杂反爬或高并发网页采集的场景",
-        "已经明确需要生产级向量库和多模型评估的项目"
-      ],
-      "maxBenefit": "低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 embedding、向量库或完整问答 UI。",
-      "maxLimit": "本轮只覆盖单个公开小网页和 BM25 内存检索；未验证复杂站点、登录页、批量抓取、embedding 成本、向量库持久化和 LLM 回答质量。",
-      "retestStatus": "",
-      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
-      "demandValidation": {
-        "targetUser": [
-          "想把产品文档、帮助中心、网页资料先变成可检索文本的小团队",
-          "正在评估 RAG/知识库原型，但不想一开始部署重系统的人",
-          "需要保留采集端和检索端可替换空间的开发者"
-        ],
-        "currentAlternative": "RAGFlow：功能更完整，但部署和调试成本明显高于 Firecrawl + Haystack 的轻量原型。",
-        "painPoint": "低成本验证“网页资料采集到可检索知识库”的核心链路，适合先跑小样本，再决定是否接入 embedding、向量库或完整问答 UI。",
-        "switchingReason": "Firecrawl 负责把网页采集和正文清洗做成稳定 Markdown，Haystack 负责后续检索、RAG 管线和组件替换；两者组合比直接上重型知识库更轻，也比单独抓网页更接近可问答资料库。",
-        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 98,
-        "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
-        ]
-      },
-      "longTermUse": {
-        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
-        "steps": [
-          "固定输入输出",
-          "运行 deep rerun",
-          "保留失败原因",
-          "进入证据中心",
-          "定期复测"
-        ],
-        "tested": true
-      },
-      "installFrictionIndex": {
-        "score": 76,
-        "level": "高摩擦",
-        "factors": [
-          {
-            "label": "安装摩擦",
-            "weight": 14
-          },
-          {
-            "label": "外部账号",
-            "weight": 10
-          },
-          {
-            "label": "Docker 重",
-            "weight": 22
-          },
-          {
-            "label": "大文件未验证",
-            "weight": 8
-          },
-          {
-            "label": "UI 未验证",
-            "weight": 6
-          },
-          {
-            "label": "业务输出打折",
-            "weight": 16
-          }
-        ],
-        "summary": "需要预留安装、账号、依赖或机器配置成本。"
-      },
-      "retestFreshness": {
-        "status": "新鲜",
-        "daysSinceTest": 0,
-        "summary": "距最近一次测试约 0 天。"
-      },
-      "verification": {
-        "testedAt": "2026-07-03T00:11:01.634093+08:00",
-        "method": "全链路实测",
-        "cleanEnvironment": true,
-        "scaleTested": false,
-        "checksPassed": 3,
-        "checksTotal": 3
-      },
-      "reportUrl": "reports/firecrawl-haystack-l3-caveat.html"
-    },
-    {
-      "id": "stirling-pdf-nocodb-l3-office",
-      "title": "Stirling-PDF + NocoDB",
-      "summary": "Stirling-PDF 负责 PDF 基础信息、页数、Markdown 转换，NocoDB 负责把处理结果写入办公台账。本轮 Docker 实测完成 PDF→Markdown ZIP→解包→台账记录闭环。",
-      "evidenceScore": 95,
-      "evidenceLevel": "L3-caveat",
-      "audience": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
-      "useCase": "PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账",
-      "testMethod": "重新启动 Stirling-PDF 与 NocoDB 容器，用 Stirling API 处理 PDF，并检查此前通过 NocoDB API 写入的页数、摘要和文件信息是否仍能从持久化台账读回。",
-      "testOutcome": "两个服务均正常启动，Stirling API 可重新执行，NocoDB 中的台账行仍可读取，6 项检查通过；因旧 token 未保留，本轮没有再通过 HTTP API 新写一行。",
-      "tools": [
-        {
-          "name": "Stirling-PDF",
-          "url": "https://github.com/Stirling-Tools/Stirling-PDF",
-          "role": "处理/理解",
-          "inputs": "PDF 文件",
-          "outputs": "PDF 基础信息, 页数, Markdown ZIP, 图片, CSV（依文档结构）",
-          "interface": "Docker / Web UI / API",
-          "setup": "中",
-          "readme": "Self-hosted PDF all-in-one tool. Supports PDF analysis, conversion, OCR, compression and other document automation actions.",
-          "evidenceLevel": "L3",
-          "primaryCategory": "文档与知识",
-          "domains": [
-            "文档与知识",
-            "数据与分析",
-            "部署运维与安全",
-            "自动化与业务流程"
-          ],
-          "tasks": [
-            "部署",
-            "转换",
-            "编排",
-            "测试"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "可自托管",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": ""
-          },
-          "hub": {
-            "score": 60,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
-            "categoryCount": 2,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 75,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
-          }
-        },
-        {
-          "name": "NocoDB",
-          "url": "https://github.com/nocodb/nocodb",
-          "role": "输出/交付",
-          "inputs": "JSON, HTTP API, structured records",
-          "outputs": "在线表格, 数据库记录, API",
-          "interface": "Docker / Web UI / API",
-          "setup": "中",
-          "readme": "Open-source Airtable alternative. Turns databases into collaborative spreadsheets with REST APIs.",
-          "evidenceLevel": "L3",
-          "primaryCategory": "数据与分析",
-          "domains": [
-            "数据与分析",
-            "部署运维与安全",
-            "开发与 Agent"
-          ],
-          "tasks": [
-            "存储",
-            "部署",
-            "测试"
-          ],
-          "audiences": [
-            "知识工作者"
-          ],
-          "traits": [
-            "可自托管",
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": ""
-          },
-          "hub": {
-            "score": 85,
-            "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 4,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
-          }
-        }
-      ],
-      "alternatives": [
-        {
-          "name": "NocoDB 文件附件字段 + 人工登记",
-          "type": "轻量替代",
-          "fit": "PDF 数量少，只需要记录文件名、负责人和状态的人",
-          "tradeoff": "更轻，但少了自动页数、Markdown 摘要和处理状态证据。"
-        },
-        {
-          "name": "Airtable + 手工 PDF 摘要",
-          "type": "商业替代",
-          "fit": "已经在 Airtable 做团队台账的人",
-          "tradeoff": "协作体验更成熟，但 PDF 处理仍要靠手工或额外自动化。"
-        }
-      ],
-      "whyComboStillMatters": "Stirling-PDF 解决 PDF 的页数、基础信息和 Markdown 转换，NocoDB 解决处理结果的登记、筛选和协作；组合起来适合把零散 PDF 处理动作变成可追踪的办公台账。",
-      "category": "文档与知识",
-      "primaryCategory": "文档与知识",
-      "domains": [
-        "文档与知识",
-        "数据与分析",
-        "部署运维与安全",
-        "开发与 Agent"
-      ],
-      "tasks": [
-        "测试",
-        "部署",
-        "协作",
-        "交付",
-        "转换"
-      ],
-      "audiences": [
-        "普通用户",
-        "团队与企业"
-      ],
-      "traits": [
-        "可自托管",
-        "已全链路实测"
-      ],
-      "collections": [
-        "普通人高频",
-        "已实测"
-      ],
-      "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
-      "caveatTags": [
-        "安装摩擦",
-        "外部账号",
-        "外部 API Key",
-        "Docker 重",
-        "PDF 表格风险",
-        "OCR 未验证",
-        "大文件未验证",
-        "UI 未验证"
-      ],
-      "suitableFor": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
-      "notFor": "不适合要求完整 UI 路径、零配置上线或马上投入生产的用户。",
-      "maxBenefit": "PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账",
-      "maxLimit": "不是所有 PDF 都能抽出 CSV 表格；Markdown 返回 ZIP，正式自动化需要解包；Stirling-PDF 默认认证，NocoDB API 需使用 xc-auth。",
-      "retestStatus": "",
-      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
-      "demandValidation": {
-        "targetUser": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
-        "currentAlternative": "NocoDB 文件附件字段 + 人工登记：更轻，但少了自动页数、Markdown 摘要和处理状态证据。",
-        "painPoint": "PDF 文件 → 页数/基础信息/Markdown 摘要 → NocoDB 办公台账",
-        "switchingReason": "Stirling-PDF 解决 PDF 的页数、基础信息和 Markdown 转换，NocoDB 解决处理结果的登记、筛选和协作；组合起来适合把零散 PDF 处理动作变成可追踪的办公台账。",
-        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 78,
-        "missingProof": [
-          "上手成本较高，需要确认用户是否愿意折腾"
-        ]
-      },
-      "longTermUse": {
-        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
-        "steps": [
-          "固定输入输出",
-          "运行 deep rerun",
-          "保留失败原因",
-          "进入证据中心",
-          "定期复测"
-        ],
-        "tested": true
-      },
-      "installFrictionIndex": {
-        "score": 88,
-        "level": "高摩擦",
-        "factors": [
-          {
-            "label": "安装摩擦",
-            "weight": 14
-          },
-          {
-            "label": "外部账号",
-            "weight": 10
-          },
-          {
-            "label": "外部 API Key",
-            "weight": 14
-          },
-          {
-            "label": "Docker 重",
-            "weight": 22
-          },
-          {
-            "label": "PDF 表格风险",
-            "weight": 8
-          },
-          {
-            "label": "OCR 未验证",
-            "weight": 6
-          },
-          {
-            "label": "大文件未验证",
-            "weight": 8
-          },
-          {
-            "label": "UI 未验证",
-            "weight": 6
-          }
-        ],
-        "summary": "需要预留安装、账号、依赖或机器配置成本。"
-      },
-      "retestFreshness": {
-        "status": "新鲜",
-        "daysSinceTest": 0,
-        "summary": "距最近一次测试约 0 天。"
-      },
-      "verification": {
-        "testedAt": "2026-07-03T19:18:43.708221+08:00",
-        "method": "全链路实测",
-        "cleanEnvironment": true,
-        "scaleTested": false,
-        "checksPassed": 6,
-        "checksTotal": 6
-      },
-      "reportUrl": "reports/stirling-pdf-nocodb-l3-office.html"
-    },
-    {
       "id": "crawlee-stirling-pdf-l1",
       "title": "Crawlee + Stirling-PDF",
       "summary": "先把网页保存为可追溯的 PDF 快照，再生成便于搜索和引用的 Markdown，适合公告、制度和研究资料留档。",
@@ -10483,16 +10923,207 @@
         "checksTotal": 6
       },
       "reportUrl": "reports/crawlee-stirling-pdf-l1.html"
+    },
+    {
+      "id": "codebase-memory-headroom-l3-caveat",
+      "title": "codebase-memory-mcp + Headroom",
+      "summary": "codebase-memory-mcp 把代码库变成可查询图谱，Headroom 把较长的图谱 JSON 输出压缩成更适合 Agent 继续阅读的上下文。",
+      "evidenceScore": 95,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
+      "useCase": "代码库知识图谱搜索 → MCP JSON 结果 → 上下文压缩 → LLM/Agent 阅读",
+      "testMethod": "让 codebase-memory-mcp 对真实项目执行大范围图搜索，把返回的大 JSON 交给 Headroom ContentRouter 压缩，再比较压缩前后大小并检查组合、发布和证据等关键词。",
+      "testOutcome": "图谱结果成功进入 Headroom，输出缩小约 23.7%，关键业务信号仍然存在，4 项检查通过；短小或高度结构化结果不一定获得同等收益。",
+      "tools": [
+        {
+          "name": "codebase-memory-mcp",
+          "url": "https://github.com/DeusData/codebase-memory-mcp",
+          "role": "处理/理解",
+          "inputs": "local repository, source code, project path",
+          "outputs": "knowledge graph, MCP search results, code snippets, architecture summary, JSON",
+          "interface": "MCP stdio server / CLI",
+          "setup": "中",
+          "readme": "MCP codebase knowledge graph server for indexing repositories and querying code structure.",
+          "evidenceLevel": "L3",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "检索",
+            "测试"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-06-22T20:49:00+08:00"
+          },
+          "hub": {
+            "score": 69,
+            "level": "高适配",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 48,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": "MCP JSON output, tool output, logs, code search results, RAG chunks",
+          "outputs": "compressed context, structured compressed JSON, retained retrieval signals",
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "中",
+          "readme": "Compression layer for AI context and tool outputs. PyPI package name is headroom-ai.",
+          "evidenceLevel": "L3",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "检索",
+            "测试"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-06-22T20:49:00+08:00"
+          },
+          "hub": {
+            "score": 92,
+            "level": "核心枢纽",
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 3,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 3 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "IDE / Agent 平台内置代码搜索",
+          "type": "平台替代",
+          "fit": "只需要快速定位函数和文件的人",
+          "tradeoff": "更直接，但不具备持久知识图谱和跨 Agent 复用视角。"
+        },
+        {
+          "name": "Repomix + 手工摘要",
+          "type": "轻量替代",
+          "fit": "中小仓库一次性投喂给 LLM 的场景",
+          "tradeoff": "更简单，但缺少图谱查询和输出压缩的组合能力。"
+        }
+      ],
+      "whyComboStillMatters": "这条组合很适合后台工程流：先用 codebase-memory-mcp 找到结构化代码证据，再用 Headroom 压缩长输出。本轮对 35KB 图谱结果压缩约 23.7%，并保留 combo/publish/evidence 关键信号。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "自动化与业务流程",
+        "数据与分析"
+      ],
+      "tasks": [
+        "交付",
+        "测试",
+        "检索",
+        "分析",
+        "编排"
+      ],
+      "audiences": [
+        "开发者"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "安装摩擦",
+        "外部 API Key"
+      ],
+      "suitableFor": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
+      "notFor": "不适合机器配置较低、网络受限或不愿承担部署成本的用户。",
+      "maxBenefit": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
+      "maxLimit": "复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
+        "currentAlternative": "IDE / Agent 平台内置代码搜索：更直接，但不具备持久知识图谱和跨 Agent 复用视角。",
+        "painPoint": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
+        "switchingReason": "这条组合很适合后台工程流：先用 codebase-memory-mcp 找到结构化代码证据，再用 Headroom 压缩长输出。本轮对 35KB 图谱结果压缩约 23.7%，并保留 combo/publish/evidence 关键信号。",
+        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 90,
+        "missingProof": [
+          "还需要真实用户反馈确认是否愿意长期使用"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 28,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-04T00:00:24.717403+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": true,
+        "scaleTested": false,
+        "checksPassed": 4,
+        "checksTotal": 4
+      },
+      "reportUrl": "reports/codebase-memory-headroom-l3-caveat.html"
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-25T18:32:41.417541+08:00",
+    "generatedAt": "2026-07-25T19:06:58.228554+08:00",
     "summary": {
-      "total": 49,
-      "publicFeatured": 49,
-      "withReports": 49,
-      "withCaveatTags": 49,
-      "withInstallFrictionIndex": 49
+      "total": 52,
+      "publicFeatured": 52,
+      "withReports": 52,
+      "withCaveatTags": 52,
+      "withInstallFrictionIndex": 52
     },
     "items": [
       {
@@ -14452,15 +15083,15 @@
         }
       },
       {
-        "id": "fresh-nexus-godot-demo-projects-worker-smoke",
-        "title": "godot-demo-projects + nexus",
+        "id": "fresh-ryu-caveman-worker-smoke",
+        "title": "ryu + caveman",
         "tools": [
-          "godot-demo-projects",
-          "nexus"
+          "ryu",
+          "caveman"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
+        "useCase": "ryu 先接收提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再读取这些中间结果，输出压缩后的回复和令牌指标。适合需要把生成结果继续压缩整理的个人用户和小团队。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
@@ -14472,9 +15103,9 @@
         "tasks": [
           "测试",
           "交付",
-          "分析",
           "生成",
-          "协作"
+          "协作",
+          "分析"
         ],
         "audiences": [
           "开发者",
@@ -14482,6 +15113,7 @@
         ],
         "traits": [
           "可自托管",
+          "CLI",
           "已全链路实测"
         ],
         "collections": [
@@ -14489,44 +15121,49 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
-        "notFor": "需要确认画面渲染、键盘或鼠标交互、完整示例库表现、付费大模型调用或多轮对话效果的人。",
-        "maxBenefit": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
-        "maxLimit": "目前只验证了官方暂停示例在无界面模式下运行五帧，以及 nexus 对真实 Godot 源代码包的读取和工作区结果留存。画面渲染、输入交互、其余示例项目、付费大模型服务和多轮对话均未测试；干净环境与更大规模也未验证。",
+        "suitableFor": "需要将提示词、源代码或 JSON 先整理成报告，再压缩为回复并查看令牌指标的个人用户和小团队。",
+        "notFor": "需要使用 Ryu Core、CLI、多模态线路或远程模型提供方，或者要求已有大规模、全新环境验证依据的场景。",
+        "maxBenefit": "ryu 先接收提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再读取这些中间结果，输出压缩后的回复和令牌指标。适合需要把生成结果继续压缩整理的个人用户和小团队。",
+        "maxLimit": "目前只验证了 Ryu 0.0.8 预编译程序、在本地回环地址运行的 Gateway，以及通过本地 Ollama 完成的一次结果固定的请求。Ryu Core、CLI、多模态线路和远程模型提供方均未验证；大规模使用未验证，测试也不是在全新环境中进行。",
         "caveatTags": [
-          "仅测试一个示例",
-          "未测试画面与交互",
-          "未调用付费大模型",
-          "规模与干净环境未验证",
-          "UI 未验证"
+          "仅测 Ryu 0.0.8",
+          "仅测本地 Ollama 单次请求",
+          "Core、CLI、多模态及远程提供方未测",
+          "规模与全新环境未验证",
+          "安装摩擦",
+          "外部 API Key"
         ],
         "alternatives": [
           {
-            "name": "单独使用 godot-demo-projects",
-            "type": "手工处理",
-            "fit": "只需要获取和检查 Godot 示例项目，不需要 nexus 自动处理时。",
-            "tradeoff": "需要自行读取源代码、整理中间结果并记录检查情况。"
+            "name": "单独使用 ryu 并手工压缩结果",
+            "type": "手工替代流程",
+            "fit": "只需要 ryu 生成 JSON、报告或日志，且可以自行整理最终回复时。",
+            "tradeoff": "无需接入 caveman，但压缩结果和令牌指标需要手工处理或放弃。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
+        "reportUrl": "reports/fresh-ryu-caveman-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "干净环境与更大规模也未验证"
+          "测试也不是在全新环境中进行"
         ],
         "installFrictionIndex": {
-          "score": 6,
-          "level": "低摩擦",
+          "score": 28,
+          "level": "中摩擦",
           "factors": [
             {
-              "label": "UI 未验证",
-              "weight": 6
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "外部 API Key",
+              "weight": 14
             }
           ],
-          "summary": "安装和配置成本相对可控。"
+          "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "目前只验证了官方暂停示例在无界面模式下运行五帧，以及 nexus 对真实 Godot 源代码包的读取和工作区结果留存。画面渲染、输入交互、其余示例项目、付费大模型服务和多轮对话均未测试；干净环境与更大规模也未验证。"
+          "目前只验证了 Ryu 0.0.8 预编译程序、在本地回环地址运行的 Gateway，以及通过本地 Ollama 完成的一次结果固定的请求。Ryu Core、CLI、多模态线路和远程模型提供方均未验证；大规模使用未验证，测试也不是在全新环境中进行。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -14541,12 +15178,11 @@
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
           "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
-          "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
-          "confidence": "需求判断中等",
-          "confidenceScore": 66,
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
           "missingProof": [
-            "缺少为什么不用单体工具的解释",
-            "上手成本较高，需要确认用户是否愿意折腾"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -14667,29 +15303,29 @@
         }
       },
       {
-        "id": "fresh-llm4ad-next-headroom-worker-smoke",
-        "title": "LLM4AD_Next + headroom",
+        "id": "fresh-nexus-godot-demo-projects-worker-smoke",
+        "title": "godot-demo-projects + nexus",
         "tools": [
-          "LLM4AD_Next",
-          "headroom"
+          "godot-demo-projects",
+          "nexus"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+        "useCase": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
-          "部署运维与安全",
           "开发与 Agent",
-          "文档与知识",
-          "团队协作与沟通"
+          "部署运维与安全",
+          "团队协作与沟通",
+          "自动化与业务流程"
         ],
         "tasks": [
           "测试",
           "交付",
-          "生成",
           "分析",
-          "检索"
+          "生成",
+          "协作"
         ],
         "audiences": [
           "开发者",
@@ -14704,46 +15340,44 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
-        "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
-        "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
-        "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
+        "suitableFor": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
+        "notFor": "需要确认画面渲染、键盘或鼠标交互、完整示例库表现、付费大模型调用或多轮对话效果的人。",
+        "maxBenefit": "godot-demo-projects 提供 Godot 示例项目源代码，nexus 随后读取这份代码并生成 JSON、报告或日志；适合需要自动读取和处理 Godot 示例项目的开发验证场景。",
+        "maxLimit": "目前只验证了官方暂停示例在无界面模式下运行五帧，以及 nexus 对真实 Godot 源代码包的读取和工作区结果留存。画面渲染、输入交互、其余示例项目、付费大模型服务和多轮对话均未测试；干净环境与更大规模也未验证。",
         "caveatTags": [
-          "仅验证80条日志",
-          "未做规模测试",
-          "依赖 Python 3.12",
-          "需额外安装 httpx",
-          "安装摩擦"
+          "仅测试一个示例",
+          "未测试画面与交互",
+          "未调用付费大模型",
+          "规模与干净环境未验证",
+          "UI 未验证"
         ],
         "alternatives": [
           {
-            "name": "单独使用 LLM4AD_Next 并手工整理结果",
-            "type": "手工替代流程",
-            "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
-            "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
+            "name": "单独使用 godot-demo-projects",
+            "type": "手工处理",
+            "fit": "只需要获取和检查 Godot 示例项目，不需要 nexus 自动处理时。",
+            "tradeoff": "需要自行读取源代码、整理中间结果并记录检查情况。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
+        "reportUrl": "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "因此测试时需额外安装并预先检查 httpx",
-          "未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境",
-          "也未在纯净环境中验证"
+          "干净环境与更大规模也未验证"
         ],
         "installFrictionIndex": {
-          "score": 14,
+          "score": 6,
           "level": "低摩擦",
           "factors": [
             {
-              "label": "安装摩擦",
-              "weight": 14
+              "label": "UI 未验证",
+              "weight": 6
             }
           ],
           "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+          "目前只验证了官方暂停示例在无界面模式下运行五帧，以及 nexus 对真实 Godot 源代码包的读取和工作区结果留存。画面渲染、输入交互、其余示例项目、付费大模型服务和多轮对话均未测试；干净环境与更大规模也未验证。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -14758,11 +15392,12 @@
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
           "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
-          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-          "confidence": "需求判断较强",
-          "confidenceScore": 86,
+          "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+          "confidence": "需求判断中等",
+          "confidenceScore": 66,
           "missingProof": [
-            "缺少为什么不用单体工具的解释"
+            "缺少为什么不用单体工具的解释",
+            "上手成本较高，需要确认用户是否愿意折腾"
           ]
         },
         "longTermUse": {
@@ -14916,29 +15551,29 @@
         }
       },
       {
-        "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
-        "title": "UI5 MCP Server + Playwright",
+        "id": "fresh-kimi-cli-codex-plugin-cc-worker-smoke",
+        "title": "kimi-cli + codex-plugin-cc",
         "tools": [
-          "UI5 MCP Server",
-          "Playwright"
+          "kimi-cli",
+          "codex-plugin-cc"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+        "useCase": "kimi-cli 先检查一处格式错误的 GitHub Actions 步骤并生成诊断报告，codex-plugin-cc 再读取该报告和工作流文件，完成修改与复核。适合处理已有检查报告的单个工作流配置问题。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
-          "部署运维与安全",
           "自动化与业务流程",
+          "部署运维与安全",
           "团队协作与沟通"
         ],
         "tasks": [
-          "测试",
           "交付",
-          "生成",
+          "测试",
+          "编排",
           "分析",
-          "协作"
+          "生成"
         ],
         "audiences": [
           "开发者",
@@ -14946,57 +15581,73 @@
         ],
         "traits": [
           "可自托管",
+          "CLI",
           "已全链路实测"
         ],
         "collections": [
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "强推荐",
-        "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-        "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
-        "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-        "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "需要检查并修改单个 GitHub Actions 工作流配置问题，且能够查看诊断报告和修改结果的开发者或小团队。",
+        "notFor": "需要大规模批量处理、已证明可在全新环境中直接运行，或不能接受失败后重新开始的场景。",
+        "maxBenefit": "kimi-cli 先检查一处格式错误的 GitHub Actions 步骤并生成诊断报告，codex-plugin-cc 再读取该报告和工作流文件，完成修改与复核。适合处理已有检查报告的单个工作流配置问题。",
+        "maxLimit": "目前只验证了通过 Ollama 在本地使用 Gemma 4 12B，诊断并处理一个格式错误的 GitHub Actions 步骤。首次后续处理在多次重新连接后仍未成功，重新开始后才完成。没有在全新环境中验证，也未验证批量任务、更大项目规模或其他运行环境。",
         "caveatTags": [
-          "首次下载较大",
-          "仅验证示例应用",
+          "仅验证单个错误步骤",
+          "未在全新环境验证",
+          "未做规模测试",
+          "首次处理失败后重试成功",
           "安装摩擦",
-          "外部账号",
-          "UI 未验证"
+          "外部 API Key",
+          "大文件未验证",
+          "业务输出打折",
+          "需要人工修模板"
         ],
         "alternatives": [
           {
-            "name": "SAP Fiori tools + 人工浏览器测试",
-            "type": "官方替代",
-            "fit": "已经使用 SAP IDE 插件并由人工完成验收",
-            "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+            "name": "kimi-cli 加人工修改",
+            "type": "单工具加手工处理",
+            "fit": "先用 kimi-cli 生成诊断报告，再由人工修改工作流 YAML 并复核结果。",
+            "tradeoff": "不依赖 codex-plugin-cc 完成后续处理，但修改和检查需要人工完成。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
+        "reportUrl": "reports/fresh-kimi-cli-codex-plugin-cc-worker-smoke.html",
         "verifiedAt": "",
-        "installFriction": [],
+        "installFriction": [
+          "没有在全新环境中验证",
+          "也未验证批量任务、更大项目规模或其他运行环境"
+        ],
         "installFrictionIndex": {
-          "score": 30,
-          "level": "中摩擦",
+          "score": 66,
+          "level": "高摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
             },
             {
-              "label": "外部账号",
-              "weight": 10
+              "label": "外部 API Key",
+              "weight": 14
             },
             {
-              "label": "UI 未验证",
-              "weight": 6
+              "label": "大文件未验证",
+              "weight": 8
+            },
+            {
+              "label": "业务输出打折",
+              "weight": 16
+            },
+            {
+              "label": "需要人工修模板",
+              "weight": 14
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "需要预留安装、账号、依赖或机器配置成本。"
         },
         "caveats": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+          "目前只验证了通过 Ollama 在本地使用 Gemma 4 12B，诊断并处理一个格式错误的 GitHub Actions 步骤。首次后续处理在多次重新连接后仍未成功，重新开始后才完成。没有在全新环境中验证，也未验证批量任务、更大项目规模或其他运行环境。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -15005,18 +15656,17 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
         "demandValidation": {
           "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
           "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-          "confidence": "需求判断中等",
-          "confidenceScore": 65,
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
           "missingProof": [
-            "缺少为什么不用单体工具的解释",
-            "缺少完整组合闭环证据"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -15156,32 +15806,33 @@
         }
       },
       {
-        "id": "repomix-actionlint-l3-caveat",
-        "title": "Repomix + actionlint",
+        "id": "fresh-wisp-science-caveman-worker-smoke",
+        "title": "wisp-science + caveman",
         "tools": [
-          "Repomix",
-          "actionlint"
+          "wisp-science",
+          "caveman"
         ],
-        "evidenceScore": 95,
+        "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+        "useCase": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
-          "自动化与业务流程",
+          "科研与教育",
           "部署运维与安全",
-          "文档与知识"
+          "团队协作与沟通"
         ],
         "tasks": [
           "测试",
-          "编排",
           "交付",
+          "生成",
           "分析",
-          "部署"
+          "协作"
         ],
         "audiences": [
-          "开发者"
+          "开发者",
+          "团队与企业"
         ],
         "traits": [
           "可自托管",
@@ -15191,56 +15842,46 @@
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-        "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
-        "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-        "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
+        "notFor": "需要凭据支持的完整代理流程、要求在全新环境中直接使用，或需要处理能力已经过规模验证的场景。",
+        "maxBenefit": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+        "maxLimit": "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。",
         "caveatTags": [
-          "安装摩擦",
-          "Docker 重"
+          "依赖内置 Python 内核",
+          "完整代理流程需要凭据",
+          "未在全新环境验证",
+          "未做规模测试",
+          "外部 API Key"
         ],
         "alternatives": [
           {
-            "name": "actionlint 单独使用",
-            "type": "单体替代",
-            "fit": "只关心 workflow 是否有静态错误的人",
-            "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
-          },
-          {
-            "name": "Repomix 单独使用",
-            "type": "单体替代",
-            "fit": "只需要给 Agent 整理代码上下文的人",
-            "tradeoff": "能解释，但没有确定性 workflow lint。"
-          },
-          {
-            "name": "GitHub Actions 在线日志",
-            "type": "平台替代",
-            "fit": "已经推送并跑过 CI 的项目",
-            "tradeoff": "结果最真实，但反馈链路更重。"
+            "name": "单独使用 wisp-science 并手工整理结果",
+            "type": "手工替代流程",
+            "fit": "只需要生成 JSON、报告或日志，不要求自动压缩最终回复或统计令牌时。",
+            "tradeoff": "需要人工处理中间结果，且不会获得本次已验证的 caveman 压缩输出与令牌指标。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/repomix-actionlint-l3-caveat.html",
-        "verifiedAt": "2026-07-03T00:11:01.634093+08:00",
-        "installFriction": [],
+        "reportUrl": "reports/fresh-wisp-science-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "测试不是在全新环境中完成",
+          "其他环境、数据量和并发情况下的表现均未验证"
+        ],
         "installFrictionIndex": {
-          "score": 36,
-          "level": "中摩擦",
+          "score": 14,
+          "level": "低摩擦",
           "factors": [
             {
-              "label": "安装摩擦",
+              "label": "外部 API Key",
               "weight": 14
-            },
-            {
-              "label": "Docker 重",
-              "weight": 22
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
-          "Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。"
+          "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -15249,29 +15890,28 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-          "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
-          "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-          "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
           "confidence": "需求判断较强",
-          "confidenceScore": 98,
+          "confidenceScore": 86,
           "missingProof": [
-            "还需要真实用户反馈确认是否愿意长期使用"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
-          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
           "steps": [
-            "固定输入输出",
-            "运行 deep rerun",
-            "保留失败原因",
-            "进入证据中心",
-            "定期复测"
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
           ],
-          "tested": true
+          "tested": false
         }
       },
       {
@@ -15383,29 +16023,29 @@
         }
       },
       {
-        "id": "fresh-agent-nexus-headroom-worker-smoke",
-        "title": "Headroom + Agent Nexus",
+        "id": "fresh-llm4ad-next-headroom-worker-smoke",
+        "title": "LLM4AD_Next + headroom",
         "tools": [
-          "Headroom",
-          "Agent Nexus"
+          "LLM4AD_Next",
+          "headroom"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "本地开发环境、内部服务和 Agent 系统的批量日志初筛与事件摘要。",
+        "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
-          "开发与 Agent",
           "部署运维与安全",
-          "数据与分析",
+          "开发与 Agent",
+          "文档与知识",
           "团队协作与沟通"
         ],
         "tasks": [
           "测试",
-          "部署",
-          "分析",
           "交付",
-          "协作"
+          "生成",
+          "分析",
+          "检索"
         ],
         "audiences": [
           "开发者",
@@ -15413,71 +16053,53 @@
         ],
         "traits": [
           "可自托管",
-          "桌面应用",
           "已全链路实测"
         ],
         "collections": [
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。",
-        "notFor": "只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。",
-        "maxBenefit": "80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。",
-        "maxLimit": "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
+        "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
+        "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+        "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
         "caveatTags": [
-          "共享依赖",
-          "规模化未验证",
-          "上游缺陷",
-          "安装摩擦",
-          "依赖缺失",
-          "Docker 重",
-          "大文件未验证"
+          "仅验证80条日志",
+          "未做规模测试",
+          "依赖 Python 3.12",
+          "需额外安装 httpx",
+          "安装摩擦"
         ],
         "alternatives": [
           {
-            "name": "Grafana Loki + 告警规则",
-            "type": "成熟运维替代",
-            "fit": "需要持续采集、查询、仪表盘和稳定告警的生产团队",
-            "tradeoff": "生产能力更成熟，但不会直接生成 Agent 式根因说明，部署与规则维护也更系统化。"
+            "name": "单独使用 LLM4AD_Next 并手工整理结果",
+            "type": "手工替代流程",
+            "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
+            "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html",
+        "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "原因是 `tools.category` 字段缺失",
-          "测试不是只检查安装或 README",
-          "最终报告正确识别了 ERROR 级别、`agent-nexus-api` 组件、缺少 `tools.category` 的根因",
-          "只想安装一个桌面应用立即查看日志的普通用户",
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
-          "实测 自动测试程序 已显式补装并预检"
+          "因此测试时需额外安装并预先检查 httpx",
+          "未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境",
+          "也未在纯净环境中验证"
         ],
         "installFrictionIndex": {
-          "score": 62,
-          "level": "高摩擦",
+          "score": 14,
+          "level": "低摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
-            },
-            {
-              "label": "依赖缺失",
-              "weight": 18
-            },
-            {
-              "label": "Docker 重",
-              "weight": 22
-            },
-            {
-              "label": "大文件未验证",
-              "weight": 8
             }
           ],
-          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
-          "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。"
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -15486,18 +16108,17 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": "维护本地服务、Agent 或内部开发平台，并希望日志不离开本机的开发者和小团队。",
-          "currentAlternative": "Grafana Loki + 告警规则：更适合成熟生产运维，但需要系统化部署和规则维护。",
-          "painPoint": "原始日志噪音太多，直接交给本地模型容易漏掉中段的高严重度错误。",
-          "switchingReason": "Headroom 先压缩并保护错误码，再由 Agent Nexus 生成根因说明；本轮对照实验确认这一步能改善识别结果。",
-          "complexityFit": "需要 Docker、PostgreSQL 与本地 Ollama，适合已有自托管环境的开发者。",
-          "confidence": "实测证据较强",
-          "confidenceScore": 85,
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
           "missingProof": [
-            "尚未覆盖大规模实时日志",
-            "Agent Nexus 原生工具种子缺列问题待上游修复"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -15630,114 +16251,87 @@
         }
       },
       {
-        "id": "agent-reach-headroom-l3-caveat",
-        "title": "Agent-Reach + headroom",
+        "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
+        "title": "UI5 MCP Server + Playwright",
         "tools": [
-          "Agent-Reach",
-          "headroom"
+          "UI5 MCP Server",
+          "Playwright"
         ],
-        "evidenceScore": 95,
+        "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "平台能力体检 → JSON 诊断 → 上下文压缩 → Agent 读取配置缺口",
+        "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
+          "部署运维与安全",
           "自动化与业务流程",
-          "团队协作与沟通",
-          "科研与教育"
+          "团队协作与沟通"
         ],
         "tasks": [
           "测试",
           "交付",
+          "生成",
           "分析",
-          "检索",
-          "编排"
+          "协作"
         ],
         "audiences": [
-          "开发者"
+          "开发者",
+          "团队与企业"
         ],
         "traits": [
-          "CLI",
+          "可自托管",
           "已全链路实测"
         ],
         "collections": [
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": [
-          "经常让 Agent 做多平台调研的人",
-          "需要检查本地平台后端可用性的 Agent 工程工作流",
-          "想把工具诊断 JSON 交给 Agent 继续判断的人"
-        ],
-        "notFor": [
-          "只需要一次普通网页搜索的人",
-          "期待零配置访问所有平台的人",
-          "要求每次都显著压缩输出的人"
-        ],
-        "maxBenefit": "适合把多平台 doctor、后端状态和配置建议整理成 Agent 可继续处理的上下文，尤其适合频繁做 X、Reddit、小红书、B 站、GitHub 调研的工作流。",
-        "maxLimit": "本轮 doctor 输出较短，headroom 实际压缩收益只有 3.5%；它不是稳定大幅压缩器，价值主要在输出变长、重复巡检或多轮诊断时体现。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+        "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
+        "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+        "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
         "caveatTags": [
+          "首次下载较大",
+          "仅验证示例应用",
           "安装摩擦",
-          "依赖缺失",
           "外部账号",
-          "外部 API Key",
           "UI 未验证"
         ],
         "alternatives": [
           {
-            "name": "ChatGPT Deep Research",
-            "type": "平台替代",
-            "fit": "只想直接拿到调研结果、不关心本地平台后端的人",
-            "tradeoff": "更省心，但无法诊断本机 Agent 到各平台的真实可用性。"
-          },
-          {
-            "name": "Claude Code 内置 Web / MCP 配置",
-            "type": "平台内能力",
-            "fit": "已经固定在 Claude Code 环境内工作的开发者",
-            "tradeoff": "集成更顺手，但跨平台路由和后端体检不如 Agent-Reach 专门。"
-          },
-          {
-            "name": "浏览器收藏夹 + 手工检查",
-            "type": "人工替代",
-            "fit": "低频调研、平台数量很少的人",
-            "tradeoff": "不用安装工具，但不可复用、不可自动化，也无法形成 Agent 可读诊断。"
+            "name": "SAP Fiori tools + 人工浏览器测试",
+            "type": "官方替代",
+            "fit": "已经使用 SAP IDE 插件并由人工完成验收",
+            "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/agent-reach-headroom-l3-caveat.html",
-        "verifiedAt": "2026-07-03T00:47:20.546997+08:00",
+        "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
+        "verifiedAt": "",
         "installFriction": [],
         "installFrictionIndex": {
-          "score": 62,
-          "level": "高摩擦",
+          "score": 30,
+          "level": "中摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
             },
             {
-              "label": "依赖缺失",
-              "weight": 18
-            },
-            {
               "label": "外部账号",
               "weight": 10
-            },
-            {
-              "label": "外部 API Key",
-              "weight": 14
             },
             {
               "label": "UI 未验证",
               "weight": 6
             }
           ],
-          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+          "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "Agent-Reach 可输出平台后端诊断，Headroom 可生成 Agent 节省配置与 小样本测试 fixture；本轮验证的是诊断输出与配置产物，不代表每个平台搜索后端都已登录或可用。"
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -15746,33 +16340,29 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": [
-            "经常让 Agent 做多平台调研的人",
-            "需要检查本地平台后端可用性的 Agent 工程工作流",
-            "想把工具诊断 JSON 交给 Agent 继续判断的人"
-          ],
-          "currentAlternative": "ChatGPT Deep Research：更省心，但无法诊断本机 Agent 到各平台的真实可用性。",
-          "painPoint": "适合把多平台 doctor、后端状态和配置建议整理成 Agent 可继续处理的上下文，尤其适合频繁做 X、Reddit、小红书、B 站、GitHub 调研的工作流。",
-          "switchingReason": "Agent-Reach 解决“我现在能访问哪些平台”的路由和诊断问题，headroom 解决长诊断输出挤占上下文的问题；组合后能让 Agent 在调研前先知道可用后端、缺失配置和下一步动作。",
-          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
-          "confidence": "需求判断较强",
-          "confidenceScore": 90,
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断中等",
+          "confidenceScore": 65,
           "missingProof": [
-            "还需要真实用户反馈确认是否愿意长期使用"
+            "缺少为什么不用单体工具的解释",
+            "缺少完整组合闭环证据"
           ]
         },
         "longTermUse": {
-          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
           "steps": [
-            "固定输入输出",
-            "运行 deep rerun",
-            "保留失败原因",
-            "进入证据中心",
-            "定期复测"
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
           ],
-          "tested": true
+          "tested": false
         }
       },
       {
@@ -15889,15 +16479,15 @@
         }
       },
       {
-        "id": "codebase-memory-headroom-l3-caveat",
-        "title": "codebase-memory-mcp + Headroom",
+        "id": "repomix-actionlint-l3-caveat",
+        "title": "Repomix + actionlint",
         "tools": [
-          "codebase-memory-mcp",
-          "Headroom"
+          "Repomix",
+          "actionlint"
         ],
         "evidenceScore": 95,
         "evidenceLevel": "L3-caveat",
-        "useCase": "代码库知识图谱搜索 → MCP JSON 结果 → 上下文压缩 → LLM/Agent 阅读",
+        "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
@@ -15907,15 +16497,14 @@
           "文档与知识"
         ],
         "tasks": [
+          "测试",
+          "编排",
           "交付",
           "分析",
-          "编排",
-          "测试",
-          "检索"
+          "部署"
         ],
         "audiences": [
-          "开发者",
-          "团队与企业"
+          "开发者"
         ],
         "traits": [
           "可自托管",
@@ -15926,36 +16515,40 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
-        "notFor": "不适合机器配置较低、网络受限或不愿承担部署成本的用户。",
-        "maxBenefit": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
-        "maxLimit": "复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。",
+        "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+        "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
+        "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+        "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
         "caveatTags": [
           "安装摩擦",
-          "外部 API Key"
+          "Docker 重"
         ],
         "alternatives": [
           {
-            "name": "IDE / Agent 平台内置代码搜索",
-            "type": "平台替代",
-            "fit": "只需要快速定位函数和文件的人",
-            "tradeoff": "更直接，但不具备持久知识图谱和跨 Agent 复用视角。"
+            "name": "actionlint 单独使用",
+            "type": "单体替代",
+            "fit": "只关心 workflow 是否有静态错误的人",
+            "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
           },
           {
-            "name": "Repomix + 手工摘要",
-            "type": "轻量替代",
-            "fit": "中小仓库一次性投喂给 LLM 的场景",
-            "tradeoff": "更简单，但缺少图谱查询和输出压缩的组合能力。"
+            "name": "Repomix 单独使用",
+            "type": "单体替代",
+            "fit": "只需要给 Agent 整理代码上下文的人",
+            "tradeoff": "能解释，但没有确定性 workflow lint。"
+          },
+          {
+            "name": "GitHub Actions 在线日志",
+            "type": "平台替代",
+            "fit": "已经推送并跑过 CI 的项目",
+            "tradeoff": "结果最真实，但反馈链路更重。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/codebase-memory-headroom-l3-caveat.html",
-        "verifiedAt": "2026-07-03T23:53:00.066311+08:00",
-        "installFriction": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
-        ],
+        "reportUrl": "reports/repomix-actionlint-l3-caveat.html",
+        "verifiedAt": "2026-07-03T00:11:01.634093+08:00",
+        "installFriction": [],
         "installFrictionIndex": {
-          "score": 28,
+          "score": 36,
           "level": "中摩擦",
           "factors": [
             {
@@ -15963,14 +16556,14 @@
               "weight": 14
             },
             {
-              "label": "外部 API Key",
-              "weight": 14
+              "label": "Docker 重",
+              "weight": 22
             }
           ],
           "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。"
+          "Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -15981,26 +16574,27 @@
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
         "demandValidation": {
-          "targetUser": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
-          "currentAlternative": "IDE / Agent 平台内置代码搜索：更直接，但不具备持久知识图谱和跨 Agent 复用视角。",
-          "painPoint": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
-          "switchingReason": "这条组合很适合后台工程流：先用 codebase-memory-mcp 找到结构化代码证据，再用 Headroom 压缩长输出。本轮对 35KB 图谱结果压缩约 23.7%，并保留 combo/publish/evidence 关键信号。",
-          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+          "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+          "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
+          "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+          "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
           "confidence": "需求判断较强",
-          "confidenceScore": 90,
+          "confidenceScore": 98,
           "missingProof": [
             "还需要真实用户反馈确认是否愿意长期使用"
           ]
         },
         "longTermUse": {
-          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
           "steps": [
-            "把用户每天会重复提供的输入做成固定模板。",
-            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
-            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
-            "准备手动兜底路径，避免自动化失败后任务停摆。"
+            "固定输入输出",
+            "运行 deep rerun",
+            "保留失败原因",
+            "进入证据中心",
+            "定期复测"
           ],
-          "tested": false
+          "tested": true
         }
       },
       {
@@ -16155,6 +16749,135 @@
         }
       },
       {
+        "id": "fresh-agent-nexus-headroom-worker-smoke",
+        "title": "Headroom + Agent Nexus",
+        "tools": [
+          "Headroom",
+          "Agent Nexus"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "本地开发环境、内部服务和 Agent 系统的批量日志初筛与事件摘要。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "数据与分析",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "测试",
+          "部署",
+          "分析",
+          "交付",
+          "协作"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "桌面应用",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。",
+        "notFor": "只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。",
+        "maxBenefit": "80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。",
+        "maxLimit": "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。",
+        "caveatTags": [
+          "共享依赖",
+          "规模化未验证",
+          "上游缺陷",
+          "安装摩擦",
+          "依赖缺失",
+          "Docker 重",
+          "大文件未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "Grafana Loki + 告警规则",
+            "type": "成熟运维替代",
+            "fit": "需要持续采集、查询、仪表盘和稳定告警的生产团队",
+            "tradeoff": "生产能力更成熟，但不会直接生成 Agent 式根因说明，部署与规则维护也更系统化。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "原因是 `tools.category` 字段缺失",
+          "测试不是只检查安装或 README",
+          "最终报告正确识别了 ERROR 级别、`agent-nexus-api` 组件、缺少 `tools.category` 的根因",
+          "只想安装一个桌面应用立即查看日志的普通用户",
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
+          "实测 自动测试程序 已显式补装并预检"
+        ],
+        "installFrictionIndex": {
+          "score": 62,
+          "level": "高摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "依赖缺失",
+              "weight": 18
+            },
+            {
+              "label": "Docker 重",
+              "weight": 22
+            },
+            {
+              "label": "大文件未验证",
+              "weight": 8
+            }
+          ],
+          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+        },
+        "caveats": [
+          "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "维护本地服务、Agent 或内部开发平台，并希望日志不离开本机的开发者和小团队。",
+          "currentAlternative": "Grafana Loki + 告警规则：更适合成熟生产运维，但需要系统化部署和规则维护。",
+          "painPoint": "原始日志噪音太多，直接交给本地模型容易漏掉中段的高严重度错误。",
+          "switchingReason": "Headroom 先压缩并保护错误码，再由 Agent Nexus 生成根因说明；本轮对照实验确认这一步能改善识别结果。",
+          "complexityFit": "需要 Docker、PostgreSQL 与本地 Ollama，适合已有自托管环境的开发者。",
+          "confidence": "实测证据较强",
+          "confidenceScore": 85,
+          "missingProof": [
+            "尚未覆盖大规模实时日志",
+            "Agent Nexus 原生工具种子缺列问题待上游修复"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
         "id": "stirling-pdf-nocodb-l3-office",
         "title": "Stirling-PDF + NocoDB",
         "tools": [
@@ -16301,6 +17024,152 @@
         }
       },
       {
+        "id": "agent-reach-headroom-l3-caveat",
+        "title": "Agent-Reach + headroom",
+        "tools": [
+          "Agent-Reach",
+          "headroom"
+        ],
+        "evidenceScore": 95,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "平台能力体检 → JSON 诊断 → 上下文压缩 → Agent 读取配置缺口",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "自动化与业务流程",
+          "团队协作与沟通",
+          "科研与教育"
+        ],
+        "tasks": [
+          "测试",
+          "交付",
+          "分析",
+          "检索",
+          "编排"
+        ],
+        "audiences": [
+          "开发者"
+        ],
+        "traits": [
+          "CLI",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": [
+          "经常让 Agent 做多平台调研的人",
+          "需要检查本地平台后端可用性的 Agent 工程工作流",
+          "想把工具诊断 JSON 交给 Agent 继续判断的人"
+        ],
+        "notFor": [
+          "只需要一次普通网页搜索的人",
+          "期待零配置访问所有平台的人",
+          "要求每次都显著压缩输出的人"
+        ],
+        "maxBenefit": "适合把多平台 doctor、后端状态和配置建议整理成 Agent 可继续处理的上下文，尤其适合频繁做 X、Reddit、小红书、B 站、GitHub 调研的工作流。",
+        "maxLimit": "本轮 doctor 输出较短，headroom 实际压缩收益只有 3.5%；它不是稳定大幅压缩器，价值主要在输出变长、重复巡检或多轮诊断时体现。",
+        "caveatTags": [
+          "安装摩擦",
+          "依赖缺失",
+          "外部账号",
+          "外部 API Key",
+          "UI 未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "ChatGPT Deep Research",
+            "type": "平台替代",
+            "fit": "只想直接拿到调研结果、不关心本地平台后端的人",
+            "tradeoff": "更省心，但无法诊断本机 Agent 到各平台的真实可用性。"
+          },
+          {
+            "name": "Claude Code 内置 Web / MCP 配置",
+            "type": "平台内能力",
+            "fit": "已经固定在 Claude Code 环境内工作的开发者",
+            "tradeoff": "集成更顺手，但跨平台路由和后端体检不如 Agent-Reach 专门。"
+          },
+          {
+            "name": "浏览器收藏夹 + 手工检查",
+            "type": "人工替代",
+            "fit": "低频调研、平台数量很少的人",
+            "tradeoff": "不用安装工具，但不可复用、不可自动化，也无法形成 Agent 可读诊断。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/agent-reach-headroom-l3-caveat.html",
+        "verifiedAt": "2026-07-03T00:47:20.546997+08:00",
+        "installFriction": [],
+        "installFrictionIndex": {
+          "score": 62,
+          "level": "高摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "依赖缺失",
+              "weight": 18
+            },
+            {
+              "label": "外部账号",
+              "weight": 10
+            },
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
+            }
+          ],
+          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+        },
+        "caveats": [
+          "Agent-Reach 可输出平台后端诊断，Headroom 可生成 Agent 节省配置与 小样本测试 fixture；本轮验证的是诊断输出与配置产物，不代表每个平台搜索后端都已登录或可用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": [
+            "经常让 Agent 做多平台调研的人",
+            "需要检查本地平台后端可用性的 Agent 工程工作流",
+            "想把工具诊断 JSON 交给 Agent 继续判断的人"
+          ],
+          "currentAlternative": "ChatGPT Deep Research：更省心，但无法诊断本机 Agent 到各平台的真实可用性。",
+          "painPoint": "适合把多平台 doctor、后端状态和配置建议整理成 Agent 可继续处理的上下文，尤其适合频繁做 X、Reddit、小红书、B 站、GitHub 调研的工作流。",
+          "switchingReason": "Agent-Reach 解决“我现在能访问哪些平台”的路由和诊断问题，headroom 解决长诊断输出挤占上下文的问题；组合后能让 Agent 在调研前先知道可用后端、缺失配置和下一步动作。",
+          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 90,
+          "missingProof": [
+            "还需要真实用户反馈确认是否愿意长期使用"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+          "steps": [
+            "固定输入输出",
+            "运行 deep rerun",
+            "保留失败原因",
+            "进入证据中心",
+            "定期复测"
+          ],
+          "tested": true
+        }
+      },
+      {
         "id": "crawlee-stirling-pdf-l1",
         "title": "Crawlee + Stirling-PDF",
         "tools": [
@@ -16418,6 +17287,121 @@
           "confidenceScore": 78,
           "missingProof": [
             "上手成本较高，需要确认用户是否愿意折腾"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "codebase-memory-headroom-l3-caveat",
+        "title": "codebase-memory-mcp + Headroom",
+        "tools": [
+          "codebase-memory-mcp",
+          "Headroom"
+        ],
+        "evidenceScore": 95,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "代码库知识图谱搜索 → MCP JSON 结果 → 上下文压缩 → LLM/Agent 阅读",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "自动化与业务流程",
+          "部署运维与安全",
+          "文档与知识"
+        ],
+        "tasks": [
+          "交付",
+          "分析",
+          "编排",
+          "测试",
+          "检索"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
+        "notFor": "不适合机器配置较低、网络受限或不愿承担部署成本的用户。",
+        "maxBenefit": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
+        "maxLimit": "复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。",
+        "caveatTags": [
+          "安装摩擦",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "IDE / Agent 平台内置代码搜索",
+            "type": "平台替代",
+            "fit": "只需要快速定位函数和文件的人",
+            "tradeoff": "更直接，但不具备持久知识图谱和跨 Agent 复用视角。"
+          },
+          {
+            "name": "Repomix + 手工摘要",
+            "type": "轻量替代",
+            "fit": "中小仓库一次性投喂给 LLM 的场景",
+            "tradeoff": "更简单，但缺少图谱查询和输出压缩的组合能力。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/codebase-memory-headroom-l3-caveat.html",
+        "verifiedAt": "2026-07-03T23:53:00.066311+08:00",
+        "installFriction": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "installFrictionIndex": {
+          "score": 28,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "复核 codebase-memory-mcp 大 JSON 结果进入 Headroom ContentRouter；本轮压缩约 23.7% 且保留 combo/publish/evidence 关键信号。仍需注意：收益取决于输出形态，短小或高度结构化结果不一定有明显压缩。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
+          "currentAlternative": "IDE / Agent 平台内置代码搜索：更直接，但不具备持久知识图谱和跨 Agent 复用视角。",
+          "painPoint": "在 Agent 做代码审查、架构分析或影响范围判断时，降低长 JSON 工具输出带来的上下文压力。",
+          "switchingReason": "这条组合很适合后台工程流：先用 codebase-memory-mcp 找到结构化代码证据，再用 Headroom 压缩长输出。本轮对 35KB 图谱结果压缩约 23.7%，并保留 combo/publish/evidence 关键信号。",
+          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 90,
+          "missingProof": [
+            "还需要真实用户反馈确认是否愿意长期使用"
           ]
         },
         "longTermUse": {
@@ -16939,14 +17923,14 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 53,
-        "level": "有潜力",
-        "verifiedComboCount": 2,
-        "partnerCount": 2,
+        "score": 76,
+        "level": "核心枢纽",
+        "verifiedComboCount": 4,
+        "partnerCount": 4,
         "categoryCount": 2,
         "deepTestSuccessRate": 100,
-        "averageFriction": 42,
-        "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+        "averageFriction": 32,
+        "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 2 类场景。"
       }
     },
     {
@@ -17114,14 +18098,14 @@
       ],
       "evidenceLevel": "L2",
       "hub": {
-        "score": 36,
+        "score": 46,
         "level": "有潜力",
-        "verifiedComboCount": 1,
-        "partnerCount": 1,
+        "verifiedComboCount": 2,
+        "partnerCount": 2,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 52,
-        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+        "averageFriction": 59,
+        "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
@@ -17418,6 +18402,56 @@
       }
     },
     {
+      "name": "ryu",
+      "url": "https://github.com/amajorai/ryu",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 38,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 28,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "Excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "role": "采集/输入",
+      "inputs": [
+        "whiteboard scene",
+        "text labels"
+      ],
+      "outputs": [
+        "excalidraw json",
+        "html export"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "godot-demo-projects",
       "url": "https://github.com/godotengine/godot-demo-projects",
       "role": "存储/检索",
@@ -17468,56 +18502,6 @@
       }
     },
     {
-      "name": "Excalidraw",
-      "url": "https://github.com/excalidraw/excalidraw",
-      "role": "采集/输入",
-      "inputs": [
-        "whiteboard scene",
-        "text labels"
-      ],
-      "outputs": [
-        "excalidraw json",
-        "html export"
-      ],
-      "evidenceLevel": "L3-caveat",
-      "hub": {
-        "score": 40,
-        "level": "有潜力",
-        "verifiedComboCount": 1,
-        "partnerCount": 1,
-        "categoryCount": 1,
-        "deepTestSuccessRate": 100,
-        "averageFriction": 14,
-        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-      }
-    },
-    {
-      "name": "LLM4AD_Next",
-      "url": "https://github.com/Optima-CityU/LLM4AD_Next",
-      "role": "采集/输入",
-      "inputs": [
-        "prompt",
-        "source code",
-        "json"
-      ],
-      "outputs": [
-        "json",
-        "report",
-        "logs"
-      ],
-      "evidenceLevel": "L3-caveat",
-      "hub": {
-        "score": 40,
-        "level": "有潜力",
-        "verifiedComboCount": 1,
-        "partnerCount": 1,
-        "categoryCount": 1,
-        "deepTestSuccessRate": 100,
-        "averageFriction": 14,
-        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-      }
-    },
-    {
       "name": "Crawlee",
       "url": "https://github.com/apify/crawlee",
       "role": "采集/输入",
@@ -17554,27 +18538,28 @@
       }
     },
     {
-      "name": "UI5 MCP Server",
-      "url": "https://github.com/UI5/mcp-server",
-      "role": "处理/理解",
+      "name": "kimi-cli",
+      "url": "https://github.com/MoonshotAI/kimi-cli",
+      "role": "采集/输入",
       "inputs": [
-        "ui5 project spec",
-        "source code"
+        "prompt",
+        "source code",
+        "json"
       ],
       "outputs": [
-        "web app",
-        "url",
-        "validation report"
+        "json",
+        "report",
+        "logs"
       ],
-      "evidenceLevel": "L2",
+      "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 38,
-        "level": "有潜力",
+        "score": 34,
+        "level": "已验证节点",
         "verifiedComboCount": 1,
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 30,
+        "averageFriction": 66,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -17606,8 +18591,60 @@
       }
     },
     {
+      "name": "wisp-science",
+      "url": "https://github.com/xuzhougeng/wisp-science",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "scholar-rag",
       "url": "https://github.com/PangHu1020/scholar-rag",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "LLM4AD_Next",
+      "url": "https://github.com/Optima-CityU/LLM4AD_Next",
       "role": "采集/输入",
       "inputs": [
         "prompt",
@@ -17657,28 +18694,27 @@
       }
     },
     {
-      "name": "Agent-Reach",
-      "url": "https://github.com/Panniantong/Agent-Reach",
-      "role": "采集/输入",
+      "name": "UI5 MCP Server",
+      "url": "https://github.com/UI5/mcp-server",
+      "role": "处理/理解",
       "inputs": [
-        "platform config",
-        "environment",
-        "channel list"
+        "ui5 project spec",
+        "source code"
       ],
       "outputs": [
-        "json",
-        "diagnostics",
-        "status report"
+        "web app",
+        "url",
+        "validation report"
       ],
-      "evidenceLevel": "L3-caveat",
+      "evidenceLevel": "L2",
       "hub": {
-        "score": 35,
+        "score": 38,
         "level": "有潜力",
         "verifiedComboCount": 1,
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 62,
+        "averageFriction": 30,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -17706,6 +18742,32 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 44,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "Agent-Reach",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "role": "采集/输入",
+      "inputs": [
+        "platform config",
+        "environment",
+        "channel list"
+      ],
+      "outputs": [
+        "json",
+        "diagnostics",
+        "status report"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 35,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 62,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     }
