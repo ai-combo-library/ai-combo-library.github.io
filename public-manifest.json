@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T19:22:38.510092+08:00",
-  "records": 56,
+  "generatedAt": "2026-07-25T19:25:41.649871+08:00",
+  "records": 58,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -33,6 +33,7 @@
     "reports/fresh-arc-caveman-worker-smoke.html",
     "reports/fresh-bluerock-agent-nexus-worker-smoke.html",
     "reports/fresh-clarity-cli-codex-plugin-cc-worker-smoke.html",
+    "reports/fresh-claude-code-templates-codebase-memory-mcp-worker-smoke.html",
     "reports/fresh-datafoundry-caveman-worker-smoke.html",
     "reports/fresh-deconvolute-headroom-worker-smoke.html",
     "reports/fresh-gatewaystack-godot-demo-projects-worker-smoke.html",
@@ -42,6 +43,7 @@
     "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
     "reports/fresh-ryu-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-headroom-worker-smoke.html",
+    "reports/fresh-whalecloud-pdf2md-paper-qa-worker-smoke.html",
     "reports/fresh-wisp-science-caveman-worker-smoke.html",
     "reports/funclip-videocaptioner-l0-worker-smoke.html",
     "reports/marker-chattts-worker-smoke.html",
