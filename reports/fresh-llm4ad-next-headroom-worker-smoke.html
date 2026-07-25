@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM4AD_Next + headroom</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=fresh-llm4ad-next-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
+      <h1>LLM4AD_Next + headroom</h1>
+      <p class="lead">LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。</p>
+      <div class="meta">
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>LLM4AD_Next</span><span>headroom</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+      </section>
+      <h2>我们怎么测</h2>
+      <p>使用仓库提供的确定性模拟服务运行 LLM4AD_Next，执行一代、一个岛和两个个体的旅行商问题任务；随后把生成的日志交给 headroom 0.31.0 处理，并核对输出是否保留错误代码、是否按严重程度排序。</p>
+      <h2>实际结果</h2>
+      <p>两款工具均成功完成各自环节，headroom 确实处理了 LLM4AD_Next 生成的结果；共检查7项，全部通过。处理样本包含80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. LLM4AD_Next：获取原始资料，并把内容交给下一步。</li><li>2. headroom：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看技术记录（供复核）</summary>
+        <pre>LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。
+LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。
+LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。
+本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。
+本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

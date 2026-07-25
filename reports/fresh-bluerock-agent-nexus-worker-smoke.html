@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bluerock + Agent Nexus</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=fresh-bluerock-agent-nexus-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
+      <h1>bluerock + Agent Nexus</h1>
+      <p class="lead">bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。</p>
+      <div class="meta">
+        <span>部署运维与安全 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>bluerock</span><span>Agent Nexus</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>希望轻量安装、直接处理未经整理的大批日志，或依赖 Agent Nexus 原生工具调用能力的用户。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的...</span></div>
+      </section>
+      <h2>我们怎么测</h2>
+      <p>使用 BlueRock OSS 0.2.0 的官方客户端与服务端示例生成实际结果，再将同一份结构化结果交给 Agent Nexus；随后核对事件记录、错误码传递、结果读取和报告生成情况。</p>
+      <h2>实际结果</h2>
+      <p>两个工具均完成了各自步骤，Agent Nexus 确实读取了 bluerock 的输出，并保留了 SQLSTATE 42703；事故报告成功生成，8 项检查全部通过。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. bluerock：获取原始资料，并把内容交给下一步。</li><li>2. Agent Nexus：接收上一步结果并自动继续处理。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看技术记录（供复核）</summary>
+        <pre>bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。
+bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。
+bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。
+本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的压缩日志都会让本地模型只关注第一条 WARN，必须先按严重程度排序，才能稳定识别 SQLSTATE 42703。Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据；本次无工具调用的分析可以完成，但原生工具能力尚未验证。测试并非在全新环境中进行，也没有进行规模测试；其他环境和流量规模均未验证。
+本次只验证了 BlueRock OSS 0.2.0 的官方客户端与服务端示例，并使用了特意加入的 SDK 审计标记；商业版连接能力和生产流量未验证。Agent Nexus 需要 PostgreSQL、API 服务和本地 Ollama 模型，本次使用 gemma4:12b，虽不需要付费 API，但首次构建和模型准备较重。原始的 80 条日志以及未经排序的压缩日志都会让本地模型只关注第一条 WARN，必须先按严重程度排序，才能稳定识别 SQLSTATE 42703。Agent Nexus 还因缺少 tools.category 列而未能写入原生工具初始数据；本次无工具调用的分析可以完成，但原生工具能力尚未验证。测试并非在全新环境中进行，也没有进行规模测试；其他环境和流量规模均未验证。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

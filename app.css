@@ -3894,6 +3894,57 @@ body.combo-detail-page {
   padding: 0 0.7rem;
 }
 
+.resource-home select,
+.resource-home .compact-filters select,
+.library-app .facet-group select,
+.library-app .sort-control select {
+  appearance: none;
+  min-height: 36px;
+  border: 1px solid #d5dbe5;
+  border-radius: 6px;
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #667085 50%),
+    linear-gradient(135deg, #667085 50%, transparent 50%);
+  background-position:
+    calc(100% - 13px) 50%,
+    calc(100% - 9px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px, 4px 4px;
+  box-shadow: none;
+  color: #344054;
+  padding: 0 2rem 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.resource-home select:hover,
+.resource-home .compact-filters select:hover,
+.library-app .facet-group select:hover,
+.library-app .sort-control select:hover {
+  border-color: #aeb9c8;
+}
+
+.resource-home select:focus,
+.resource-home .compact-filters select:focus,
+.library-app .facet-group select:focus,
+.library-app .sort-control select:focus {
+  border-color: #7ba5ea;
+  box-shadow: 0 0 0 2px rgba(36, 104, 229, 0.12);
+}
+
+.library-app .sort-control {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.library-app .sort-control select {
+  width: auto;
+  min-width: 138px;
+}
+
 .library-search input {
   width: min(30vw, 310px);
 }
@@ -4818,6 +4869,11 @@ body.combo-detail-page {
   .library-search input,
   .sort-control select {
     width: 100%;
+  }
+
+  .library-app .sort-control {
+    display: grid;
+    gap: 0.3rem;
   }
 
   .hero-library-search {
