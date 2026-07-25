@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T19:06:58.579190+08:00",
-  "records": 52,
+  "generatedAt": "2026-07-25T19:19:41.677309+08:00",
+  "records": 54,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -31,7 +31,9 @@
     "reports/fresh-adrian-headroom-worker-smoke.html",
     "reports/fresh-agent-nexus-headroom-worker-smoke.html",
     "reports/fresh-bluerock-agent-nexus-worker-smoke.html",
+    "reports/fresh-clarity-cli-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-datafoundry-caveman-worker-smoke.html",
+    "reports/fresh-gatewaystack-godot-demo-projects-worker-smoke.html",
     "reports/fresh-jat-headroom-worker-smoke.html",
     "reports/fresh-kimi-cli-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
