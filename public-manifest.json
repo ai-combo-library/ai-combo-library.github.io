@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T19:25:41.649871+08:00",
-  "records": 58,
+  "generatedAt": "2026-07-25T19:28:11.206617+08:00",
+  "records": 59,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -22,6 +22,7 @@
     "reports/codebase-memory-headroom-l3-caveat.html",
     "reports/codebase-memory-mcp-marlin-worker-smoke.html",
     "reports/codebase-memory-repomix-l3-caveat.html",
+    "reports/crawl4ai-llamaindex-open-webui-worker-smoke.html",
     "reports/crawlee-stirling-pdf-l1.html",
     "reports/crawlee-unstructured-bookstack-light-l3.html",
     "reports/desktop-commander-markitdown-fresh-deep-worker-smoke.html",
