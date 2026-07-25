@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>scholar-rag + headroom</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=fresh-scholar-rag-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
+      <h1>scholar-rag + headroom</h1>
+      <p class="lead">scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。</p>
+      <div class="meta">
+        <span>文档与知识 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>scholar-rag</span><span>headroom</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要验证 scholar-rag 局部论文节点输出能否交给 headroom 压缩整理，并希望保留错误代码、严重程度等排查线索的个人或小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>需要完整处理 PDF、连接 Milvus 或 PostgreSQL、执行向量生成与检索、多智能体回答，或者处理百万行日志、实时数据流和多服务关联分析的用户；这些场景均未验证。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+      </section>
+      <h2>我们怎么测</h2>
+      <p>运行 scholar-rag 的真实论文节点生成逻辑及错误分支，将生成的实际输出交给 headroom 处理，再逐项核对错误信息、错误代码和严重程度是否保留并得到合理排序。测试样本为 80 条固定服务日志，包含 INFO、WARN 和 SQLSTATE ERROR。</p>
+      <h2>实际结果</h2>
+      <p>scholar-rag 与 headroom 均成功完成本次处理，headroom 确实使用了前者的输出，并保留了原始错误和错误代码、按严重程度突出关键信息；7 项结果检查全部通过。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. scholar-rag：获取原始资料，并把内容交给下一步。</li><li>2. headroom：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看技术记录（供复核）</summary>
+        <pre>scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。
+scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。
+scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。
+目前只验证了 scholar-rag 的真实论文节点生成逻辑和错误分支，没有覆盖完整 PDF、Milvus、PostgreSQL、向量生成、检索或多智能体回答流程。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，本次测试额外安装并预先检查了 httpx。规模仅覆盖 80 条固定服务日志，未验证百万行日志、实时流或多服务关联，也未进行规模测试和全新环境验证。
+目前只验证了 scholar-rag 的真实论文节点生成逻辑和错误分支，没有覆盖完整 PDF、Milvus、PostgreSQL、向量生成、检索或多智能体回答流程。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，本次测试额外安装并预先检查了 httpx。规模仅覆盖 80 条固定服务日志，未验证百万行日志、实时流或多服务关联，也未进行规模测试和全新环境验证。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T17:38:34.117588+08:00",
-  "records": 46,
+  "generatedAt": "2026-07-25T18:32:41.752731+08:00",
+  "records": 49,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -32,7 +32,10 @@
     "reports/fresh-agent-nexus-headroom-worker-smoke.html",
     "reports/fresh-bluerock-agent-nexus-worker-smoke.html",
     "reports/fresh-datafoundry-caveman-worker-smoke.html",
+    "reports/fresh-jat-headroom-worker-smoke.html",
     "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
+    "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
+    "reports/fresh-scholar-rag-headroom-worker-smoke.html",
     "reports/funclip-videocaptioner-l0-worker-smoke.html",
     "reports/marker-chattts-worker-smoke.html",
     "reports/marker-haystack-l3-caveat.html",
