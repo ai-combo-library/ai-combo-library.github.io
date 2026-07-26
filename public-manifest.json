@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-25T20:56:54.088407+08:00",
-  "records": 62,
+  "generatedAt": "2026-07-26T09:24:02.903391+08:00",
+  "records": 63,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -45,6 +45,7 @@
     "reports/fresh-ryu-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-headroom-worker-smoke.html",
     "reports/fresh-twiligent-headroom-worker-smoke.html",
+    "reports/fresh-vault-operator-caveman-worker-smoke.html",
     "reports/fresh-whalecloud-pdf2md-paper-qa-worker-smoke.html",
     "reports/fresh-wisp-science-caveman-worker-smoke.html",
     "reports/funclip-videocaptioner-l0-worker-smoke.html",

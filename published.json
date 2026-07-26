@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-25T20:56:53.995268+08:00",
+  "generatedAt": "2026-07-26T09:24:02.809824+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 62,
-    "featured": 62,
-    "evidenceItems": 62,
-    "tools": 67
+    "records": 63,
+    "featured": 63,
+    "evidenceItems": 63,
+    "tools": 68
   },
   "records": [
     {
@@ -2185,12 +2185,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 5,
-            "partnerCount": 5,
+            "verifiedComboCount": 6,
+            "partnerCount": 6,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
             "averageFriction": 28,
-            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -3018,12 +3018,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 5,
-            "partnerCount": 5,
+            "verifiedComboCount": 6,
+            "partnerCount": 6,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
             "averageFriction": 28,
-            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -5122,12 +5122,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 5,
-            "partnerCount": 5,
+            "verifiedComboCount": 6,
+            "partnerCount": 6,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
             "averageFriction": 28,
-            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -8515,12 +8515,12 @@
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 5,
-            "partnerCount": 5,
+            "verifiedComboCount": 6,
+            "partnerCount": 6,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
             "averageFriction": 28,
-            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
@@ -10581,19 +10581,19 @@
       "reportUrl": "reports/fresh-whalecloud-pdf2md-paper-qa-worker-smoke.html"
     },
     {
-      "id": "fresh-wisp-science-caveman-worker-smoke",
-      "title": "wisp-science + caveman",
-      "summary": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+      "id": "fresh-vault-operator-caveman-worker-smoke",
+      "title": "vault-operator + caveman",
+      "summary": "vault-operator 先处理提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再接收其中的 JSON、报告或回复草稿，输出压缩后的回复和 token 指标。适合需要按这一流程处理材料的个人用户和小团队。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
-      "useCase": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
-      "testMethod": "先用真实样本运行 wisp-science 生成输出，再把同一份输出交给 caveman，最后核对中间文件、最终结果以及后者是否实际使用了前者的输出。",
-      "testOutcome": "两个工具均成功完成处理，caveman 确实使用了 wisp-science 的输出，2 项结果检查全部通过。",
+      "audience": "适合希望用真实材料检验工具接力流程，并能自行准备所需软件环境的个人用户和小团队。",
+      "useCase": "vault-operator 先处理提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再接收其中的 JSON、报告或回复草稿，输出压缩后的回复和 token 指标。适合需要按这一流程处理材料的个人用户和小团队。",
+      "testMethod": "先用真实样本运行 vault-operator 生成实际输出，再将同一份输出交给 caveman，最后核对中间文件和最终结果。",
+      "testOutcome": "两个工具均成功运行，caveman 确实使用了 vault-operator 的输出，2 项结果检查全部通过。",
       "tools": [
         {
-          "name": "wisp-science",
-          "url": "https://github.com/xuzhougeng/wisp-science",
+          "name": "vault-operator",
+          "url": "https://github.com/pssah4/vault-operator",
           "role": "采集/输入",
           "inputs": [
             "prompt",
@@ -10609,9 +10609,8 @@
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "科研与教育",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "科研与教育",
             "文档与知识",
             "开发与 Agent"
           ],
@@ -10621,22 +10620,22 @@
             "交付"
           ],
           "audiences": [
-            "研究与教育人员"
+            "知识工作者"
           ],
           "traits": [
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
+            "verifiedAt": "2026-07-26T09:23:08.880020+08:00"
           },
           "hub": {
-            "score": 40,
+            "score": 38,
             "level": "有潜力",
             "verifiedComboCount": 1,
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 14,
+            "averageFriction": 28,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
@@ -10660,7 +10659,6 @@
           "primaryCategory": "文档与知识",
           "domains": [
             "文档与知识",
-            "科研与教育",
             "开发与 Agent"
           ],
           "tasks": [
@@ -10674,36 +10672,36 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
+            "verifiedAt": "2026-07-26T09:23:08.880020+08:00"
           },
           "hub": {
             "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 5,
-            "partnerCount": 5,
+            "verifiedComboCount": 6,
+            "partnerCount": 6,
             "categoryCount": 3,
             "deepTestSuccessRate": 100,
             "averageFriction": 28,
-            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 wisp-science 并手工整理结果",
-          "type": "手工替代流程",
-          "fit": "只需要生成 JSON、报告或日志，不要求自动压缩最终回复或统计令牌时。",
-          "tradeoff": "需要人工处理中间结果，且不会获得本次已验证的 caveman 压缩输出与令牌指标。"
+          "name": "单独使用 vault-operator",
+          "type": "手工处理方案",
+          "fit": "适合只需要获得 JSON、报告或日志，不需要 caveman 后续输出的人。",
+          "tradeoff": "需要手工整理中间结果，并且不会获得本组合中由 caveman 生成的压缩回复和 token 指标。"
         }
       ],
-      "whyComboStillMatters": "wisp-science 负责生成 JSON、报告或日志，caveman 负责将这些内容压缩成最终回复并提供令牌指标。只用 wisp-science，缺少已经验证的压缩交付步骤；只用 caveman，则仍需另行准备可供处理的 JSON、报告或回复草稿。",
+      "whyComboStillMatters": "vault-operator 负责生成 JSON、报告或日志等中间结果，caveman 负责把这些结果进一步处理成压缩回复和 token 指标。只用 vault-operator 无法覆盖已验证的最终处理；只用 caveman 则缺少这条流程中由 vault-operator 生成的实际输入。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
-        "科研与教育",
         "文档与知识",
-        "团队协作与沟通"
+        "团队协作与沟通",
+        "科研与教育"
       ],
       "tasks": [
         "测试",
@@ -10726,16 +10724,16 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "依赖内置 Python 内核",
-        "完整代理流程需要凭据",
-        "未在全新环境验证",
-        "未做规模测试",
+        "依赖 Node.js 与 npm",
+        "需要公共 npm 软件源",
+        "全新环境与规模未验证",
+        "安装摩擦",
         "外部 API Key"
       ],
-      "suitableFor": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
-      "notFor": "需要凭据支持的完整代理流程、要求在全新环境中直接使用，或需要处理能力已经过规模验证的场景。",
-      "maxBenefit": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
-      "maxLimit": "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。",
+      "suitableFor": "适合希望用真实材料检验工具接力流程，并能自行准备所需软件环境的个人用户和小团队。",
+      "notFor": "不适合无法安装 Node.js 和 npm、无法访问公共 npm 软件源的人，也不应把当前结果直接视为大规模使用或其他环境下同样有效的证明。",
+      "maxBenefit": "vault-operator 先处理提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再接收其中的 JSON、报告或回复草稿，输出压缩后的回复和 token 指标。适合需要按这一流程处理材料的个人用户和小团队。",
+      "maxLimit": "需要 Node.js、npm，并且能够访问公共 npm 软件源。本次测试并非在全新环境中完成，也没有进行规模测试；其他规模和环境下的表现尚未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -10757,15 +10755,19 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 14,
-        "level": "低摩擦",
+        "score": 28,
+        "level": "中摩擦",
         "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
           {
             "label": "外部 API Key",
             "weight": 14
           }
         ],
-        "summary": "安装和配置成本相对可控。"
+        "summary": "可试，但建议先按报告准备依赖和配置。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -10773,14 +10775,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-25T19:04:44.476265+08:00",
+        "testedAt": "2026-07-26T09:23:08.880020+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
         "checksPassed": 2,
         "checksTotal": 2
       },
-      "reportUrl": "reports/fresh-wisp-science-caveman-worker-smoke.html"
+      "reportUrl": "reports/fresh-vault-operator-caveman-worker-smoke.html"
     },
     {
       "id": "mdpdf-paperqa-l2-caveat-worker-smoke",
@@ -11004,19 +11006,19 @@
       "reportUrl": "reports/mdpdf-paperqa-l2-caveat-worker-smoke.html"
     },
     {
-      "id": "fresh-llm4ad-next-headroom-worker-smoke",
-      "title": "LLM4AD_Next + Headroom",
-      "summary": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "id": "fresh-wisp-science-caveman-worker-smoke",
+      "title": "wisp-science + caveman",
+      "summary": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
-      "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
-      "testMethod": "使用仓库提供的确定性模拟服务运行 LLM4AD_Next，执行一代、一个岛和两个个体的旅行商问题任务；随后把生成的日志交给 headroom 0.31.0 处理，并核对输出是否保留错误代码、是否按严重程度排序。",
-      "testOutcome": "两款工具均成功完成各自环节，headroom 确实处理了 LLM4AD_Next 生成的结果；共检查7项，全部通过。处理样本包含80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR。",
+      "audience": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
+      "useCase": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+      "testMethod": "先用真实样本运行 wisp-science 生成输出，再把同一份输出交给 caveman，最后核对中间文件、最终结果以及后者是否实际使用了前者的输出。",
+      "testOutcome": "两个工具均成功完成处理，caveman 确实使用了 wisp-science 的输出，2 项结果检查全部通过。",
       "tools": [
         {
-          "name": "LLM4AD_Next",
-          "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+          "name": "wisp-science",
+          "url": "https://github.com/xuzhougeng/wisp-science",
           "role": "采集/输入",
           "inputs": [
             "prompt",
@@ -11032,8 +11034,9 @@
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
+          "primaryCategory": "科研与教育",
           "domains": [
+            "科研与教育",
             "文档与知识",
             "开发与 Agent"
           ],
@@ -11043,13 +11046,13 @@
             "交付"
           ],
           "audiences": [
-            "知识工作者"
+            "研究与教育人员"
           ],
           "traits": [
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
+            "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
           },
           "hub": {
             "score": 40,
@@ -11063,79 +11066,76 @@
           }
         },
         {
-          "name": "Headroom",
-          "url": "https://github.com/chopratejas/headroom",
-          "role": "处理/理解",
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
           "inputs": [
-            "mcp json output",
-            "tool output",
-            "logs",
-            "code search results",
-            "rag chunks"
+            "json",
+            "report",
+            "draft response"
           ],
           "outputs": [
-            "compressed context",
-            "structured compressed json",
-            "retained retrieval signals"
+            "compressed response",
+            "token metrics"
           ],
-          "interface": "Python library / CLI / proxy / MCP",
+          "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "开发与 Agent",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "开发与 Agent",
-            "文档与知识"
+            "文档与知识",
+            "科研与教育",
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "检索"
+            "交付"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
           "traits": [
-            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
+            "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 92,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
-            "categoryCount": 4,
+            "verifiedComboCount": 6,
+            "partnerCount": 6,
+            "categoryCount": 3,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 28,
+            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 LLM4AD_Next 并手工整理结果",
+          "name": "单独使用 wisp-science 并手工整理结果",
           "type": "手工替代流程",
-          "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
-          "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
+          "fit": "只需要生成 JSON、报告或日志，不要求自动压缩最终回复或统计令牌时。",
+          "tradeoff": "需要人工处理中间结果，且不会获得本次已验证的 caveman 压缩输出与令牌指标。"
         }
       ],
-      "whyComboStillMatters": "LLM4AD_Next 负责执行上游任务并生成 JSON、报告或日志，headroom 负责压缩和整理这些结果，同时保留重要检索线索。只用 LLM4AD_Next，需要人工整理输出；只用 headroom，则没有这次验证中的上游任务结果可供处理。",
+      "whyComboStillMatters": "wisp-science 负责生成 JSON、报告或日志，caveman 负责将这些内容压缩成最终回复并提供令牌指标。只用 wisp-science，缺少已经验证的压缩交付步骤；只用 caveman，则仍需另行准备可供处理的 JSON、报告或回复草稿。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
+        "科研与教育",
         "文档与知识",
-        "团队协作与沟通",
-        "科研与教育"
+        "团队协作与沟通"
       ],
       "tasks": [
         "测试",
-        "检索",
         "交付",
         "采集",
-        "分析"
+        "分析",
+        "协作"
       ],
       "audiences": [
         "开发者",
@@ -11151,16 +11151,16 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "仅验证80条日志",
+        "依赖内置 Python 内核",
+        "完整代理流程需要凭据",
+        "未在全新环境验证",
         "未做规模测试",
-        "依赖 Python 3.12",
-        "需额外安装 httpx",
-        "安装摩擦"
+        "外部 API Key"
       ],
-      "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
-      "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
-      "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
-      "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
+      "suitableFor": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
+      "notFor": "需要凭据支持的完整代理流程、要求在全新环境中直接使用，或需要处理能力已经过规模验证的场景。",
+      "maxBenefit": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+      "maxLimit": "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -11186,7 +11186,7 @@
         "level": "低摩擦",
         "factors": [
           {
-            "label": "安装摩擦",
+            "label": "外部 API Key",
             "weight": 14
           }
         ],
@@ -11198,14 +11198,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-24T09:24:27.893397+08:00",
+        "testedAt": "2026-07-25T19:04:44.476265+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 7,
-        "checksTotal": 7
+        "checksPassed": 2,
+        "checksTotal": 2
       },
-      "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html"
+      "reportUrl": "reports/fresh-wisp-science-caveman-worker-smoke.html"
     },
     {
       "id": "mdpdf-anything-llm-l2-blocked",
@@ -11424,33 +11424,84 @@
       "reportUrl": "reports/mdpdf-anything-llm-l2-blocked.html"
     },
     {
-      "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
-      "title": "UI5 MCP Server + Playwright",
-      "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "id": "fresh-llm4ad-next-headroom-worker-smoke",
+      "title": "LLM4AD_Next + Headroom",
+      "summary": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-      "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-      "testMethod": "通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。",
-      "testOutcome": "应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。",
+      "audience": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
+      "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "testMethod": "使用仓库提供的确定性模拟服务运行 LLM4AD_Next，执行一代、一个岛和两个个体的旅行商问题任务；随后把生成的日志交给 headroom 0.31.0 处理，并核对输出是否保留错误代码、是否按严重程度排序。",
+      "testOutcome": "两款工具均成功完成各自环节，headroom 确实处理了 LLM4AD_Next 生成的结果；共检查7项，全部通过。处理样本包含80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR。",
       "tools": [
         {
-          "name": "UI5 MCP Server",
-          "url": "https://github.com/UI5/mcp-server",
-          "role": "处理/理解",
+          "name": "LLM4AD_Next",
+          "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+          "role": "采集/输入",
           "inputs": [
-            "ui5 project spec",
-            "source code"
+            "prompt",
+            "source code",
+            "json"
           ],
           "outputs": [
-            "web app",
-            "url",
-            "validation report"
+            "json",
+            "report",
+            "logs"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L2",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
+          ],
+          "outputs": [
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
+          ],
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
@@ -11458,79 +11509,39 @@
           ],
           "tasks": [
             "测试",
-            "交付"
+            "检索"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
           "testResults": {
-            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+            "verifiedAt": "2026-07-24T09:24:27.893397+08:00"
           },
           "hub": {
-            "score": 38,
-            "level": "有潜力",
-            "verifiedComboCount": 1,
-            "partnerCount": 1,
-            "categoryCount": 1,
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
             "averageFriction": 30,
-            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
-          }
-        },
-        {
-          "name": "Playwright",
-          "url": "https://github.com/microsoft/playwright",
-          "role": "输出/交付",
-          "inputs": [
-            "web app",
-            "url"
-          ],
-          "outputs": [
-            "test result",
-            "screenshot",
-            "console log"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L2",
-          "primaryCategory": "开发与 Agent",
-          "domains": [
-            "开发与 Agent",
-            "文档与知识"
-          ],
-          "tasks": [
-            "测试"
-          ],
-          "audiences": [
-            "开发者"
-          ],
-          "traits": [],
-          "testResults": {
-            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
-          },
-          "hub": {
-            "score": 64,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
-            "categoryCount": 2,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 43,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "SAP Fiori tools + 人工浏览器测试",
-          "type": "官方替代",
-          "fit": "已经使用 SAP IDE 插件并由人工完成验收",
-          "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+          "name": "单独使用 LLM4AD_Next 并手工整理结果",
+          "type": "手工替代流程",
+          "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
+          "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
         }
       ],
-      "whyComboStillMatters": "UI5 MCP Server 负责遵循 UI5 工程规范生成代码，Playwright 负责验证浏览器中的真实结果；组合后可以及时发现“项目生成成功但页面不可用”的问题。",
+      "whyComboStillMatters": "LLM4AD_Next 负责执行上游任务并生成 JSON、报告或日志，headroom 负责压缩和整理这些结果，同时保留重要检索线索。只用 LLM4AD_Next，需要人工整理输出；只用 headroom，则没有这次验证中的上游任务结果可供处理。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
@@ -11541,10 +11552,10 @@
       ],
       "tasks": [
         "测试",
+        "检索",
         "交付",
-        "分析",
-        "协作",
-        "采集"
+        "采集",
+        "分析"
       ],
       "audiences": [
         "开发者",
@@ -11560,16 +11571,16 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "首次下载较大",
-        "仅验证示例应用",
-        "安装摩擦",
-        "外部账号",
-        "UI 未验证"
+        "仅验证80条日志",
+        "未做规模测试",
+        "依赖 Python 3.12",
+        "需额外安装 httpx",
+        "安装摩擦"
       ],
-      "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-      "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
-      "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-      "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+      "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
+      "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
+      "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -11579,11 +11590,10 @@
         "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断中等",
-        "confidenceScore": 65,
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
         "missingProof": [
-          "缺少为什么不用单体工具的解释",
-          "缺少完整组合闭环证据"
+          "缺少为什么不用单体工具的解释"
         ]
       },
       "longTermUse": {
@@ -11592,23 +11602,15 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 30,
-        "level": "中摩擦",
+        "score": 14,
+        "level": "低摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
-          },
-          {
-            "label": "外部账号",
-            "weight": 10
-          },
-          {
-            "label": "UI 未验证",
-            "weight": 6
           }
         ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
+        "summary": "安装和配置成本相对可控。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -11616,14 +11618,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-14T18:20:16.846346+08:00",
+        "testedAt": "2026-07-24T09:24:27.893397+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 2,
-        "checksTotal": 2
+        "checksPassed": 7,
+        "checksTotal": 7
       },
-      "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
+      "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html"
     },
     {
       "id": "firecrawl-haystack-l3-caveat",
@@ -11866,152 +11868,133 @@
       "reportUrl": "reports/firecrawl-haystack-l3-caveat.html"
     },
     {
-      "id": "repomix-actionlint-l3-caveat",
-      "title": "Repomix + actionlint",
-      "summary": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
-      "evidenceScore": 95,
+      "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
+      "title": "UI5 MCP Server + Playwright",
+      "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": null,
-      "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
-      "testMethod": "让 Repomix 把 GitHub Actions workflow 与说明文件打成审查包，再对包内同一份 workflow 运行 actionlint 确定性校验。",
-      "testOutcome": "审查包包含目标 YAML，actionlint 对该文件返回通过，3 项检查完成；未覆盖大型 monorepo、私有 Action 和矩阵构建。",
+      "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+      "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "testMethod": "通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。",
+      "testOutcome": "应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。",
       "tools": [
         {
-          "name": "Repomix",
-          "url": "https://github.com/yamadashy/repomix",
-          "role": "采集/输入",
+          "name": "UI5 MCP Server",
+          "url": "https://github.com/UI5/mcp-server",
+          "role": "处理/理解",
           "inputs": [
-            "repository files",
-            "include globs"
+            "ui5 project spec",
+            "source code"
           ],
           "outputs": [
-            "Agent context pack",
-            "XML/text bundle"
+            "web app",
+            "url",
+            "validation report"
           ],
-          "interface": "CLI",
+          "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L3-caveat",
+          "evidenceLevel": "L2",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
-            "文档与知识",
-            "自动化与业务流程"
+            "文档与知识"
           ],
           "tasks": [
             "测试",
-            "采集",
-            "编排"
+            "交付"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
+          "traits": [],
           "testResults": {
-            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
           },
           "hub": {
-            "score": 46,
+            "score": 38,
             "level": "有潜力",
-            "verifiedComboCount": 2,
-            "partnerCount": 2,
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 55,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "actionlint",
-          "url": "https://github.com/rhysd/actionlint",
-          "role": "处理/理解",
+          "name": "Playwright",
+          "url": "https://github.com/microsoft/playwright",
+          "role": "输出/交付",
           "inputs": [
-            "GitHub Actions YAML"
+            "web app",
+            "url"
           ],
           "outputs": [
-            "lint diagnostics",
-            "exit code"
+            "test result",
+            "screenshot",
+            "console log"
           ],
-          "interface": "CLI",
+          "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L3-caveat",
+          "evidenceLevel": "L2",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
-            "文档与知识",
-            "自动化与业务流程"
+            "文档与知识"
           ],
           "tasks": [
-            "测试",
-            "编排"
+            "测试"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
+          "traits": [],
           "testResults": {
-            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
           },
           "hub": {
-            "score": 58,
+            "score": 64,
             "level": "高适配",
             "verifiedComboCount": 3,
             "partnerCount": 3,
-            "categoryCount": 1,
+            "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 46,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 43,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "actionlint 单独使用",
-          "type": "单体替代",
-          "fit": "只关心 workflow 是否有静态错误的人",
-          "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
-        },
-        {
-          "name": "Repomix 单独使用",
-          "type": "单体替代",
-          "fit": "只需要给 Agent 整理代码上下文的人",
-          "tradeoff": "能解释，但没有确定性 workflow lint。"
-        },
-        {
-          "name": "GitHub Actions 在线日志",
-          "type": "平台替代",
-          "fit": "已经推送并跑过 CI 的项目",
-          "tradeoff": "结果最真实，但反馈链路更重。"
+          "name": "SAP Fiori tools + 人工浏览器测试",
+          "type": "官方替代",
+          "fit": "已经使用 SAP IDE 插件并由人工完成验收",
+          "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
         }
       ],
-      "whyComboStillMatters": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+      "whyComboStillMatters": "UI5 MCP Server 负责遵循 UI5 工程规范生成代码，Playwright 负责验证浏览器中的真实结果；组合后可以及时发现“项目生成成功但页面不可用”的问题。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
-        "自动化与业务流程",
         "文档与知识",
-        "部署运维与安全"
+        "团队协作与沟通",
+        "科研与教育"
       ],
       "tasks": [
         "测试",
-        "编排",
         "交付",
         "分析",
-        "部署"
+        "协作",
+        "采集"
       ],
       "audiences": [
-        "开发者"
+        "开发者",
+        "团队与企业"
       ],
       "traits": [
-        "可自托管",
         "CLI",
         "已全链路实测"
       ],
@@ -12019,43 +12002,41 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
+      "recommendationLevel": "强推荐",
       "caveatTags": [
+        "首次下载较大",
+        "仅验证示例应用",
         "安装摩擦",
-        "Docker 重"
+        "外部账号",
+        "UI 未验证"
       ],
-      "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-      "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
-      "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-      "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+      "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+      "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
+      "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
       "demandValidation": {
-        "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-        "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
-        "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-        "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 98,
+        "confidence": "需求判断中等",
+        "confidenceScore": 65,
         "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
+          "缺少为什么不用单体工具的解释",
+          "缺少完整组合闭环证据"
         ]
       },
       "longTermUse": {
-        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
-        "steps": [
-          "固定输入输出",
-          "运行 deep rerun",
-          "保留失败原因",
-          "进入证据中心",
-          "定期复测"
-        ],
-        "tested": true
+        "summary": "",
+        "steps": [],
+        "tested": false
       },
       "installFrictionIndex": {
-        "score": 36,
+        "score": 30,
         "level": "中摩擦",
         "factors": [
           {
@@ -12063,8 +12044,12 @@
             "weight": 14
           },
           {
-            "label": "Docker 重",
-            "weight": 22
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
           }
         ],
         "summary": "可试，但建议先按报告准备依赖和配置。"
@@ -12075,14 +12060,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-03T00:11:01.634093+08:00",
+        "testedAt": "2026-07-14T18:20:16.846346+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 3,
-        "checksTotal": 3
+        "checksPassed": 2,
+        "checksTotal": 2
       },
-      "reportUrl": "reports/repomix-actionlint-l3-caveat.html"
+      "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
     },
     {
       "id": "stirling-pdf-nocodb-l3-office",
@@ -12321,148 +12306,153 @@
       "reportUrl": "reports/stirling-pdf-nocodb-l3-office.html"
     },
     {
-      "id": "fresh-agent-nexus-headroom-worker-smoke",
-      "title": "Headroom + Agent Nexus",
-      "summary": "先用 Headroom 把大量结构化日志压缩并把高严重度异常排到前面，再让 Agent Nexus 用本地模型生成带错误码和处置建议的事件报告。",
-      "evidenceScore": 85,
+      "id": "repomix-actionlint-l3-caveat",
+      "title": "Repomix + actionlint",
+      "summary": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+      "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
-      "audience": "维护本地服务、Agent 或内部开发平台的开发者和小团队。",
-      "useCase": "本地开发环境、内部服务和 Agent 系统的批量日志初筛与事件摘要。",
-      "testMethod": "准备 80 条含 INFO、WARN 和 SQLSTATE 42703 ERROR 的结构化日志，先用 Headroom 压缩并按严重度排序，再把 16 条优先日志交给 Agent Nexus，使用本地 gemma4:12b 生成事件报告。",
-      "testOutcome": "Headroom 保留了 SQLSTATE 错误和请求编号；Agent Nexus 最终指出出错组件、缺失字段、受影响请求和修复方向。8 项断言全部通过，但原始日志或未排序压缩日志会让模型漏掉核心错误。",
+      "audience": null,
+      "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+      "testMethod": "让 Repomix 把 GitHub Actions workflow 与说明文件打成审查包，再对包内同一份 workflow 运行 actionlint 确定性校验。",
+      "testOutcome": "审查包包含目标 YAML，actionlint 对该文件返回通过，3 项检查完成；未覆盖大型 monorepo、私有 Action 和矩阵构建。",
       "tools": [
         {
-          "name": "Headroom",
-          "url": "https://github.com/chopratejas/headroom",
-          "role": "处理/理解",
+          "name": "Repomix",
+          "url": "https://github.com/yamadashy/repomix",
+          "role": "采集/输入",
           "inputs": [
-            "structured logs",
-            "tool output",
-            "json"
+            "repository files",
+            "include globs"
           ],
           "outputs": [
-            "prioritized compressed logs",
-            "structured json"
+            "Agent context pack",
+            "XML/text bundle"
           ],
-          "interface": "",
+          "interface": "CLI",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L3",
+          "evidenceLevel": "L3-caveat",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
             "文档与知识",
-            "数据与分析",
-            "部署运维与安全"
-          ],
-          "tasks": [
-            "测试",
-            "检索",
-            "生成"
-          ],
-          "audiences": [
-            "开发者"
-          ],
-          "traits": [
-            "已全链路实测"
-          ],
-          "testResults": {
-            "verifiedAt": "2026-07-14T00:55:32.314716+08:00"
-          },
-          "hub": {
-            "score": 97,
-            "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
-            "categoryCount": 4,
-            "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
-          }
-        },
-        {
-          "name": "Agent Nexus",
-          "url": "https://github.com/deepaksinghcs14/agent-nexus",
-          "role": "自动执行",
-          "inputs": [
-            "prompt",
-            "tool configuration",
-            "structured context"
-          ],
-          "outputs": [
-            "agent run",
-            "run trace",
-            "incident report"
-          ],
-          "interface": "",
-          "setup": "",
-          "readme": "",
-          "evidenceLevel": "L3",
-          "primaryCategory": "开发与 Agent",
-          "domains": [
-            "开发与 Agent",
-            "文档与知识",
-            "数据与分析",
-            "部署运维与安全"
+            "自动化与业务流程"
           ],
           "tasks": [
             "测试",
             "采集",
-            "交付",
-            "生成"
+            "编排"
           ],
           "audiences": [
             "开发者"
           ],
           "traits": [
+            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-14T00:55:32.314716+08:00"
+            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
           },
           "hub": {
-            "score": 52,
+            "score": 46,
             "level": "有潜力",
             "verifiedComboCount": 2,
             "partnerCount": 2,
-            "categoryCount": 2,
+            "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 50,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 55,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "actionlint",
+          "url": "https://github.com/rhysd/actionlint",
+          "role": "处理/理解",
+          "inputs": [
+            "GitHub Actions YAML"
+          ],
+          "outputs": [
+            "lint diagnostics",
+            "exit code"
+          ],
+          "interface": "CLI",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "自动化与业务流程"
+          ],
+          "tasks": [
+            "测试",
+            "编排"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+          },
+          "hub": {
+            "score": 58,
+            "level": "高适配",
+            "verifiedComboCount": 3,
+            "partnerCount": 3,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 46,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "Grafana Loki + 告警规则",
-          "type": "成熟运维替代",
-          "fit": "需要持续采集、查询、仪表盘和稳定告警的生产团队",
-          "tradeoff": "生产能力更成熟，但不会直接生成 Agent 式根因说明，部署与规则维护也更系统化。"
+          "name": "actionlint 单独使用",
+          "type": "单体替代",
+          "fit": "只关心 workflow 是否有静态错误的人",
+          "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
+        },
+        {
+          "name": "Repomix 单独使用",
+          "type": "单体替代",
+          "fit": "只需要给 Agent 整理代码上下文的人",
+          "tradeoff": "能解释，但没有确定性 workflow lint。"
+        },
+        {
+          "name": "GitHub Actions 在线日志",
+          "type": "平台替代",
+          "fit": "已经推送并跑过 CI 的项目",
+          "tradeoff": "结果最真实，但反馈链路更重。"
         }
       ],
-      "whyComboStillMatters": "Agent Nexus 直接读取原始日志时连续漏掉中段 ERROR；Headroom 先压缩并保护错误码，再由适配器按严重度排序，才让本地模型稳定关注真正故障。",
+      "whyComboStillMatters": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
+        "自动化与业务流程",
         "文档与知识",
-        "团队协作与沟通",
-        "数据与分析"
+        "部署运维与安全"
       ],
       "tasks": [
         "测试",
+        "编排",
         "交付",
         "分析",
-        "协作",
-        "检索"
+        "部署"
       ],
       "audiences": [
-        "开发者",
-        "团队与企业"
+        "开发者"
       ],
       "traits": [
-        "CLI",
         "可自托管",
+        "CLI",
         "已全链路实测"
       ],
       "collections": [
@@ -12471,61 +12461,53 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "共享依赖",
-        "规模化未验证",
-        "上游缺陷",
         "安装摩擦",
-        "依赖缺失",
-        "Docker 重",
-        "大文件未验证"
+        "Docker 重"
       ],
-      "suitableFor": "愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。",
-      "notFor": "只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。",
-      "maxBenefit": "80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。",
-      "maxLimit": "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。",
+      "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+      "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
+      "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+      "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
       "demandValidation": {
-        "targetUser": "维护本地服务、Agent 或内部开发平台，并希望日志不离开本机的开发者和小团队。",
-        "currentAlternative": "Grafana Loki + 告警规则：更适合成熟生产运维，但需要系统化部署和规则维护。",
-        "painPoint": "原始日志噪音太多，直接交给本地模型容易漏掉中段的高严重度错误。",
-        "switchingReason": "Headroom 先压缩并保护错误码，再由 Agent Nexus 生成根因说明；本轮对照实验确认这一步能改善识别结果。",
-        "complexityFit": "需要 Docker、PostgreSQL 与本地 Ollama，适合已有自托管环境的开发者。",
-        "confidence": "实测证据较强",
-        "confidenceScore": 85,
+        "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+        "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
+        "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+        "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 98,
         "missingProof": [
-          "尚未覆盖大规模实时日志",
-          "Agent Nexus 原生工具种子缺列问题待上游修复"
+          "还需要真实用户反馈确认是否愿意长期使用"
         ]
       },
       "longTermUse": {
-        "summary": "",
-        "steps": [],
-        "tested": false
+        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+        "steps": [
+          "固定输入输出",
+          "运行 deep rerun",
+          "保留失败原因",
+          "进入证据中心",
+          "定期复测"
+        ],
+        "tested": true
       },
       "installFrictionIndex": {
-        "score": 62,
-        "level": "高摩擦",
+        "score": 36,
+        "level": "中摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
           },
           {
-            "label": "依赖缺失",
-            "weight": 18
-          },
-          {
             "label": "Docker 重",
             "weight": 22
-          },
-          {
-            "label": "大文件未验证",
-            "weight": 8
           }
         ],
-        "summary": "需要预留安装、账号、依赖或机器配置成本。"
+        "summary": "可试，但建议先按报告准备依赖和配置。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -12533,14 +12515,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-14T00:55:32.314716+08:00",
+        "testedAt": "2026-07-03T00:11:01.634093+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 8,
-        "checksTotal": 8
+        "checksPassed": 3,
+        "checksTotal": 3
       },
-      "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html"
+      "reportUrl": "reports/repomix-actionlint-l3-caveat.html"
     },
     {
       "id": "crawlee-stirling-pdf-l1",
@@ -12765,6 +12747,228 @@
         "checksTotal": 6
       },
       "reportUrl": "reports/crawlee-stirling-pdf-l1.html"
+    },
+    {
+      "id": "fresh-agent-nexus-headroom-worker-smoke",
+      "title": "Headroom + Agent Nexus",
+      "summary": "先用 Headroom 把大量结构化日志压缩并把高严重度异常排到前面，再让 Agent Nexus 用本地模型生成带错误码和处置建议的事件报告。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "维护本地服务、Agent 或内部开发平台的开发者和小团队。",
+      "useCase": "本地开发环境、内部服务和 Agent 系统的批量日志初筛与事件摘要。",
+      "testMethod": "准备 80 条含 INFO、WARN 和 SQLSTATE 42703 ERROR 的结构化日志，先用 Headroom 压缩并按严重度排序，再把 16 条优先日志交给 Agent Nexus，使用本地 gemma4:12b 生成事件报告。",
+      "testOutcome": "Headroom 保留了 SQLSTATE 错误和请求编号；Agent Nexus 最终指出出错组件、缺失字段、受影响请求和修复方向。8 项断言全部通过，但原始日志或未排序压缩日志会让模型漏掉核心错误。",
+      "tools": [
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "structured logs",
+            "tool output",
+            "json"
+          ],
+          "outputs": [
+            "prioritized compressed logs",
+            "structured json"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "数据与分析",
+            "部署运维与安全"
+          ],
+          "tasks": [
+            "测试",
+            "检索",
+            "生成"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-14T00:55:32.314716+08:00"
+          },
+          "hub": {
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+          }
+        },
+        {
+          "name": "Agent Nexus",
+          "url": "https://github.com/deepaksinghcs14/agent-nexus",
+          "role": "自动执行",
+          "inputs": [
+            "prompt",
+            "tool configuration",
+            "structured context"
+          ],
+          "outputs": [
+            "agent run",
+            "run trace",
+            "incident report"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "数据与分析",
+            "部署运维与安全"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付",
+            "生成"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-14T00:55:32.314716+08:00"
+          },
+          "hub": {
+            "score": 52,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 2,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 50,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "Grafana Loki + 告警规则",
+          "type": "成熟运维替代",
+          "fit": "需要持续采集、查询、仪表盘和稳定告警的生产团队",
+          "tradeoff": "生产能力更成熟，但不会直接生成 Agent 式根因说明，部署与规则维护也更系统化。"
+        }
+      ],
+      "whyComboStillMatters": "Agent Nexus 直接读取原始日志时连续漏掉中段 ERROR；Headroom 先压缩并保护错误码，再由适配器按严重度排序，才让本地模型稳定关注真正故障。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "数据与分析"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "分析",
+        "协作",
+        "检索"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "可自托管",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "共享依赖",
+        "规模化未验证",
+        "上游缺陷",
+        "安装摩擦",
+        "依赖缺失",
+        "Docker 重",
+        "大文件未验证"
+      ],
+      "suitableFor": "愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。",
+      "notFor": "只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。",
+      "maxBenefit": "80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。",
+      "maxLimit": "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "维护本地服务、Agent 或内部开发平台，并希望日志不离开本机的开发者和小团队。",
+        "currentAlternative": "Grafana Loki + 告警规则：更适合成熟生产运维，但需要系统化部署和规则维护。",
+        "painPoint": "原始日志噪音太多，直接交给本地模型容易漏掉中段的高严重度错误。",
+        "switchingReason": "Headroom 先压缩并保护错误码，再由 Agent Nexus 生成根因说明；本轮对照实验确认这一步能改善识别结果。",
+        "complexityFit": "需要 Docker、PostgreSQL 与本地 Ollama，适合已有自托管环境的开发者。",
+        "confidence": "实测证据较强",
+        "confidenceScore": 85,
+        "missingProof": [
+          "尚未覆盖大规模实时日志",
+          "Agent Nexus 原生工具种子缺列问题待上游修复"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 62,
+        "level": "高摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "依赖缺失",
+            "weight": 18
+          },
+          {
+            "label": "Docker 重",
+            "weight": 22
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          }
+        ],
+        "summary": "需要预留安装、账号、依赖或机器配置成本。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-14T00:55:32.314716+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 8,
+        "checksTotal": 8
+      },
+      "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html"
     },
     {
       "id": "agent-reach-headroom-l3-caveat",
@@ -13205,13 +13409,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-25T20:56:53.703770+08:00",
+    "generatedAt": "2026-07-26T09:24:02.518976+08:00",
     "summary": {
-      "total": 62,
-      "publicFeatured": 62,
-      "withReports": 62,
-      "withCaveatTags": 62,
-      "withInstallFrictionIndex": 62
+      "total": 63,
+      "publicFeatured": 63,
+      "withReports": 63,
+      "withCaveatTags": 63,
+      "withInstallFrictionIndex": 63
     },
     "items": [
       {
@@ -19204,29 +19408,29 @@
         }
       },
       {
-        "id": "fresh-wisp-science-caveman-worker-smoke",
-        "title": "wisp-science + caveman",
+        "id": "fresh-vault-operator-caveman-worker-smoke",
+        "title": "vault-operator + caveman",
         "tools": [
-          "wisp-science",
+          "vault-operator",
           "caveman"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+        "useCase": "vault-operator 先处理提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再接收其中的 JSON、报告或回复草稿，输出压缩后的回复和 token 指标。适合需要按这一流程处理材料的个人用户和小团队。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
-          "科研与教育",
           "部署运维与安全",
-          "团队协作与沟通"
+          "团队协作与沟通",
+          "自动化与业务流程"
         ],
         "tasks": [
-          "测试",
           "交付",
-          "生成",
+          "测试",
+          "协作",
           "分析",
-          "协作"
+          "生成"
         ],
         "audiences": [
           "开发者",
@@ -19241,45 +19445,49 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
-        "notFor": "需要凭据支持的完整代理流程、要求在全新环境中直接使用，或需要处理能力已经过规模验证的场景。",
-        "maxBenefit": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
-        "maxLimit": "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。",
+        "suitableFor": "适合希望用真实材料检验工具接力流程，并能自行准备所需软件环境的个人用户和小团队。",
+        "notFor": "不适合无法安装 Node.js 和 npm、无法访问公共 npm 软件源的人，也不应把当前结果直接视为大规模使用或其他环境下同样有效的证明。",
+        "maxBenefit": "vault-operator 先处理提示词、源代码或 JSON，生成 JSON、报告或日志；caveman 再接收其中的 JSON、报告或回复草稿，输出压缩后的回复和 token 指标。适合需要按这一流程处理材料的个人用户和小团队。",
+        "maxLimit": "需要 Node.js、npm，并且能够访问公共 npm 软件源。本次测试并非在全新环境中完成，也没有进行规模测试；其他规模和环境下的表现尚未验证。",
         "caveatTags": [
-          "依赖内置 Python 内核",
-          "完整代理流程需要凭据",
-          "未在全新环境验证",
-          "未做规模测试",
+          "依赖 Node.js 与 npm",
+          "需要公共 npm 软件源",
+          "全新环境与规模未验证",
+          "安装摩擦",
           "外部 API Key"
         ],
         "alternatives": [
           {
-            "name": "单独使用 wisp-science 并手工整理结果",
-            "type": "手工替代流程",
-            "fit": "只需要生成 JSON、报告或日志，不要求自动压缩最终回复或统计令牌时。",
-            "tradeoff": "需要人工处理中间结果，且不会获得本次已验证的 caveman 压缩输出与令牌指标。"
+            "name": "单独使用 vault-operator",
+            "type": "手工处理方案",
+            "fit": "适合只需要获得 JSON、报告或日志，不需要 caveman 后续输出的人。",
+            "tradeoff": "需要手工整理中间结果，并且不会获得本组合中由 caveman 生成的压缩回复和 token 指标。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-wisp-science-caveman-worker-smoke.html",
+        "reportUrl": "reports/fresh-vault-operator-caveman-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "测试不是在全新环境中完成",
-          "其他环境、数据量和并发情况下的表现均未验证"
+          "本次测试并非在全新环境中完成",
+          "其他规模和环境下的表现尚未验证"
         ],
         "installFrictionIndex": {
-          "score": 14,
-          "level": "低摩擦",
+          "score": 28,
+          "level": "中摩擦",
           "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
             {
               "label": "外部 API Key",
               "weight": 14
             }
           ],
-          "summary": "安装和配置成本相对可控。"
+          "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。"
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -19431,21 +19639,21 @@
         }
       },
       {
-        "id": "fresh-llm4ad-next-headroom-worker-smoke",
-        "title": "LLM4AD_Next + headroom",
+        "id": "fresh-wisp-science-caveman-worker-smoke",
+        "title": "wisp-science + caveman",
         "tools": [
-          "LLM4AD_Next",
-          "headroom"
+          "wisp-science",
+          "caveman"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+        "useCase": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
-          "部署运维与安全",
           "开发与 Agent",
-          "文档与知识",
+          "科研与教育",
+          "部署运维与安全",
           "团队协作与沟通"
         ],
         "tasks": [
@@ -19453,7 +19661,7 @@
           "交付",
           "生成",
           "分析",
-          "检索"
+          "协作"
         ],
         "audiences": [
           "开发者",
@@ -19468,46 +19676,45 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
-        "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
-        "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
-        "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
+        "suitableFor": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
+        "notFor": "需要凭据支持的完整代理流程、要求在全新环境中直接使用，或需要处理能力已经过规模验证的场景。",
+        "maxBenefit": "wisp-science 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果，生成压缩后的回复和令牌指标；适合需要先整理输入、再压缩交付结果的开发场景。",
+        "maxLimit": "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。",
         "caveatTags": [
-          "仅验证80条日志",
+          "依赖内置 Python 内核",
+          "完整代理流程需要凭据",
+          "未在全新环境验证",
           "未做规模测试",
-          "依赖 Python 3.12",
-          "需额外安装 httpx",
-          "安装摩擦"
+          "外部 API Key"
         ],
         "alternatives": [
           {
-            "name": "单独使用 LLM4AD_Next 并手工整理结果",
+            "name": "单独使用 wisp-science 并手工整理结果",
             "type": "手工替代流程",
-            "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
-            "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
+            "fit": "只需要生成 JSON、报告或日志，不要求自动压缩最终回复或统计令牌时。",
+            "tradeoff": "需要人工处理中间结果，且不会获得本次已验证的 caveman 压缩输出与令牌指标。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
+        "reportUrl": "reports/fresh-wisp-science-caveman-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "因此测试时需额外安装并预先检查 httpx",
-          "未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境",
-          "也未在纯净环境中验证"
+          "测试不是在全新环境中完成",
+          "其他环境、数据量和并发情况下的表现均未验证"
         ],
         "installFrictionIndex": {
           "score": 14,
           "level": "低摩擦",
           "factors": [
             {
-              "label": "安装摩擦",
+              "label": "外部 API Key",
               "weight": 14
             }
           ],
           "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+          "本次使用的是 Wisp Science 自带、可持续保留状态的 Python 内核，因为由服务商支持的代理流程需要凭据。测试不是在全新环境中完成，也没有进行规模测试；其他环境、数据量和并发情况下的表现均未验证。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -19654,21 +19861,21 @@
         }
       },
       {
-        "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
-        "title": "UI5 MCP Server + Playwright",
+        "id": "fresh-llm4ad-next-headroom-worker-smoke",
+        "title": "LLM4AD_Next + headroom",
         "tools": [
-          "UI5 MCP Server",
-          "Playwright"
+          "LLM4AD_Next",
+          "headroom"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+        "useCase": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
-          "开发与 Agent",
           "部署运维与安全",
-          "自动化与业务流程",
+          "开发与 Agent",
+          "文档与知识",
           "团队协作与沟通"
         ],
         "tasks": [
@@ -19676,7 +19883,7 @@
           "交付",
           "生成",
           "分析",
-          "协作"
+          "检索"
         ],
         "audiences": [
           "开发者",
@@ -19691,47 +19898,43 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-        "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
-        "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-        "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+        "suitableFor": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
+        "notFor": "需要处理百万行日志、实时日志流、多服务关联数据，或要求已经验证大规模处理能力和纯净环境安装流程的用户。",
+        "maxBenefit": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+        "maxLimit": "本次每次调用都需要 Python 3.12，并通过公共软件包索引重新安装依赖。测试使用仓库内的确定性模拟服务，没有使用外部大模型凭据；任务规模仅为一代、一个岛和两个个体的旅行商问题。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包没有声明这一依赖，因此测试时需额外安装并预先检查 httpx。本次只处理了80条确定性服务日志，未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境；也未在纯净环境中验证。",
         "caveatTags": [
-          "首次下载较大",
-          "仅验证示例应用",
-          "安装摩擦",
-          "外部账号",
-          "UI 未验证"
+          "仅验证80条日志",
+          "未做规模测试",
+          "依赖 Python 3.12",
+          "需额外安装 httpx",
+          "安装摩擦"
         ],
         "alternatives": [
           {
-            "name": "SAP Fiori tools + 人工浏览器测试",
-            "type": "官方替代",
-            "fit": "已经使用 SAP IDE 插件并由人工完成验收",
-            "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+            "name": "单独使用 LLM4AD_Next 并手工整理结果",
+            "type": "手工替代流程",
+            "fit": "适合只需运行上游任务、且愿意人工查看 JSON、报告和日志的情况。",
+            "tradeoff": "可以省去 headroom 及其 httpx 依赖，但需要人工压缩内容、筛选错误代码并按严重程度整理日志。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
+        "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
         "verifiedAt": "",
-        "installFriction": [],
+        "installFriction": [
+          "因此测试时需额外安装并预先检查 httpx",
+          "未覆盖百万行日志、实时流、多服务关联、其他任务规模或其他环境",
+          "也未在纯净环境中验证"
+        ],
         "installFrictionIndex": {
-          "score": 30,
-          "level": "中摩擦",
+          "score": 14,
+          "level": "低摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
-            },
-            {
-              "label": "外部账号",
-              "weight": 10
-            },
-            {
-              "label": "UI 未验证",
-              "weight": 6
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
           "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
@@ -19750,11 +19953,10 @@
           "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-          "confidence": "需求判断中等",
-          "confidenceScore": 65,
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
           "missingProof": [
-            "缺少为什么不用单体工具的解释",
-            "缺少完整组合闭环证据"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -19920,32 +20122,33 @@
         }
       },
       {
-        "id": "repomix-actionlint-l3-caveat",
-        "title": "Repomix + actionlint",
+        "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
+        "title": "UI5 MCP Server + Playwright",
         "tools": [
-          "Repomix",
-          "actionlint"
+          "UI5 MCP Server",
+          "Playwright"
         ],
-        "evidenceScore": 95,
+        "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+        "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
-          "自动化与业务流程",
           "部署运维与安全",
-          "文档与知识"
+          "自动化与业务流程",
+          "团队协作与沟通"
         ],
         "tasks": [
           "测试",
-          "编排",
           "交付",
+          "生成",
           "分析",
-          "部署"
+          "协作"
         ],
         "audiences": [
-          "开发者"
+          "开发者",
+          "团队与企业"
         ],
         "traits": [
           "可自托管",
@@ -19955,41 +20158,32 @@
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-        "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
-        "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-        "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+        "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
+        "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+        "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
         "caveatTags": [
+          "首次下载较大",
+          "仅验证示例应用",
           "安装摩擦",
-          "Docker 重"
+          "外部账号",
+          "UI 未验证"
         ],
         "alternatives": [
           {
-            "name": "actionlint 单独使用",
-            "type": "单体替代",
-            "fit": "只关心 workflow 是否有静态错误的人",
-            "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
-          },
-          {
-            "name": "Repomix 单独使用",
-            "type": "单体替代",
-            "fit": "只需要给 Agent 整理代码上下文的人",
-            "tradeoff": "能解释，但没有确定性 workflow lint。"
-          },
-          {
-            "name": "GitHub Actions 在线日志",
-            "type": "平台替代",
-            "fit": "已经推送并跑过 CI 的项目",
-            "tradeoff": "结果最真实，但反馈链路更重。"
+            "name": "SAP Fiori tools + 人工浏览器测试",
+            "type": "官方替代",
+            "fit": "已经使用 SAP IDE 插件并由人工完成验收",
+            "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/repomix-actionlint-l3-caveat.html",
-        "verifiedAt": "2026-07-03T00:11:01.634093+08:00",
+        "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
+        "verifiedAt": "",
         "installFriction": [],
         "installFrictionIndex": {
-          "score": 36,
+          "score": 30,
           "level": "中摩擦",
           "factors": [
             {
@@ -19997,14 +20191,18 @@
               "weight": 14
             },
             {
-              "label": "Docker 重",
-              "weight": 22
+              "label": "外部账号",
+              "weight": 10
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
             }
           ],
           "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。"
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -20013,29 +20211,29 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-          "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
-          "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-          "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-          "confidence": "需求判断较强",
-          "confidenceScore": 98,
+          "confidence": "需求判断中等",
+          "confidenceScore": 65,
           "missingProof": [
-            "还需要真实用户反馈确认是否愿意长期使用"
+            "缺少为什么不用单体工具的解释",
+            "缺少完整组合闭环证据"
           ]
         },
         "longTermUse": {
-          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
           "steps": [
-            "固定输入输出",
-            "运行 deep rerun",
-            "保留失败原因",
-            "进入证据中心",
-            "定期复测"
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
           ],
-          "tested": true
+          "tested": false
         }
       },
       {
@@ -20185,37 +20383,35 @@
         }
       },
       {
-        "id": "fresh-agent-nexus-headroom-worker-smoke",
-        "title": "Headroom + Agent Nexus",
+        "id": "repomix-actionlint-l3-caveat",
+        "title": "Repomix + actionlint",
         "tools": [
-          "Headroom",
-          "Agent Nexus"
+          "Repomix",
+          "actionlint"
         ],
-        "evidenceScore": 85,
+        "evidenceScore": 95,
         "evidenceLevel": "L3-caveat",
-        "useCase": "本地开发环境、内部服务和 Agent 系统的批量日志初筛与事件摘要。",
+        "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
+          "自动化与业务流程",
           "部署运维与安全",
-          "数据与分析",
-          "团队协作与沟通"
+          "文档与知识"
         ],
         "tasks": [
           "测试",
-          "部署",
-          "分析",
+          "编排",
           "交付",
-          "协作"
+          "分析",
+          "部署"
         ],
         "audiences": [
-          "开发者",
-          "团队与企业"
+          "开发者"
         ],
         "traits": [
           "可自托管",
-          "桌面应用",
           "已全链路实测"
         ],
         "collections": [
@@ -20223,63 +20419,55 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "适合特定人群",
-        "suitableFor": "愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。",
-        "notFor": "只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。",
-        "maxBenefit": "80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。",
-        "maxLimit": "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。",
+        "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+        "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
+        "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+        "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
         "caveatTags": [
-          "共享依赖",
-          "规模化未验证",
-          "上游缺陷",
           "安装摩擦",
-          "依赖缺失",
-          "Docker 重",
-          "大文件未验证"
+          "Docker 重"
         ],
         "alternatives": [
           {
-            "name": "Grafana Loki + 告警规则",
-            "type": "成熟运维替代",
-            "fit": "需要持续采集、查询、仪表盘和稳定告警的生产团队",
-            "tradeoff": "生产能力更成熟，但不会直接生成 Agent 式根因说明，部署与规则维护也更系统化。"
+            "name": "actionlint 单独使用",
+            "type": "单体替代",
+            "fit": "只关心 workflow 是否有静态错误的人",
+            "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
+          },
+          {
+            "name": "Repomix 单独使用",
+            "type": "单体替代",
+            "fit": "只需要给 Agent 整理代码上下文的人",
+            "tradeoff": "能解释，但没有确定性 workflow lint。"
+          },
+          {
+            "name": "GitHub Actions 在线日志",
+            "type": "平台替代",
+            "fit": "已经推送并跑过 CI 的项目",
+            "tradeoff": "结果最真实，但反馈链路更重。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html",
-        "verifiedAt": "",
-        "installFriction": [
-          "原因是 `tools.category` 字段缺失",
-          "测试不是只检查安装或 README",
-          "最终报告正确识别了 ERROR 级别、`agent-nexus-api` 组件、缺少 `tools.category` 的根因",
-          "只想安装一个桌面应用立即查看日志的普通用户",
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
-          "实测 自动测试程序 已显式补装并预检"
-        ],
+        "reportUrl": "reports/repomix-actionlint-l3-caveat.html",
+        "verifiedAt": "2026-07-03T00:11:01.634093+08:00",
+        "installFriction": [],
         "installFrictionIndex": {
-          "score": 62,
-          "level": "高摩擦",
+          "score": 36,
+          "level": "中摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
             },
             {
-              "label": "依赖缺失",
-              "weight": 18
-            },
-            {
               "label": "Docker 重",
               "weight": 22
-            },
-            {
-              "label": "大文件未验证",
-              "weight": 8
             }
           ],
-          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+          "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。"
+          "Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -20290,27 +20478,27 @@
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
         "demandValidation": {
-          "targetUser": "维护本地服务、Agent 或内部开发平台，并希望日志不离开本机的开发者和小团队。",
-          "currentAlternative": "Grafana Loki + 告警规则：更适合成熟生产运维，但需要系统化部署和规则维护。",
-          "painPoint": "原始日志噪音太多，直接交给本地模型容易漏掉中段的高严重度错误。",
-          "switchingReason": "Headroom 先压缩并保护错误码，再由 Agent Nexus 生成根因说明；本轮对照实验确认这一步能改善识别结果。",
-          "complexityFit": "需要 Docker、PostgreSQL 与本地 Ollama，适合已有自托管环境的开发者。",
-          "confidence": "实测证据较强",
-          "confidenceScore": 85,
+          "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+          "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
+          "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+          "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 98,
           "missingProof": [
-            "尚未覆盖大规模实时日志",
-            "Agent Nexus 原生工具种子缺列问题待上游修复"
+            "还需要真实用户反馈确认是否愿意长期使用"
           ]
         },
         "longTermUse": {
-          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
           "steps": [
-            "把用户每天会重复提供的输入做成固定模板。",
-            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
-            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
-            "准备手动兜底路径，避免自动化失败后任务停摆。"
+            "固定输入输出",
+            "运行 deep rerun",
+            "保留失败原因",
+            "进入证据中心",
+            "定期复测"
           ],
-          "tested": false
+          "tested": true
         }
       },
       {
@@ -20431,6 +20619,135 @@
           "confidenceScore": 78,
           "missingProof": [
             "上手成本较高，需要确认用户是否愿意折腾"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-agent-nexus-headroom-worker-smoke",
+        "title": "Headroom + Agent Nexus",
+        "tools": [
+          "Headroom",
+          "Agent Nexus"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "本地开发环境、内部服务和 Agent 系统的批量日志初筛与事件摘要。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "数据与分析",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "测试",
+          "部署",
+          "分析",
+          "交付",
+          "协作"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "桌面应用",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "愿意维护 Docker 和本地 Ollama、希望降低日志上下文长度并保留本地数据控制的开发者和小团队。",
+        "notFor": "只想开箱即用查看日志、没有 Docker/本地模型环境，或需要成熟告警、审计和大规模日志关联分析的团队。",
+        "maxBenefit": "80 条日志压缩为 16 条优先样本，关键 SQLSTATE 错误得到保留；本地 Agent 最终能给出组件、根因和修复方向，全程不使用付费 API。",
+        "maxLimit": "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。",
+        "caveatTags": [
+          "共享依赖",
+          "规模化未验证",
+          "上游缺陷",
+          "安装摩擦",
+          "依赖缺失",
+          "Docker 重",
+          "大文件未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "Grafana Loki + 告警规则",
+            "type": "成熟运维替代",
+            "fit": "需要持续采集、查询、仪表盘和稳定告警的生产团队",
+            "tradeoff": "生产能力更成熟，但不会直接生成 Agent 式根因说明，部署与规则维护也更系统化。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-agent-nexus-headroom-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "原因是 `tools.category` 字段缺失",
+          "测试不是只检查安装或 README",
+          "最终报告正确识别了 ERROR 级别、`agent-nexus-api` 组件、缺少 `tools.category` 的根因",
+          "只想安装一个桌面应用立即查看日志的普通用户",
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
+          "实测 自动测试程序 已显式补装并预检"
+        ],
+        "installFrictionIndex": {
+          "score": 62,
+          "level": "高摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "依赖缺失",
+              "weight": 18
+            },
+            {
+              "label": "Docker 重",
+              "weight": 22
+            },
+            {
+              "label": "大文件未验证",
+              "weight": 8
+            }
+          ],
+          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+        },
+        "caveats": [
+          "首次运行需要 Docker、PostgreSQL 和本地 Ollama 模型；Headroom 需补装 httpx。Agent Nexus 的原生工具种子当前受 tools.category 缺列影响，本轮也未覆盖大规模实时日志。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "维护本地服务、Agent 或内部开发平台，并希望日志不离开本机的开发者和小团队。",
+          "currentAlternative": "Grafana Loki + 告警规则：更适合成熟生产运维，但需要系统化部署和规则维护。",
+          "painPoint": "原始日志噪音太多，直接交给本地模型容易漏掉中段的高严重度错误。",
+          "switchingReason": "Headroom 先压缩并保护错误码，再由 Agent Nexus 生成根因说明；本轮对照实验确认这一步能改善识别结果。",
+          "complexityFit": "需要 Docker、PostgreSQL 与本地 Ollama，适合已有自托管环境的开发者。",
+          "confidence": "实测证据较强",
+          "confidenceScore": 85,
+          "missingProof": [
+            "尚未覆盖大规模实时日志",
+            "Agent Nexus 原生工具种子缺列问题待上游修复"
           ]
         },
         "longTermUse": {
@@ -21179,12 +21496,12 @@
       "hub": {
         "score": 92,
         "level": "核心枢纽",
-        "verifiedComboCount": 5,
-        "partnerCount": 5,
+        "verifiedComboCount": 6,
+        "partnerCount": 6,
         "categoryCount": 3,
         "deepTestSuccessRate": 100,
         "averageFriction": 28,
-        "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 3 类场景。"
+        "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
       }
     },
     {
@@ -22129,8 +22446,8 @@
       }
     },
     {
-      "name": "wisp-science",
-      "url": "https://github.com/xuzhougeng/wisp-science",
+      "name": "vault-operator",
+      "url": "https://github.com/pssah4/vault-operator",
       "role": "采集/输入",
       "inputs": [
         "prompt",
@@ -22144,19 +22461,19 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 40,
+        "score": 38,
         "level": "有潜力",
         "verifiedComboCount": 1,
         "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 14,
+        "averageFriction": 28,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
-      "name": "LLM4AD_Next",
-      "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+      "name": "wisp-science",
+      "url": "https://github.com/xuzhougeng/wisp-science",
       "role": "采集/输入",
       "inputs": [
         "prompt",
@@ -22204,6 +22521,32 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 44,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "LLM4AD_Next",
+      "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
