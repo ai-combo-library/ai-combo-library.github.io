@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>knowledgeops-agent + codex-plugin-cc</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=fresh-knowledgeops-agent-codex-plugin-cc-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
+      <h1>knowledgeops-agent + codex-plugin-cc</h1>
+      <p class="lead">knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。</p>
+      <div class="meta">
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>knowledgeops-agent</span><span>codex-plugin-cc</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>需要处理工作流配置或源代码检查结果，并愿意准备所需开发环境的个人用户和小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合无法运行 Docker、无法在需要时访问 Maven 镜像或依赖，或没有安装 actionlint 的环境；也不适合把这次结果直接视为大规模或全新环境验证的人。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+      </section>
+      <h2>我们怎么测</h2>
+      <p>先运行 knowledgeops-agent 生成实际输出，再将同一份输出交给 codex-plugin-cc，最后分别核对中间文件与最终结果。</p>
+      <h2>实际结果</h2>
+      <p>两个工具均成功运行，codex-plugin-cc 确实使用了 knowledgeops-agent 的输出；工作流处理和 actionlint 诊断两项检查均通过。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. knowledgeops-agent：获取原始资料，并把内容交给下一步。</li><li>2. codex-plugin-cc：接收上一步结果并自动继续处理。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看技术记录（供复核）</summary>
+        <pre>knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。
+knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。
+knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。
+本次使用的不是全新环境，也没有进行规模测试，因此在全新环境中的表现、可处理的数据量和项目规模均未验证。运行还要求 Docker 服务处于可用状态；若 Maven 镜像或依赖未缓存，需要能够访问并获取它们；同时必须已安装 actionlint。
+本次使用的不是全新环境，也没有进行规模测试，因此在全新环境中的表现、可处理的数据量和项目规模均未验证。运行还要求 Docker 服务处于可用状态；若 Maven 镜像或依赖未缓存，需要能够访问并获取它们；同时必须已安装 actionlint。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>
