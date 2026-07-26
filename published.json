@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-26T12:37:39.946900+08:00",
+  "generatedAt": "2026-07-26T12:40:58.168536+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 65,
-    "featured": 65,
-    "evidenceItems": 65,
-    "tools": 69
+    "records": 66,
+    "featured": 66,
+    "evidenceItems": 66,
+    "tools": 70
   },
   "records": [
     {
@@ -2183,14 +2183,14 @@
             "verifiedAt": "2026-07-21T19:41:44.989301+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 6,
-            "partnerCount": 6,
-            "categoryCount": 3,
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -2926,6 +2926,210 @@
       "reportUrl": "reports/supabase-agent-skills-cli-fresh-deep-worker-smoke.html"
     },
     {
+      "id": "fresh-10xproductivity-caveman-worker-smoke",
+      "title": "10xProductivity + caveman",
+      "summary": "10xProductivity 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果并压缩回复、给出令牌用量指标；适合需要先产出分析材料、再精简交付内容的流程。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
+      "useCase": "10xProductivity 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果并压缩回复、给出令牌用量指标；适合需要先产出分析材料、再精简交付内容的流程。",
+      "testMethod": "先运行 10xProductivity 生成实际输出，再把同一份输出交给 caveman，随后核对中间文件与最终结果是否对应。测试使用了固定且无需登录凭据的 HAR 网络记录样本。",
+      "testOutcome": "两个工具均成功运行，caveman 确实使用了 10xProductivity 的输出；两项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "10xProductivity",
+          "url": "https://github.com/ZhixiangLuo/10xProductivity",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
+          },
+          "hub": {
+            "score": 39,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 24,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
+          },
+          "hub": {
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 10xProductivity 并手工处理结果",
+          "type": "简化流程",
+          "fit": "适合只需要生成 JSON、报告或日志，且可以自行整理最终内容的人。",
+          "tradeoff": "需要手工压缩中间结果，也不会获得这次组合测试中由 caveman 给出的压缩回复和令牌用量指标。"
+        }
+      ],
+      "whyComboStillMatters": "10xProductivity 负责生成 JSON、报告或日志，caveman 负责把这些材料进一步压缩为回复并提供令牌用量指标。只用 10xProductivity，缺少已经验证的后续压缩处理；只用 caveman，则仍需另行准备 JSON、报告或回复草稿。",
+      "category": "自动化与业务流程",
+      "primaryCategory": "自动化与业务流程",
+      "domains": [
+        "自动化与业务流程",
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅验证固定 HAR 样本",
+        "未在全新环境测试",
+        "未做规模测试",
+        "外部账号",
+        "外部 API Key"
+      ],
+      "suitableFor": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
+      "notFor": "不适合要求已经证明可在全新环境、大规模任务或其他输入条件下稳定工作的场景。",
+      "maxBenefit": "10xProductivity 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果并压缩回复、给出令牌用量指标；适合需要先产出分析材料、再精简交付内容的流程。",
+      "maxLimit": "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 24,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-26T12:40:09.883353+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-10xproductivity-caveman-worker-smoke.html"
+    },
+    {
       "id": "codebase-memory-caveman-fresh-deep-worker-smoke",
       "title": "codebase-memory-mcp + caveman",
       "summary": "先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。",
@@ -3016,14 +3220,14 @@
             "verifiedAt": "2026-07-14T02:20:54.788281+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 6,
-            "partnerCount": 6,
-            "categoryCount": 3,
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -5120,14 +5324,14 @@
             "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 6,
-            "partnerCount": 6,
-            "categoryCount": 3,
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -8524,14 +8728,14 @@
             "verifiedAt": "2026-07-21T20:39:28.528586+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 6,
-            "partnerCount": 6,
-            "categoryCount": 3,
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -10683,14 +10887,14 @@
             "verifiedAt": "2026-07-26T09:23:08.880020+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 6,
-            "partnerCount": 6,
-            "categoryCount": 3,
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -11095,14 +11299,14 @@
             "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
           },
           "hub": {
-            "score": 92,
+            "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 6,
-            "partnerCount": 6,
-            "categoryCount": 3,
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -13831,13 +14035,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-26T12:37:39.644230+08:00",
+    "generatedAt": "2026-07-26T12:40:57.862848+08:00",
     "summary": {
-      "total": 65,
-      "publicFeatured": 65,
-      "withReports": 65,
-      "withCaveatTags": 65,
-      "withInstallFrictionIndex": 65
+      "total": 66,
+      "publicFeatured": 66,
+      "withReports": 66,
+      "withCaveatTags": 66,
+      "withInstallFrictionIndex": 66
     },
     "items": [
       {
@@ -15487,6 +15691,118 @@
           "missingProof": [
             "缺少为什么不用单体工具的解释",
             "缺少完整组合闭环证据"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-10xproductivity-caveman-worker-smoke",
+        "title": "10xProductivity + caveman",
+        "tools": [
+          "10xProductivity",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "10xProductivity 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果并压缩回复、给出令牌用量指标；适合需要先产出分析材料、再精简交付内容的流程。",
+        "category": "自动化与业务流程",
+        "primaryCategory": "自动化与业务流程",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "团队协作与沟通",
+          "自动化与业务流程"
+        ],
+        "tasks": [
+          "测试",
+          "分析",
+          "交付",
+          "生成",
+          "协作"
+        ],
+        "audiences": [
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
+        "notFor": "不适合要求已经证明可在全新环境、大规模任务或其他输入条件下稳定工作的场景。",
+        "maxBenefit": "10xProductivity 先根据提示词、源代码或 JSON 生成 JSON、报告或日志，caveman 再接收这些中间结果并压缩回复、给出令牌用量指标；适合需要先产出分析材料、再精简交付内容的流程。",
+        "maxLimit": "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。",
+        "caveatTags": [
+          "仅验证固定 HAR 样本",
+          "未在全新环境测试",
+          "未做规模测试",
+          "外部账号",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 10xProductivity 并手工处理结果",
+            "type": "简化流程",
+            "fit": "适合只需要生成 JSON、报告或日志，且可以自行整理最终内容的人。",
+            "tradeoff": "需要手工压缩中间结果，也不会获得这次组合测试中由 caveman 给出的压缩回复和令牌用量指标。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-10xproductivity-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "未在全新环境中测试",
+          "其他输入格式和使用环境同样未覆盖"
+        ],
+        "installFrictionIndex": {
+          "score": 24,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部账号",
+              "weight": 10
+            },
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -22156,14 +22472,14 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 92,
+        "score": 97,
         "level": "核心枢纽",
-        "verifiedComboCount": 6,
-        "partnerCount": 6,
-        "categoryCount": 3,
+        "verifiedComboCount": 7,
+        "partnerCount": 7,
+        "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 28,
-        "summary": "已在 6 条实测组合中连接 6 个不同搭档，覆盖 3 类场景。"
+        "averageFriction": 27,
+        "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
       }
     },
     {
@@ -22283,6 +22599,32 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 22,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "10xProductivity",
+      "url": "https://github.com/ZhixiangLuo/10xProductivity",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 39,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 24,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },

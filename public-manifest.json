@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-26T12:37:40.040857+08:00",
-  "records": 65,
+  "generatedAt": "2026-07-26T12:40:58.262987+08:00",
+  "records": 66,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -29,6 +29,7 @@
     "reports/excalidraw-markitdown-l3-caveat.html",
     "reports/firecrawl-chattts-worker-smoke.html",
     "reports/firecrawl-haystack-l3-caveat.html",
+    "reports/fresh-10xproductivity-caveman-worker-smoke.html",
     "reports/fresh-adrian-headroom-worker-smoke.html",
     "reports/fresh-agent-nexus-headroom-worker-smoke.html",
     "reports/fresh-arc-caveman-worker-smoke.html",
