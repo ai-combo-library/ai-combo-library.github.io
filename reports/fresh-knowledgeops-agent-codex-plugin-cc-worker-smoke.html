@@ -121,7 +121,7 @@
       <p class="note"><a href="../combo.html?id=fresh-knowledgeops-agent-codex-plugin-cc-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
       <h1>knowledgeops-agent + codex-plugin-cc</h1>
-      <p class="lead">knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。</p>
+      <p class="lead">有一份无法通过检查的 GitHub Actions 工作流配置、想得到标出具体位置和原因的语法诊断时，knowledgeops-agent 准备待检文件，codex-plugin-cc 运行 actionlint，省去人工逐行定位。</p>
       <div class="meta">
         <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
@@ -143,9 +143,9 @@
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre>knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。
-knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。
-knowledgeops-agent 先根据提示词、源代码或 JSON 生成报告等中间结果，codex-plugin-cc 再结合检查报告、工作流配置或源代码生成修改补丁和审查结果；适合处理工作流配置与源代码检查相关的开发任务。
+        <pre>有一份无法通过检查的 GitHub Actions 工作流配置、想得到标出具体位置和原因的语法诊断时，knowledgeops-agent 准备待检文件，codex-plugin-cc 运行 actionlint，省去人工逐行定位。
+有一份无法通过检查的 GitHub Actions 工作流配置、想得到标出具体位置和原因的语法诊断时，knowledgeops-agent 准备待检文件，codex-plugin-cc 运行 actionlint，省去人工逐行定位。
+有一份无法通过检查的 GitHub Actions 工作流配置、想得到标出具体位置和原因的语法诊断时，knowledgeops-agent 准备待检文件，codex-plugin-cc 运行 actionlint，省去人工逐行定位。
 本次使用的不是全新环境，也没有进行规模测试，因此在全新环境中的表现、可处理的数据量和项目规模均未验证。运行还要求 Docker 服务处于可用状态；若 Maven 镜像或依赖未缓存，需要能够访问并获取它们；同时必须已安装 actionlint。
 本次使用的不是全新环境，也没有进行规模测试，因此在全新环境中的表现、可处理的数据量和项目规模均未验证。运行还要求 Docker 服务处于可用状态；若 Maven 镜像或依赖未缓存，需要能够访问并获取它们；同时必须已安装 actionlint。</pre>
       </details>

@@ -121,7 +121,7 @@
       <p class="note"><a href="../combo.html?id=fresh-scholar-rag-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
       <h1>scholar-rag + headroom</h1>
-      <p class="lead">scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。</p>
+      <p class="lead">有论文处理过程中产生的节点日志和错误信息、想得到保留错误码并按严重程度排序的排查清单时，scholar-rag 产生真实错误记录，headroom 再压缩排序，便于先处理最严重问题。</p>
       <div class="meta">
         <span>文档与知识 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
@@ -143,9 +143,9 @@
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre>scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。
-scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。
-scholar-rag 先从论文处理节点及其错误分支生成 JSON、报告或日志，headroom 再压缩并整理这些输出，同时保留错误代码、严重程度等关键信号。适合处理需要缩短内容、又不能丢失关键排查线索的小规模固定日志样本。
+        <pre>有论文处理过程中产生的节点日志和错误信息、想得到保留错误码并按严重程度排序的排查清单时，scholar-rag 产生真实错误记录，headroom 再压缩排序，便于先处理最严重问题。
+有论文处理过程中产生的节点日志和错误信息、想得到保留错误码并按严重程度排序的排查清单时，scholar-rag 产生真实错误记录，headroom 再压缩排序，便于先处理最严重问题。
+有论文处理过程中产生的节点日志和错误信息、想得到保留错误码并按严重程度排序的排查清单时，scholar-rag 产生真实错误记录，headroom 再压缩排序，便于先处理最严重问题。
 目前只验证了 scholar-rag 的真实论文节点生成逻辑和错误分支，没有覆盖完整 PDF、Milvus、PostgreSQL、向量生成、检索或多智能体回答流程。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，本次测试额外安装并预先检查了 httpx。规模仅覆盖 80 条固定服务日志，未验证百万行日志、实时流或多服务关联，也未进行规模测试和全新环境验证。
 目前只验证了 scholar-rag 的真实论文节点生成逻辑和错误分支，没有覆盖完整 PDF、Milvus、PostgreSQL、向量生成、检索或多智能体回答流程。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，本次测试额外安装并预先检查了 httpx。规模仅覆盖 80 条固定服务日志，未验证百万行日志、实时流或多服务关联，也未进行规模测试和全新环境验证。</pre>
       </details>

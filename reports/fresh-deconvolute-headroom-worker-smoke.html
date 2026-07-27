@@ -121,7 +121,7 @@
       <p class="note"><a href="../combo.html?id=fresh-deconvolute-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
       <h1>deconvolute + headroom</h1>
-      <p class="lead">deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。</p>
+      <p class="lead">有一批包含普通信息、警告和 SQL 错误的服务日志、想得到危险操作已拦截且严重问题排在前面的精简日志时，deconvolute 先执行安全策略，headroom 再保留错误码并压缩排序。</p>
       <div class="meta">
         <span>部署运维与安全 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
@@ -143,9 +143,9 @@
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre>deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。
-deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。
-deconvolute 先从提示词、源代码或 JSON 中生成日志、报告或 JSON 中间结果，再由 headroom 压缩并整理其中的重要信息；适合处理服务日志并突出错误代码和严重程度。
+        <pre>有一批包含普通信息、警告和 SQL 错误的服务日志、想得到危险操作已拦截且严重问题排在前面的精简日志时，deconvolute 先执行安全策略，headroom 再保留错误码并压缩排序。
+有一批包含普通信息、警告和 SQL 错误的服务日志、想得到危险操作已拦截且严重问题排在前面的精简日志时，deconvolute 先执行安全策略，headroom 再保留错误码并压缩排序。
+有一批包含普通信息、警告和 SQL 错误的服务日志、想得到危险操作已拦截且严重问题排在前面的精简日志时，deconvolute 先执行安全策略，headroom 再保留错误码并压缩排序。
 本次只验证了 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未验证百万行日志、实时流、多服务关联或其他规模，也未在全新隔离环境中验证。Deconvolute 0.1.5 生成的策略模板末尾有一个无效逗号，测试流程进行了最小修复并留下记录；其默认兜底规则还允许读取私有路径。Headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包未声明该依赖，因此测试时需要明确安装并提前检查 httpx。
 本次只验证了 80 条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未验证百万行日志、实时流、多服务关联或其他规模，也未在全新隔离环境中验证。Deconvolute 0.1.5 生成的策略模板末尾有一个无效逗号，测试流程进行了最小修复并留下记录；其默认兜底规则还允许读取私有路径。Headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但安装包未声明该依赖，因此测试时需要明确安装并提前检查 httpx。</pre>
       </details>

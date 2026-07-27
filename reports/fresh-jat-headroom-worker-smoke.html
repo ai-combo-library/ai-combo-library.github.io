@@ -121,7 +121,7 @@
       <p class="note"><a href="../combo.html?id=fresh-jat-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
       <h1>jat + headroom</h1>
-      <p class="lead">jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。</p>
+      <p class="lead">有一批包含普通信息、警告和 SQL 错误的事件任务与服务日志、想得到保留错误码并按严重程度排序的排查清单时，jat 先记录事件任务，headroom 再压缩日志并突出严重问题。</p>
       <div class="meta">
         <span>部署运维与安全 · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
@@ -143,9 +143,9 @@
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre>jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。
-jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。
-jat 先把任务与日志整理成可继续处理的中间结果，headroom 再压缩内容、保留检索线索并突出严重问题，适合对一批服务日志做初步整理和优先级判断。
+        <pre>有一批包含普通信息、警告和 SQL 错误的事件任务与服务日志、想得到保留错误码并按严重程度排序的排查清单时，jat 先记录事件任务，headroom 再压缩日志并突出严重问题。
+有一批包含普通信息、警告和 SQL 错误的事件任务与服务日志、想得到保留错误码并按严重程度排序的排查清单时，jat 先记录事件任务，headroom 再压缩日志并突出严重问题。
+有一批包含普通信息、警告和 SQL 错误的事件任务与服务日志、想得到保留错误码并按严重程度排序的排查清单时，jat 先记录事件任务，headroom 再压缩日志并突出严重问题。
 目前只验证了 jat 的本地 SQLite 任务命令行、3 个固定事件任务，以及 80 条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志。IDE、Postgres、tmux 协作、云端集成、百万行日志、实时流和多服务关联均未验证；测试也不是在全新环境中完成，未做规模测试。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但其安装包没有声明该依赖，本次测试环境另行安装并预先检查了 httpx。
 目前只验证了 jat 的本地 SQLite 任务命令行、3 个固定事件任务，以及 80 条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志。IDE、Postgres、tmux 协作、云端集成、百万行日志、实时流和多服务关联均未验证；测试也不是在全新环境中完成，未做规模测试。headroom 0.31.0 的 SmartCrusher 会间接使用 httpx，但其安装包没有声明该依赖，本次测试环境另行安装并预先检查了 httpx。</pre>
       </details>
