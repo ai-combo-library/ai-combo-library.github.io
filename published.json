@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-28T19:25:27.043166+08:00",
+  "generatedAt": "2026-07-28T19:30:26.302363+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 67,
-    "featured": 67,
-    "evidenceItems": 67,
-    "tools": 71
+    "records": 68,
+    "featured": 68,
+    "evidenceItems": 68,
+    "tools": 72
   },
   "records": [
     {
@@ -4732,14 +4732,14 @@
             "verifiedAt": "2026-07-14T02:20:56.598003+08:00"
           },
           "hub": {
-            "score": 69,
-            "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
+            "score": 81,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 46,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 39,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -10268,14 +10268,14 @@
             "verifiedAt": "2026-07-21T19:53:58.378164+08:00"
           },
           "hub": {
-            "score": 69,
-            "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
+            "score": 81,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 46,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 39,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -10702,14 +10702,14 @@
             "verifiedAt": "2026-07-21T20:26:26.172566+08:00"
           },
           "hub": {
-            "score": 69,
-            "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
+            "score": 81,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 46,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 39,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -11962,14 +11962,14 @@
             "verifiedAt": "2026-07-26T12:28:06.229284+08:00"
           },
           "hub": {
-            "score": 69,
-            "level": "高适配",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
+            "score": 81,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 46,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 39,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -12734,127 +12734,136 @@
       "reportUrl": "reports/firecrawl-haystack-l3-caveat.html"
     },
     {
-      "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
-      "title": "UI5 MCP Server + Playwright",
-      "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "id": "fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke",
+      "title": "MinerU-Document-Explorer + codex-plugin-cc",
+      "summary": "有一份待检查的项目源代码，以及项目中的工作流 YAML 配置文件。、想得到针对该项目生成的可应用代码补丁，以及说明检查结果的审查结论。时，省去手工转交和整理 MinerU-Document-Explorer 检查产物的步骤，并帮助用户判断是否采用 codex-plugin-cc 给出的修改。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-      "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-      "testMethod": "通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。",
-      "testOutcome": "应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。",
+      "audience": "手上已有项目源代码和工作流 YAML 配置文件，希望把检查报告继续转成代码补丁与审查结论的个人开发者或小团队。",
+      "useCase": "用户提供待检查的项目源代码和工作流 YAML 配置文件后，MinerU-Document-Explorer 先生成检查报告，codex-plugin-cc 再接收这份报告以及原有代码和配置，产出可应用的代码补丁与审查结论。这套接力省去了手工转交和整理检查产物的步骤，也帮助用户判断是否采用生成的修改。",
+      "testMethod": "先让 MinerU-Document-Explorer 处理实际项目文件并生成检查报告，再将同一份报告连同相关代码和工作流配置交给 codex-plugin-cc；随后核对后者是否确实使用了前者的产物，并检查是否生成代码补丁和审查结论。",
+      "testOutcome": "MinerU-Document-Explorer 与 codex-plugin-cc 均成功运行，后者确实使用了前者的输出，衔接检查和功能结果检查共 2 项，全部通过。",
       "tools": [
         {
-          "name": "UI5 MCP Server",
-          "url": "https://github.com/UI5/mcp-server",
-          "role": "处理/理解",
+          "name": "MinerU-Document-Explorer",
+          "url": "https://github.com/opendatalab/MinerU-Document-Explorer",
+          "role": "采集/输入",
           "inputs": [
-            "ui5 project spec",
-            "source code"
+            "prompt",
+            "source code",
+            "json"
           ],
           "outputs": [
-            "web app",
-            "url",
-            "validation report"
+            "json",
+            "report",
+            "logs"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L2",
-          "primaryCategory": "开发与 Agent",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "开发与 Agent",
-            "文档与知识"
+            "文档与知识",
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
+            "采集",
             "交付"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
-          "traits": [],
+          "traits": [
+            "已全链路实测"
+          ],
           "testResults": {
-            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+            "verifiedAt": "2026-07-28T19:29:26.051112+08:00"
           },
           "hub": {
-            "score": 38,
+            "score": 40,
             "level": "有潜力",
             "verifiedComboCount": 1,
             "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
+            "averageFriction": 14,
             "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "Playwright",
-          "url": "https://github.com/microsoft/playwright",
-          "role": "输出/交付",
+          "name": "codex-plugin-cc",
+          "url": "https://github.com/openai/codex-plugin-cc",
+          "role": "自动执行",
           "inputs": [
-            "web app",
-            "url"
+            "lint report",
+            "workflow yaml",
+            "source code"
           ],
           "outputs": [
-            "test result",
-            "screenshot",
-            "console log"
+            "patch",
+            "review result"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L2",
+          "evidenceLevel": "L3-caveat",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
-            "文档与知识"
+            "文档与知识",
+            "自动化与业务流程"
           ],
           "tasks": [
-            "测试"
+            "测试",
+            "编排",
+            "交付"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [],
+          "traits": [
+            "已全链路实测"
+          ],
           "testResults": {
-            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
+            "verifiedAt": "2026-07-28T19:29:26.051112+08:00"
           },
           "hub": {
-            "score": 64,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
-            "categoryCount": 2,
+            "score": 81,
+            "level": "核心枢纽",
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 43,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
+            "averageFriction": 39,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "SAP Fiori tools + 人工浏览器测试",
-          "type": "官方替代",
-          "fit": "已经使用 SAP IDE 插件并由人工完成验收",
-          "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+          "name": "只使用 MinerU-Document-Explorer并手工修改",
+          "type": "单工具加人工处理",
+          "fit": "适合希望自行掌控每一处代码改动、不需要自动生成补丁的用户。",
+          "tradeoff": "需要自己阅读检查报告、修改对应代码，并整理审查结论。"
         }
       ],
-      "whyComboStillMatters": "UI5 MCP Server 负责遵循 UI5 工程规范生成代码，Playwright 负责验证浏览器中的真实结果；组合后可以及时发现“项目生成成功但页面不可用”的问题。",
+      "whyComboStillMatters": "MinerU-Document-Explorer 负责从项目文件生成检查报告，但已验证信息没有表明它会直接给出代码补丁；codex-plugin-cc 能依据检查报告、工作流配置和代码生成补丁与审查结论，但仍需要前置的检查产物。两者组合才能覆盖从发现问题到形成可审查修改的完整接力。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
         "文档与知识",
-        "团队协作与沟通",
-        "科研与教育"
+        "自动化与业务流程",
+        "团队协作与沟通"
       ],
       "tasks": [
         "测试",
         "交付",
+        "采集",
         "分析",
-        "协作",
-        "采集"
+        "编排"
       ],
       "audiences": [
         "开发者",
@@ -12870,16 +12879,16 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "强推荐",
       "caveatTags": [
-        "首次下载较大",
-        "仅验证示例应用",
-        "安装摩擦",
-        "外部账号",
-        "UI 未验证"
+        "每次运行需访问 npm 软件源",
+        "测试主机无法使用 Bun",
+        "未在全新环境验证",
+        "未做规模测试",
+        "安装摩擦"
       ],
-      "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-      "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
-      "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-      "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+      "suitableFor": "手上已有项目源代码和工作流 YAML 配置文件，希望把检查报告继续转成代码补丁与审查结论的个人开发者或小团队。",
+      "notFor": "需要完全离线运行，或必须先确认其能在全新环境、大规模项目及其他包管理环境中稳定工作的用户。",
+      "maxBenefit": "用户提供待检查的项目源代码和工作流 YAML 配置文件后，MinerU-Document-Explorer 先生成检查报告，codex-plugin-cc 再接收这份报告以及原有代码和配置，产出可应用的代码补丁与审查结论。这套接力省去了手工转交和整理检查产物的步骤，也帮助用户判断是否采用生成的修改。",
+      "maxLimit": "当前每次运行都需要访问 npm 软件源，因为仓库只有 bun.lock、没有 package-lock.json，而测试所用主机又无法使用 Bun。本次也不是在全新环境中完成，且没有进行规模测试；其他项目规模、主机环境和包管理条件下的表现均未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -12889,11 +12898,10 @@
         "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
         "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断中等",
-        "confidenceScore": 65,
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
         "missingProof": [
-          "缺少为什么不用单体工具的解释",
-          "缺少完整组合闭环证据"
+          "缺少为什么不用单体工具的解释"
         ]
       },
       "longTermUse": {
@@ -12902,23 +12910,15 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 30,
-        "level": "中摩擦",
+        "score": 14,
+        "level": "低摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
-          },
-          {
-            "label": "外部账号",
-            "weight": 10
-          },
-          {
-            "label": "UI 未验证",
-            "weight": 6
           }
         ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
+        "summary": "安装和配置成本相对可控。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -12926,14 +12926,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-14T18:20:16.846346+08:00",
+        "testedAt": "2026-07-28T19:29:26.051112+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
         "checksPassed": 2,
         "checksTotal": 2
       },
-      "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
+      "reportUrl": "reports/fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke.html"
     },
     {
       "id": "stirling-pdf-nocodb-l3-office",
@@ -13172,152 +13172,133 @@
       "reportUrl": "reports/stirling-pdf-nocodb-l3-office.html"
     },
     {
-      "id": "repomix-actionlint-l3-caveat",
-      "title": "Repomix + actionlint",
-      "summary": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
-      "evidenceScore": 95,
+      "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
+      "title": "UI5 MCP Server + Playwright",
+      "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": null,
-      "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
-      "testMethod": "让 Repomix 把 GitHub Actions workflow 与说明文件打成审查包，再对包内同一份 workflow 运行 actionlint 确定性校验。",
-      "testOutcome": "审查包包含目标 YAML，actionlint 对该文件返回通过，3 项检查完成；未覆盖大型 monorepo、私有 Action 和矩阵构建。",
+      "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+      "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "testMethod": "通过 UI5 MCP Server 创建 OpenUI5 TypeScript 应用，运行 manifest 校验和 UI5 linter；启动应用后由 Playwright 打开页面、点击按钮并检查对话框。",
+      "testOutcome": "应用成功生成，manifest 与 linter 均通过；Playwright 能加载页面、触发按钮、看到对话框并保存截图，生成与浏览器验收形成完整闭环。",
       "tools": [
         {
-          "name": "Repomix",
-          "url": "https://github.com/yamadashy/repomix",
-          "role": "采集/输入",
+          "name": "UI5 MCP Server",
+          "url": "https://github.com/UI5/mcp-server",
+          "role": "处理/理解",
           "inputs": [
-            "repository files",
-            "include globs"
+            "ui5 project spec",
+            "source code"
           ],
           "outputs": [
-            "Agent context pack",
-            "XML/text bundle"
+            "web app",
+            "url",
+            "validation report"
           ],
-          "interface": "CLI",
+          "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L3-caveat",
+          "evidenceLevel": "L2",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
-            "文档与知识",
-            "自动化与业务流程"
+            "文档与知识"
           ],
           "tasks": [
             "测试",
-            "采集",
-            "编排"
+            "交付"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
+          "traits": [],
           "testResults": {
-            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
           },
           "hub": {
-            "score": 46,
+            "score": 38,
             "level": "有潜力",
-            "verifiedComboCount": 2,
-            "partnerCount": 2,
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 55,
-            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "actionlint",
-          "url": "https://github.com/rhysd/actionlint",
-          "role": "处理/理解",
+          "name": "Playwright",
+          "url": "https://github.com/microsoft/playwright",
+          "role": "输出/交付",
           "inputs": [
-            "GitHub Actions YAML"
+            "web app",
+            "url"
           ],
           "outputs": [
-            "lint diagnostics",
-            "exit code"
+            "test result",
+            "screenshot",
+            "console log"
           ],
-          "interface": "CLI",
+          "interface": "",
           "setup": "",
           "readme": "",
-          "evidenceLevel": "L3-caveat",
+          "evidenceLevel": "L2",
           "primaryCategory": "开发与 Agent",
           "domains": [
             "开发与 Agent",
-            "文档与知识",
-            "自动化与业务流程"
+            "文档与知识"
           ],
           "tasks": [
-            "测试",
-            "编排"
+            "测试"
           ],
           "audiences": [
             "开发者"
           ],
-          "traits": [
-            "CLI",
-            "已全链路实测"
-          ],
+          "traits": [],
           "testResults": {
-            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+            "verifiedAt": "2026-07-14T02:20:53.255213+08:00"
           },
           "hub": {
-            "score": 58,
+            "score": 64,
             "level": "高适配",
             "verifiedComboCount": 3,
             "partnerCount": 3,
-            "categoryCount": 1,
+            "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 46,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 43,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 2 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "actionlint 单独使用",
-          "type": "单体替代",
-          "fit": "只关心 workflow 是否有静态错误的人",
-          "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
-        },
-        {
-          "name": "Repomix 单独使用",
-          "type": "单体替代",
-          "fit": "只需要给 Agent 整理代码上下文的人",
-          "tradeoff": "能解释，但没有确定性 workflow lint。"
-        },
-        {
-          "name": "GitHub Actions 在线日志",
-          "type": "平台替代",
-          "fit": "已经推送并跑过 CI 的项目",
-          "tradeoff": "结果最真实，但反馈链路更重。"
+          "name": "SAP Fiori tools + 人工浏览器测试",
+          "type": "官方替代",
+          "fit": "已经使用 SAP IDE 插件并由人工完成验收",
+          "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
         }
       ],
-      "whyComboStillMatters": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+      "whyComboStillMatters": "UI5 MCP Server 负责遵循 UI5 工程规范生成代码，Playwright 负责验证浏览器中的真实结果；组合后可以及时发现“项目生成成功但页面不可用”的问题。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
         "开发与 Agent",
-        "自动化与业务流程",
         "文档与知识",
-        "部署运维与安全"
+        "团队协作与沟通",
+        "科研与教育"
       ],
       "tasks": [
         "测试",
-        "编排",
         "交付",
         "分析",
-        "部署"
+        "协作",
+        "采集"
       ],
       "audiences": [
-        "开发者"
+        "开发者",
+        "团队与企业"
       ],
       "traits": [
-        "可自托管",
         "CLI",
         "已全链路实测"
       ],
@@ -13325,43 +13306,41 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
+      "recommendationLevel": "强推荐",
       "caveatTags": [
+        "首次下载较大",
+        "仅验证示例应用",
         "安装摩擦",
-        "Docker 重"
+        "外部账号",
+        "UI 未验证"
       ],
-      "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-      "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
-      "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-      "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+      "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+      "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
+      "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
       "demandValidation": {
-        "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-        "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
-        "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-        "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
         "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 98,
+        "confidence": "需求判断中等",
+        "confidenceScore": 65,
         "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
+          "缺少为什么不用单体工具的解释",
+          "缺少完整组合闭环证据"
         ]
       },
       "longTermUse": {
-        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
-        "steps": [
-          "固定输入输出",
-          "运行 deep rerun",
-          "保留失败原因",
-          "进入证据中心",
-          "定期复测"
-        ],
-        "tested": true
+        "summary": "",
+        "steps": [],
+        "tested": false
       },
       "installFrictionIndex": {
-        "score": 36,
+        "score": 30,
         "level": "中摩擦",
         "factors": [
           {
@@ -13369,8 +13348,12 @@
             "weight": 14
           },
           {
-            "label": "Docker 重",
-            "weight": 22
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
           }
         ],
         "summary": "可试，但建议先按报告准备依赖和配置。"
@@ -13381,14 +13364,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-03T00:11:01.634093+08:00",
+        "testedAt": "2026-07-14T18:20:16.846346+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 3,
-        "checksTotal": 3
+        "checksPassed": 2,
+        "checksTotal": 2
       },
-      "reportUrl": "reports/repomix-actionlint-l3-caveat.html"
+      "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
     },
     {
       "id": "crawlee-stirling-pdf-l1",
@@ -13613,6 +13596,225 @@
         "checksTotal": 6
       },
       "reportUrl": "reports/crawlee-stirling-pdf-l1.html"
+    },
+    {
+      "id": "repomix-actionlint-l3-caveat",
+      "title": "Repomix + actionlint",
+      "summary": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+      "evidenceScore": 95,
+      "evidenceLevel": "L3-caveat",
+      "audience": null,
+      "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+      "testMethod": "让 Repomix 把 GitHub Actions workflow 与说明文件打成审查包，再对包内同一份 workflow 运行 actionlint 确定性校验。",
+      "testOutcome": "审查包包含目标 YAML，actionlint 对该文件返回通过，3 项检查完成；未覆盖大型 monorepo、私有 Action 和矩阵构建。",
+      "tools": [
+        {
+          "name": "Repomix",
+          "url": "https://github.com/yamadashy/repomix",
+          "role": "采集/输入",
+          "inputs": [
+            "repository files",
+            "include globs"
+          ],
+          "outputs": [
+            "Agent context pack",
+            "XML/text bundle"
+          ],
+          "interface": "CLI",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "自动化与业务流程"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "编排"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+          },
+          "hub": {
+            "score": 46,
+            "level": "有潜力",
+            "verifiedComboCount": 2,
+            "partnerCount": 2,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 55,
+            "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "actionlint",
+          "url": "https://github.com/rhysd/actionlint",
+          "role": "处理/理解",
+          "inputs": [
+            "GitHub Actions YAML"
+          ],
+          "outputs": [
+            "lint diagnostics",
+            "exit code"
+          ],
+          "interface": "CLI",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "自动化与业务流程"
+          ],
+          "tasks": [
+            "测试",
+            "编排"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-01T12:53:34.882240+08:00"
+          },
+          "hub": {
+            "score": 58,
+            "level": "高适配",
+            "verifiedComboCount": 3,
+            "partnerCount": 3,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 46,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "actionlint 单独使用",
+          "type": "单体替代",
+          "fit": "只关心 workflow 是否有静态错误的人",
+          "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
+        },
+        {
+          "name": "Repomix 单独使用",
+          "type": "单体替代",
+          "fit": "只需要给 Agent 整理代码上下文的人",
+          "tradeoff": "能解释，但没有确定性 workflow lint。"
+        },
+        {
+          "name": "GitHub Actions 在线日志",
+          "type": "平台替代",
+          "fit": "已经推送并跑过 CI 的项目",
+          "tradeoff": "结果最真实，但反馈链路更重。"
+        }
+      ],
+      "whyComboStillMatters": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "自动化与业务流程",
+        "文档与知识",
+        "部署运维与安全"
+      ],
+      "tasks": [
+        "测试",
+        "编排",
+        "交付",
+        "分析",
+        "部署"
+      ],
+      "audiences": [
+        "开发者"
+      ],
+      "traits": [
+        "可自托管",
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "安装摩擦",
+        "Docker 重"
+      ],
+      "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+      "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
+      "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+      "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+        "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
+        "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+        "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 98,
+        "missingProof": [
+          "还需要真实用户反馈确认是否愿意长期使用"
+        ]
+      },
+      "longTermUse": {
+        "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+        "steps": [
+          "固定输入输出",
+          "运行 deep rerun",
+          "保留失败原因",
+          "进入证据中心",
+          "定期复测"
+        ],
+        "tested": true
+      },
+      "installFrictionIndex": {
+        "score": 36,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "Docker 重",
+            "weight": 22
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-03T00:11:01.634093+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 3,
+        "checksTotal": 3
+      },
+      "reportUrl": "reports/repomix-actionlint-l3-caveat.html"
     },
     {
       "id": "fresh-agent-nexus-headroom-worker-smoke",
@@ -14275,13 +14477,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-28T19:25:26.714078+08:00",
+    "generatedAt": "2026-07-28T19:30:25.966561+08:00",
     "summary": {
-      "total": 67,
-      "publicFeatured": 67,
-      "withReports": 67,
-      "withCaveatTags": 67,
-      "withInstallFrictionIndex": 67
+      "total": 68,
+      "publicFeatured": 68,
+      "withReports": 68,
+      "withCaveatTags": 68,
+      "withInstallFrictionIndex": 68
     },
     "items": [
       {
@@ -21475,29 +21677,29 @@
         }
       },
       {
-        "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
-        "title": "UI5 MCP Server + Playwright",
+        "id": "fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke",
+        "title": "MinerU-Document-Explorer + codex-plugin-cc",
         "tools": [
-          "UI5 MCP Server",
-          "Playwright"
+          "MinerU-Document-Explorer",
+          "codex-plugin-cc"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+        "useCase": "用户提供待检查的项目源代码和工作流 YAML 配置文件后，MinerU-Document-Explorer 先生成检查报告，codex-plugin-cc 再接收这份报告以及原有代码和配置，产出可应用的代码补丁与审查结论。这套接力省去了手工转交和整理检查产物的步骤，也帮助用户判断是否采用生成的修改。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
-          "部署运维与安全",
+          "文档与知识",
           "自动化与业务流程",
-          "团队协作与沟通"
+          "部署运维与安全"
         ],
         "tasks": [
-          "测试",
           "交付",
+          "测试",
           "生成",
-          "分析",
-          "协作"
+          "编排",
+          "分析"
         ],
         "audiences": [
           "开发者",
@@ -21512,47 +21714,42 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "强推荐",
-        "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
-        "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
-        "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
-        "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
+        "suitableFor": "手上已有项目源代码和工作流 YAML 配置文件，希望把检查报告继续转成代码补丁与审查结论的个人开发者或小团队。",
+        "notFor": "需要完全离线运行，或必须先确认其能在全新环境、大规模项目及其他包管理环境中稳定工作的用户。",
+        "maxBenefit": "用户提供待检查的项目源代码和工作流 YAML 配置文件后，MinerU-Document-Explorer 先生成检查报告，codex-plugin-cc 再接收这份报告以及原有代码和配置，产出可应用的代码补丁与审查结论。这套接力省去了手工转交和整理检查产物的步骤，也帮助用户判断是否采用生成的修改。",
+        "maxLimit": "当前每次运行都需要访问 npm 软件源，因为仓库只有 bun.lock、没有 package-lock.json，而测试所用主机又无法使用 Bun。本次也不是在全新环境中完成，且没有进行规模测试；其他项目规模、主机环境和包管理条件下的表现均未验证。",
         "caveatTags": [
-          "首次下载较大",
-          "仅验证示例应用",
-          "安装摩擦",
-          "外部账号",
-          "UI 未验证"
+          "每次运行需访问 npm 软件源",
+          "测试主机无法使用 Bun",
+          "未在全新环境验证",
+          "未做规模测试",
+          "安装摩擦"
         ],
         "alternatives": [
           {
-            "name": "SAP Fiori tools + 人工浏览器测试",
-            "type": "官方替代",
-            "fit": "已经使用 SAP IDE 插件并由人工完成验收",
-            "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
+            "name": "只使用 MinerU-Document-Explorer并手工修改",
+            "type": "单工具加人工处理",
+            "fit": "适合希望自行掌控每一处代码改动、不需要自动生成补丁的用户。",
+            "tradeoff": "需要自己阅读检查报告、修改对应代码，并整理审查结论。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
+        "reportUrl": "reports/fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke.html",
         "verifiedAt": "",
-        "installFriction": [],
+        "installFriction": [
+          "本次也不是在全新环境中完成",
+          "其他项目规模、主机环境和包管理条件下的表现均未验证"
+        ],
         "installFrictionIndex": {
-          "score": 30,
-          "level": "中摩擦",
+          "score": 14,
+          "level": "低摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
-            },
-            {
-              "label": "外部账号",
-              "weight": 10
-            },
-            {
-              "label": "UI 未验证",
-              "weight": 6
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
           "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
@@ -21571,11 +21768,10 @@
           "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
           "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-          "confidence": "需求判断中等",
-          "confidenceScore": 65,
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
           "missingProof": [
-            "缺少为什么不用单体工具的解释",
-            "缺少完整组合闭环证据"
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -21736,32 +21932,33 @@
         }
       },
       {
-        "id": "repomix-actionlint-l3-caveat",
-        "title": "Repomix + actionlint",
+        "id": "ui5-mcp-playwright-fresh-deep-worker-smoke",
+        "title": "UI5 MCP Server + Playwright",
         "tools": [
-          "Repomix",
-          "actionlint"
+          "UI5 MCP Server",
+          "Playwright"
         ],
-        "evidenceScore": 95,
+        "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+        "useCase": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
           "开发与 Agent",
-          "自动化与业务流程",
           "部署运维与安全",
-          "文档与知识"
+          "自动化与业务流程",
+          "团队协作与沟通"
         ],
         "tasks": [
           "测试",
-          "编排",
           "交付",
+          "生成",
           "分析",
-          "部署"
+          "协作"
         ],
         "audiences": [
-          "开发者"
+          "开发者",
+          "团队与企业"
         ],
         "traits": [
           "可自托管",
@@ -21771,41 +21968,32 @@
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-        "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
-        "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-        "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
+        "notFor": "不使用 UI5 技术栈，或需要立即覆盖完整企业业务流程的项目。",
+        "maxBenefit": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+        "maxLimit": "首次执行会安装 UI5 依赖和 Chromium；本轮只覆盖生成的示例应用，没有验证 OData 后端、登录和生产部署。",
         "caveatTags": [
+          "首次下载较大",
+          "仅验证示例应用",
           "安装摩擦",
-          "Docker 重"
+          "外部账号",
+          "UI 未验证"
         ],
         "alternatives": [
           {
-            "name": "actionlint 单独使用",
-            "type": "单体替代",
-            "fit": "只关心 workflow 是否有静态错误的人",
-            "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
-          },
-          {
-            "name": "Repomix 单独使用",
-            "type": "单体替代",
-            "fit": "只需要给 Agent 整理代码上下文的人",
-            "tradeoff": "能解释，但没有确定性 workflow lint。"
-          },
-          {
-            "name": "GitHub Actions 在线日志",
-            "type": "平台替代",
-            "fit": "已经推送并跑过 CI 的项目",
-            "tradeoff": "结果最真实，但反馈链路更重。"
+            "name": "SAP Fiori tools + 人工浏览器测试",
+            "type": "官方替代",
+            "fit": "已经使用 SAP IDE 插件并由人工完成验收",
+            "tradeoff": "生态成熟，但 Agent 难以独立完成从生成、校验到浏览器证据的闭环。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/repomix-actionlint-l3-caveat.html",
-        "verifiedAt": "2026-07-03T00:11:01.634093+08:00",
+        "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html",
+        "verifiedAt": "",
         "installFriction": [],
         "installFrictionIndex": {
-          "score": 36,
+          "score": 30,
           "level": "中摩擦",
           "factors": [
             {
@@ -21813,14 +22001,18 @@
               "weight": 14
             },
             {
-              "label": "Docker 重",
-              "weight": 22
+              "label": "外部账号",
+              "weight": 10
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
             }
           ],
           "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。"
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -21829,29 +22021,29 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
-          "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
-          "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
-          "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
-          "confidence": "需求判断较强",
-          "confidenceScore": 98,
+          "confidence": "需求判断中等",
+          "confidenceScore": 65,
           "missingProof": [
-            "还需要真实用户反馈确认是否愿意长期使用"
+            "缺少为什么不用单体工具的解释",
+            "缺少完整组合闭环证据"
           ]
         },
         "longTermUse": {
-          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
           "steps": [
-            "固定输入输出",
-            "运行 deep rerun",
-            "保留失败原因",
-            "进入证据中心",
-            "定期复测"
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
           ],
-          "tested": true
+          "tested": false
         }
       },
       {
@@ -21983,6 +22175,125 @@
             "准备手动兜底路径，避免自动化失败后任务停摆。"
           ],
           "tested": false
+        }
+      },
+      {
+        "id": "repomix-actionlint-l3-caveat",
+        "title": "Repomix + actionlint",
+        "tools": [
+          "Repomix",
+          "actionlint"
+        ],
+        "evidenceScore": 95,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "自动化与业务流程",
+          "部署运维与安全",
+          "文档与知识"
+        ],
+        "tasks": [
+          "测试",
+          "编排",
+          "交付",
+          "分析",
+          "部署"
+        ],
+        "audiences": [
+          "开发者"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+        "notFor": "不适合需要真实执行 workflow 的场景；这类应使用 act 或线上 GitHub Actions。",
+        "maxBenefit": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+        "maxLimit": "不能证明 job 能实际运行，只能证明上下文可读和静态校验通过。",
+        "caveatTags": [
+          "安装摩擦",
+          "Docker 重"
+        ],
+        "alternatives": [
+          {
+            "name": "actionlint 单独使用",
+            "type": "单体替代",
+            "fit": "只关心 workflow 是否有静态错误的人",
+            "tradeoff": "更简单，但没有上下文包给 Agent 做解释。"
+          },
+          {
+            "name": "Repomix 单独使用",
+            "type": "单体替代",
+            "fit": "只需要给 Agent 整理代码上下文的人",
+            "tradeoff": "能解释，但没有确定性 workflow lint。"
+          },
+          {
+            "name": "GitHub Actions 在线日志",
+            "type": "平台替代",
+            "fit": "已经推送并跑过 CI 的项目",
+            "tradeoff": "结果最真实，但反馈链路更重。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/repomix-actionlint-l3-caveat.html",
+        "verifiedAt": "2026-07-03T00:11:01.634093+08:00",
+        "installFriction": [],
+        "installFrictionIndex": {
+          "score": 36,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "Docker 重",
+              "weight": 22
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "Repomix 可把 CI 配置打包给 Agent 阅读，actionlint 可做语法闸门；未覆盖真实大型 monorepo、私有 action、矩阵构建和安全策略。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要审查 GitHub Actions 配置、希望把上下文交给 Agent 的开发者。",
+          "currentAlternative": "actionlint 单独使用：更简单，但没有上下文包给 Agent 做解释。",
+          "painPoint": "把 workflow 上下文打包给 Agent，同时保留 actionlint 的确定性校验。",
+          "switchingReason": "它让 Agent 获得上下文，同时用专用 linter 给硬判断，减少纯 LLM 审查的幻觉风险。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 98,
+          "missingProof": [
+            "还需要真实用户反馈确认是否愿意长期使用"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从可跑通样例升级为可复测、可解释、可维护的生产化组合。",
+          "steps": [
+            "固定输入输出",
+            "运行 deep rerun",
+            "保留失败原因",
+            "进入证据中心",
+            "定期复测"
+          ],
+          "tested": true
         }
       },
       {
@@ -23166,14 +23477,14 @@
       ],
       "evidenceLevel": "L2",
       "hub": {
-        "score": 69,
-        "level": "高适配",
-        "verifiedComboCount": 4,
-        "partnerCount": 4,
+        "score": 81,
+        "level": "核心枢纽",
+        "verifiedComboCount": 5,
+        "partnerCount": 5,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 46,
-        "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+        "averageFriction": 39,
+        "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
@@ -23959,6 +24270,32 @@
     {
       "name": "LLM4AD_Next",
       "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "MinerU-Document-Explorer",
+      "url": "https://github.com/opendatalab/MinerU-Document-Explorer",
       "role": "采集/输入",
       "inputs": [
         "prompt",

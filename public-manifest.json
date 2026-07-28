@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-28T19:25:27.155679+08:00",
-  "records": 67,
+  "generatedAt": "2026-07-28T19:30:26.413350+08:00",
+  "records": 68,
   "assetVersions": {
     "app.css": "86f9d2587370",
     "shared.js": "54836c51eae8"
@@ -44,6 +44,7 @@
     "reports/fresh-kimi-cli-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-knowledgeops-agent-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
+    "reports/fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
     "reports/fresh-ryu-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-headroom-worker-smoke.html",
