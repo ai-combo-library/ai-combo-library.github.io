@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-28T15:35:13.583235+08:00",
+  "generatedAt": "2026-07-28T16:09:15.490401+08:00",
   "version": "public-catalog-v3",
   "summary": {
-    "records": 66,
-    "featured": 66,
-    "evidenceItems": 66,
-    "tools": 70
+    "records": 67,
+    "featured": 67,
+    "evidenceItems": 67,
+    "tools": 71
   },
   "records": [
     {
@@ -1777,14 +1777,14 @@
             "verifiedAt": "2026-07-14T02:20:42.382808+08:00"
           },
           "hub": {
-            "score": 85,
+            "score": 96,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 4,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 38,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -2926,42 +2926,46 @@
       "reportUrl": "reports/supabase-agent-skills-cli-fresh-deep-worker-smoke.html"
     },
     {
-      "id": "fresh-10xproductivity-caveman-worker-smoke",
-      "title": "10xProductivity + caveman",
-      "summary": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
-      "evidenceScore": 85,
+      "id": "activepieces-nocodb-l3-caveat",
+      "title": "Activepieces + NocoDB",
+      "summary": "有通过 webhook 送入的一条待登记线索、任务或运营记录，以及可用的凭据和工作流配置。、想得到NocoDB 中能够查看、筛选和查询的线索、任务或运营记录表格台账。时，省去在 Activepieces 每次执行后逐条复制记录、再手工整理到表格中的步骤。",
+      "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
-      "audience": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
-      "useCase": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
-      "testMethod": "先运行 10xProductivity 生成实际输出，再把同一份输出交给 caveman，随后核对中间文件与最终结果是否对应。测试使用了固定且无需登录凭据的 HAR 网络记录样本。",
-      "testOutcome": "两个工具均成功运行，caveman 确实使用了 10xProductivity 的输出；两项结果检查全部通过。",
+      "audience": "手上已有线索、任务或运营记录，希望在事件触发后自动写入可筛选台账的个人用户或小团队。",
+      "useCase": "用户已有通过 webhook 送入的线索、任务或运营记录时，Activepieces 接收事件并执行工作流，NocoDB 接着保存记录，形成可筛选、可查询的表格台账；这能省去逐条复制执行结果并手工整理表格的步骤。",
+      "testMethod": "实际启动 Activepieces 和 NocoDB，让 Activepieces 工作流产生一条记录并写入 NocoDB，再从 NocoDB 读回该记录，分别核对两项服务的接力和存储情况。",
+      "testOutcome": "Activepieces 成功产生并交出记录，NocoDB 成功保存并读回同一条记录；两项检查均通过。",
       "tools": [
         {
-          "name": "10xProductivity",
-          "url": "https://github.com/ZhixiangLuo/10xProductivity",
-          "role": "采集/输入",
+          "name": "activepieces",
+          "url": "https://github.com/activepieces/activepieces",
+          "role": "自动执行",
           "inputs": [
-            "prompt",
-            "source code",
-            "json"
+            "webhook",
+            "trigger",
+            "credential",
+            "workflow config"
           ],
           "outputs": [
-            "json",
-            "report",
-            "logs"
+            "automation run",
+            "task result",
+            "http request"
           ],
-          "interface": "",
+          "interface": "Web UI / API",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
+          "primaryCategory": "自动化与业务流程",
           "domains": [
-            "文档与知识",
-            "开发与 Agent"
+            "自动化与业务流程",
+            "数据与分析",
+            "开发与 Agent",
+            "文档与知识"
           ],
           "tasks": [
+            "编排",
             "测试",
-            "采集",
+            "部署",
             "交付"
           ],
           "audiences": [
@@ -2971,7 +2975,7 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
+            "verifiedAt": "2026-07-28T16:08:13.589615+08:00"
           },
           "hub": {
             "score": 37,
@@ -2985,30 +2989,36 @@
           }
         },
         {
-          "name": "caveman",
-          "url": "https://github.com/JuliusBrussee/caveman",
-          "role": "输出/交付",
+          "name": "NocoDB",
+          "url": "https://github.com/nocodb/nocodb",
+          "role": "存储/检索",
           "inputs": [
-            "json",
-            "report",
-            "draft response"
+            "table rows",
+            "api payload",
+            "structured json record"
           ],
           "outputs": [
-            "compressed response",
-            "token metrics"
+            "database table",
+            "grid view",
+            "api records"
           ],
           "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "文档与知识",
+          "primaryCategory": "数据与分析",
           "domains": [
+            "数据与分析",
+            "自动化与业务流程",
             "文档与知识",
             "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "交付"
+            "存储",
+            "编排",
+            "检索",
+            "部署"
           ],
           "audiences": [
             "知识工作者"
@@ -3017,83 +3027,84 @@
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
+            "verifiedAt": "2026-07-28T16:08:13.589615+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 96,
             "level": "核心枢纽",
-            "verifiedComboCount": 7,
-            "partnerCount": 7,
-            "categoryCount": 4,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 30,
-            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 38,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 10xProductivity 并手工处理结果",
-          "type": "简化流程",
-          "fit": "适合只需要生成 JSON、报告或日志，且可以自行整理最终内容的人。",
-          "tradeoff": "需要手工压缩中间结果，也不会获得这次组合测试中由 caveman 给出的压缩回复和令牌用量指标。"
+          "name": "单独使用 NocoDB 手工登记",
+          "type": "单工具加手工录入",
+          "fit": "不需要自动接收事件，只想维护线索、任务或运营记录表格时。",
+          "tradeoff": "部署环节更少，但每条记录都需要人工录入，无法获得这次已经验证的自动写入接力。"
         }
       ],
-      "whyComboStillMatters": "10xProductivity 负责生成 JSON、报告或日志，caveman 负责把这些材料进一步压缩为回复并提供令牌用量指标。只用 10xProductivity，缺少已经验证的后续压缩处理；只用 caveman，则仍需另行准备 JSON、报告或回复草稿。",
+      "whyComboStillMatters": "Activepieces 负责接收事件和自动执行，NocoDB 负责保存、检索并以表格呈现记录。只用 Activepieces，执行结果不会在这套组合中形成 NocoDB 台账；只用 NocoDB，则需要人工把线索、任务或运营记录录入表格。",
       "category": "自动化与业务流程",
       "primaryCategory": "自动化与业务流程",
       "domains": [
         "自动化与业务流程",
+        "数据与分析",
         "开发与 Agent",
-        "文档与知识",
-        "团队协作与沟通"
+        "文档与知识"
       ],
       "tasks": [
+        "编排",
         "测试",
+        "部署",
         "交付",
-        "采集",
-        "分析",
         "协作"
       ],
       "audiences": [
-        "开发者",
+        "普通用户",
         "团队与企业"
       ],
       "traits": [
-        "CLI",
+        "可自托管",
         "已全链路实测"
       ],
       "collections": [
+        "普通人高频",
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "仅验证固定 HAR 样本",
-        "未在全新环境测试",
+        "非全新环境验证",
         "未做规模测试",
-        "安装摩擦",
+        "需真实启动两项服务",
         "外部账号",
         "外部 API Key",
-        "UI 未验证"
+        "UI 未验证",
+        "需要人工修模板"
       ],
-      "suitableFor": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
-      "notFor": "不适合要求已经证明可在全新环境、大规模任务或其他输入条件下稳定工作的场景。",
-      "maxBenefit": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
-      "maxLimit": "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。",
+      "suitableFor": "手上已有线索、任务或运营记录，希望在事件触发后自动写入可筛选台账的个人用户或小团队。",
+      "notFor": "需要已验证的大规模处理能力，或要求组合已在全新环境中完成验证的用户。",
+      "maxBenefit": "用户已有通过 webhook 送入的线索、任务或运营记录时，Activepieces 接收事件并执行工作流，NocoDB 接着保存记录，形成可筛选、可查询的表格台账；这能省去逐条复制执行结果并手工整理表格的步骤。",
+      "maxLimit": "目前只验证了真实启动两项服务后，由 Activepieces 工作流产生记录、写入 NocoDB并成功读回的情况。测试环境并非全新环境，也没有进行规模测试；其他部署环境以及大量记录下的表现均未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
       "demandValidation": {
-        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
-        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
-        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
-        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
-        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "targetUser": "需要把 webhook、表单、线索或运营任务自动沉淀到表格台账的小团队。",
+        "currentAlternative": "Zapier / Make / Airtable Automations：开箱即用更强，但私有化、可迁移性和自托管控制力弱于 Activepieces + NocoDB。",
+        "painPoint": "把散落的自动化结果变成一个可筛选、可协作、可回放的业务台账。",
+        "switchingReason": "Activepieces 擅长连接触发器和动作，NocoDB 擅长低门槛表格化管理；两者组合比单独脚本更容易交给非工程成员查看结果。",
+        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
         "confidence": "需求判断较强",
-        "confidenceScore": 86,
+        "confidenceScore": 84,
         "missingProof": [
-          "缺少为什么不用单体工具的解释"
+          "还需要真实用户反馈确认是否愿意长期使用"
         ]
       },
       "longTermUse": {
@@ -3106,10 +3117,6 @@
         "level": "中摩擦",
         "factors": [
           {
-            "label": "安装摩擦",
-            "weight": 14
-          },
-          {
             "label": "外部账号",
             "weight": 10
           },
@@ -3120,6 +3127,10 @@
           {
             "label": "UI 未验证",
             "weight": 6
+          },
+          {
+            "label": "需要人工修模板",
+            "weight": 14
           }
         ],
         "summary": "可试，但建议先按报告准备依赖和配置。"
@@ -3130,14 +3141,14 @@
         "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-26T12:40:09.883353+08:00",
+        "testedAt": "2026-07-28T16:08:13.589615+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
         "checksPassed": 2,
         "checksTotal": 2
       },
-      "reportUrl": "reports/fresh-10xproductivity-caveman-worker-smoke.html"
+      "reportUrl": "reports/activepieces-nocodb-l3-caveat.html"
     },
     {
       "id": "codebase-memory-caveman-fresh-deep-worker-smoke",
@@ -3656,14 +3667,14 @@
             "verifiedAt": "2026-07-16T16:08:55.266390+08:00"
           },
           "hub": {
-            "score": 85,
+            "score": 96,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 4,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 38,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -4415,6 +4426,220 @@
         "checksTotal": 6
       },
       "reportUrl": "reports/fresh-twiligent-headroom-worker-smoke.html"
+    },
+    {
+      "id": "fresh-10xproductivity-caveman-worker-smoke",
+      "title": "10xProductivity + caveman",
+      "summary": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
+      "useCase": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+      "testMethod": "先运行 10xProductivity 生成实际输出，再把同一份输出交给 caveman，随后核对中间文件与最终结果是否对应。测试使用了固定且无需登录凭据的 HAR 网络记录样本。",
+      "testOutcome": "两个工具均成功运行，caveman 确实使用了 10xProductivity 的输出；两项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "10xProductivity",
+          "url": "https://github.com/ZhixiangLuo/10xProductivity",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
+          },
+          "hub": {
+            "score": 37,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 44,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
+          },
+          "hub": {
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 7,
+            "partnerCount": 7,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 7 条实测组合中连接 7 个不同搭档，覆盖 4 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 10xProductivity 并手工处理结果",
+          "type": "简化流程",
+          "fit": "适合只需要生成 JSON、报告或日志，且可以自行整理最终内容的人。",
+          "tradeoff": "需要手工压缩中间结果，也不会获得这次组合测试中由 caveman 给出的压缩回复和令牌用量指标。"
+        }
+      ],
+      "whyComboStillMatters": "10xProductivity 负责生成 JSON、报告或日志，caveman 负责把这些材料进一步压缩为回复并提供令牌用量指标。只用 10xProductivity，缺少已经验证的后续压缩处理；只用 caveman，则仍需另行准备 JSON、报告或回复草稿。",
+      "category": "自动化与业务流程",
+      "primaryCategory": "自动化与业务流程",
+      "domains": [
+        "自动化与业务流程",
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "仅验证固定 HAR 样本",
+        "未在全新环境测试",
+        "未做规模测试",
+        "安装摩擦",
+        "外部账号",
+        "外部 API Key",
+        "UI 未验证"
+      ],
+      "suitableFor": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
+      "notFor": "不适合要求已经证明可在全新环境、大规模任务或其他输入条件下稳定工作的场景。",
+      "maxBenefit": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+      "maxLimit": "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 44,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-26T12:40:09.883353+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-10xproductivity-caveman-worker-smoke.html"
     },
     {
       "id": "actionlint-codex-plugin-cc-fresh-deep-worker-smoke",
@@ -6345,14 +6570,14 @@
             "verifiedAt": "2026-07-14T19:43:46.948849+08:00"
           },
           "hub": {
-            "score": 85,
+            "score": 96,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 4,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 38,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 5 类场景。"
           }
         },
         {
@@ -12797,14 +13022,14 @@
             "verifiedAt": ""
           },
           "hub": {
-            "score": 85,
+            "score": 96,
             "level": "核心枢纽",
-            "verifiedComboCount": 4,
-            "partnerCount": 4,
-            "categoryCount": 4,
+            "verifiedComboCount": 5,
+            "partnerCount": 5,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 36,
-            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 38,
+            "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -14050,13 +14275,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-07-28T15:35:13.269171+08:00",
+    "generatedAt": "2026-07-28T16:09:15.175217+08:00",
     "summary": {
-      "total": 66,
-      "publicFeatured": 66,
-      "withReports": 66,
-      "withCaveatTags": 66,
-      "withInstallFrictionIndex": 66
+      "total": 67,
+      "publicFeatured": 67,
+      "withReports": 67,
+      "withCaveatTags": 67,
+      "withInstallFrictionIndex": 67
     },
     "items": [
       {
@@ -15720,28 +15945,28 @@
         }
       },
       {
-        "id": "fresh-10xproductivity-caveman-worker-smoke",
-        "title": "10xProductivity + caveman",
+        "id": "activepieces-nocodb-l3-caveat",
+        "title": "Activepieces + NocoDB",
         "tools": [
-          "10xProductivity",
-          "caveman"
+          "activepieces",
+          "NocoDB"
         ],
-        "evidenceScore": 85,
+        "evidenceScore": 95,
         "evidenceLevel": "L3-caveat",
-        "useCase": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+        "useCase": "用户已有通过 webhook 送入的线索、任务或运营记录时，Activepieces 接收事件并执行工作流，NocoDB 接着保存记录，形成可筛选、可查询的表格台账；这能省去逐条复制执行结果并手工整理表格的步骤。",
         "category": "自动化与业务流程",
         "primaryCategory": "自动化与业务流程",
         "domains": [
+          "自动化与业务流程",
+          "数据与分析",
           "开发与 Agent",
-          "部署运维与安全",
-          "团队协作与沟通",
-          "自动化与业务流程"
+          "部署运维与安全"
         ],
         "tasks": [
           "测试",
+          "编排",
           "交付",
           "分析",
-          "转换",
           "协作"
         ],
         "audiences": [
@@ -15756,43 +15981,35 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "适合特定人群",
-        "suitableFor": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
-        "notFor": "不适合要求已经证明可在全新环境、大规模任务或其他输入条件下稳定工作的场景。",
-        "maxBenefit": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
-        "maxLimit": "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。",
+        "suitableFor": "手上已有线索、任务或运营记录，希望在事件触发后自动写入可筛选台账的个人用户或小团队。",
+        "notFor": "需要已验证的大规模处理能力，或要求组合已在全新环境中完成验证的用户。",
+        "maxBenefit": "用户已有通过 webhook 送入的线索、任务或运营记录时，Activepieces 接收事件并执行工作流，NocoDB 接着保存记录，形成可筛选、可查询的表格台账；这能省去逐条复制执行结果并手工整理表格的步骤。",
+        "maxLimit": "目前只验证了真实启动两项服务后，由 Activepieces 工作流产生记录、写入 NocoDB并成功读回的情况。测试环境并非全新环境，也没有进行规模测试；其他部署环境以及大量记录下的表现均未验证。",
         "caveatTags": [
-          "仅验证固定 HAR 样本",
-          "未在全新环境测试",
+          "非全新环境验证",
           "未做规模测试",
-          "安装摩擦",
+          "需真实启动两项服务",
           "外部账号",
           "外部 API Key",
-          "UI 未验证"
+          "UI 未验证",
+          "需要人工修模板"
         ],
         "alternatives": [
           {
-            "name": "单独使用 10xProductivity 并手工处理结果",
-            "type": "简化流程",
-            "fit": "适合只需要生成 JSON、报告或日志，且可以自行整理最终内容的人。",
-            "tradeoff": "需要手工压缩中间结果，也不会获得这次组合测试中由 caveman 给出的压缩回复和令牌用量指标。"
+            "name": "单独使用 NocoDB 手工登记",
+            "type": "单工具加手工录入",
+            "fit": "不需要自动接收事件，只想维护线索、任务或运营记录表格时。",
+            "tradeoff": "部署环节更少，但每条记录都需要人工录入，无法获得这次已经验证的自动写入接力。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/fresh-10xproductivity-caveman-worker-smoke.html",
-        "verifiedAt": "",
-        "installFriction": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
-          "未在全新环境中测试",
-          "其他输入格式和使用环境同样未覆盖"
-        ],
+        "reportUrl": "reports/activepieces-nocodb-l3-caveat.html",
+        "verifiedAt": "2026-07-09T18:42:49.231138+08:00",
+        "installFriction": [],
         "installFrictionIndex": {
           "score": 44,
           "level": "中摩擦",
           "factors": [
-            {
-              "label": "安装摩擦",
-              "weight": 14
-            },
             {
               "label": "外部账号",
               "weight": 10
@@ -15804,12 +16021,16 @@
             {
               "label": "UI 未验证",
               "weight": 6
+            },
+            {
+              "label": "需要人工修模板",
+              "weight": 14
             }
           ],
           "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。"
+          "目前只验证了真实启动两项服务后，由 Activepieces 工作流产生记录、写入 NocoDB并成功读回的情况。测试环境并非全新环境，也没有进行规模测试；其他部署环境以及大量记录下的表现均未验证。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -15820,15 +16041,15 @@
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
         "demandValidation": {
-          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
-          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
-          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
-          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
-          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "targetUser": "需要把 webhook、表单、线索或运营任务自动沉淀到表格台账的小团队。",
+          "currentAlternative": "Zapier / Make / Airtable Automations：开箱即用更强，但私有化、可迁移性和自托管控制力弱于 Activepieces + NocoDB。",
+          "painPoint": "把散落的自动化结果变成一个可筛选、可协作、可回放的业务台账。",
+          "switchingReason": "Activepieces 擅长连接触发器和动作，NocoDB 擅长低门槛表格化管理；两者组合比单独脚本更容易交给非工程成员查看结果。",
+          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
           "confidence": "需求判断较强",
-          "confidenceScore": 86,
+          "confidenceScore": 84,
           "missingProof": [
-            "缺少为什么不用单体工具的解释"
+            "还需要真实用户反馈确认是否愿意长期使用"
           ]
         },
         "longTermUse": {
@@ -16539,6 +16760,129 @@
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-10xproductivity-caveman-worker-smoke",
+        "title": "10xProductivity + caveman",
+        "tools": [
+          "10xProductivity",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+        "category": "自动化与业务流程",
+        "primaryCategory": "自动化与业务流程",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "团队协作与沟通",
+          "自动化与业务流程"
+        ],
+        "tasks": [
+          "测试",
+          "交付",
+          "分析",
+          "转换",
+          "协作"
+        ],
+        "audiences": [
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
+        "notFor": "不适合要求已经证明可在全新环境、大规模任务或其他输入条件下稳定工作的场景。",
+        "maxBenefit": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+        "maxLimit": "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。",
+        "caveatTags": [
+          "仅验证固定 HAR 样本",
+          "未在全新环境测试",
+          "未做规模测试",
+          "安装摩擦",
+          "外部账号",
+          "外部 API Key",
+          "UI 未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 10xProductivity 并手工处理结果",
+            "type": "简化流程",
+            "fit": "适合只需要生成 JSON、报告或日志，且可以自行整理最终内容的人。",
+            "tradeoff": "需要手工压缩中间结果，也不会获得这次组合测试中由 caveman 给出的压缩回复和令牌用量指标。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-10xproductivity-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。",
+          "未在全新环境中测试",
+          "其他输入格式和使用环境同样未覆盖"
+        ],
+        "installFrictionIndex": {
+          "score": 44,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "外部账号",
+              "weight": 10
+            },
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "由于没有声明必需的上游输入格式，本次只使用固定且无需登录凭据的 HAR 网络记录样本进行验证；未在全新环境中测试，也未验证大规模处理能力，其他输入格式和使用环境同样未覆盖。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
         "demandValidation": {
           "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
@@ -22416,14 +22760,14 @@
       ],
       "evidenceLevel": "L2",
       "hub": {
-        "score": 85,
+        "score": 96,
         "level": "核心枢纽",
-        "verifiedComboCount": 4,
-        "partnerCount": 4,
-        "categoryCount": 4,
+        "verifiedComboCount": 5,
+        "partnerCount": 5,
+        "categoryCount": 5,
         "deepTestSuccessRate": 100,
-        "averageFriction": 36,
-        "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 4 类场景。"
+        "averageFriction": 38,
+        "summary": "已在 5 条实测组合中连接 5 个不同搭档，覆盖 5 类场景。"
       }
     },
     {
@@ -22634,18 +22978,19 @@
       }
     },
     {
-      "name": "10xProductivity",
-      "url": "https://github.com/ZhixiangLuo/10xProductivity",
-      "role": "采集/输入",
+      "name": "activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "role": "自动执行",
       "inputs": [
-        "prompt",
-        "source code",
-        "json"
+        "webhook",
+        "trigger",
+        "credential",
+        "workflow config"
       ],
       "outputs": [
-        "json",
-        "report",
-        "logs"
+        "automation run",
+        "task result",
+        "http request"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
@@ -22754,6 +23099,32 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 28,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "10xProductivity",
+      "url": "https://github.com/ZhixiangLuo/10xProductivity",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 37,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 44,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
