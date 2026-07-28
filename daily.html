@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI 工具组合实测库</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="app.css?v=86f9d2587370">
+  <link rel="stylesheet" href="app.css?v=96ce3dc697f0">
 </head>
 <body class="daily-page public-daily resource-home library-app">
   <header class="public-header">
@@ -42,6 +42,22 @@
         <span><b id="statVerified">—</b>完整流程跑通</span>
         <span><b id="statCoverage">—</b>覆盖场景</span>
         <span><b id="statTools">—</b>工具</span>
+      </div>
+    </section>
+
+    <section class="featured-combos" id="featured" aria-labelledby="featuredTitle">
+      <div class="featured-combos-head">
+        <div>
+          <p class="eyebrow">首页精选</p>
+          <h2 id="featuredTitle">优先值得尝试的 12 组组合</h2>
+          <p>按实测证据、场景清晰度、运行稳定性和差异性精选。完整组合仍可在下方搜索和筛选。</p>
+        </div>
+        <a href="#library">查看全部组合 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="combo-grid library-result-grid featured-combo-grid" id="featuredGrid">
+        <article class="resource-combo-card result-skeleton">
+          <div class="empty">正在读取首页精选。</div>
+        </article>
       </div>
     </section>
 
@@ -181,6 +197,7 @@
     const resultCount = document.querySelector("#resultCount");
     const activeFilters = document.querySelector("#activeFilters");
     const comboGrid = document.querySelector("#comboGrid");
+    const featuredGrid = document.querySelector("#featuredGrid");
     const libraryFilters = document.querySelector("#libraryFilters");
     const mobileFilterToggle = document.querySelector("#mobileFilterToggle");
     const mobileFilterClose = document.querySelector("#mobileFilterClose");
@@ -456,6 +473,16 @@
         : `<article class="resource-combo-card"><div class="empty">没有匹配组合，请减少筛选条件。</div></article>`;
     }
 
+    function renderFeatured() {
+      const featured = records
+        .filter(record => record.publicFeatured)
+        .sort((a, b) => Number(a.publicFeaturedRank || 999) - Number(b.publicFeaturedRank || 999))
+        .slice(0, 12);
+      featuredGrid.innerHTML = featured.length
+        ? featured.map(renderComboCard).join("")
+        : `<article class="resource-combo-card"><div class="empty">暂时没有通过精选门禁的组合。</div></article>`;
+    }
+
     function renderStats() {
       document.querySelector("#statPublished").textContent = records.length;
       document.querySelector("#statVerified").textContent = records.filter(record => String(record.evidenceLevel || "").toLowerCase().startsWith("l3")).length;
@@ -464,6 +491,7 @@
     }
 
     function render() {
+      renderFeatured();
       renderFacets();
       renderResults();
       renderStats();
