@@ -121,7 +121,7 @@
       <p class="note"><a href="../combo.html?id=maxun-unstructured-l3-caveat&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
       <h1>maxun + unstructured</h1>
-      <p class="lead">maxun 先采集网页内容，unstructured 再把采集结果处理成 JSON 元素和结构化文本，适合整理网页资料、竞品页面或公开资料归档。</p>
+      <p class="lead">用户已有一个竞品产品页的 URL、要采集内容的自然语言描述和选定网页元素时，maxun 先取得网页内容，unstructured 再将其整理成逐项内容元素和结构化文本；这些结果可直接用于阅读和归档，省去复制网页后再手工拆分、整理内容的步骤。</p>
       <div class="meta">
         <span>文档与知识 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
       </div>
@@ -129,14 +129,14 @@
         <span>maxun</span><span>unstructured</span>
       </div>
       <section class="summary-grid">
-        <div class="summary-card"><b>适合谁</b><span>需要整理网页资料、竞品页面或公开资料归档的个人用户和小团队。</span></div>
-        <div class="summary-card"><b>不适合谁</b><span>不适合直接处理缺失、空白或并非 JSON 对象或数组的中间数据；也不适合要求已有大规模处理或全新环境验证结论的场景。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>交给 unstructured 的网页数据必须已经存在、内容非空，并且是本次任务目录内的 JSON 对象或数组。本次没有在全新环境中验证，也没有验证大规模数据处理能力；其他规模和环境下的表现均未验证。</span></div>
+        <div class="summary-card"><b>适合谁</b><span>适合手上已有竞品产品页或其他公开网页，希望把指定网页内容整理成便于阅读和归档的结构化文本的个人用户和小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合把全新环境中的可复现性或大规模网页处理能力视为已经得到验证的用户，也不适合无法提供有效衔接文件的情况。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>目前只验证了两者通过一个已存在、非空的 JSON 对象或数组衔接，而且该文件必须位于本次处理目录内。测试并非在全新环境中完成，也没有进行规模测试；全新环境表现、批量处理规模以及其他环境兼容性均未验证。</span></div>
       </section>
       <h2>我们怎么测</h2>
-      <p>先用 maxun 生成实际网页数据，再将同一份数据交给 unstructured；随后检查这份中间数据是否存在、非空且为 JSON 对象或数组，并核对最终是否生成结构化 JSON。</p>
+      <p>选取实际网页，让 maxun 根据 URL、内容描述和网页元素生成采集内容，再把同一份内容交给 unstructured；检查两者之间的文件是否存在、非空且为有效的 JSON 对象或数组，并检查 unstructured 是否产出包含内容元素的 JSON。</p>
       <h2>实际结果</h2>
-      <p>unstructured 确实读取了 maxun 产生的网页数据，并成功生成 JSON 结果；两项检查全部通过。</p>
+      <p>unstructured 成功读取了 maxun 生成的网页采集内容，并产出包含内容元素的 JSON；两项检查均通过（2/2）。</p>
       <h2>实际工作流怎么走</h2>
       <ol><li>1. maxun：获取原始资料，并把内容交给下一步。</li><li>2. unstructured：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>

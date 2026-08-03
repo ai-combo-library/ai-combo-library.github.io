@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T12:31:37.259961+08:00",
+  "generatedAt": "2026-08-03T12:39:08.170043+08:00",
   "version": "public-catalog-v4",
   "summary": {
     "records": 69,
@@ -476,13 +476,13 @@
             "verifiedAt": "2026-06-25T22:42:52.369455+08:00"
           },
           "hub": {
-            "score": 45,
+            "score": 46,
             "level": "有潜力",
             "verifiedComboCount": 2,
             "partnerCount": 2,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 66,
+            "averageFriction": 57,
             "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
           }
         },
@@ -2211,7 +2211,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -3702,13 +3702,13 @@
             "verifiedAt": ""
           },
           "hub": {
-            "score": 74,
-            "level": "高适配",
+            "score": 75,
+            "level": "核心枢纽",
             "verifiedComboCount": 4,
             "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 66,
+            "averageFriction": 62,
             "summary": "已在 4 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         },
@@ -5241,13 +5241,13 @@
       "title": "maxun + unstructured",
       "publicFeatured": false,
       "publicFeaturedRank": null,
-      "summary": "maxun 先采集网页内容，unstructured 再把采集结果处理成 JSON 元素和结构化文本，适合整理网页资料、竞品页面或公开资料归档。",
+      "summary": "有一个竞品产品页的 URL、希望采集哪些内容的自然语言描述，以及选定的网页元素。、想得到该竞品产品页中被选定内容的逐项元素和结构化文本，可供阅读与归档。时，maxun 负责取得指定网页内容，unstructured 负责拆分和整理，省去用户复制网页后逐项梳理内容的步骤，并帮助判断采集结果是否已转成便于归档的结构。",
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要整理网页资料、竞品页面或公开资料归档的个人用户和小团队。",
-      "useCase": "maxun 先采集网页内容，unstructured 再把采集结果处理成 JSON 元素和结构化文本，适合整理网页资料、竞品页面或公开资料归档。",
-      "testMethod": "先用 maxun 生成实际网页数据，再将同一份数据交给 unstructured；随后检查这份中间数据是否存在、非空且为 JSON 对象或数组，并核对最终是否生成结构化 JSON。",
-      "testOutcome": "unstructured 确实读取了 maxun 产生的网页数据，并成功生成 JSON 结果；两项检查全部通过。",
+      "audience": "适合手上已有竞品产品页或其他公开网页，希望把指定网页内容整理成便于阅读和归档的结构化文本的个人用户和小团队。",
+      "useCase": "用户已有一个竞品产品页的 URL、要采集内容的自然语言描述和选定网页元素时，maxun 先取得网页内容，unstructured 再将其整理成逐项内容元素和结构化文本；这些结果可直接用于阅读和归档，省去复制网页后再手工拆分、整理内容的步骤。",
+      "testMethod": "选取实际网页，让 maxun 根据 URL、内容描述和网页元素生成采集内容，再把同一份内容交给 unstructured；检查两者之间的文件是否存在、非空且为有效的 JSON 对象或数组，并检查 unstructured 是否产出包含内容元素的 JSON。",
+      "testOutcome": "unstructured 成功读取了 maxun 生成的网页采集内容，并产出包含内容元素的 JSON；两项检查均通过（2/2）。",
       "tools": [
         {
           "name": "maxun",
@@ -5280,13 +5280,13 @@
             "verifiedAt": "2026-07-26T12:36:53.626356+08:00"
           },
           "hub": {
-            "score": 45,
+            "score": 46,
             "level": "有潜力",
             "verifiedComboCount": 2,
             "partnerCount": 2,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 66,
+            "averageFriction": 57,
             "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
           }
         },
@@ -5321,26 +5321,26 @@
             "verifiedAt": "2026-07-26T12:36:53.626356+08:00"
           },
           "hub": {
-            "score": 74,
-            "level": "高适配",
+            "score": 75,
+            "level": "核心枢纽",
             "verifiedComboCount": 4,
             "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 66,
+            "averageFriction": 62,
             "summary": "已在 4 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 maxun 并手工整理采集结果",
+          "name": "单独使用 maxun 后手工整理",
           "type": "单工具加人工处理",
-          "fit": "适合只需采集网页内容，或愿意自行整理中间结果的情况。",
-          "tradeoff": "无需把结果继续交给 unstructured，但标题、段落、列表等结构需要人工处理。"
+          "fit": "适合只需处理少量网页，并愿意自行整理采集内容的用户。",
+          "tradeoff": "省去连接 unstructured 的步骤，但需要自己把 maxun 取得的网页内容拆分并整理成可阅读、可归档的文本。"
         }
       ],
-      "whyComboStillMatters": "maxun 负责获取网页内容，unstructured 负责把内容进一步整理为 JSON 元素和结构化文本。只用 maxun 会停留在采集结果，只用 unstructured 则缺少前一步提供的网页数据来源。",
+      "whyComboStillMatters": "maxun 负责根据 URL、自然语言描述和网页元素采集网页，unstructured 负责把采集内容拆成内容元素并生成结构化文本。只用 maxun 会停在网页采集结果；只用 unstructured，则需要用户先自行准备 HTML、Markdown 或文本内容。",
       "category": "文档与知识",
       "primaryCategory": "文档与知识",
       "domains": [
@@ -5370,20 +5370,18 @@
       "taxonomyVersion": "2026-07-multifacet-v1",
       "recommendationLevel": "适合特定人群",
       "caveatTags": [
-        "中间数据必须存在且非空",
-        "仅接受JSON对象或数组",
-        "未验证全新环境",
-        "未验证大规模处理",
+        "衔接格式受限",
+        "非全新环境验证",
+        "未做规模测试",
         "安装摩擦",
-        "依赖缺失",
         "外部账号",
         "大文件未验证",
         "UI 未验证"
       ],
-      "suitableFor": "需要整理网页资料、竞品页面或公开资料归档的个人用户和小团队。",
-      "notFor": "不适合直接处理缺失、空白或并非 JSON 对象或数组的中间数据；也不适合要求已有大规模处理或全新环境验证结论的场景。",
-      "maxBenefit": "maxun 先采集网页内容，unstructured 再把采集结果处理成 JSON 元素和结构化文本，适合整理网页资料、竞品页面或公开资料归档。",
-      "maxLimit": "交给 unstructured 的网页数据必须已经存在、内容非空，并且是本次任务目录内的 JSON 对象或数组。本次没有在全新环境中验证，也没有验证大规模数据处理能力；其他规模和环境下的表现均未验证。",
+      "suitableFor": "适合手上已有竞品产品页或其他公开网页，希望把指定网页内容整理成便于阅读和归档的结构化文本的个人用户和小团队。",
+      "notFor": "不适合把全新环境中的可复现性或大规模网页处理能力视为已经得到验证的用户，也不适合无法提供有效衔接文件的情况。",
+      "maxBenefit": "用户已有一个竞品产品页的 URL、要采集内容的自然语言描述和选定网页元素时，maxun 先取得网页内容，unstructured 再将其整理成逐项内容元素和结构化文本；这些结果可直接用于阅读和归档，省去复制网页后再手工拆分、整理内容的步骤。",
+      "maxLimit": "目前只验证了两者通过一个已存在、非空的 JSON 对象或数组衔接，而且该文件必须位于本次处理目录内。测试并非在全新环境中完成，也没有进行规模测试；全新环境表现、批量处理规模以及其他环境兼容性均未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
       "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -5411,16 +5409,12 @@
         "tested": true
       },
       "installFrictionIndex": {
-        "score": 56,
-        "level": "高摩擦",
+        "score": 38,
+        "level": "中摩擦",
         "factors": [
           {
             "label": "安装摩擦",
             "weight": 14
-          },
-          {
-            "label": "依赖缺失",
-            "weight": 18
           },
           {
             "label": "外部账号",
@@ -5435,7 +5429,7 @@
             "weight": 6
           }
         ],
-        "summary": "需要预留安装、账号、依赖或机器配置成本。"
+        "summary": "可试，但建议先按报告准备依赖和配置。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -5992,13 +5986,13 @@
             "verifiedAt": "2026-07-01T16:57:38.864180+08:00"
           },
           "hub": {
-            "score": 74,
-            "level": "高适配",
+            "score": 75,
+            "level": "核心枢纽",
             "verifiedComboCount": 4,
             "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 66,
+            "averageFriction": 62,
             "summary": "已在 4 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         }
@@ -7266,13 +7260,13 @@
             "verifiedAt": "2026-07-01T16:56:46.803380+08:00"
           },
           "hub": {
-            "score": 74,
-            "level": "高适配",
+            "score": 75,
+            "level": "核心枢纽",
             "verifiedComboCount": 4,
             "partnerCount": 5,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 66,
+            "averageFriction": 62,
             "summary": "已在 4 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
           }
         },
@@ -8211,7 +8205,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -9066,7 +9060,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -10339,7 +10333,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -12018,7 +12012,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -12127,13 +12121,13 @@
       "title": "scholar-rag + caveman",
       "publicFeatured": false,
       "publicFeaturedRank": null,
-      "summary": "有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。",
+      "summary": "有一份需要梳理结构的程序代码、想得到一份经过压缩的架构说明文本和对应的 token 用量指标时，省去手工精简 scholar-rag 生成的架构说明并另行统计 token 用量的步骤。",
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
-      "useCase": "有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。",
-      "testMethod": "先运行 scholar-rag 生成实际输出，再把同一份输出交给 caveman；最后核对中间文件和最终结果。",
-      "testOutcome": "scholar-rag 和 caveman 均运行成功，caveman 确实使用了 scholar-rag 的输出，2 项结果检查全部通过。",
+      "audience": "适合需要离线梳理程序代码，并希望获得精简架构说明和 token 用量指标的个人用户或小团队。",
+      "useCase": "把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。",
+      "testMethod": "先用 scholar-rag 的离线节点内容生成路径处理程序代码，再把本次生成的架构说明交给 caveman 压缩；分别检查架构说明是否非空，以及压缩操作是否成功。",
+      "testOutcome": "scholar-rag 生成了非空的架构说明，caveman 成功压缩了本次生成的内容，两项检查全部通过。",
       "tools": [
         {
           "name": "scholar-rag",
@@ -12174,13 +12168,13 @@
             "verifiedAt": "2026-08-03T12:31:34.322686+08:00"
           },
           "hub": {
-            "score": 54,
-            "level": "有潜力",
+            "score": 56,
+            "level": "高适配",
             "verifiedComboCount": 2,
             "partnerCount": 2,
             "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 25,
+            "averageFriction": 14,
             "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
           }
         },
@@ -12227,20 +12221,20 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "单独使用 caveman 并手工准备输入",
-          "type": "手动替代",
-          "fit": "数据量较少且只偶尔处理时",
-          "tradeoff": "部署组件更少，但每次都要人工整理成 caveman 可读取的格式。"
+          "name": "单独使用 scholar-rag 后手工精简",
+          "type": "单工具加人工处理",
+          "fit": "适合只需要从程序代码生成架构说明，且愿意自行删减内容的用户。",
+          "tradeoff": "需要人工压缩架构说明，并且无法获得本次组合中由 caveman 输出的 token 用量指标。"
         }
       ],
-      "whyComboStillMatters": "scholar-rag 负责前一段数据准备，caveman 负责后一段处理；单独只用 scholar-rag 仍要人工完成后续，单独只用 caveman 又缺少稳定输入，组合后才能连续完成这项工作。",
+      "whyComboStillMatters": "scholar-rag 负责从程序代码生成架构说明，caveman 负责压缩这份说明并给出 token 用量指标。只用 scholar-rag 得不到已经验证过的压缩文本和指标；只用 caveman 则缺少由 scholar-rag 生成的架构说明。",
       "category": "开发与 Agent",
       "primaryCategory": "开发与 Agent",
       "domains": [
@@ -12268,21 +12262,20 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
+      "recommendationLevel": "强推荐",
       "caveatTags": [
-        "规模未验证",
-        "生产环境未验证",
-        "安装摩擦",
-        "外部 API Key",
-        "大文件未验证"
+        "仅验证离线生成路径",
+        "外部服务未验证",
+        "全新环境与处理规模未验证",
+        "外部 API Key"
       ],
-      "suitableFor": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
-      "notFor": "要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。",
-      "maxBenefit": "有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。",
-      "maxLimit": "只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。",
+      "suitableFor": "适合需要离线梳理程序代码，并希望获得精简架构说明和 token 用量指标的个人用户或小团队。",
+      "notFor": "不适合需要确认 Milvus、PostgreSQL或大模型服务联动效果的人，也不适合据此判断全新环境或大规模处理表现。",
+      "maxBenefit": "把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。",
+      "maxLimit": "目前只验证了 scholar-rag 的离线节点内容生成路径，以及其产物交给 caveman 压缩的过程；外部 Milvus、PostgreSQL和基于大模型的服务均未测试。测试环境不是全新环境，也没有覆盖任何明确的数据量、代码量或并发规模，因此这些环境与规模下的表现尚未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
       "demandValidation": {
         "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
         "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
@@ -12301,23 +12294,15 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 36,
-        "level": "中摩擦",
+        "score": 14,
+        "level": "低摩擦",
         "factors": [
-          {
-            "label": "安装摩擦",
-            "weight": 14
-          },
           {
             "label": "外部 API Key",
             "weight": 14
-          },
-          {
-            "label": "大文件未验证",
-            "weight": 8
           }
         ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
+        "summary": "安装和配置成本相对可控。"
       },
       "retestFreshness": {
         "status": "新鲜",
@@ -12386,13 +12371,13 @@
             "verifiedAt": "2026-07-21T20:43:50.133852+08:00"
           },
           "hub": {
-            "score": 54,
-            "level": "有潜力",
+            "score": 56,
+            "level": "高适配",
             "verifiedComboCount": 2,
             "partnerCount": 2,
             "categoryCount": 2,
             "deepTestSuccessRate": 100,
-            "averageFriction": 25,
+            "averageFriction": 14,
             "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
           }
         },
@@ -12855,7 +12840,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -13271,7 +13256,7 @@
             "partnerCount": 8,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
+            "averageFriction": 28,
             "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
           }
         }
@@ -14825,7 +14810,7 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-08-03T12:31:36.910091+08:00",
+    "generatedAt": "2026-08-03T12:39:07.825573+08:00",
     "summary": {
       "total": 69,
       "publicFeatured": 12,
@@ -17801,20 +17786,20 @@
         ],
         "evidenceScore": 95,
         "evidenceLevel": "L3-caveat",
-        "useCase": "maxun 先采集网页内容，unstructured 再把采集结果处理成 JSON 元素和结构化文本，适合整理网页资料、竞品页面或公开资料归档。",
+        "useCase": "用户已有一个竞品产品页的 URL、要采集内容的自然语言描述和选定网页元素时，maxun 先取得网页内容，unstructured 再将其整理成逐项内容元素和结构化文本；这些结果可直接用于阅读和归档，省去复制网页后再手工拆分、整理内容的步骤。",
         "category": "文档与知识",
         "primaryCategory": "文档与知识",
         "domains": [
           "文档与知识",
           "获取与监测",
-          "数据与分析",
-          "开发与 Agent"
+          "开发与 Agent",
+          "数据与分析"
         ],
         "tasks": [
           "测试",
           "交付",
-          "采集",
           "存储",
+          "采集",
           "分析"
         ],
         "audiences": [
@@ -17828,27 +17813,25 @@
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
         "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要整理网页资料、竞品页面或公开资料归档的个人用户和小团队。",
-        "notFor": "不适合直接处理缺失、空白或并非 JSON 对象或数组的中间数据；也不适合要求已有大规模处理或全新环境验证结论的场景。",
-        "maxBenefit": "maxun 先采集网页内容，unstructured 再把采集结果处理成 JSON 元素和结构化文本，适合整理网页资料、竞品页面或公开资料归档。",
-        "maxLimit": "交给 unstructured 的网页数据必须已经存在、内容非空，并且是本次任务目录内的 JSON 对象或数组。本次没有在全新环境中验证，也没有验证大规模数据处理能力；其他规模和环境下的表现均未验证。",
+        "suitableFor": "适合手上已有竞品产品页或其他公开网页，希望把指定网页内容整理成便于阅读和归档的结构化文本的个人用户和小团队。",
+        "notFor": "不适合把全新环境中的可复现性或大规模网页处理能力视为已经得到验证的用户，也不适合无法提供有效衔接文件的情况。",
+        "maxBenefit": "用户已有一个竞品产品页的 URL、要采集内容的自然语言描述和选定网页元素时，maxun 先取得网页内容，unstructured 再将其整理成逐项内容元素和结构化文本；这些结果可直接用于阅读和归档，省去复制网页后再手工拆分、整理内容的步骤。",
+        "maxLimit": "目前只验证了两者通过一个已存在、非空的 JSON 对象或数组衔接，而且该文件必须位于本次处理目录内。测试并非在全新环境中完成，也没有进行规模测试；全新环境表现、批量处理规模以及其他环境兼容性均未验证。",
         "caveatTags": [
-          "中间数据必须存在且非空",
-          "仅接受JSON对象或数组",
-          "未验证全新环境",
-          "未验证大规模处理",
+          "衔接格式受限",
+          "非全新环境验证",
+          "未做规模测试",
           "安装摩擦",
-          "依赖缺失",
           "外部账号",
           "大文件未验证",
           "UI 未验证"
         ],
         "alternatives": [
           {
-            "name": "单独使用 maxun 并手工整理采集结果",
+            "name": "单独使用 maxun 后手工整理",
             "type": "单工具加人工处理",
-            "fit": "适合只需采集网页内容，或愿意自行整理中间结果的情况。",
-            "tradeoff": "无需把结果继续交给 unstructured，但标题、段落、列表等结构需要人工处理。"
+            "fit": "适合只需处理少量网页，并愿意自行整理采集内容的用户。",
+            "tradeoff": "省去连接 unstructured 的步骤，但需要自己把 maxun 取得的网页内容拆分并整理成可阅读、可归档的文本。"
           }
         ],
         "hasReport": true,
@@ -17856,16 +17839,12 @@
         "verifiedAt": "2026-07-03T23:26:14.383905+08:00",
         "installFriction": [],
         "installFrictionIndex": {
-          "score": 56,
-          "level": "高摩擦",
+          "score": 38,
+          "level": "中摩擦",
           "factors": [
             {
               "label": "安装摩擦",
               "weight": 14
-            },
-            {
-              "label": "依赖缺失",
-              "weight": 18
             },
             {
               "label": "外部账号",
@@ -17880,10 +17859,10 @@
               "weight": 6
             }
           ],
-          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+          "summary": "可试，但建议先按报告准备依赖和配置。"
         },
         "caveats": [
-          "交给 unstructured 的网页数据必须已经存在、内容非空，并且是本次任务目录内的 JSON 对象或数组。本次没有在全新环境中验证，也没有验证大规模数据处理能力；其他规模和环境下的表现均未验证。"
+          "目前只验证了两者通过一个已存在、非空的 JSON 对象或数组衔接，而且该文件必须位于本次处理目录内。测试并非在全新环境中完成，也没有进行规模测试；全新环境表现、批量处理规模以及其他环境兼容性均未验证。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -21678,21 +21657,21 @@
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。",
+        "useCase": "把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。",
         "category": "开发与 Agent",
         "primaryCategory": "开发与 Agent",
         "domains": [
-          "文档与知识",
           "开发与 Agent",
-          "部署运维与安全",
-          "团队协作与沟通"
+          "文档与知识",
+          "数据与分析",
+          "部署运维与安全"
         ],
         "tasks": [
-          "检索",
           "测试",
+          "检索",
+          "生成",
           "交付",
-          "分析",
-          "协作"
+          "分析"
         ],
         "audiences": [
           "开发者",
@@ -21706,53 +21685,45 @@
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
-        "notFor": "要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。",
-        "maxBenefit": "有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。",
-        "maxLimit": "只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合需要离线梳理程序代码，并希望获得精简架构说明和 token 用量指标的个人用户或小团队。",
+        "notFor": "不适合需要确认 Milvus、PostgreSQL或大模型服务联动效果的人，也不适合据此判断全新环境或大规模处理表现。",
+        "maxBenefit": "把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。",
+        "maxLimit": "目前只验证了 scholar-rag 的离线节点内容生成路径，以及其产物交给 caveman 压缩的过程；外部 Milvus、PostgreSQL和基于大模型的服务均未测试。测试环境不是全新环境，也没有覆盖任何明确的数据量、代码量或并发规模，因此这些环境与规模下的表现尚未验证。",
         "caveatTags": [
-          "规模未验证",
-          "生产环境未验证",
-          "安装摩擦",
-          "外部 API Key",
-          "大文件未验证"
+          "仅验证离线生成路径",
+          "外部服务未验证",
+          "全新环境与处理规模未验证",
+          "外部 API Key"
         ],
         "alternatives": [
           {
-            "name": "单独使用 caveman 并手工准备输入",
-            "type": "手动替代",
-            "fit": "数据量较少且只偶尔处理时",
-            "tradeoff": "部署组件更少，但每次都要人工整理成 caveman 可读取的格式。"
+            "name": "单独使用 scholar-rag 后手工精简",
+            "type": "单工具加人工处理",
+            "fit": "适合只需要从程序代码生成架构说明，且愿意自行删减内容的用户。",
+            "tradeoff": "需要人工压缩架构说明，并且无法获得本次组合中由 caveman 输出的 token 用量指标。"
           }
         ],
         "hasReport": true,
         "reportUrl": "reports/fresh-scholar-rag-caveman-worker-smoke.html",
         "verifiedAt": "",
         "installFriction": [
-          "没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境"
+          "测试环境不是全新环境",
+          "因此这些环境与规模下的表现尚未验证"
         ],
         "installFrictionIndex": {
-          "score": 36,
-          "level": "中摩擦",
+          "score": 14,
+          "level": "低摩擦",
           "factors": [
-            {
-              "label": "安装摩擦",
-              "weight": 14
-            },
             {
               "label": "外部 API Key",
               "weight": 14
-            },
-            {
-              "label": "大文件未验证",
-              "weight": 8
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
-          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+          "目前只验证了 scholar-rag 的离线节点内容生成路径，以及其产物交给 caveman 压缩的过程；外部 Milvus、PostgreSQL和基于大模型的服务均未测试。测试环境不是全新环境，也没有覆盖任何明确的数据量、代码量或并发规模，因此这些环境与规模下的表现尚未验证。"
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
@@ -21761,7 +21732,7 @@
           "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
           "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
@@ -23241,13 +23212,13 @@
       "outputs": "HTML, Markdown, JSON, API",
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 45,
+        "score": 46,
         "level": "有潜力",
         "verifiedComboCount": 2,
         "partnerCount": 2,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 66,
+        "averageFriction": 57,
         "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -23628,7 +23599,7 @@
         "partnerCount": 8,
         "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 31,
+        "averageFriction": 28,
         "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
       }
     },
@@ -23776,13 +23747,13 @@
       "outputs": "JSON, 结构化元素",
       "evidenceLevel": "L3",
       "hub": {
-        "score": 74,
-        "level": "高适配",
+        "score": 75,
+        "level": "核心枢纽",
         "verifiedComboCount": 4,
         "partnerCount": 5,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 66,
+        "averageFriction": 62,
         "summary": "已在 4 条实测组合中连接 5 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -24538,13 +24509,13 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 54,
-        "level": "有潜力",
+        "score": 56,
+        "level": "高适配",
         "verifiedComboCount": 2,
         "partnerCount": 2,
         "categoryCount": 2,
         "deepTestSuccessRate": 100,
-        "averageFriction": 25,
+        "averageFriction": 14,
         "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
       }
     },

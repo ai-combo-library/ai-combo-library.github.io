@@ -121,33 +121,33 @@
       <p class="note"><a href="../combo.html?id=fresh-scholar-rag-caveman-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
       <p class="eyebrow">完整实测报告</p>
       <h1>scholar-rag + caveman</h1>
-      <p class="lead">有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。</p>
+      <p class="lead">把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。</p>
       <div class="meta">
-        <span>开发与 Agent · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+        <span>开发与 Agent · 实测通过 · 有使用限制 · 强推荐</span><span>有实测证据</span><span>含限制说明</span>
       </div>
       <div class="tool-chain">
         <span>scholar-rag</span><span>caveman</span>
       </div>
       <section class="summary-grid">
-        <div class="summary-card"><b>适合谁</b><span>需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。</span></div>
-        <div class="summary-card"><b>不适合谁</b><span>要求立即支持复杂权限、超大规模数据、长期无人值守或正式生产环境的团队。</span></div>
-        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+        <div class="summary-card"><b>适合谁</b><span>适合需要离线梳理程序代码，并希望获得精简架构说明和 token 用量指标的个人用户或小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合需要确认 Milvus、PostgreSQL或大模型服务联动效果的人，也不适合据此判断全新环境或大规模处理表现。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>目前只验证了 scholar-rag 的离线节点内容生成路径，以及其产物交给 caveman 压缩的过程；外部 Milvus、PostgreSQL和基于大模型的服务均未测试。测试环境不是全新环境，也没有覆盖任何明确的数据量、代码量或并发规模，因此这些环境与规模下的表现尚未验证。</span></div>
       </section>
       <h2>我们怎么测</h2>
-      <p>先运行 scholar-rag 生成实际输出，再把同一份输出交给 caveman；最后核对中间文件和最终结果。</p>
+      <p>先用 scholar-rag 的离线节点内容生成路径处理程序代码，再把本次生成的架构说明交给 caveman 压缩；分别检查架构说明是否非空，以及压缩操作是否成功。</p>
       <h2>实际结果</h2>
-      <p>scholar-rag 和 caveman 均运行成功，caveman 确实使用了 scholar-rag 的输出，2 项结果检查全部通过。</p>
+      <p>scholar-rag 生成了非空的架构说明，caveman 成功压缩了本次生成的内容，两项检查全部通过。</p>
       <h2>实际工作流怎么走</h2>
       <ol><li>1. scholar-rag：获取原始资料，并把内容交给下一步。</li><li>2. caveman：生成最终可查看、下载或交付的结果。</li></ol>
       <h2>继续补成可长期使用方案要做什么</h2>
       <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
       <details>
         <summary>查看技术记录（供复核）</summary>
-        <pre>有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。
-有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。
-有一份需要由 scholar-rag 整理的原始资料、想得到caveman 生成的可直接交付内容时，scholar-rag 的实际产物直接交给 caveman，减少人工复制、改格式和重复整理。
-只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。
-只验证了当前确定性样本和依赖条件，没有覆盖长期运行、大规模数据、复杂权限、多用户并发或生产环境。</pre>
+        <pre>把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。
+把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。
+把一份待梳理的程序代码交给 scholar-rag 生成非空的架构说明，再将这份说明交给 caveman 压缩，得到精简的架构说明文本和 token 用量指标，省去手工精简第一步说明并另行统计 token 用量的步骤。
+目前只验证了 scholar-rag 的离线节点内容生成路径，以及其产物交给 caveman 压缩的过程；外部 Milvus、PostgreSQL和基于大模型的服务均未测试。测试环境不是全新环境，也没有覆盖任何明确的数据量、代码量或并发规模，因此这些环境与规模下的表现尚未验证。
+目前只验证了 scholar-rag 的离线节点内容生成路径，以及其产物交给 caveman 压缩的过程；外部 Milvus、PostgreSQL和基于大模型的服务均未测试。测试环境不是全新环境，也没有覆盖任何明确的数据量、代码量或并发规模，因此这些环境与规模下的表现尚未验证。</pre>
       </details>
     </div>
   </main>
