@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T09:56:11.224564+08:00",
-  "records": 68,
+  "generatedAt": "2026-08-03T12:31:37.370747+08:00",
+  "records": 69,
   "assetVersions": {
     "app.css": "96ce3dc697f0",
     "shared.js": "54836c51eae8"
@@ -47,6 +47,7 @@
     "reports/fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
     "reports/fresh-ryu-caveman-worker-smoke.html",
+    "reports/fresh-scholar-rag-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-headroom-worker-smoke.html",
     "reports/fresh-twiligent-headroom-worker-smoke.html",
     "reports/fresh-vault-operator-caveman-worker-smoke.html",
