@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T12:39:08.170043+08:00",
+  "generatedAt": "2026-08-05T12:22:03.240521+08:00",
   "version": "public-catalog-v4",
   "summary": {
     "records": 69,
@@ -209,8 +209,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 9,
-        "summary": "距最近一次测试约 9 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:17:00.294498+08:00",
@@ -419,8 +419,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -643,8 +643,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T23:41:06.207959+08:00",
@@ -866,8 +866,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 9,
-        "summary": "距最近一次测试约 9 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:46:33.347456+08:00",
@@ -1066,8 +1066,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:05:19.237913+08:00",
@@ -1276,8 +1276,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:06:36.842560+08:00",
@@ -1471,8 +1471,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:54:44.484813+08:00",
@@ -1687,8 +1687,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:34:37.621839+08:00",
@@ -1776,10 +1776,10 @@
           "setup": "",
           "readme": "",
           "evidenceLevel": "L2",
-          "primaryCategory": "开发与 Agent",
+          "primaryCategory": "数据与分析",
           "domains": [
-            "开发与 Agent",
             "数据与分析",
+            "开发与 Agent",
             "文档与知识"
           ],
           "tasks": [
@@ -1788,7 +1788,7 @@
             "检索"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
           "traits": [],
           "testResults": {
@@ -1886,8 +1886,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:07:05.921469+08:00",
@@ -2095,8 +2095,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T19:18:43.708221+08:00",
@@ -2298,8 +2298,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:41:44.989301+08:00",
@@ -2506,8 +2506,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 19,
-        "summary": "距最近一次测试约 19 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-15T10:27:06.791084+08:00",
@@ -2733,8 +2733,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 6,
-        "summary": "距最近一次测试约 6 天。"
+        "daysSinceTest": 8,
+        "summary": "距最近一次测试约 8 天。"
       },
       "verification": {
         "testedAt": "2026-07-28T16:08:13.589615+08:00",
@@ -2933,8 +2933,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:08:55.266390+08:00",
@@ -3181,8 +3181,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:47:20.546997+08:00",
@@ -3374,8 +3374,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-04T00:00:24.717403+08:00",
@@ -3603,8 +3603,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 35,
+        "summary": "距最近一次测试约 35 天。"
       },
       "verification": {
         "testedAt": "2026-07-01T12:53:34.882240+08:00",
@@ -3874,8 +3874,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T17:54:05.741088+08:00",
@@ -4082,8 +4082,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 19,
-        "summary": "距最近一次测试约 19 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-15T23:51:52.657051+08:00",
@@ -4294,8 +4294,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:47:20.546997+08:00",
@@ -4536,8 +4536,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -4765,8 +4765,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T23:56:22.909610+08:00",
@@ -4996,8 +4996,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -5223,8 +5223,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:41:49.409711+08:00",
@@ -5433,8 +5433,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 8,
-        "summary": "距最近一次测试约 8 天。"
+        "daysSinceTest": 10,
+        "summary": "距最近一次测试约 10 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:36:53.626356+08:00",
@@ -5660,8 +5660,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 21,
-        "summary": "距最近一次测试约 21 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:15:32.616491+08:00",
@@ -5883,8 +5883,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:52:05.655889+08:00",
@@ -6104,8 +6104,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:41:49.409711+08:00",
@@ -6332,8 +6332,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T23:41:06.207959+08:00",
@@ -6549,8 +6549,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 23,
-        "summary": "距最近一次测试约 23 天。"
+        "daysSinceTest": 25,
+        "summary": "距最近一次测试约 25 天。"
       },
       "verification": {
         "testedAt": "2026-07-11T11:54:38.024610+08:00",
@@ -6770,8 +6770,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -6960,8 +6960,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 21,
-        "summary": "距最近一次测试约 21 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:06:20.082520+08:00",
@@ -7198,8 +7198,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T19:18:43.708221+08:00",
@@ -7425,8 +7425,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7649,8 +7649,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 31,
-        "summary": "距最近一次测试约 31 天。"
+        "daysSinceTest": 33,
+        "summary": "距最近一次测试约 33 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7881,8 +7881,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 12,
-        "summary": "距最近一次测试约 12 天。"
+        "daysSinceTest": 14,
+        "summary": "距最近一次测试约 14 天。"
       },
       "verification": {
         "testedAt": "2026-07-22T22:43:43.025263+08:00",
@@ -8093,8 +8093,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:05:17.476375+08:00",
@@ -8305,8 +8305,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:04:26.875265+08:00",
@@ -8510,8 +8510,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:51:23.972449+08:00",
@@ -8736,8 +8736,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 21,
-        "summary": "距最近一次测试约 21 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:23:54.925764+08:00",
@@ -8944,8 +8944,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:17:46.129434+08:00",
@@ -9160,8 +9160,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 8,
-        "summary": "距最近一次测试约 8 天。"
+        "daysSinceTest": 10,
+        "summary": "距最近一次测试约 10 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:40:09.883353+08:00",
@@ -9366,8 +9366,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 9,
-        "summary": "距最近一次测试约 9 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T14:32:37.975923+08:00",
@@ -9590,8 +9590,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T00:55:32.314716+08:00",
@@ -9800,8 +9800,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T21:08:11.665061+08:00",
@@ -10008,8 +10008,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:53:58.378164+08:00",
@@ -10217,8 +10217,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:36:38.498909+08:00",
@@ -10424,8 +10424,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 13,
+        "summary": "距最近一次测试约 13 天。"
       },
       "verification": {
         "testedAt": "2026-07-23T07:23:39.148828+08:00",
@@ -10640,8 +10640,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:04:45.776659+08:00",
@@ -10846,8 +10846,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 9,
-        "summary": "距最近一次测试约 9 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T18:30:44.014854+08:00",
@@ -11072,8 +11072,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:26:26.172566+08:00",
@@ -11282,8 +11282,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 8,
-        "summary": "距最近一次测试约 8 天。"
+        "daysSinceTest": 10,
+        "summary": "距最近一次测试约 10 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:28:06.229284+08:00",
@@ -11488,8 +11488,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 10,
-        "summary": "距最近一次测试约 10 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-24T09:24:27.893397+08:00",
@@ -11692,8 +11692,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 6,
-        "summary": "距最近一次测试约 6 天。"
+        "daysSinceTest": 8,
+        "summary": "距最近一次测试约 8 天。"
       },
       "verification": {
         "testedAt": "2026-07-28T19:29:26.051112+08:00",
@@ -11896,8 +11896,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:52:36.908454+08:00",
@@ -12103,8 +12103,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:39:28.528586+08:00",
@@ -12306,8 +12306,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 0,
-        "summary": "距最近一次测试约 0 天。"
+        "daysSinceTest": 2,
+        "summary": "距最近一次测试约 2 天。"
       },
       "verification": {
         "testedAt": "2026-08-03T12:31:34.322686+08:00",
@@ -12513,8 +12513,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:43:50.133852+08:00",
@@ -12724,8 +12724,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 9,
-        "summary": "距最近一次测试约 9 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:13:59.063896+08:00",
@@ -12930,8 +12930,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 8,
-        "summary": "距最近一次测试约 8 天。"
+        "daysSinceTest": 10,
+        "summary": "距最近一次测试约 10 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T09:23:08.880020+08:00",
@@ -13138,8 +13138,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:52:01.192064+08:00",
@@ -13342,8 +13342,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 9,
-        "summary": "距最近一次测试约 9 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T19:04:44.476265+08:00",
@@ -13537,8 +13537,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 21,
-        "summary": "距最近一次测试约 21 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T18:27:40.076712+08:00",
@@ -13769,8 +13769,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T23:56:43.452063+08:00",
@@ -13987,8 +13987,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:15:47.687264+08:00",
@@ -14189,8 +14189,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T19:43:46.948849+08:00",
@@ -14389,8 +14389,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:17:37.166519+08:00",
@@ -14591,8 +14591,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:18:32.190203+08:00",
@@ -14795,8 +14795,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:20:16.846346+08:00",
@@ -14810,7 +14810,7 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-08-03T12:39:07.825573+08:00",
+    "generatedAt": "2026-08-05T12:22:02.892181+08:00",
     "summary": {
       "total": 69,
       "publicFeatured": 12,
@@ -14910,8 +14910,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 9,
-          "summary": "距最近一次测试约 9 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15030,8 +15030,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15166,8 +15166,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15306,8 +15306,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 9,
-          "summary": "距最近一次测试约 9 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15416,8 +15416,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -15536,8 +15536,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15643,8 +15643,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15763,8 +15763,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15866,8 +15866,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -15987,8 +15987,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16097,8 +16097,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -16214,8 +16214,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 19,
-          "summary": "距最近一次测试约 19 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16333,8 +16333,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 6,
-          "summary": "距最近一次测试约 6 天。"
+          "daysSinceTest": 8,
+          "summary": "距最近一次测试约 8 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16434,8 +16434,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -16575,8 +16575,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16695,8 +16695,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16837,8 +16837,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 35,
+          "summary": "距最近一次测试约 35 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16976,8 +16976,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17083,8 +17083,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 19,
-          "summary": "距最近一次测试约 19 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -17203,8 +17203,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17350,8 +17350,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17489,8 +17489,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17621,8 +17621,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17748,8 +17748,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17867,8 +17867,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 8,
-          "summary": "距最近一次测试约 8 天。"
+          "daysSinceTest": 10,
+          "summary": "距最近一次测试约 10 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17992,8 +17992,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 21,
-          "summary": "距最近一次测试约 21 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18111,8 +18111,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18237,8 +18237,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18363,8 +18363,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18481,8 +18481,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 23,
-          "summary": "距最近一次测试约 23 天。"
+          "daysSinceTest": 25,
+          "summary": "距最近一次测试约 25 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18600,8 +18600,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18714,8 +18714,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 21,
-          "summary": "距最近一次测试约 21 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18860,8 +18860,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18987,8 +18987,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19120,8 +19120,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 31,
-          "summary": "距最近一次测试约 31 天。"
+          "daysSinceTest": 33,
+          "summary": "距最近一次测试约 33 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19251,8 +19251,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 12,
-          "summary": "距最近一次测试约 12 天。"
+          "daysSinceTest": 14,
+          "summary": "距最近一次测试约 14 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19371,8 +19371,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19492,8 +19492,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19616,8 +19616,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19747,8 +19747,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 21,
-          "summary": "距最近一次测试约 21 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19862,8 +19862,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -19986,8 +19986,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 8,
-          "summary": "距最近一次测试约 8 天。"
+          "daysSinceTest": 10,
+          "summary": "距最近一次测试约 10 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20096,8 +20096,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 9,
-          "summary": "距最近一次测试约 9 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -20224,8 +20224,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20346,8 +20346,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20460,8 +20460,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -20586,8 +20586,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20699,8 +20699,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 13,
+          "summary": "距最近一次测试约 13 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -20823,8 +20823,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20933,8 +20933,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 9,
-          "summary": "距最近一次测试约 9 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21063,8 +21063,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21178,8 +21178,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 8,
-          "summary": "距最近一次测试约 8 天。"
+          "daysSinceTest": 10,
+          "summary": "距最近一次测试约 10 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21288,8 +21288,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 10,
-          "summary": "距最近一次测试约 10 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21397,8 +21397,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 6,
-          "summary": "距最近一次测试约 6 天。"
+          "daysSinceTest": 8,
+          "summary": "距最近一次测试约 8 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21505,8 +21505,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21620,8 +21620,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21728,8 +21728,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 0,
-          "summary": "距最近一次测试约 0 天。"
+          "daysSinceTest": 2,
+          "summary": "距最近一次测试约 2 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21836,8 +21836,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21951,8 +21951,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 9,
-          "summary": "距最近一次测试约 9 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22064,8 +22064,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 8,
-          "summary": "距最近一次测试约 8 天。"
+          "daysSinceTest": 10,
+          "summary": "距最近一次测试约 10 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22182,8 +22182,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22291,8 +22291,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 9,
-          "summary": "距最近一次测试约 9 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22410,8 +22410,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 21,
-          "summary": "距最近一次测试约 21 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22542,8 +22542,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22656,8 +22656,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22763,8 +22763,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22872,8 +22872,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22977,8 +22977,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23092,8 +23092,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
