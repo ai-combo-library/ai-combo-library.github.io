@@ -88,6 +88,81 @@ function publicTaskLabel(value) {
   return labels[String(value || "")] || String(value || "");
 }
 
+function publicCardDescription(record) {
+  const scenario = record?.readerScenario || {};
+  const input = publicText(scenario.input || "").replace(/[。；;]+$/g, "");
+  const outcome = publicText(scenario.outcome || "").replace(/[。；;]+$/g, "");
+  const value = publicText(scenario.value || "").replace(/[。；;]+$/g, "");
+  if (input && outcome && value) {
+    return `适合场景：手上有${input}，需要得到${outcome}。${value}。`;
+  }
+  const fallback = publicText(record?.maxBenefit || record?.useCase || record?.summary || "查看这组工具的真实使用结论。")
+    .replace(/\s*(?:-|=)>\s*/g, "，接着得到")
+    .replace(/[。；;]+$/g, "");
+  return `适合场景：${fallback}。`;
+}
+
+const PUBLIC_SEARCH_CONCEPTS = [
+  ["网页", "网址", "页面", "website", "web page", "url", "html", "crawl", "scrape"],
+  ["视频", "youtube", "video", "短片"],
+  ["文字稿", "文字", "字幕", "转写", "转录", "transcript", "speech to text", "asr"],
+  ["文档", "文件", "pdf", "markdown", "document"],
+  ["知识库", "检索", "搜索资料", "rag", "retrieval", "index", "knowledge base"],
+  ["代码", "源码", "仓库", "repository", "github", "code"],
+  ["审查", "检查", "诊断", "review", "lint", "actionlint"],
+  ["日志", "错误", "故障", "排查", "log", "incident", "sqlstate"],
+  ["会议", "纪要", "meeting"],
+  ["行动项", "待办", "任务", "action item", "todo"],
+  ["表格", "台账", "数据库", "excel", "csv", "nocodb", "baserow", "database"],
+  ["自动化", "批量", "工作流", "automation", "workflow", "batch"],
+  ["报告", "日报", "总结", "report", "summary"],
+];
+
+const PUBLIC_SEARCH_STOP_WORDS = new Set([
+  "我", "想", "要", "需要", "希望", "帮我", "怎么", "如何", "可以", "能够",
+  "工具", "组合", "用来", "用于", "把", "将", "转成", "变成", "生成", "得到",
+]);
+
+function publicSearchGroups(query) {
+  let remaining = normalize(query).replace(/[，。！？、；：,.!?;:/\\|()[\]{}]+/g, " ");
+  const groups = [];
+  PUBLIC_SEARCH_CONCEPTS.forEach(aliases => {
+    const matched = aliases.some(alias => remaining.includes(normalize(alias)));
+    if (!matched) return;
+    groups.push(aliases.map(normalize));
+    aliases.forEach(alias => {
+      remaining = remaining.replaceAll(normalize(alias), " ");
+    });
+  });
+  remaining.split(/\s+/).filter(Boolean).forEach(token => {
+    if (!PUBLIC_SEARCH_STOP_WORDS.has(token)) groups.push([token]);
+  });
+  return groups;
+}
+
+function matchesPublicSearch(text, query) {
+  const haystack = normalize(publicText(text));
+  const needle = normalize(query).trim();
+  if (!needle || haystack.includes(needle)) return true;
+  const groups = publicSearchGroups(needle);
+  return groups.length > 0 && groups.every(aliases => aliases.some(alias => haystack.includes(alias)));
+}
+
+function publicSearchScore(text, query) {
+  const haystack = normalize(publicText(text));
+  const needle = normalize(query).trim();
+  if (!needle) return 0;
+  let score = haystack.includes(needle) ? 1000 : 0;
+  needle.split(/\s+/).filter(Boolean).forEach(token => {
+    if (!PUBLIC_SEARCH_STOP_WORDS.has(token) && haystack.includes(token)) score += 100;
+  });
+  publicSearchGroups(needle).forEach(aliases => {
+    const matches = aliases.filter(alias => haystack.includes(alias));
+    if (matches.length) score += 20 + Math.min(matches.length, 4) * 5;
+  });
+  return score;
+}
+
 function normalize(text) {
   return String(text || "").toLowerCase();
 }

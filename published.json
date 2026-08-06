@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-05T12:22:03.240521+08:00",
+  "generatedAt": "2026-08-06T10:45:37.264033+08:00",
   "version": "public-catalog-v4",
   "summary": {
-    "records": 69,
+    "records": 71,
     "featured": 12,
-    "evidenceItems": 69,
-    "tools": 72
+    "evidenceItems": 71,
+    "tools": 74
   },
   "records": [
     {
@@ -14,6 +14,11 @@
       "publicFeatured": true,
       "publicFeaturedRank": 1,
       "summary": "有一个需要持续观察内容变化的网页、想得到带文档标题和变化信息、可在表格中筛选的记录时，changedetection.io 负责抓取变化并生成文档，baserow 再保存元数据。",
+      "readerScenario": {
+        "input": "一个需要持续观察内容变化的网页",
+        "outcome": "带文档标题和变化信息、可在表格中筛选的记录",
+        "value": "changedetection.io 负责抓取变化并生成文档，baserow 再保存元数据"
+      },
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
@@ -209,8 +214,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:17:00.294498+08:00",
@@ -228,6 +233,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 2,
       "summary": "yt-dlp 下载公开视频并截取样本，FunClip 完成语音识别和 SRT 字幕输出；适合验证视频到可编辑字幕的入口，尚未证明自动精剪阶段。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把公开课、访谈、会议回放拆成短片段的内容创作者和知识整理者。",
@@ -419,8 +425,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -438,6 +444,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 3,
       "summary": "maxun 把网页采集结果输出为 Markdown，MrDoc 把这些内容沉淀为可读、可检索、可继续编辑的私有文档库。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把网页资料、教程页、工具页沉淀到团队或个人知识库的人。",
@@ -643,8 +650,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T23:41:06.207959+08:00",
@@ -662,6 +669,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 4,
       "summary": "MarkItDown 负责把 PDF 转成 Markdown/text，Haystack 负责把文本写入本地检索管线。本轮在测试沙箱完成 PDF 转换、Markdown 分页、InMemoryDocumentStore 写入与 BM25 检索命中闭环。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
@@ -866,8 +874,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:46:33.347456+08:00",
@@ -885,6 +893,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 5,
       "summary": "用 Claude Skill 生成结构稳定的任务交接文档，再由 OpenCLI 在命令行读取、检查并接入下一段自动化。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要跨 Agent、跨会话传递任务状态的开发者和自动化团队。",
@@ -1066,8 +1075,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:05:19.237913+08:00",
@@ -1085,6 +1094,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 6,
       "summary": "用 shadcn/ui 快速搭出真实可操作的界面，再让 Playwright Skill 自动验证表单、弹窗和不同屏幕宽度。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "使用 React 构建后台、工具页或原型，并希望快速补上浏览器验收的前端团队。",
@@ -1276,8 +1286,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:06:36.842560+08:00",
@@ -1295,6 +1305,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 7,
       "summary": "先把 Marlin 固件仓库建立为可查询代码图谱，再根据图谱定位结果完成实际编译，适合大型固件项目的结构理解与修改前检查。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要理解大型 C++/固件项目结构的开发者和 Agent 工程用户。",
@@ -1471,8 +1482,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:54:44.484813+08:00",
@@ -1490,6 +1501,11 @@
       "publicFeatured": true,
       "publicFeaturedRank": 8,
       "summary": "有一批包含普通信息、警告和 SQL 错误的服务日志、想得到危险操作已拦截且严重问题排在前面的精简日志时，deconvolute 先执行安全策略，headroom 再保留错误码并压缩排序。",
+      "readerScenario": {
+        "input": "一批包含普通信息、警告和 SQL 错误的服务日志",
+        "outcome": "危险操作已拦截且严重问题排在前面的精简日志",
+        "value": "deconvolute 先执行安全策略，headroom 再保留错误码并压缩排序"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "适合希望把一批服务日志先整理成中间结果，再压缩重点、保留错误代码并按严重程度查看问题的个人用户或小团队。",
@@ -1587,12 +1603,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -1687,8 +1703,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:34:37.621839+08:00",
@@ -1706,6 +1722,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 9,
       "summary": "把会议转写和摘要自动写入 NocoDB，形成可检索、可筛选、可继续分派的会议记录与行动项台账。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "会议较多、需要持续追踪决策和行动项的小团队。",
@@ -1886,8 +1903,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:07:05.921469+08:00",
@@ -1905,6 +1922,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 10,
       "summary": "Stirling-PDF 将 PDF 转成 Markdown，second-brain 的附件解析层把 Markdown/PDF 资产变成 LLM 可读上下文，适合个人或小团队资料归档。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "经常整理 PDF 报告、说明书、学习资料、项目文档，并希望进入本地 AI 助手上下文的人或小团队。",
@@ -2095,8 +2113,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T19:18:43.708221+08:00",
@@ -2114,6 +2132,11 @@
       "publicFeatured": true,
       "publicFeaturedRank": 11,
       "summary": "有一篇已知公开 arXiv 论文的编号、想得到精简后的论文题目、作者等查询信息时，arc 负责查询论文资料，caveman 再压缩展示，省去手工挑选字段。",
+      "readerScenario": {
+        "input": "一篇已知公开 arXiv 论文的编号",
+        "outcome": "精简后的论文题目、作者等查询信息",
+        "value": "arc 负责查询论文资料，caveman 再压缩展示，省去手工挑选字段"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要用一篇已知公开论文验证“查询结果生成—回复压缩”流程的个人用户或小团队。",
@@ -2207,12 +2230,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -2298,8 +2321,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:41:44.989301+08:00",
@@ -2317,6 +2340,7 @@
       "publicFeatured": true,
       "publicFeaturedRank": 12,
       "summary": "下载视频及其说明文字后生成一份可听的语音复习稿，适合课程、访谈和公开视频资料的二次整理。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
@@ -2506,8 +2530,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 21,
-        "summary": "距最近一次测试约 21 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-15T10:27:06.791084+08:00",
@@ -2525,6 +2549,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有通过 webhook 送入的一条待登记线索、任务或运营记录，以及可用的凭据和工作流配置。、想得到NocoDB 中能够查看、筛选和查询的线索、任务或运营记录表格台账。时，省去在 Activepieces 每次执行后逐条复制记录、再手工整理到表格中的步骤。",
+      "readerScenario": {
+        "input": "通过 webhook 送入的一条待登记线索、任务或运营记录，以及可用的凭据和工作流配置。",
+        "outcome": "NocoDB 中能够查看、筛选和查询的线索、任务或运营记录表格台账。",
+        "value": "省去在 Activepieces 每次执行后逐条复制记录、再手工整理到表格中的步骤。"
+      },
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "手上已有线索、任务或运营记录，希望在事件触发后自动写入可筛选台账的个人用户或小团队。",
@@ -2733,8 +2762,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 8,
-        "summary": "距最近一次测试约 8 天。"
+        "daysSinceTest": 9,
+        "summary": "距最近一次测试约 9 天。"
       },
       "verification": {
         "testedAt": "2026-07-28T16:08:13.589615+08:00",
@@ -2752,6 +2781,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Actual 风格的个人财务流水导出后，转换为 NocoDB 表格记录，并能按分类和余额读回，适合把家庭预算从记账工具沉淀到可筛选台账。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
@@ -2933,8 +2963,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:08:55.266390+08:00",
@@ -2952,6 +2982,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Agent-Reach 产出 13 个平台的互联网能力体检 JSON，headroom 负责结构化压缩并保留关键平台状态，适合 Agent 调研前做环境巡检。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "经常让 Agent 做网页、RSS、视频、社交平台调研，需要先检查平台能力和登录状态的个人用户、内容运营和 AI 自动化搭建者。",
@@ -3046,12 +3077,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -3181,8 +3212,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:47:20.546997+08:00",
@@ -3200,6 +3231,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "codebase-memory-mcp 把代码库变成可查询图谱，Headroom 把较长的图谱 JSON 输出压缩成更适合 Agent 继续阅读的上下文。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要让 Agent 阅读代码库、压缩 MCP 工具输出、减少长 JSON 上下文负担的开发者、AI 工具开发者和自动化工作流维护者。",
@@ -3278,12 +3310,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -3374,8 +3406,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-04T00:00:24.717403+08:00",
@@ -3393,6 +3425,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "codebase-memory-mcp 先用图搜索定位相关函数和文件，Repomix 再只打包命中的影响范围，形成更小的 Agent 代码上下文。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": null,
@@ -3603,8 +3636,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 35,
-        "summary": "距最近一次测试约 35 天。"
+        "daysSinceTest": 36,
+        "summary": "距最近一次测试约 36 天。"
       },
       "verification": {
         "testedAt": "2026-07-01T12:53:34.882240+08:00",
@@ -3622,6 +3655,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Crawlee 直接抽取网页 HTML/text，unstructured 保留标题、列表和表格结构，BookStack 负责知识库沉淀。本轮沙箱实测证明，绕过 PDF→Markdown 后中文句子完整，结构化质量明显优于四步重链。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把网页资料沉淀到团队知识库的运营、研究、产品、内容和技术团队。尤其适合不需要 PDF 归档证据、只关心网页正文结构化入库的场景。",
@@ -3874,8 +3908,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T17:54:05.741088+08:00",
@@ -3893,6 +3927,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把白板中的文字导出并整理为可编辑 Markdown，适合把讨论草图、灵感板和流程草案沉淀进文档。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
@@ -4082,8 +4117,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 21,
-        "summary": "距最近一次测试约 21 天。"
+        "daysSinceTest": 22,
+        "summary": "距最近一次测试约 22 天。"
       },
       "verification": {
         "testedAt": "2026-07-15T23:51:52.657051+08:00",
@@ -4101,6 +4136,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把网页正文转成音频文件，适合文章播报、资料复听和批量音频草稿。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "想把网页文章、公告、文档页转成音频草稿的内容创作者和知识工作者。",
@@ -4294,8 +4330,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:47:20.546997+08:00",
@@ -4313,6 +4349,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把公开网页先用 Firecrawl 转成 Markdown，再交给 Haystack 建轻量检索索引，适合快速验证网页资料库原型。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要快速验证网页资料检索/RAG 原型的开发者和知识库搭建者。",
@@ -4536,8 +4573,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -4555,6 +4592,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把 PDF 重新解析成可检查的 Markdown，再合成为音频草稿，适合课程讲义、报告和资料的可听版本。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把 PDF/讲义/报告转成可听草稿的学习者、内容团队和知识工作者。",
@@ -4765,8 +4803,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T23:56:22.909610+08:00",
@@ -4784,6 +4822,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Marker 把文字型 PDF 转成 Markdown，Haystack 对转换结果建立本地 BM25 索引并返回预期内容。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要轻量、本地、无 API Key 工具组合的个人用户、开发者和小团队。",
@@ -4996,8 +5035,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -5015,6 +5054,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "MarkItDown 把 HTML 转成保留关键信息的 Markdown，LlamaIndex 将其写入本地索引并可按关键词召回，适合轻量文档检索原型。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要轻量、本地、无 API Key 工具组合的个人用户、开发者和小团队。",
@@ -5223,8 +5263,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:41:49.409711+08:00",
@@ -5242,6 +5282,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一个竞品产品页的 URL、希望采集哪些内容的自然语言描述，以及选定的网页元素。、想得到该竞品产品页中被选定内容的逐项元素和结构化文本，可供阅读与归档。时，maxun 负责取得指定网页内容，unstructured 负责拆分和整理，省去用户复制网页后逐项梳理内容的步骤，并帮助判断采集结果是否已转成便于归档的结构。",
+      "readerScenario": {
+        "input": "一个竞品产品页的 URL、希望采集哪些内容的自然语言描述，以及选定的网页元素。",
+        "outcome": "该竞品产品页中被选定内容的逐项元素和结构化文本，可供阅读与归档。",
+        "value": "maxun 负责取得指定网页内容，unstructured 负责拆分和整理，省去用户复制网页后逐项梳理内容的步骤，并帮助判断采集结果是否已转成便于归档的结构。"
+      },
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "适合手上已有竞品产品页或其他公开网页，希望把指定网页内容整理成便于阅读和归档的结构化文本的个人用户和小团队。",
@@ -5433,8 +5478,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 10,
-        "summary": "距最近一次测试约 10 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:36:53.626356+08:00",
@@ -5452,6 +5497,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把 Markdown 检查表生成可归档 PDF，同时把标题、负责人、状态和文件信息写入可筛选台账。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把 SOP、检查表、日报、项目复盘先归档为 PDF，再进入可筛选台账的小团队、运营和项目管理者。",
@@ -5660,8 +5706,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 23,
-        "summary": "距最近一次测试约 23 天。"
+        "daysSinceTest": 24,
+        "summary": "距最近一次测试约 24 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:15:32.616491+08:00",
@@ -5679,6 +5725,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把 Markdown 资料生成 PDF 后交给 paper-qa 建立本地检索索引，适合既要保留归档文件、又要继续检索资料的研究工作。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把 Markdown/PDF 报告放进问答检索流程的研究和文档用户。",
@@ -5883,8 +5930,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:52:05.655889+08:00",
@@ -5902,6 +5949,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "mdpdf 把 Markdown 生成可归档 PDF，unstructured 再把该 PDF 解析回结构化文本，适合同时保留交付文件和机器可读内容。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要轻量、本地、无 API Key 工具组合的个人用户、开发者和小团队。",
@@ -6104,8 +6152,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:41:49.409711+08:00",
@@ -6123,6 +6171,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Playwright 先把需要 JavaScript 渲染的网页跑成稳定 HTML，MarkItDown 再把渲染后的页面转成 Markdown，适合处理普通抓取拿不到正文的网页资料。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要轻量、本地、无 API Key 工具组合的个人用户、开发者和小团队。",
@@ -6332,8 +6381,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T23:41:06.207959+08:00",
@@ -6351,6 +6400,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "shadcn/ui 风格组件先生成页面，Playwright 再做 DOM 和截图验收，适合 Agent 生成前端后的回归验证。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": null,
@@ -6549,8 +6599,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-11T11:54:38.024610+08:00",
@@ -6568,6 +6618,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Repomix 把 workflow 和 README 打成 Agent 审查包，actionlint 对同一 workflow 给出确定性校验。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": null,
@@ -6770,8 +6821,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -6789,6 +6840,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "ShortGPT 生成短视频初稿和可编辑字幕，VideoCaptioner 再把字幕封装进视频，适合需要保留字幕中间稿的自动化短视频制作。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
@@ -6960,8 +7012,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 23,
-        "summary": "距最近一次测试约 23 天。"
+        "daysSinceTest": 24,
+        "summary": "距最近一次测试约 24 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:06:20.082520+08:00",
@@ -6979,6 +7031,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Stirling-PDF 负责 PDF 基础信息、页数、Markdown 转换，NocoDB 负责把处理结果写入办公台账。本轮 Docker 实测完成 PDF→Markdown ZIP→解包→台账记录闭环。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "行政、运营、财务助理、项目资料管理者，以及需要批量登记 PDF 文件处理状态的小团队。",
@@ -7198,8 +7251,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T19:18:43.708221+08:00",
@@ -7217,6 +7270,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "unstructured 把 HTML 拆成结构化文本元素，Haystack 将其写入本地 BM25 索引并可检索，适合无 API 的轻量资料检索。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要轻量、本地、无 API Key 工具组合的个人用户、开发者和小团队。",
@@ -7425,8 +7479,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7444,6 +7498,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "yt-dlp 负责从公开视频文件 URL 下载 MP4，VideoCaptioner 接收该 MP4 与 SRT 字幕文件，并输出带软字幕轨的视频。本轮验证的是“视频下载 -> 字幕封装”闭环，不是自动识别、翻译或配音。",
+      "readerScenario": {},
       "evidenceScore": 95,
       "evidenceLevel": "L3-caveat",
       "audience": "需要下载公开视频素材，并给已有字幕文件快速封装成成品视频的内容创作者、课程整理者和运营人员。",
@@ -7649,8 +7704,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 33,
-        "summary": "距最近一次测试约 33 天。"
+        "daysSinceTest": 34,
+        "summary": "距最近一次测试约 34 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7668,6 +7723,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "actionlint 先静态抓 GitHub Actions workflow 错误，act 再用 Docker 在本地回放核心 job。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": null,
@@ -7881,8 +7937,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 14,
-        "summary": "距最近一次测试约 14 天。"
+        "daysSinceTest": 15,
+        "summary": "距最近一次测试约 15 天。"
       },
       "verification": {
         "testedAt": "2026-07-22T22:43:43.025263+08:00",
@@ -7900,6 +7956,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "让 actionlint 先精确指出 GitHub Actions 错误，再交给 Codex 插件修复同一文件并复检，形成可验证的 CI 配置修复闭环。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "维护 GitHub Actions、希望 Agent 修复后仍有确定性校验的开发者。",
@@ -8093,8 +8150,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:05:17.476375+08:00",
@@ -8112,6 +8169,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "先把代码库关系整理成结构化架构，再压缩成 Agent 能快速消化的短摘要，适合代码审查、交接和改造前预读。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "维护中大型代码库、经常让 Agent 参与审查或交接的开发者和技术团队。",
@@ -8201,12 +8259,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -8305,8 +8363,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:04:26.875265+08:00",
@@ -8324,6 +8382,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Crawl4AI 先采集网页并转成 Markdown，LlamaIndex 再将内容建立索引、保存并用于检索；适合处理网页内容采集到知识检索这一段流程。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "希望验证网页采集、Markdown 转换、索引保存和检索能否顺利衔接的个人用户或小团队。",
@@ -8510,8 +8569,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:51:23.972449+08:00",
@@ -8529,6 +8588,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "先把网页保存为可追溯的 PDF 快照，再生成便于搜索和引用的 Markdown，适合公告、制度和研究资料留档。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要保留网页 PDF 归档证据，同时希望把摘要沉淀到知识库的技术团队、研究团队和资料归档场景。",
@@ -8736,8 +8796,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 23,
-        "summary": "距最近一次测试约 23 天。"
+        "daysSinceTest": 24,
+        "summary": "距最近一次测试约 24 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:23:54.925764+08:00",
@@ -8755,6 +8815,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "让 Desktop Commander 在授权目录中定位并读取文件，再由 MarkItDown 统一转换成适合检索、总结和交给 Agent 的 Markdown。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要整理本机文档、批量建立 Markdown 资料入口的个人和知识工作者。",
@@ -8944,8 +9005,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:17:46.129434+08:00",
@@ -8963,6 +9024,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一份浏览器网络请求记录、想得到便于快速查看的产品架构短说明时，10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录。",
+      "readerScenario": {
+        "input": "一份浏览器网络请求记录",
+        "outcome": "便于快速查看的产品架构短说明",
+        "value": "10xProductivity 提取主要模块和依赖，caveman 再压缩说明，减少人工通读记录"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "适合希望把分析材料生成与回复压缩串联起来，并愿意先用小范围样本核验流程的个人用户或小团队。",
@@ -9056,12 +9122,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -9160,8 +9226,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 10,
-        "summary": "距最近一次测试约 10 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:40:09.883353+08:00",
@@ -9179,6 +9245,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "Adrian 先处理服务日志中的个人敏感信息并生成中间结果，headroom 再压缩这些结果、保留错误线索并按严重程度整理；适合对一批服务日志进行脱敏后再精简查看的场景。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要先对一批服务日志做个人敏感信息脱敏，再压缩内容并突出错误线索的个人或小团队。",
@@ -9276,12 +9343,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -9366,8 +9433,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T14:32:37.975923+08:00",
@@ -9385,6 +9452,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "先用 Headroom 把大量结构化日志压缩并把高严重度异常排到前面，再让 Agent Nexus 用本地模型生成带错误码和处置建议的事件报告。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "维护本地服务、Agent 或内部开发平台的开发者和小团队。",
@@ -9433,12 +9501,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         },
         {
@@ -9590,8 +9658,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T00:55:32.314716+08:00",
@@ -9609,6 +9677,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "bluerock 先采集工具事件和项目上下文，生成保留错误码的结构化结果；Agent Nexus 再读取这份结果，完成问题分析并生成事故报告。适合处理需要先整理工具日志、再分析故障线索的开发运维场景。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "愿意部署本地模型及相关服务，并需要把工具日志和错误码整理后交给智能代理分析的开发者或小团队。",
@@ -9800,8 +9869,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T21:08:11.665061+08:00",
@@ -9819,6 +9888,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "clarity-cli 先分析源代码并生成 JSON 或检查报告，codex-plugin-cc 再读取报告以及相关工作流文件和源代码，完成后续修改或审查；适合处理代码依赖问题和 GitHub Actions 配置错误等开发任务。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要尝试用检查报告辅助修正小型 JavaScript 依赖问题或 GitHub Actions 配置错误的开发者和小团队。",
@@ -10008,8 +10078,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:53:58.378164+08:00",
@@ -10027,6 +10097,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "claude-code-templates 先提供代码审查模板和中间结果，codebase-memory-mcp 再通过知识图谱辅助检查本地代码；适合需要审查代码并定位缺陷的个人用户和小团队。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "本机已有可用 Claude Code 登录状态，希望借助代码审查模板和知识图谱检查本地项目的个人用户或小团队。",
@@ -10217,8 +10288,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:36:38.498909+08:00",
@@ -10236,6 +10307,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一份需要建立关系图的 CSV 表格、想得到关系图构建记录和便于阅读的精简说明时，datafoundry 先按表格建立关系，caveman 再压缩说明。",
+      "readerScenario": {
+        "input": "一份需要建立关系图的 CSV 表格",
+        "outcome": "关系图构建记录和便于阅读的精简说明",
+        "value": "datafoundry 先按表格建立关系，caveman 再压缩说明"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把提示词、源代码、JSON 或 CSV 图构建结果整理成报告，再压缩为最终回复的个人用户和小团队。",
@@ -10329,12 +10405,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -10424,8 +10500,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 14,
+        "summary": "距最近一次测试约 14 天。"
       },
       "verification": {
         "testedAt": "2026-07-23T07:23:39.148828+08:00",
@@ -10443,6 +10519,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "godot-demo-projects 提供 Godot 示例项目源码，GatewayStack 随后读取这份源码并进行基于正则表达式的隐私信息处理。适合需要先取得 Godot 示例代码，再对代码中的邮箱信息进行处理的开发测试场景。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "适合想用一个官方 Godot 暂停示例，尝试源码读取与邮箱信息处理流程的开发者或小团队。",
@@ -10640,8 +10717,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:04:45.776659+08:00",
@@ -10654,11 +10731,222 @@
       "reportUrl": "reports/fresh-gatewaystack-godot-demo-projects-worker-smoke.html"
     },
     {
+      "id": "fresh-hermes-ecosystem-caveman-worker-smoke",
+      "title": "hermes-ecosystem + caveman",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一份待检查的程序代码，以及写明检查目标的任务说明。、想得到一份精简后的架构分析答复，以及对应的词元用量指标。时，省去用户先自行撰写架构分析内容、再手工压缩答复并另行整理词元用量指标的步骤，也便于判断压缩是否产生了预期结果。",
+      "readerScenario": {
+        "input": "一份待检查的程序代码，以及写明检查目标的任务说明。",
+        "outcome": "一份精简后的架构分析答复，以及对应的词元用量指标。",
+        "value": "省去用户先自行撰写架构分析内容、再手工压缩答复并另行整理词元用量指标的步骤，也便于判断压缩是否产生了预期结果。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合手上已有待检查程序代码，希望获得架构分析内容，再将其精简并查看词元用量指标的个人用户或小团队。",
+      "useCase": "用户提供一份待检查的程序代码和写明检查目标的任务说明，hermes-ecosystem 先生成架构分析文档，caveman 再接收这份文档并产出精简后的架构分析答复和词元用量指标，省去用户自行压缩分析内容并另行整理用量指标的步骤。",
+      "testMethod": "用一份实际程序代码和对应的检查目标运行 hermes-ecosystem，确认它生成架构分析文档；再将同一份文档交给 caveman，核对其是否完成内容压缩并给出词元用量指标。",
+      "testOutcome": "hermes-ecosystem 成功生成了架构分析文档，caveman 确实使用该文档完成压缩；两项检查均通过。",
+      "tools": [
+        {
+          "name": "hermes-ecosystem",
+          "url": "https://github.com/ksimback/hermes-ecosystem",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:42:00.134896+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:42:00.134896+08:00"
+          },
+          "hub": {
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 hermes-ecosystem 并手工精简",
+          "type": "单工具加人工处理",
+          "fit": "适合只需要先生成架构分析文档，并愿意自行删减内容的用户。",
+          "tradeoff": "用户需要亲自精简架构分析内容，也不会直接获得 caveman 生成的压缩答复和词元用量指标。"
+        }
+      ],
+      "whyComboStillMatters": "hermes-ecosystem 负责从程序代码生成架构分析文档，caveman 负责将该文档压缩并给出词元用量指标。只用 hermes-ecosystem，缺少本次已验证的压缩结果和用量指标；只用 caveman，则需要用户事先准备好架构分析文档或答复草稿。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "非全新环境验证",
+        "未做规模测试",
+        "兼容范围未验证",
+        "外部 API Key"
+      ],
+      "suitableFor": "适合手上已有待检查程序代码，希望获得架构分析内容，再将其精简并查看词元用量指标的个人用户或小团队。",
+      "notFor": "不适合必须先确认全新环境可复现性、大规模处理能力或具体兼容范围后才能采用的用户。",
+      "maxBenefit": "用户提供一份待检查的程序代码和写明检查目标的任务说明，hermes-ecosystem 先生成架构分析文档，caveman 再接收这份文档并产出精简后的架构分析答复和词元用量指标，省去用户自行压缩分析内容并另行整理用量指标的步骤。",
+      "maxLimit": "已知限制列表没有记录其他限制，但本次测试并非在全新环境中完成，也没有进行规模测试。可处理的代码量、并发量、耗时表现，以及操作系统和版本兼容范围均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-06T10:42:00.134896+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-hermes-ecosystem-caveman-worker-smoke.html"
+    },
+    {
       "id": "fresh-jat-headroom-worker-smoke",
       "title": "jat + Headroom",
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一批包含普通信息、警告和 SQL 错误的事件任务与服务日志、想得到保留错误码并按严重程度排序的排查清单时，jat 先记录事件任务，headroom 再压缩日志并突出严重问题。",
+      "readerScenario": {
+        "input": "一批包含普通信息、警告和 SQL 错误的事件任务与服务日志",
+        "outcome": "保留错误码并按严重程度排序的排查清单",
+        "value": "jat 先记录事件任务，headroom 再压缩日志并突出严重问题"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要整理一批服务事件和日志，并希望进一步压缩内容、保留错误线索及区分处理优先级的个人或小团队。",
@@ -10756,12 +11044,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -10846,8 +11134,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T18:30:44.014854+08:00",
@@ -10865,6 +11153,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "kimi-cli 先检查一处格式错误的 GitHub Actions 步骤并生成诊断报告，codex-plugin-cc 再读取该报告和工作流文件，完成修改与复核。适合处理已有检查报告的单个工作流配置问题。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要检查并修改单个 GitHub Actions 工作流配置问题，且能够查看诊断报告和修改结果的开发者或小团队。",
@@ -11072,8 +11361,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:26:26.172566+08:00",
@@ -11091,6 +11380,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一份无法通过检查的 GitHub Actions 工作流配置、想得到标出具体位置和原因的语法诊断时，knowledgeops-agent 准备待检文件，codex-plugin-cc 运行 actionlint，省去人工逐行定位。",
+      "readerScenario": {
+        "input": "一份无法通过检查的 GitHub Actions 工作流配置",
+        "outcome": "标出具体位置和原因的语法诊断",
+        "value": "knowledgeops-agent 准备待检文件，codex-plugin-cc 运行 actionlint，省去人工逐行定位"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要处理工作流配置或源代码检查结果，并愿意准备所需开发环境的个人用户和小团队。",
@@ -11282,8 +11576,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 10,
-        "summary": "距最近一次测试约 10 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:28:06.229284+08:00",
@@ -11301,6 +11595,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "LLM4AD_Next 先执行受限的算法任务并生成日志等中间结果，headroom 再读取这些结果，压缩内容并保留检索线索；适合尝试小规模、确定性的服务日志整理流程。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "使用 Python 3.12，希望在小规模、确定性样本上尝试“生成任务结果后再压缩整理日志”的开发者或小团队。",
@@ -11398,12 +11693,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -11488,8 +11783,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 12,
-        "summary": "距最近一次测试约 12 天。"
+        "daysSinceTest": 13,
+        "summary": "距最近一次测试约 13 天。"
       },
       "verification": {
         "testedAt": "2026-07-24T09:24:27.893397+08:00",
@@ -11507,6 +11802,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一份待检查的项目源代码，以及项目中的工作流 YAML 配置文件。、想得到针对该项目生成的可应用代码补丁，以及说明检查结果的审查结论。时，省去手工转交和整理 MinerU-Document-Explorer 检查产物的步骤，并帮助用户判断是否采用 codex-plugin-cc 给出的修改。",
+      "readerScenario": {
+        "input": "一份待检查的项目源代码，以及项目中的工作流 YAML 配置文件。",
+        "outcome": "针对该项目生成的可应用代码补丁，以及说明检查结果的审查结论。",
+        "value": "省去手工转交和整理 MinerU-Document-Explorer 检查产物的步骤，并帮助用户判断是否采用 codex-plugin-cc 给出的修改。"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "手上已有项目源代码和工作流 YAML 配置文件，希望把检查报告继续转成代码补丁与审查结论的个人开发者或小团队。",
@@ -11692,8 +11992,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 8,
-        "summary": "距最近一次测试约 8 天。"
+        "daysSinceTest": 9,
+        "summary": "距最近一次测试约 9 天。"
       },
       "verification": {
         "testedAt": "2026-07-28T19:29:26.051112+08:00",
@@ -11711,6 +12011,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一个需要交给 Agent 检查的 Godot 示例项目、想得到确认源码已被读取且未被意外改动的记录时，godot-demo-projects 提供可运行样本，nexus 读取并留存检查结果。",
+      "readerScenario": {
+        "input": "一个需要交给 Agent 检查的 Godot 示例项目",
+        "outcome": "确认源码已被读取且未被意外改动的记录",
+        "value": "godot-demo-projects 提供可运行样本，nexus 读取并留存检查结果"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "想用真实 Godot 示例代码验证自动读取、处理和结果留存流程的开发者或小团队。",
@@ -11896,8 +12201,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:52:36.908454+08:00",
@@ -11915,6 +12220,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一段需要通过本地模型生成并精简的对话请求、想得到保留关键信息并附带令牌用量的短回复时，ryu 先通过本地模型生成回复，caveman 再压缩并统计令牌，减少手工删减。",
+      "readerScenario": {
+        "input": "一段需要通过本地模型生成并精简的对话请求",
+        "outcome": "保留关键信息并附带令牌用量的短回复",
+        "value": "ryu 先通过本地模型生成回复，caveman 再压缩并统计令牌，减少手工删减"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要将提示词、源代码或 JSON 先整理成报告，再压缩为回复并查看令牌指标的个人用户和小团队。",
@@ -12008,12 +12318,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12103,8 +12413,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:39:28.528586+08:00",
@@ -12122,6 +12432,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一份需要梳理结构的程序代码、想得到一份经过压缩的架构说明文本和对应的 token 用量指标时，省去手工精简 scholar-rag 生成的架构说明并另行统计 token 用量的步骤。",
+      "readerScenario": {
+        "input": "一份需要梳理结构的程序代码",
+        "outcome": "一份经过压缩的架构说明文本和对应的 token 用量指标",
+        "value": "省去手工精简 scholar-rag 生成的架构说明并另行统计 token 用量的步骤。"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "适合需要离线梳理程序代码，并希望获得精简架构说明和 token 用量指标的个人用户或小团队。",
@@ -12217,12 +12532,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12306,8 +12621,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 2,
-        "summary": "距最近一次测试约 2 天。"
+        "daysSinceTest": 3,
+        "summary": "距最近一次测试约 3 天。"
       },
       "verification": {
         "testedAt": "2026-08-03T12:31:34.322686+08:00",
@@ -12325,6 +12640,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有论文处理过程中产生的节点日志和错误信息、想得到保留错误码并按严重程度排序的排查清单时，scholar-rag 产生真实错误记录，headroom 再压缩排序，便于先处理最严重问题。",
+      "readerScenario": {
+        "input": "论文处理过程中产生的节点日志和错误信息",
+        "outcome": "保留错误码并按严重程度排序的排查清单",
+        "value": "scholar-rag 产生真实错误记录，headroom 再压缩排序，便于先处理最严重问题"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要验证 scholar-rag 局部论文节点输出能否交给 headroom 压缩整理，并希望保留错误代码、严重程度等排查线索的个人或小团队。",
@@ -12423,12 +12743,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12513,8 +12833,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:43:50.133852+08:00",
@@ -12527,11 +12847,232 @@
       "reportUrl": "reports/fresh-scholar-rag-headroom-worker-smoke.html"
     },
     {
+      "id": "fresh-tlamatini-headroom-worker-smoke",
+      "title": "Tlamatini + Headroom",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有80条包含 INFO、WARN 和 SQLSTATE ERROR 的确定性服务日志、想得到一份按严重程度突出重点、保留 SQLSTATE 错误码的压缩上下文时，省去用户逐条筛查80条服务日志，再手工归纳严重程度和关键错误码的部分工作。",
+      "readerScenario": {
+        "input": "80条包含 INFO、WARN 和 SQLSTATE ERROR 的确定性服务日志",
+        "outcome": "一份按严重程度突出重点、保留 SQLSTATE 错误码的压缩上下文",
+        "value": "省去用户逐条筛查80条服务日志，再手工归纳严重程度和关键错误码的部分工作。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合需要从一批固定服务日志中提取事故线索，并获得保留错误码、突出严重程度的精简上下文的个人用户或小团队。",
+      "useCase": "把80条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志交给 Tlamatini 提取事故线索，再由 headroom 压缩并按严重程度突出重点，得到保留 SQLSTATE 错误码的精简上下文，帮助用户减少逐条筛查日志、手工整理错误等级和关键错误码的工作。",
+      "testMethod": "使用 Tlamatini 的确定性 Executer 路径处理80条服务日志，再将其产出的事故线索交给 headroom 0.31.0；随后检查 headroom 是否实际接收该内容、是否保留 SQLSTATE 错误码，以及是否按严重程度突出重点。",
+      "testOutcome": "Tlamatini 成功产出事故线索，headroom 成功生成按严重程度整理的压缩上下文；SQLSTATE 错误码得到保留，5项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "Tlamatini",
+          "url": "https://github.com/XAIHT/Tlamatini",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:42:01.827191+08:00"
+          },
+          "hub": {
+            "score": 39,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 20,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
+          ],
+          "outputs": [
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
+          ],
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "检索"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:42:01.827191+08:00"
+          },
+          "hub": {
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 Tlamatini 后人工整理",
+          "type": "单工具加人工处理",
+          "fit": "适合只需要提取事故线索，且愿意自行筛选重点的用户。",
+          "tradeoff": "需要人工压缩事故线索、排列严重程度并核对 SQLSTATE 错误码。"
+        }
+      ],
+      "whyComboStillMatters": "Tlamatini 负责从服务日志中提取事故线索，headroom 负责压缩这些线索并突出严重程度。只用 Tlamatini，还需要人工筛选和整理重点；只用 headroom，则缺少本次已经验证的 Tlamatini 事故线索提取环节。",
+      "category": "部署运维与安全",
+      "primaryCategory": "部署运维与安全",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "检索",
+        "交付",
+        "采集",
+        "分析"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅测试80条服务日志",
+        "未测实时流与多服务关联",
+        "headroom需额外安装httpx",
+        "仅验证Tlamatini确定性Executer路径",
+        "安装摩擦",
+        "UI 未验证"
+      ],
+      "suitableFor": "适合需要从一批固定服务日志中提取事故线索，并获得保留错误码、突出严重程度的精简上下文的个人用户或小团队。",
+      "notFor": "不适合据此直接处理百万行日志、实时日志流或多服务关联分析；依赖 Tlamatini 网页界面或 Ollama 支持代理的用户也不在本次验证范围内。",
+      "maxBenefit": "把80条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志交给 Tlamatini 提取事故线索，再由 headroom 压缩并按严重程度突出重点，得到保留 SQLSTATE 错误码的精简上下文，帮助用户减少逐条筛查日志、手工整理错误等级和关键错误码的工作。",
+      "maxLimit": "本次只验证了 Tlamatini 的确定性 Executer 路径，没有验证其网页界面或 Ollama 支持的代理。测试副本对路径引号做了小范围兼容修改，以支持运行目录包含空格。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，因此测试时需要显式安装并预先检查 httpx。规模方面仅测试80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；百万行日志、实时流、多服务关联及其他规模或环境均未验证，而且测试环境并非全新环境。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 78,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 20,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-06T10:42:01.827191+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 5,
+        "checksTotal": 5
+      },
+      "reportUrl": "reports/fresh-tlamatini-headroom-worker-smoke.html"
+    },
+    {
       "id": "fresh-twiligent-headroom-worker-smoke",
       "title": "twiligent + Headroom",
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有Twiligent 前端构建产生的一批服务日志、想得到保留 SQL 错误码并按严重程度排序的排查清单时，twiligent 提供实际日志，headroom 再压缩并突出最严重问题。",
+      "readerScenario": {
+        "input": "Twiligent 前端构建产生的一批服务日志",
+        "outcome": "保留 SQL 错误码并按严重程度排序的排查清单",
+        "value": "twiligent 提供实际日志，headroom 再压缩并突出最严重问题"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要反复处理固定类型资料，并希望减少手工复制和整理步骤的个人用户或小团队。",
@@ -12626,12 +13167,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 31,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12724,8 +13265,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:13:59.063896+08:00",
@@ -12743,6 +13284,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有一份需要检查构建入口的 vault-operator 源码包、想得到关键模块和可部署入口的精简说明时，vault-operator 生成构建与架构信息，caveman 再压缩重点。",
+      "readerScenario": {
+        "input": "一份需要检查构建入口的 vault-operator 源码包",
+        "outcome": "关键模块和可部署入口的精简说明",
+        "value": "vault-operator 生成构建与架构信息，caveman 再压缩重点"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "适合希望用真实材料检验工具接力流程，并能自行准备所需软件环境的个人用户和小团队。",
@@ -12836,12 +13382,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12930,8 +13476,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 10,
-        "summary": "距最近一次测试约 10 天。"
+        "daysSinceTest": 11,
+        "summary": "距最近一次测试约 11 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T09:23:08.880020+08:00",
@@ -12949,6 +13495,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "先用 @whalecloud/pdf2md 将 PDF 转成 Markdown 或文本，再交给 paper-qa 分块、入库和检索。适合需要把论文或其他 PDF 整理成可查询文档的个人用户和小团队。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把论文或其他 PDF 转为文本，并进一步完成文档入库和检索验证的个人用户和小团队。",
@@ -13138,8 +13685,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:52:01.192064+08:00",
@@ -13157,6 +13704,11 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "有Wisp Science 项目源码和一次内核运行信息、想得到主要架构与执行结果的精简说明时，wisp-science 运行自带的 Python 内核，caveman 再压缩关键内容。",
+      "readerScenario": {
+        "input": "Wisp Science 项目源码和一次内核运行信息",
+        "outcome": "主要架构与执行结果的精简说明",
+        "value": "wisp-science 运行自带的 Python 内核，caveman 再压缩关键内容"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要把提示词、源代码或 JSON 先整理成中间结果，再压缩为最终回复并查看令牌指标的个人用户或小团队。",
@@ -13252,12 +13804,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 8,
-            "partnerCount": 8,
+            "verifiedComboCount": 9,
+            "partnerCount": 9,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 28,
-            "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 27,
+            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -13342,8 +13894,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 11,
-        "summary": "距最近一次测试约 11 天。"
+        "daysSinceTest": 12,
+        "summary": "距最近一次测试约 12 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T19:04:44.476265+08:00",
@@ -13361,6 +13913,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把视频中的语音转成可编辑字幕，再将确认后的字幕写回视频，适合访谈、课程和口播内容的字幕初稿制作。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
@@ -13537,8 +14090,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 23,
-        "summary": "距最近一次测试约 23 天。"
+        "daysSinceTest": 24,
+        "summary": "距最近一次测试约 24 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T18:27:40.076712+08:00",
@@ -13556,6 +14109,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把 PDF 解析成 Markdown 后建立可持久化检索索引，适合需要保留转换结果并继续开发知识检索流程的团队。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "Developers, AI agents, and technical knowledge workers who need local document ingestion before building a RAG app.",
@@ -13769,8 +14323,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T23:56:43.452063+08:00",
@@ -13788,6 +14342,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "mdpdf 已将 Markdown 转成可抽取文本的 PDF，AnythingLLM Docker 服务可启动并返回 HTTP 200；本轮未验证文档上传、embedding 和检索问答。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "想把 Markdown/PDF 文档导入本地知识库问答界面的用户。",
@@ -13987,8 +14542,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:15:47.687264+08:00",
@@ -14006,6 +14561,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "把 NocoDB 中的运营台账读回后自动生成并校验 Excel 报告，适合需要数据库协作与 Office 交付并存的小团队。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": null,
@@ -14189,8 +14745,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T19:43:46.948849+08:00",
@@ -14208,6 +14764,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "让 Playwright MCP 重放真实页面交互，再由 Chrome DevTools MCP 接手同一页面的网络与性能证据，适合 Agent 自动验收网页。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "让 Agent 执行网页回归、排查性能和网络问题的开发者与测试团队。",
@@ -14389,8 +14946,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:17:37.166519+08:00",
@@ -14408,6 +14965,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "让 Supabase Agent Skills 按项目规范生成数据库迁移，再由 Supabase CLI 在本地数据库真正执行并查询验证。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "使用 Supabase、希望 Agent 参与数据库设计和迁移验证的开发团队。",
@@ -14591,8 +15149,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:18:32.190203+08:00",
@@ -14610,6 +15168,7 @@
       "publicFeatured": false,
       "publicFeaturedRank": null,
       "summary": "让 UI5 MCP Server 生成并校验 UI5 应用，再由 Playwright 打开页面、执行交互并保存可核验截图。",
+      "readerScenario": {},
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
       "audience": "开发 SAP UI5/OpenUI5 应用，并希望 Agent 同时承担脚手架和浏览器验收的团队。",
@@ -14795,8 +15354,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 22,
-        "summary": "距最近一次测试约 22 天。"
+        "daysSinceTest": 23,
+        "summary": "距最近一次测试约 23 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:20:16.846346+08:00",
@@ -14810,13 +15369,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-08-05T12:22:02.892181+08:00",
+    "generatedAt": "2026-08-06T10:45:36.918560+08:00",
     "summary": {
-      "total": 69,
+      "total": 71,
       "publicFeatured": 12,
-      "withReports": 69,
-      "withCaveatTags": 69,
-      "withInstallFrictionIndex": 69
+      "withReports": 71,
+      "withCaveatTags": 71,
+      "withInstallFrictionIndex": 71
     },
     "items": [
       {
@@ -14910,8 +15469,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15030,8 +15589,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15166,8 +15725,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15306,8 +15865,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15416,8 +15975,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -15536,8 +16095,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15643,8 +16202,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15763,8 +16322,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -15866,8 +16425,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -15987,8 +16546,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16097,8 +16656,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -16214,8 +16773,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 21,
-          "summary": "距最近一次测试约 21 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16333,8 +16892,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 8,
-          "summary": "距最近一次测试约 8 天。"
+          "daysSinceTest": 9,
+          "summary": "距最近一次测试约 9 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16434,8 +16993,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -16575,8 +17134,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16695,8 +17254,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16837,8 +17396,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 35,
-          "summary": "距最近一次测试约 35 天。"
+          "daysSinceTest": 36,
+          "summary": "距最近一次测试约 36 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16976,8 +17535,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17083,8 +17642,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 21,
-          "summary": "距最近一次测试约 21 天。"
+          "daysSinceTest": 22,
+          "summary": "距最近一次测试约 22 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -17203,8 +17762,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17350,8 +17909,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17489,8 +18048,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17621,8 +18180,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17748,8 +18307,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17867,8 +18426,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 10,
-          "summary": "距最近一次测试约 10 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17992,8 +18551,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 23,
-          "summary": "距最近一次测试约 23 天。"
+          "daysSinceTest": 24,
+          "summary": "距最近一次测试约 24 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18111,8 +18670,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18237,8 +18796,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18363,8 +18922,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18481,8 +19040,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18600,8 +19159,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18714,8 +19273,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 23,
-          "summary": "距最近一次测试约 23 天。"
+          "daysSinceTest": 24,
+          "summary": "距最近一次测试约 24 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18860,8 +19419,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18987,8 +19546,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19120,8 +19679,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 33,
-          "summary": "距最近一次测试约 33 天。"
+          "daysSinceTest": 34,
+          "summary": "距最近一次测试约 34 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19251,8 +19810,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 14,
-          "summary": "距最近一次测试约 14 天。"
+          "daysSinceTest": 15,
+          "summary": "距最近一次测试约 15 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19371,8 +19930,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19492,8 +20051,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19616,8 +20175,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19747,8 +20306,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 23,
-          "summary": "距最近一次测试约 23 天。"
+          "daysSinceTest": 24,
+          "summary": "距最近一次测试约 24 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19862,8 +20421,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -19986,8 +20545,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 10,
-          "summary": "距最近一次测试约 10 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20096,8 +20655,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -20224,8 +20783,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20346,8 +20905,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20460,8 +21019,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -20586,8 +21145,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20699,8 +21258,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 14,
+          "summary": "距最近一次测试约 14 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -20823,11 +21382,118 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-hermes-ecosystem-caveman-worker-smoke",
+        "title": "hermes-ecosystem + caveman",
+        "tools": [
+          "hermes-ecosystem",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "用户提供一份待检查的程序代码和写明检查目标的任务说明，hermes-ecosystem 先生成架构分析文档，caveman 再接收这份文档并产出精简后的架构分析答复和词元用量指标，省去用户自行压缩分析内容并另行整理用量指标的步骤。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "文档与知识",
+          "部署运维与安全",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "分析",
+          "测试",
+          "交付",
+          "生成",
+          "协作"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合手上已有待检查程序代码，希望获得架构分析内容，再将其精简并查看词元用量指标的个人用户或小团队。",
+        "notFor": "不适合必须先确认全新环境可复现性、大规模处理能力或具体兼容范围后才能采用的用户。",
+        "maxBenefit": "用户提供一份待检查的程序代码和写明检查目标的任务说明，hermes-ecosystem 先生成架构分析文档，caveman 再接收这份文档并产出精简后的架构分析答复和词元用量指标，省去用户自行压缩分析内容并另行整理用量指标的步骤。",
+        "maxLimit": "已知限制列表没有记录其他限制，但本次测试并非在全新环境中完成，也没有进行规模测试。可处理的代码量、并发量、耗时表现，以及操作系统和版本兼容范围均未验证。",
+        "caveatTags": [
+          "非全新环境验证",
+          "未做规模测试",
+          "兼容范围未验证",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 hermes-ecosystem 并手工精简",
+            "type": "单工具加人工处理",
+            "fit": "适合只需要先生成架构分析文档，并愿意自行删减内容的用户。",
+            "tradeoff": "用户需要亲自精简架构分析内容，也不会直接获得 caveman 生成的压缩答复和词元用量指标。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-hermes-ecosystem-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "但本次测试并非在全新环境中完成"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "已知限制列表没有记录其他限制，但本次测试并非在全新环境中完成，也没有进行规模测试。可处理的代码量、并发量、耗时表现，以及操作系统和版本兼容范围均未验证。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
           "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
           "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
@@ -20933,8 +21599,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21063,8 +21729,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21178,8 +21844,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 10,
-          "summary": "距最近一次测试约 10 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21288,8 +21954,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 12,
-          "summary": "距最近一次测试约 12 天。"
+          "daysSinceTest": 13,
+          "summary": "距最近一次测试约 13 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21397,8 +22063,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 8,
-          "summary": "距最近一次测试约 8 天。"
+          "daysSinceTest": 9,
+          "summary": "距最近一次测试约 9 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21505,8 +22171,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21620,8 +22286,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21728,8 +22394,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 2,
-          "summary": "距最近一次测试约 2 天。"
+          "daysSinceTest": 3,
+          "summary": "距最近一次测试约 3 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21836,8 +22502,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21849,6 +22515,121 @@
           "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
           "confidence": "需求判断较强",
           "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-tlamatini-headroom-worker-smoke",
+        "title": "Tlamatini + headroom",
+        "tools": [
+          "Tlamatini",
+          "headroom"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "把80条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志交给 Tlamatini 提取事故线索，再由 headroom 压缩并按严重程度突出重点，得到保留 SQLSTATE 错误码的精简上下文，帮助用户减少逐条筛查日志、手工整理错误等级和关键错误码的工作。",
+        "category": "部署运维与安全",
+        "primaryCategory": "部署运维与安全",
+        "domains": [
+          "部署运维与安全",
+          "数据与分析",
+          "开发与 Agent",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "测试",
+          "转换",
+          "分析",
+          "交付",
+          "协作"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合需要从一批固定服务日志中提取事故线索，并获得保留错误码、突出严重程度的精简上下文的个人用户或小团队。",
+        "notFor": "不适合据此直接处理百万行日志、实时日志流或多服务关联分析；依赖 Tlamatini 网页界面或 Ollama 支持代理的用户也不在本次验证范围内。",
+        "maxBenefit": "把80条包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志交给 Tlamatini 提取事故线索，再由 headroom 压缩并按严重程度突出重点，得到保留 SQLSTATE 错误码的精简上下文，帮助用户减少逐条筛查日志、手工整理错误等级和关键错误码的工作。",
+        "maxLimit": "本次只验证了 Tlamatini 的确定性 Executer 路径，没有验证其网页界面或 Ollama 支持的代理。测试副本对路径引号做了小范围兼容修改，以支持运行目录包含空格。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，因此测试时需要显式安装并预先检查 httpx。规模方面仅测试80条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；百万行日志、实时流、多服务关联及其他规模或环境均未验证，而且测试环境并非全新环境。",
+        "caveatTags": [
+          "仅测试80条服务日志",
+          "未测实时流与多服务关联",
+          "headroom需额外安装httpx",
+          "仅验证Tlamatini确定性Executer路径",
+          "安装摩擦",
+          "UI 未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 Tlamatini 后人工整理",
+            "type": "单工具加人工处理",
+            "fit": "适合只需要提取事故线索，且愿意自行筛选重点的用户。",
+            "tradeoff": "需要人工压缩事故线索、排列严重程度并核对 SQLSTATE 错误码。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-tlamatini-headroom-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "因此测试时需要显式安装并预先检查 httpx",
+          "百万行日志、实时流、多服务关联及其他规模或环境均未验证",
+          "而且测试环境并非全新环境"
+        ],
+        "installFrictionIndex": {
+          "score": 20,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 78,
           "missingProof": [
             "缺少为什么不用单体工具的解释"
           ]
@@ -21951,8 +22732,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22064,8 +22845,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 10,
-          "summary": "距最近一次测试约 10 天。"
+          "daysSinceTest": 11,
+          "summary": "距最近一次测试约 11 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22182,8 +22963,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22291,8 +23072,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 11,
-          "summary": "距最近一次测试约 11 天。"
+          "daysSinceTest": 12,
+          "summary": "距最近一次测试约 12 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22410,8 +23191,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 23,
-          "summary": "距最近一次测试约 23 天。"
+          "daysSinceTest": 24,
+          "summary": "距最近一次测试约 24 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22542,8 +23323,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22656,8 +23437,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22763,8 +23544,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22872,8 +23653,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22977,8 +23758,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23092,8 +23873,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 22,
-          "summary": "距最近一次测试约 22 天。"
+          "daysSinceTest": 23,
+          "summary": "距最近一次测试约 23 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23458,12 +24239,12 @@
       "hub": {
         "score": 97,
         "level": "核心枢纽",
-        "verifiedComboCount": 9,
-        "partnerCount": 9,
+        "verifiedComboCount": 10,
+        "partnerCount": 10,
         "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 31,
-        "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+        "averageFriction": 30,
+        "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
       }
     },
     {
@@ -23595,12 +24376,12 @@
       "hub": {
         "score": 97,
         "level": "核心枢纽",
-        "verifiedComboCount": 8,
-        "partnerCount": 8,
+        "verifiedComboCount": 9,
+        "partnerCount": 9,
         "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 28,
-        "summary": "已在 8 条实测组合中连接 8 个不同搭档，覆盖 4 类场景。"
+        "averageFriction": 27,
+        "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
       }
     },
     {
@@ -24312,6 +25093,32 @@
       }
     },
     {
+      "name": "hermes-ecosystem",
+      "url": "https://github.com/ksimback/hermes-ecosystem",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "jat",
       "url": "https://github.com/joewinke/jat",
       "role": "采集/输入",
@@ -24517,6 +25324,32 @@
         "deepTestSuccessRate": 100,
         "averageFriction": 14,
         "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+      }
+    },
+    {
+      "name": "Tlamatini",
+      "url": "https://github.com/XAIHT/Tlamatini",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 39,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 20,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {

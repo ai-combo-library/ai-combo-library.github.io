@@ -158,7 +158,7 @@
     </section>
   </main>
 
-  <script src="shared.js?v=54836c51eae8"></script>
+  <script src="shared.js?v=ccc8a33a2be6"></script>
   <script>
     let records = [];
     let tools = [];
@@ -281,8 +281,10 @@
     }
 
     function recordText(record) {
+      const scenario = record.readerScenario || {};
       return [
         record.title, record.category, record.primaryCategory, record.summary, record.useCase, record.maxBenefit,
+        scenario.input, scenario.outcome, scenario.value,
         record.suitableFor, record.notFor, record.recommendationLevel,
         ...(record.domains || []), ...(record.tasks || []), ...(record.audiences || []),
         ...(record.traits || []), ...(record.collections || []),
@@ -319,7 +321,7 @@
         if (evidenceFilter === "l3" && !String(record.evidenceLevel || "").toLowerCase().startsWith("l3")) return false;
         if (!matchesFriction(record)) return false;
         if (localOnlyValue && !isLocalFriendly(record)) return false;
-        return !query.trim() || recordText(record).includes(query.trim().toLowerCase());
+        return matchesPublicSearch(recordText(record), query);
       });
       const sorters = {
         latest: (a, b) => String(latestDate(b)).localeCompare(String(latestDate(a))),
@@ -327,7 +329,13 @@
         evidence: (a, b) => Number(b.evidenceScore || 0) - Number(a.evidenceScore || 0),
         recommended: (a, b) => qualityRank(b) - qualityRank(a),
       };
-      return visible.sort(sorters[sortModeValue]);
+      return visible.sort((a, b) => {
+        if (query.trim()) {
+          const relevance = publicSearchScore(recordText(b), query) - publicSearchScore(recordText(a), query);
+          if (relevance) return relevance;
+        }
+        return sorters[sortModeValue](a, b);
+      });
     }
 
     function categoryCount(category) {
@@ -426,7 +434,7 @@
               ${escapeHtml(publicSetupDifficultyLabel(record))}<b>${frictionScore(record)}</b>
             </span>
           </div>
-          <p>${escapeHtml(publicText(record.maxBenefit || record.useCase || record.summary || "查看这组工具的真实使用结论。"))}</p>
+          <p data-card-description="1">${escapeHtml(publicCardDescription(record))}</p>
           <div class="combo-card-tags" aria-label="包含工具">
             ${chain.slice(0, 4).map(name => `<span>${escapeHtml(name)}</span>`).join("")}
             ${chain.length > 4 ? `<span>+${chain.length - 4}</span>` : ""}
