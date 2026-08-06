@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-06T14:56:40.943429+08:00",
+  "generatedAt": "2026-08-06T14:59:48.340873+08:00",
   "version": "public-catalog-v4",
   "summary": {
-    "records": 72,
+    "records": 73,
     "featured": 12,
-    "evidenceItems": 72,
-    "tools": 76
+    "evidenceItems": 73,
+    "tools": 77
   },
   "records": [
     {
@@ -2228,14 +2228,14 @@
             "verifiedAt": "2026-07-21T19:41:44.989301+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -8257,14 +8257,14 @@
             "verifiedAt": "2026-07-14T02:20:54.788281+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -9120,14 +9120,14 @@
             "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -10403,14 +10403,14 @@
             "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -10512,6 +10512,212 @@
         "checksTotal": 2
       },
       "reportUrl": "reports/fresh-datafoundry-caveman-worker-smoke.html"
+    },
+    {
+      "id": "fresh-doberman-core-caveman-worker-smoke",
+      "title": "Doberman-Core + caveman",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一段需要梳理架构的源代码、想得到一份压缩后的代码架构分析答复及其令牌指标时，Doberman-Core 先完成代码架构梳理，caveman 再精简答复并计算令牌指标，省去用户手工删减架构分析内容和自行估算答复长度的步骤。",
+      "readerScenario": {
+        "input": "一段需要梳理架构的源代码",
+        "outcome": "一份压缩后的代码架构分析答复及其令牌指标",
+        "value": "Doberman-Core 先完成代码架构梳理，caveman 再精简答复并计算令牌指标，省去用户手工删减架构分析内容和自行估算答复长度的步骤。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合手上已有源代码，希望先获得架构分析、再精简分析答复并查看令牌指标的个人用户或小团队。",
+      "useCase": "用户提供一段待分析的源代码后，Doberman-Core 先生成架构分析报告，caveman 再接收这份报告并生成压缩后的答复和令牌指标。用户因此不必自己复制、删减架构分析内容，还能据此判断压缩后的答复长度。",
+      "testMethod": "先让 Doberman-Core 根据同一段源代码生成架构分析报告，再把该报告交给 caveman 压缩；随后检查架构报告是否生成，以及压缩答复是否确实来自这份报告。",
+      "testOutcome": "Doberman-Core 成功生成架构分析报告，caveman 成功接收并压缩该报告；两项检查全部通过。",
+      "tools": [
+        {
+          "name": "Doberman-Core",
+          "url": "https://github.com/fu351/Doberman-Core",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:40:30.039371+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:40:30.039371+08:00"
+          },
+          "hub": {
+            "score": 98,
+            "level": "核心枢纽",
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 Doberman-Core 并手工精简报告",
+          "type": "单工具加人工处理",
+          "fit": "适合只需要代码架构分析，不要求由 caveman 自动压缩的情况。",
+          "tradeoff": "需要自己删减架构分析内容并判断篇幅，无法沿用本次已经通过检查的 caveman 压缩与令牌统计环节。"
+        }
+      ],
+      "whyComboStillMatters": "Doberman-Core 负责把源代码整理成架构分析报告，caveman 负责压缩这份报告并给出令牌指标。只用 Doberman-Core，现有验证没有覆盖报告压缩；只用 caveman，则缺少已经验证的上游代码架构分析结果。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "未使用 Claude 压缩流程",
+        "非干净环境测试",
+        "处理规模未验证",
+        "外部 API Key"
+      ],
+      "suitableFor": "适合手上已有源代码，希望先获得架构分析、再精简分析答复并查看令牌指标的个人用户或小团队。",
+      "notFor": "不适合必须使用 Claude 支持的 caveman 压缩流程，或要求组合已经在干净环境、大规模任务中得到验证的用户。",
+      "maxBenefit": "用户提供一段待分析的源代码后，Doberman-Core 先生成架构分析报告，caveman 再接收这份报告并生成压缩后的答复和令牌指标。用户因此不必自己复制、删减架构分析内容，还能据此判断压缩后的答复长度。",
+      "maxLimit": "本次使用的是仓库内确定性、无需凭据的 caveman-shrink 压缩器，没有调用另一套由 Claude 支持的 caveman-compress 流程。测试环境并非干净环境；处理规模以及其他环境中的表现均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-06T10:40:30.039371+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-doberman-core-caveman-worker-smoke.html"
     },
     {
       "id": "fresh-gatewaystack-godot-demo-projects-worker-smoke",
@@ -10832,14 +11038,14 @@
             "verifiedAt": "2026-08-06T10:42:00.134896+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12316,14 +12522,14 @@
             "verifiedAt": "2026-07-21T20:39:28.528586+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12530,14 +12736,14 @@
             "verifiedAt": "2026-08-03T12:31:34.322686+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -13593,14 +13799,14 @@
             "verifiedAt": "2026-07-26T09:23:08.880020+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -14015,14 +14221,14 @@
             "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 9,
-            "partnerCount": 9,
+            "verifiedComboCount": 10,
+            "partnerCount": 10,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 27,
-            "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 25,
+            "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -15582,13 +15788,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-08-06T14:56:40.574743+08:00",
+    "generatedAt": "2026-08-06T14:59:47.988529+08:00",
     "summary": {
-      "total": 72,
+      "total": 73,
       "publicFeatured": 12,
-      "withReports": 72,
-      "withCaveatTags": 72,
-      "withInstallFrictionIndex": 72
+      "withReports": 73,
+      "withCaveatTags": 73,
+      "withInstallFrictionIndex": 73
     },
     "items": [
       {
@@ -21500,6 +21706,114 @@
         }
       },
       {
+        "id": "fresh-doberman-core-caveman-worker-smoke",
+        "title": "Doberman-Core + caveman",
+        "tools": [
+          "Doberman-Core",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "用户提供一段待分析的源代码后，Doberman-Core 先生成架构分析报告，caveman 再接收这份报告并生成压缩后的答复和令牌指标。用户因此不必自己复制、删减架构分析内容，还能据此判断压缩后的答复长度。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "自动化与业务流程",
+          "部署运维与安全",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "分析",
+          "交付",
+          "测试",
+          "生成",
+          "编排"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合手上已有源代码，希望先获得架构分析、再精简分析答复并查看令牌指标的个人用户或小团队。",
+        "notFor": "不适合必须使用 Claude 支持的 caveman 压缩流程，或要求组合已经在干净环境、大规模任务中得到验证的用户。",
+        "maxBenefit": "用户提供一段待分析的源代码后，Doberman-Core 先生成架构分析报告，caveman 再接收这份报告并生成压缩后的答复和令牌指标。用户因此不必自己复制、删减架构分析内容，还能据此判断压缩后的答复长度。",
+        "maxLimit": "本次使用的是仓库内确定性、无需凭据的 caveman-shrink 压缩器，没有调用另一套由 Claude 支持的 caveman-compress 流程。测试环境并非干净环境；处理规模以及其他环境中的表现均未验证。",
+        "caveatTags": [
+          "未使用 Claude 压缩流程",
+          "非干净环境测试",
+          "处理规模未验证",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 Doberman-Core 并手工精简报告",
+            "type": "单工具加人工处理",
+            "fit": "适合只需要代码架构分析，不要求由 caveman 自动压缩的情况。",
+            "tradeoff": "需要自己删减架构分析内容并判断篇幅，无法沿用本次已经通过检查的 caveman 压缩与令牌统计环节。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-doberman-core-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "测试环境并非干净环境",
+          "处理规模以及其他环境中的表现均未验证"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "Uses the repository's deterministic, credential-free caveman-shrink compressor; it does not invoke the separate Claude-backed caveman-compress workflow."
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
         "id": "fresh-gatewaystack-godot-demo-projects-worker-smoke",
         "title": "godot-demo-projects + GatewayStack",
         "tools": [
@@ -24696,14 +25010,14 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 97,
+        "score": 98,
         "level": "核心枢纽",
-        "verifiedComboCount": 9,
-        "partnerCount": 9,
+        "verifiedComboCount": 10,
+        "partnerCount": 10,
         "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 27,
-        "summary": "已在 9 条实测组合中连接 9 个不同搭档，覆盖 4 类场景。"
+        "averageFriction": 25,
+        "summary": "已在 10 条实测组合中连接 10 个不同搭档，覆盖 4 类场景。"
       }
     },
     {
@@ -25361,6 +25675,32 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 28,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "Doberman-Core",
+      "url": "https://github.com/fu351/Doberman-Core",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },

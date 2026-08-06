@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-06T14:56:41.067707+08:00",
-  "records": 72,
+  "generatedAt": "2026-08-06T14:59:48.457809+08:00",
+  "records": 73,
   "assetVersions": {
     "app.css": "96ce3dc697f0",
     "shared.js": "ccc8a33a2be6"
@@ -39,6 +39,7 @@
     "reports/fresh-claude-code-templates-codebase-memory-mcp-worker-smoke.html",
     "reports/fresh-datafoundry-caveman-worker-smoke.html",
     "reports/fresh-deconvolute-headroom-worker-smoke.html",
+    "reports/fresh-doberman-core-caveman-worker-smoke.html",
     "reports/fresh-gatewaystack-godot-demo-projects-worker-smoke.html",
     "reports/fresh-hermes-ecosystem-caveman-worker-smoke.html",
     "reports/fresh-jat-headroom-worker-smoke.html",
