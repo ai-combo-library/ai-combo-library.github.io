@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-06T10:45:37.373726+08:00",
-  "records": 71,
+  "generatedAt": "2026-08-06T14:56:41.067707+08:00",
+  "records": 72,
   "assetVersions": {
     "app.css": "96ce3dc697f0",
     "shared.js": "ccc8a33a2be6"
@@ -50,6 +50,7 @@
     "reports/fresh-ryu-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-caveman-worker-smoke.html",
     "reports/fresh-scholar-rag-headroom-worker-smoke.html",
+    "reports/fresh-siclaw-agency-agents-worker-smoke.html",
     "reports/fresh-tlamatini-headroom-worker-smoke.html",
     "reports/fresh-twiligent-headroom-worker-smoke.html",
     "reports/fresh-vault-operator-caveman-worker-smoke.html",

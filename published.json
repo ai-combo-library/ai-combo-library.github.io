@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-06T10:45:37.264033+08:00",
+  "generatedAt": "2026-08-06T14:56:40.943429+08:00",
   "version": "public-catalog-v4",
   "summary": {
-    "records": 71,
+    "records": 72,
     "featured": 12,
-    "evidenceItems": 71,
-    "tools": 74
+    "evidenceItems": 72,
+    "tools": 76
   },
   "records": [
     {
@@ -12847,6 +12847,219 @@
       "reportUrl": "reports/fresh-scholar-rag-headroom-worker-smoke.html"
     },
     {
+      "id": "fresh-siclaw-agency-agents-worker-smoke",
+      "title": "agency-agents + siclaw",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一份任务说明、项目背景，以及已选定的 Minimal Change Engineer 代理角色。、想得到一份由 agency-agents 生成、完成格式转换并经 siclaw 检查的代理配置，以及针对该配置的确定性静态技能脚本安全评估结果。时，省去用户手工重写代理配置、再逐项交给安全评估器检查的步骤，并帮助判断这份特定代理配置能否完成已验证的静态安全检查。",
+      "readerScenario": {
+        "input": "一份任务说明、项目背景，以及已选定的 Minimal Change Engineer 代理角色。",
+        "outcome": "一份由 agency-agents 生成、完成格式转换并经 siclaw 检查的代理配置，以及针对该配置的确定性静态技能脚本安全评估结果。",
+        "value": "省去用户手工重写代理配置、再逐项交给安全评估器检查的步骤，并帮助判断这份特定代理配置能否完成已验证的静态安全检查。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合希望生成 Minimal Change Engineer 代理配置，并继续进行静态技能脚本安全检查的个人用户或小团队。",
+      "useCase": "agency-agents 先依据任务说明、项目背景和选定的 Minimal Change Engineer 角色生成代理配置；转换后的配置再交给 siclaw 的静态技能脚本安全评估器，得到针对该代理配置的确定性安全评估结果，省去人工重新整理配置并逐项送检的步骤。",
+      "testMethod": "先运行 agency-agents 生成 Minimal Change Engineer 代理配置并完成格式转换，再将转换内容交给 siclaw，核对 siclaw 是否实际接收该内容，以及静态安全评估是否成功产出。",
+      "testOutcome": "agency-agents 与 siclaw 均成功运行，siclaw 确实接收了转换后的代理配置；配置交接和评估结果两项检查全部通过。",
+      "tools": [
+        {
+          "name": "agency-agents",
+          "url": "https://github.com/msitarzewski/agency-agents",
+          "role": "处理/理解",
+          "inputs": [
+            "task brief",
+            "project context",
+            "agent selection"
+          ],
+          "outputs": [
+            "agent profile",
+            "system prompt",
+            "workflow",
+            "code or analysis deliverable"
+          ],
+          "interface": "Markdown agent library / installer / desktop app",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识",
+            "自动化与业务流程"
+          ],
+          "tasks": [
+            "测试",
+            "编排"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "桌面应用",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:42:12.282963+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "siclaw",
+          "url": "https://github.com/scitix/siclaw",
+          "role": "存储/检索",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "检索",
+            "存储",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-06T10:42:12.282963+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 agency-agents 并人工检查",
+          "type": "单工具加人工处理",
+          "fit": "只需要生成代理配置、系统指令或工作流程，并愿意自行检查其安全性的用户。",
+          "tradeoff": "无需把配置交给 siclaw，但要自行整理和检查代理配置，无法获得本次已验证的静态安全评估。"
+        }
+      ],
+      "whyComboStillMatters": "agency-agents 负责根据任务说明和项目背景生成所选角色的代理配置，siclaw 负责对转换后的配置进行确定性静态安全评估。只用 agency-agents 得不到这次验证中的安全评估；只用 siclaw 则不会生成或运行上游的 agency-agents，仍需用户自行准备待评估配置。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "自动化与业务流程",
+        "团队协作与沟通"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "分析",
+        "检索",
+        "存储"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "桌面应用",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅验证单一代理配置",
+        "非大模型基础设施调查",
+        "非洁净环境测试",
+        "未做规模测试",
+        "安装摩擦"
+      ],
+      "suitableFor": "适合希望生成 Minimal Change Engineer 代理配置，并继续进行静态技能脚本安全检查的个人用户或小团队。",
+      "notFor": "不适合需要基于大模型的基础设施调查、要求 siclaw 自动调用 agency-agents，或需要已验证的大规模与洁净环境运行能力的用户。",
+      "maxBenefit": "agency-agents 先依据任务说明、项目背景和选定的 Minimal Change Engineer 角色生成代理配置；转换后的配置再交给 siclaw 的静态技能脚本安全评估器，得到针对该代理配置的确定性安全评估结果，省去人工重新整理配置并逐项送检的步骤。",
+      "maxLimit": "目前只验证了由转换后的 Minimal Change Engineer 代理配置形成的确定性交接，其他代理配置未验证。agency-agents 的这段执行没有继续运行下游 NeMo-Relay；siclaw 运行的是确定性静态技能脚本安全评估器，并非基于大模型的基础设施调查，而且它只接收 agency-agents 的产物，不会自行运行 agency-agents。本次测试并非在洁净环境中完成，也没有进行规模测试，因此其他环境和处理规模均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-06T10:42:12.282963+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-siclaw-agency-agents-worker-smoke.html"
+    },
+    {
       "id": "fresh-tlamatini-headroom-worker-smoke",
       "title": "Tlamatini + Headroom",
       "publicFeatured": false,
@@ -15369,13 +15582,13 @@
     }
   ],
   "evidence": {
-    "generatedAt": "2026-08-06T10:45:36.918560+08:00",
+    "generatedAt": "2026-08-06T14:56:40.574743+08:00",
     "summary": {
-      "total": 71,
+      "total": 72,
       "publicFeatured": 12,
-      "withReports": 71,
-      "withCaveatTags": 71,
-      "withInstallFrictionIndex": 71
+      "withReports": 72,
+      "withCaveatTags": 72,
+      "withInstallFrictionIndex": 72
     },
     "items": [
       {
@@ -22531,6 +22744,115 @@
         }
       },
       {
+        "id": "fresh-siclaw-agency-agents-worker-smoke",
+        "title": "agency-agents + siclaw",
+        "tools": [
+          "agency-agents",
+          "siclaw"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "agency-agents 先依据任务说明、项目背景和选定的 Minimal Change Engineer 角色生成代理配置；转换后的配置再交给 siclaw 的静态技能脚本安全评估器，得到针对该代理配置的确定性安全评估结果，省去人工重新整理配置并逐项送检的步骤。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "自动化与业务流程",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "测试",
+          "分析",
+          "转换",
+          "生成",
+          "交付"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合希望生成 Minimal Change Engineer 代理配置，并继续进行静态技能脚本安全检查的个人用户或小团队。",
+        "notFor": "不适合需要基于大模型的基础设施调查、要求 siclaw 自动调用 agency-agents，或需要已验证的大规模与洁净环境运行能力的用户。",
+        "maxBenefit": "agency-agents 先依据任务说明、项目背景和选定的 Minimal Change Engineer 角色生成代理配置；转换后的配置再交给 siclaw 的静态技能脚本安全评估器，得到针对该代理配置的确定性安全评估结果，省去人工重新整理配置并逐项送检的步骤。",
+        "maxLimit": "目前只验证了由转换后的 Minimal Change Engineer 代理配置形成的确定性交接，其他代理配置未验证。agency-agents 的这段执行没有继续运行下游 NeMo-Relay；siclaw 运行的是确定性静态技能脚本安全评估器，并非基于大模型的基础设施调查，而且它只接收 agency-agents 的产物，不会自行运行 agency-agents。本次测试并非在洁净环境中完成，也没有进行规模测试，因此其他环境和处理规模均未验证。",
+        "caveatTags": [
+          "仅验证单一代理配置",
+          "非大模型基础设施调查",
+          "非洁净环境测试",
+          "未做规模测试",
+          "安装摩擦"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 agency-agents 并人工检查",
+            "type": "单工具加人工处理",
+            "fit": "只需要生成代理配置、系统指令或工作流程，并愿意自行检查其安全性的用户。",
+            "tradeoff": "无需把配置交给 siclaw，但要自行整理和检查代理配置，无法获得本次已验证的静态安全评估。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-siclaw-agency-agents-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "本次测试并非在洁净环境中完成",
+          "因此其他环境和处理规模均未验证"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "Produces a deterministic 结果交接 from the converted Minimal Change Engineer profile.；Executes only agency-agents and does not execute downstream NeMo-Relay.；Executes Siclaw's deter..."
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
         "id": "fresh-tlamatini-headroom-worker-smoke",
         "title": "Tlamatini + headroom",
         "tools": [
@@ -25324,6 +25646,59 @@
         "deepTestSuccessRate": 100,
         "averageFriction": 14,
         "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+      }
+    },
+    {
+      "name": "agency-agents",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "role": "处理/理解",
+      "inputs": [
+        "task brief",
+        "project context",
+        "agent selection"
+      ],
+      "outputs": [
+        "agent profile",
+        "system prompt",
+        "workflow",
+        "code or analysis deliverable"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "siclaw",
+      "url": "https://github.com/scitix/siclaw",
+      "role": "存储/检索",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
