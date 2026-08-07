@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-06T14:59:48.457809+08:00",
-  "records": 73,
+  "generatedAt": "2026-08-07T11:33:35.177422+08:00",
+  "records": 76,
   "assetVersions": {
     "app.css": "96ce3dc697f0",
     "shared.js": "ccc8a33a2be6"
@@ -34,6 +34,7 @@
     "reports/fresh-adrian-headroom-worker-smoke.html",
     "reports/fresh-agent-nexus-headroom-worker-smoke.html",
     "reports/fresh-arc-caveman-worker-smoke.html",
+    "reports/fresh-automatos-ai-agency-agents-worker-smoke.html",
     "reports/fresh-bluerock-agent-nexus-worker-smoke.html",
     "reports/fresh-clarity-cli-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-claude-code-templates-codebase-memory-mcp-worker-smoke.html",
@@ -45,7 +46,9 @@
     "reports/fresh-jat-headroom-worker-smoke.html",
     "reports/fresh-kimi-cli-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-knowledgeops-agent-codex-plugin-cc-worker-smoke.html",
+    "reports/fresh-lamprey-harness-caveman-worker-smoke.html",
     "reports/fresh-llm4ad-next-headroom-worker-smoke.html",
+    "reports/fresh-meshmonitor-headroom-worker-smoke.html",
     "reports/fresh-mineru-document-explorer-codex-plugin-cc-worker-smoke.html",
     "reports/fresh-nexus-godot-demo-projects-worker-smoke.html",
     "reports/fresh-ryu-caveman-worker-smoke.html",
