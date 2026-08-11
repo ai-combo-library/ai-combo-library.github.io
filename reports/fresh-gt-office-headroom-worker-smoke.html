@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GT-Office + headroom</title>
+  <style>
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 14% 0%, rgba(22, 119, 255, .10), transparent 34%),
+        linear-gradient(180deg, #f7faff 0, #f3f6fb 48%, #f8fafc 100%);
+      color: #172033;
+      font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+    a { color: #0f5fd7; text-decoration: none; }
+    h1 {
+      margin: 8px 0 10px;
+      color: #172033;
+      font-size: 34px;
+      line-height: 1.18;
+    }
+    h2 {
+      margin: 28px 0 10px;
+      color: #172033;
+      font-size: 18px;
+    }
+    p { margin: 0; }
+    .eyebrow {
+      color: #0f69d8;
+      font-weight: 800;
+    }
+    .lead {
+      max-width: 760px;
+      color: #66758a;
+      font-size: 17px;
+    }
+    .report-shell {
+      border: 1px solid #dfe7f2;
+      border-radius: 16px;
+      padding: 24px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 14px 36px rgba(37, 99, 235, .08);
+    }
+    .meta, .tool-chain {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .meta span, .tool-chain span {
+      border: 1px solid #dfe7f2;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #f7faff;
+      color: #526277;
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .summary-card {
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #ffffff;
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 5px;
+      color: #0f69d8;
+      font-size: 12px;
+    }
+    .summary-card span {
+      color: #526277;
+      font-size: 14px;
+    }
+    details {
+      margin-top: 22px;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 14px;
+      background: #f8fbff;
+    }
+    summary {
+      cursor: pointer;
+      color: #0f5fd7;
+      font-weight: 850;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background: #f7faff;
+      border: 1px solid #dfe7f2;
+      border-radius: 10px;
+      padding: 20px;
+      color: #344256;
+    }
+    .note {
+      color: #66758a;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 760px) {
+      h1 { font-size: 27px; }
+      .summary-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="report-shell">
+      <p class="note"><a href="../combo.html?id=fresh-gt-office-headroom-worker-smoke&tab=report">返回组合详情</a> · <a href="../evidence.html">实测档案</a></p>
+      <p class="eyebrow">完整实测报告</p>
+      <h1>GT-Office + headroom</h1>
+      <p class="lead">GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。</p>
+      <div class="meta">
+        <span>部署运维与安全 · 实测通过 · 有使用限制 · 适合特定人群</span><span>有实测证据</span><span>含限制说明</span>
+      </div>
+      <div class="tool-chain">
+        <span>GT-Office</span><span>headroom</span>
+      </div>
+      <section class="summary-grid">
+        <div class="summary-card"><b>适合谁</b><span>适合手上已有包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志，希望先形成事故线索，再压缩内容并判断排查优先级的个人用户或小团队。</span></div>
+        <div class="summary-card"><b>不适合谁</b><span>不适合要求已验证桌面界面、实时终端、桌面桥接网络、外部代理命令行、大规模日志、实时流或多服务关联处理的场景。</span></div>
+        <div class="summary-card"><b>最大的限制</b><span>需要按工具说明安装本地依赖；建议固定版本后再长期使用。</span></div>
+      </section>
+      <h2>我们怎么测</h2>
+      <p>用80条固定服务日志运行 GT-Office 的活动、Git 状态、超时和变更错误相关模型功能，不启动桌面界面；再将其实际产出交给 headroom 0.31.0 的 SmartCrusher，检查后者是否确实使用该产出、保留错误码并按严重程度确定优先级。</p>
+      <h2>实际结果</h2>
+      <p>GT-Office 成功生成事故排查材料，headroom 成功生成优先级结果；SQLSTATE 错误码得到保留，严重程度被优先处理，5项检查全部通过。</p>
+      <h2>实际工作流怎么走</h2>
+      <ol><li>1. GT-Office：获取原始资料，并把内容交给下一步。</li><li>2. headroom：整理上一环节的内容，转换成后续工具可以继续读取的结果。</li></ol>
+      <h2>继续补成可长期使用方案要做什么</h2>
+      <ol><li>固定输入样本和预期输出。</li><li>锁定依赖版本并在干净环境重新执行。</li><li>保留失败原因、产物和复测日期。</li></ol>
+      <details>
+        <summary>查看技术记录（供复核）</summary>
+        <pre>GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。
+GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。
+GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。
+本次只在未启动 Tauri 桌面界面的情况下测试了 GT-Office 的活动、Git 状态、超时和变更错误相关模型功能。使用的是80条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；没有覆盖实时终端、桌面桥接网络、外部代理命令行、百万行日志、实时流和多服务关联。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，因此测试时需要显式安装并预检 httpx。测试环境并非全新环境，也没有进行规模测试；其他规模和环境均未验证。
+Exercises GT-Office activity, Git-status, timeout, and mutation-error model functions without launching the Tauri GUI.；Uses 80 deterministic station-log records; live terminals, desktop bridge networking, and external agent CLIs are not covered.；Headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但当前安装包未声明该依赖；自动测试程序 会显式安装并预检 httpx。；本轮使用 80 条确定性服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；未覆盖百万行日志、实时流和多服务关联。</pre>
+      </details>
+    </div>
+  </main>
+</body>
+</html>

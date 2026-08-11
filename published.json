@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-10T09:05:55.289030+08:00",
+  "generatedAt": "2026-08-11T12:22:48.068442+08:00",
   "version": "public-catalog-v4",
   "summary": {
-    "records": 76,
+    "records": 84,
     "featured": 12,
-    "evidenceItems": 76,
-    "tools": 80
+    "evidenceItems": 84,
+    "tools": 90
   },
   "records": [
     {
@@ -214,8 +214,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 16,
-        "summary": "距最近一次测试约 16 天。"
+        "daysSinceTest": 17,
+        "summary": "距最近一次测试约 17 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:17:00.294498+08:00",
@@ -425,8 +425,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -650,8 +650,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T23:41:06.207959+08:00",
@@ -874,8 +874,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 16,
-        "summary": "距最近一次测试约 16 天。"
+        "daysSinceTest": 17,
+        "summary": "距最近一次测试约 17 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:46:33.347456+08:00",
@@ -1075,8 +1075,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:05:19.237913+08:00",
@@ -1286,8 +1286,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:06:36.842560+08:00",
@@ -1482,8 +1482,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:54:44.484813+08:00",
@@ -1603,12 +1603,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -1703,8 +1703,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:34:37.621839+08:00",
@@ -1903,8 +1903,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:07:05.921469+08:00",
@@ -2113,8 +2113,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T19:18:43.708221+08:00",
@@ -2228,14 +2228,14 @@
             "verifiedAt": "2026-07-21T19:41:44.989301+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -2321,8 +2321,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:41:44.989301+08:00",
@@ -2335,136 +2335,143 @@
       "reportUrl": "reports/fresh-arc-caveman-worker-smoke.html"
     },
     {
-      "id": "yt-dlp-chattts-public-seed-worker-smoke",
-      "title": "yt-dlp + ChatTTS",
+      "id": "fresh-engram-gitsocial-worker-smoke",
+      "title": "engram + gitsocial",
       "publicFeatured": true,
       "publicFeaturedRank": 12,
-      "summary": "下载视频及其说明文字后生成一份可听的语音复习稿，适合课程、访谈和公开视频资料的二次整理。",
-      "readerScenario": {},
+      "summary": "有一组预先放在本地待导入区的媒体占位文件，以及 engram 和 gitsocial 所需的相关配置。、想得到一条由 gitsocial 在本地创建、内容采用 engram 实际输出的社交帖子。时，省去在 gitsocial 中重新录入 engram 已生成的文字，并帮助判断本地扫描分类内容能否衔接到帖子创建。",
+      "readerScenario": {
+        "input": "一组预先放在本地待导入区的媒体占位文件，以及 engram 和 gitsocial 所需的相关配置。",
+        "outcome": "一条由 gitsocial 在本地创建、内容采用 engram 实际输出的社交帖子。",
+        "value": "省去在 gitsocial 中重新录入 engram 已生成的文字，并帮助判断本地扫描分类内容能否衔接到帖子创建。"
+      },
       "evidenceScore": 85,
       "evidenceLevel": "L3-caveat",
-      "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
-      "useCase": "公开视频资料下载、说明文字留档和语音复习稿生成。",
-      "testMethod": "先用 yt-dlp 2026.7.4 从本地确定性视频页下载视频和说明文字，再把当次下载得到的文字交给 ChatTTS 合成为 WAV 音频。",
-      "testOutcome": "yt-dlp 成功生成视频、元数据和文字交接文件，ChatTTS 成功读取该文字并生成 WAV；4 项交接与结果检查全部通过。",
+      "audience": "手头已有本地媒体占位文件和相关配置，想验证扫描分类内容能否用于创建一条本地社交帖子的个人用户或小团队。",
+      "useCase": "用户准备一组放在本地待导入区的媒体占位文件和相关配置后，engram 先扫描并分类，gitsocial 再使用它产生的文字创建一条本地社交帖子。这套组合省去在 gitsocial 中重新录入同一段文字，并帮助用户判断媒体分类内容能否衔接到本地帖子创建。",
+      "testMethod": "使用固定预置的媒体占位文件和相关配置运行 engram 的本地待导入扫描与分类，再将它产生的非空文字交给 gitsocial 创建一条本地社交帖子，分别检查交接文字和帖子内容是否非空。",
+      "testOutcome": "engram 与 gitsocial 均成功运行，gitsocial 确实使用了 engram 的输出并创建了一条本地社交帖子；两项结果检查全部通过。",
       "tools": [
         {
-          "name": "yt-dlp",
-          "url": "https://github.com/yt-dlp/yt-dlp",
+          "name": "engram",
+          "url": "https://github.com/Jsakkos/engram",
           "role": "采集/输入",
-          "inputs": [],
-          "outputs": [],
+          "inputs": [
+            "text",
+            "configuration"
+          ],
+          "outputs": [
+            "text",
+            "json"
+          ],
           "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "开发与 Agent",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "开发与 Agent",
-            "内容与媒体",
             "文档与知识",
-            "团队协作与沟通"
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "采集",
-            "生成"
+            "采集"
           ],
           "audiences": [
-            "开发者"
+            "知识工作者"
           ],
           "traits": [
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-15T10:27:06.791084+08:00"
+            "verifiedAt": "2026-08-11T12:14:26.054530+08:00"
           },
           "hub": {
-            "score": 57,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 63,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 10,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         },
         {
-          "name": "ChatTTS",
-          "url": "https://github.com/2noise/ChatTTS",
-          "role": "自动执行",
+          "name": "gitsocial",
+          "url": "https://github.com/gitsocial-org/gitsocial",
+          "role": "存储/检索",
           "inputs": [
-            "text"
+            "text",
+            "configuration"
           ],
           "outputs": [
-            "audio",
-            "wav"
+            "text",
+            "json"
           ],
-          "interface": "CLI, SDK",
+          "interface": "",
           "setup": "",
           "readme": "",
           "evidenceLevel": "L3-caveat",
-          "primaryCategory": "内容与媒体",
+          "primaryCategory": "文档与知识",
           "domains": [
-            "内容与媒体",
-            "开发与 Agent",
-            "团队协作与沟通",
-            "文档与知识"
+            "文档与知识",
+            "开发与 Agent"
           ],
           "tasks": [
             "测试",
-            "生成"
+            "检索",
+            "存储"
           ],
           "audiences": [
-            "内容创作者"
+            "知识工作者"
           ],
           "traits": [
-            "CLI",
             "已全链路实测"
           ],
           "testResults": {
-            "verifiedAt": "2026-07-15T10:27:06.791084+08:00"
+            "verifiedAt": "2026-08-11T12:14:26.054530+08:00"
           },
           "hub": {
-            "score": 56,
-            "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
-            "averageFriction": 65,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+            "averageFriction": 10,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
       "alternatives": [
         {
-          "name": "浏览器下载 + 系统朗读",
-          "type": "轻量替代",
-          "fit": "只偶尔处理一个公开视频，不需要批量、留档和中间产物的人",
-          "tradeoff": "操作更简单，但自动化、格式复查和批量处理能力较弱。"
+          "name": "只用 gitsocial 手工建帖",
+          "type": "单工具手工方案",
+          "fit": "适合不需要 engram 扫描分类、只想根据手头文字创建一条本地社交帖子的人。",
+          "tradeoff": "需要自行整理并录入帖子文字，无法利用 engram 的本地待导入扫描与分类结果。"
         }
       ],
-      "whyComboStillMatters": "yt-dlp 负责可靠获取视频与元数据，ChatTTS 负责把确认后的文字变成音频；两者组合后才形成从在线资料到可听复习稿的交付链。",
+      "whyComboStillMatters": "engram 负责扫描本地待导入内容并完成分类，gitsocial 负责使用分类后的文字创建本地社交帖子。只用 engram 无法完成帖子创建，只用 gitsocial 则缺少 engram 提供的扫描分类内容。",
       "category": "内容与媒体",
       "primaryCategory": "内容与媒体",
       "domains": [
         "内容与媒体",
         "开发与 Agent",
-        "团队协作与沟通",
-        "文档与知识"
+        "文档与知识",
+        "团队协作与沟通"
       ],
       "tasks": [
         "测试",
-        "生成",
         "采集",
         "分析",
-        "交付"
+        "检索",
+        "存储"
       ],
       "audiences": [
-        "内容创作者",
-        "团队与企业"
+        "开发者",
+        "团队与企业",
+        "内容创作者"
       ],
       "traits": [
         "CLI",
@@ -2474,30 +2481,32 @@
         "已实测"
       ],
       "taxonomyVersion": "2026-07-multifacet-v1",
-      "recommendationLevel": "适合特定人群",
+      "recommendationLevel": "强推荐",
       "caveatTags": [
-        "外部账号",
-        "大文件未验证",
-        "UI 未验证",
-        "业务输出打折"
+        "仅使用媒体占位文件",
+        "仅创建一条本地帖子",
+        "未验证远端推送与登录认证",
+        "未在全新环境中进行规模测试",
+        "外部账号"
       ],
-      "suitableFor": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
-      "notFor": "需要绕过登录或版权限制、只想在线播放，或要求专业配音质量和自动生成完整视频字幕的人。",
-      "maxBenefit": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
-      "maxLimit": "使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。",
+      "suitableFor": "手头已有本地媒体占位文件和相关配置，想验证扫描分类内容能否用于创建一条本地社交帖子的个人用户或小团队。",
+      "notFor": "需要读取真实光学设备、调用外部元数据服务、登录远端平台、推送或拉取内容、衔接其他工作流，或者要求已有大规模使用验证的人。",
+      "maxBenefit": "用户准备一组放在本地待导入区的媒体占位文件和相关配置后，engram 先扫描并分类，gitsocial 再使用它产生的文字创建一条本地社交帖子。这套组合省去在 gitsocial 中重新录入同一段文字，并帮助用户判断媒体分类内容能否衔接到本地帖子创建。",
+      "maxLimit": "本次只使用固定预置的媒体占位文件测试了 engram 的本地待导入扫描与分类，并用 gitsocial 创建了一条本地社交帖子；未接入光学设备或外部元数据服务，也未验证推送、拉取、登录认证及其他工作流。测试环境并非全新环境，未进行规模测试，因此更多帖子、真实媒体和其他环境下的表现均未验证。",
       "retestStatus": "",
       "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
       "demandValidation": {
-        "targetUser": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
-        "currentAlternative": "浏览器下载 + 系统朗读：操作更简单，但自动化、格式复查和批量处理能力较弱。",
-        "painPoint": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
-        "switchingReason": "yt-dlp 负责可靠获取视频与元数据，ChatTTS 负责把确认后的文字变成音频；两者组合后才形成从在线资料到可听复习稿的交付链。",
-        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
-        "confidence": "需求判断较强",
-        "confidenceScore": 90,
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+        "confidence": "需求判断中等",
+        "confidenceScore": 66,
         "missingProof": [
-          "还需要真实用户反馈确认是否愿意长期使用"
+          "缺少为什么不用单体工具的解释",
+          "上手成本较高，需要确认用户是否愿意折腾"
         ]
       },
       "longTermUse": {
@@ -2506,42 +2515,30 @@
         "tested": false
       },
       "installFrictionIndex": {
-        "score": 40,
-        "level": "中摩擦",
+        "score": 10,
+        "level": "低摩擦",
         "factors": [
           {
             "label": "外部账号",
             "weight": 10
-          },
-          {
-            "label": "大文件未验证",
-            "weight": 8
-          },
-          {
-            "label": "UI 未验证",
-            "weight": 6
-          },
-          {
-            "label": "业务输出打折",
-            "weight": 16
           }
         ],
-        "summary": "可试，但建议先按报告准备依赖和配置。"
+        "summary": "安装和配置成本相对可控。"
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 26,
-        "summary": "距最近一次测试约 26 天。"
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
       },
       "verification": {
-        "testedAt": "2026-07-15T10:27:06.791084+08:00",
+        "testedAt": "2026-08-11T12:14:26.054530+08:00",
         "method": "全链路实测",
         "cleanEnvironment": false,
         "scaleTested": false,
-        "checksPassed": 4,
-        "checksTotal": 4
+        "checksPassed": 2,
+        "checksTotal": 2
       },
-      "reportUrl": "reports/yt-dlp-chattts-public-seed-worker-smoke.html"
+      "reportUrl": "reports/fresh-engram-gitsocial-worker-smoke.html"
     },
     {
       "id": "activepieces-nocodb-l3-caveat",
@@ -2762,8 +2759,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 14,
+        "summary": "距最近一次测试约 14 天。"
       },
       "verification": {
         "testedAt": "2026-07-28T16:08:13.589615+08:00",
@@ -2963,8 +2960,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:08:55.266390+08:00",
@@ -3077,12 +3074,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -3212,8 +3209,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:47:20.546997+08:00",
@@ -3310,12 +3307,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -3406,8 +3403,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-04T00:00:24.717403+08:00",
@@ -3636,8 +3633,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 40,
-        "summary": "距最近一次测试约 40 天。"
+        "daysSinceTest": 41,
+        "summary": "距最近一次测试约 41 天。"
       },
       "verification": {
         "testedAt": "2026-07-01T12:53:34.882240+08:00",
@@ -3908,8 +3905,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T17:54:05.741088+08:00",
@@ -4117,8 +4114,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 26,
-        "summary": "距最近一次测试约 26 天。"
+        "daysSinceTest": 27,
+        "summary": "距最近一次测试约 27 天。"
       },
       "verification": {
         "testedAt": "2026-07-15T23:51:52.657051+08:00",
@@ -4218,14 +4215,14 @@
             "verifiedAt": "2026-07-02T18:38:43.450365+08:00"
           },
           "hub": {
-            "score": 56,
+            "score": 68,
             "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
             "averageFriction": 65,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -4330,8 +4327,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:47:20.546997+08:00",
@@ -4573,8 +4570,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -4678,14 +4675,14 @@
             "verifiedAt": "2026-07-14T23:56:22.909610+08:00"
           },
           "hub": {
-            "score": 56,
+            "score": 68,
             "level": "高适配",
-            "verifiedComboCount": 3,
-            "partnerCount": 3,
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
             "categoryCount": 1,
             "deepTestSuccessRate": 100,
             "averageFriction": 65,
-            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
           }
         }
       ],
@@ -4803,8 +4800,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T23:56:22.909610+08:00",
@@ -5035,8 +5032,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -5263,8 +5260,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:41:49.409711+08:00",
@@ -5478,8 +5475,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:36:53.626356+08:00",
@@ -5706,8 +5703,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 28,
-        "summary": "距最近一次测试约 28 天。"
+        "daysSinceTest": 29,
+        "summary": "距最近一次测试约 29 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:15:32.616491+08:00",
@@ -5930,8 +5927,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:52:05.655889+08:00",
@@ -6152,8 +6149,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:41:49.409711+08:00",
@@ -6381,8 +6378,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T23:41:06.207959+08:00",
@@ -6598,9 +6595,9 @@
         "summary": "可试，但建议先按报告准备依赖和配置。"
       },
       "retestFreshness": {
-        "status": "新鲜",
-        "daysSinceTest": 30,
-        "summary": "距最近一次测试约 30 天。"
+        "status": "需复查",
+        "daysSinceTest": 31,
+        "summary": "距最近一次测试约 31 天。"
       },
       "verification": {
         "testedAt": "2026-07-11T11:54:38.024610+08:00",
@@ -6821,8 +6818,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7012,8 +7009,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 28,
-        "summary": "距最近一次测试约 28 天。"
+        "daysSinceTest": 29,
+        "summary": "距最近一次测试约 29 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:06:20.082520+08:00",
@@ -7251,8 +7248,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T19:18:43.708221+08:00",
@@ -7479,8 +7476,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7704,8 +7701,8 @@
       },
       "retestFreshness": {
         "status": "需复查",
-        "daysSinceTest": 38,
-        "summary": "距最近一次测试约 38 天。"
+        "daysSinceTest": 39,
+        "summary": "距最近一次测试约 39 天。"
       },
       "verification": {
         "testedAt": "2026-07-03T00:11:01.634093+08:00",
@@ -7937,8 +7934,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 19,
-        "summary": "距最近一次测试约 19 天。"
+        "daysSinceTest": 20,
+        "summary": "距最近一次测试约 20 天。"
       },
       "verification": {
         "testedAt": "2026-07-22T22:43:43.025263+08:00",
@@ -8150,8 +8147,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:05:17.476375+08:00",
@@ -8257,14 +8254,14 @@
             "verifiedAt": "2026-07-14T02:20:54.788281+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -8363,8 +8360,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:04:26.875265+08:00",
@@ -8375,6 +8372,221 @@
         "checksTotal": 2
       },
       "reportUrl": "reports/codebase-memory-caveman-fresh-deep-worker-smoke.html"
+    },
+    {
+      "id": "comfyui-chattts-worker-smoke",
+      "title": "ComfyUI + ChatTTS",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一段需要配成语音、可由 ComfyUI 导出为 Markdown 的文字。、想得到由这份 Markdown 中前 240 个规范化后的可朗读字符合成的 WAV 音频文件。时，省去从 ComfyUI 导出后再手工复制文字到 ChatTTS 的步骤，并帮助判断这两个工具能否完成 Markdown 到短音频的衔接。",
+      "readerScenario": {
+        "input": "一段需要配成语音、可由 ComfyUI 导出为 Markdown 的文字。",
+        "outcome": "由这份 Markdown 中前 240 个规范化后的可朗读字符合成的 WAV 音频文件。",
+        "value": "省去从 ComfyUI 导出后再手工复制文字到 ChatTTS 的步骤，并帮助判断这两个工具能否完成 Markdown 到短音频的衔接。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "手上有一段需要转成语音的文字，并希望验证 ComfyUI 导出内容能否交给 ChatTTS 生成短 WAV 音频的个人用户或小团队。",
+      "useCase": "把一段需要转成语音的文字交给 ComfyUI 的 Markdown 导出节点，再由 ChatTTS 读取导出的文字并合成 WAV 音频。它省去手工复制这段文字到语音工具的步骤，也帮助用户判断两者能否实际衔接。",
+      "testMethod": "实际运行 ComfyUI 的 Markdown 导出节点，将导出的同一份 Markdown 文字交给 ChatTTS；检查文字是否成功保存和传递，并核对是否生成 WAV 音频，共检查 4 项。",
+      "testOutcome": "ComfyUI 成功导出 Markdown 文字，ChatTTS 成功读取该文字并生成 WAV 音频，4 项检查全部通过。",
+      "tools": [
+        {
+          "name": "ComfyUI",
+          "url": "https://github.com/comfyanonymous/ComfyUI",
+          "role": "采集/输入",
+          "inputs": "text, image, prompt",
+          "outputs": "video, image",
+          "interface": "API, SDK",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "内容与媒体",
+            "设计与创意",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "生成"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "高配置需求",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:13:02.891361+08:00"
+          },
+          "hub": {
+            "score": 35,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 64,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "ChatTTS",
+          "url": "https://github.com/2noise/ChatTTS",
+          "role": "自动执行",
+          "inputs": "text",
+          "outputs": "audio, wav",
+          "interface": "CLI, SDK",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "内容与媒体",
+          "domains": [
+            "内容与媒体",
+            "开发与 Agent",
+            "团队协作与沟通",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "生成"
+          ],
+          "audiences": [
+            "内容创作者"
+          ],
+          "traits": [
+            "高配置需求",
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:13:02.891361+08:00"
+          },
+          "hub": {
+            "score": 68,
+            "level": "高适配",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 65,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 ChatTTS",
+          "type": "手工处理",
+          "fit": "已经有 Markdown 文件，只需要把其中一小段文字合成为 WAV 音频。",
+          "tradeoff": "需要手工提取和整理可朗读文字，也无法验证 ChatTTS 与 ComfyUI Markdown 导出节点之间的衔接。"
+        }
+      ],
+      "whyComboStillMatters": "ComfyUI 负责在工作流中导出 Markdown 文字，ChatTTS 负责把其中的可朗读文字合成为 WAV 音频。只用 ComfyUI 无法完成这次语音合成，只用 ChatTTS 则无法验证它能否直接接收 ComfyUI 导出的内容。",
+      "category": "内容与媒体",
+      "primaryCategory": "内容与媒体",
+      "domains": [
+        "开发与 Agent",
+        "内容与媒体",
+        "团队协作与沟通",
+        "设计与创意"
+      ],
+      "tasks": [
+        "测试",
+        "生成",
+        "分析",
+        "交付",
+        "协作"
+      ],
+      "audiences": [
+        "内容创作者",
+        "团队与企业"
+      ],
+      "traits": [
+        "高配置需求",
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "仅处理前 240 个可朗读字符",
+        "每次新运行均需公共网络",
+        "仅验证 CPU 上的 Markdown 转 WAV",
+        "未验证图片生成与处理规模",
+        "安装摩擦",
+        "依赖缺失",
+        "模型下载大",
+        "大文件未验证"
+      ],
+      "suitableFor": "手上有一段需要转成语音的文字，并希望验证 ComfyUI 导出内容能否交给 ChatTTS 生成短 WAV 音频的个人用户或小团队。",
+      "notFor": "需要验证图片生成、长篇文字完整合成、离线运行、大批量处理、不同硬件表现或正式业务环境的人。",
+      "maxBenefit": "把一段需要转成语音的文字交给 ComfyUI 的 Markdown 导出节点，再由 ChatTTS 读取导出的文字并合成 WAV 音频。它省去手工复制这段文字到语音工具的步骤，也帮助用户判断两者能否实际衔接。",
+      "maxLimit": "每次在新目录运行都需要通过公共网络安装 PyAV 16.0.1 和缺少的 Python 软件包，并下载 ChatTTS 模型权重。本次只验证了 ComfyUI 的真实 Markdown 导出节点，以及 ChatTTS 在 CPU 上把 Markdown 中前 240 个规范化后的可朗读字符合成为 WAV；图片生成不在验证范围内。测试并非在全新洁净环境完成，也没有验证处理规模、长文本、其他硬件或其他环境。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "一体化剪辑或内容生产套件：上手更快，但自动化、批处理和局部替换能力较弱。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "值得排进候选或低成本试用，但还不适合作为主推。",
+        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 76,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 64,
+        "level": "高摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "依赖缺失",
+            "weight": 18
+          },
+          {
+            "label": "模型下载大",
+            "weight": 24
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          }
+        ],
+        "summary": "需要预留安装、账号、依赖或机器配置成本。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:13:02.891361+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 4,
+        "checksTotal": 4
+      },
+      "reportUrl": "reports/comfyui-chattts-worker-smoke.html"
     },
     {
       "id": "crawl4ai-llamaindex-open-webui-worker-smoke",
@@ -8569,8 +8781,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:51:23.972449+08:00",
@@ -8796,8 +9008,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 28,
-        "summary": "距最近一次测试约 28 天。"
+        "daysSinceTest": 29,
+        "summary": "距最近一次测试约 29 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T19:23:54.925764+08:00",
@@ -9005,8 +9217,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:17:46.129434+08:00",
@@ -9120,14 +9332,14 @@
             "verifiedAt": "2026-07-26T12:40:09.883353+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -9226,8 +9438,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:40:09.883353+08:00",
@@ -9343,12 +9555,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -9433,8 +9645,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 16,
-        "summary": "距最近一次测试约 16 天。"
+        "daysSinceTest": 17,
+        "summary": "距最近一次测试约 17 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T14:32:37.975923+08:00",
@@ -9501,12 +9713,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         },
         {
@@ -9658,8 +9870,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T00:55:32.314716+08:00",
@@ -9871,8 +10083,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 3,
-        "summary": "距最近一次测试约 3 天。"
+        "daysSinceTest": 4,
+        "summary": "距最近一次测试约 4 天。"
       },
       "verification": {
         "testedAt": "2026-08-07T11:30:56.192936+08:00",
@@ -9883,6 +10095,217 @@
         "checksTotal": 3
       },
       "reportUrl": "reports/fresh-automatos-ai-agency-agents-worker-smoke.html"
+    },
+    {
+      "id": "fresh-bansos-caveman-worker-smoke",
+      "title": "bansos + caveman",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一段待分析的程序代码和一项明确的分析要求。、想得到一份压缩后的代码分析答复，以及对应的词元用量指标。时，把程序代码分析与答复精简接在一起，省去用户自行压缩分析报告的步骤，并帮助用户根据词元用量判断答复是否足够精简。",
+      "readerScenario": {
+        "input": "一段待分析的程序代码和一项明确的分析要求。",
+        "outcome": "一份压缩后的代码分析答复，以及对应的词元用量指标。",
+        "value": "把程序代码分析与答复精简接在一起，省去用户自行压缩分析报告的步骤，并帮助用户根据词元用量判断答复是否足够精简。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要把程序代码的分析报告进一步压缩成简短答复，并查看词元用量指标的个人用户和小团队。",
+      "useCase": "用户把一段待分析的程序代码和明确的分析要求交给 bansos，由它生成分析报告；caveman 接收这份报告，生成压缩后的答复和词元用量指标，省去用户自行精简报告的步骤，并帮助判断答复是否足够精简。",
+      "testMethod": "先让 bansos 处理实际内容并生成报告，再将同一份报告交给 caveman，最后核对两个工具是否成功衔接以及压缩处理是否完成。",
+      "testOutcome": "bansos 和 caveman 均成功运行，caveman 确实使用了 bansos 生成的报告，报告衔接与答复压缩两项检查全部通过。",
+      "tools": [
+        {
+          "name": "bansos",
+          "url": "https://github.com/wauputr4/bansos",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:30.842863+08:00"
+          },
+          "hub": {
+            "score": 38,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 28,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:30.842863+08:00"
+          },
+          "hub": {
+            "score": 98,
+            "level": "核心枢纽",
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 bansos 后人工精简",
+          "type": "手工替代",
+          "fit": "适合只需要程序代码分析报告、不要求自动生成压缩答复和词元用量指标的情况。",
+          "tradeoff": "需要用户自行删减和改写分析报告，也无法直接获得 caveman 提供的词元用量指标。"
+        }
+      ],
+      "whyComboStillMatters": "bansos 负责根据程序代码生成分析报告，caveman 负责将该报告压缩成答复并提供词元用量指标。只用 bansos 需要用户自己精简报告；只用 caveman 则需要用户另行准备分析报告或答复草稿。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "需 Node.js 20 或更高版本",
+        "未在干净环境中验证",
+        "未进行规模测试",
+        "安装摩擦",
+        "外部 API Key"
+      ],
+      "suitableFor": "需要把程序代码的分析报告进一步压缩成简短答复，并查看词元用量指标的个人用户和小团队。",
+      "notFor": "无法提供 Node.js 20 或更高版本，或者必须先确认大体量代码、长报告及不同环境下表现的用户。",
+      "maxBenefit": "用户把一段待分析的程序代码和明确的分析要求交给 bansos，由它生成分析报告；caveman 接收这份报告，生成压缩后的答复和词元用量指标，省去用户自行精简报告的步骤，并帮助判断答复是否足够精简。",
+      "maxLimit": "必须安装 Node.js 20 或更高版本，并确保能从命令行直接调用。本次测试不是在干净环境中完成的，其他系统和依赖环境未验证；也未进行规模测试，可处理的程序代码长度、报告长度和任务数量上限均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 28,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:15:30.842863+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-bansos-caveman-worker-smoke.html"
     },
     {
       "id": "fresh-bluerock-agent-nexus-worker-smoke",
@@ -10082,8 +10505,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T21:08:11.665061+08:00",
@@ -10291,8 +10714,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T19:53:58.378164+08:00",
@@ -10303,6 +10726,215 @@
         "checksTotal": 4
       },
       "reportUrl": "reports/fresh-clarity-cli-codex-plugin-cc-worker-smoke.html"
+    },
+    {
+      "id": "fresh-claude-code-agent-monitor-caveman-worker-smoke",
+      "title": "Claude-Code-Agent-Monitor + caveman",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有用户手上已有一段待处理的任务说明，以及与该任务相关的程序文件。、想得到用户得到一份压缩后的回复和对应的词元统计。时，组合省去用户在两个工具之间手工重录前段产物的步骤，并帮助判断回复压缩后的词元用量。",
+      "readerScenario": {
+        "input": "用户手上已有一段待处理的任务说明，以及与该任务相关的程序文件。",
+        "outcome": "用户得到一份压缩后的回复和对应的词元统计。",
+        "value": "组合省去用户在两个工具之间手工重录前段产物的步骤，并帮助判断回复压缩后的词元用量。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合手上已有任务说明和相关程序文件，希望先取得结构化记录，再获得压缩回复与词元统计的个人用户或小团队。",
+      "useCase": "Claude-Code-Agent-Monitor 先处理用户已有的任务说明和相关程序文件，生成结构化记录与检查说明；caveman 接收同一份产物，给出压缩后的回复和词元统计。这套组合省去在两个工具之间手工重录前段产物的步骤，并帮助用户查看回复压缩后的词元用量。",
+      "testMethod": "先运行 Claude-Code-Agent-Monitor 处理任务说明和相关程序文件，再将它生成的同一份产物交给 caveman，最后核对 caveman 是否实际使用了该产物，并检查压缩回复和词元统计是否生成。",
+      "testOutcome": "Claude-Code-Agent-Monitor 与 caveman 均成功运行，后者确实使用了前者的产物；两项检查全部通过。",
+      "tools": [
+        {
+          "name": "Claude-Code-Agent-Monitor",
+          "url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "获取与监测",
+            "文档与知识"
+          ],
+          "tasks": [
+            "监测",
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:13:58.806287+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "获取与监测",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "监测",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:13:58.806287+08:00"
+          },
+          "hub": {
+            "score": 98,
+            "level": "核心枢纽",
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 Claude-Code-Agent-Monitor 后手工整理",
+          "type": "单工具加人工处理",
+          "fit": "适合只需要结构化记录与检查说明，且愿意自行整理简短回复的用户。",
+          "tradeoff": "用户需要手工压缩回复并另行计算词元用量，无法获得本次已验证的两工具接力。"
+        }
+      ],
+      "whyComboStillMatters": "Claude-Code-Agent-Monitor 负责生成结构化记录与检查说明，caveman 负责把接收到的内容压缩成回复并提供词元统计。只用 Claude-Code-Agent-Monitor 得不到本次验证中的压缩回复和词元统计；只用 caveman，则缺少本次已经验证过的前段产物来源及工具间接力。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "获取与监测",
+        "文档与知识",
+        "团队协作与沟通"
+      ],
+      "tasks": [
+        "测试",
+        "监测",
+        "交付",
+        "采集",
+        "分析"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "未在全新环境验证",
+        "未进行规模测试",
+        "外部 API Key"
+      ],
+      "suitableFor": "适合手上已有任务说明和相关程序文件，希望先取得结构化记录，再获得压缩回复与词元统计的个人用户或小团队。",
+      "notFor": "不适合必须确认全新环境表现、最大处理规模，或需要大规模使用证据的用户。",
+      "maxBenefit": "Claude-Code-Agent-Monitor 先处理用户已有的任务说明和相关程序文件，生成结构化记录与检查说明；caveman 接收同一份产物，给出压缩后的回复和词元统计。这套组合省去在两个工具之间手工重录前段产物的步骤，并帮助用户查看回复压缩后的词元用量。",
+      "maxLimit": "现有验证没有列出明确的功能限制，但测试并非在全新环境中完成，也没有进行规模测试；最大可处理规模以及其他环境中的表现均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:13:58.806287+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-claude-code-agent-monitor-caveman-worker-smoke.html"
     },
     {
       "id": "fresh-claude-code-templates-codebase-memory-mcp-worker-smoke",
@@ -10501,8 +11133,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:36:38.498909+08:00",
@@ -10616,14 +11248,14 @@
             "verifiedAt": "2026-07-23T07:23:39.148828+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -10713,8 +11345,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 18,
-        "summary": "距最近一次测试约 18 天。"
+        "daysSinceTest": 19,
+        "summary": "距最近一次测试约 19 天。"
       },
       "verification": {
         "testedAt": "2026-07-23T07:23:39.148828+08:00",
@@ -10828,14 +11460,14 @@
             "verifiedAt": "2026-08-06T10:40:30.039371+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -10919,8 +11551,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 4,
-        "summary": "距最近一次测试约 4 天。"
+        "daysSinceTest": 5,
+        "summary": "距最近一次测试约 5 天。"
       },
       "verification": {
         "testedAt": "2026-08-06T10:40:30.039371+08:00",
@@ -11136,8 +11768,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:04:45.776659+08:00",
@@ -11148,6 +11780,228 @@
         "checksTotal": 5
       },
       "reportUrl": "reports/fresh-gatewaystack-godot-demo-projects-worker-smoke.html"
+    },
+    {
+      "id": "fresh-gt-office-headroom-worker-smoke",
+      "title": "GT-Office + Headroom",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有80条包含 INFO、WARN 和 SQLSTATE ERROR 的固定服务日志，以及其中涉及的活动、Git 状态、超时和变更错误记录。、想得到一份按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文。时，省去人工逐条筛选服务日志、摘取关键错误码和重新排序问题严重程度的步骤，帮助用户判断应先排查哪类问题。",
+      "readerScenario": {
+        "input": "80条包含 INFO、WARN 和 SQLSTATE ERROR 的固定服务日志，以及其中涉及的活动、Git 状态、超时和变更错误记录。",
+        "outcome": "一份按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文。",
+        "value": "省去人工逐条筛选服务日志、摘取关键错误码和重新排序问题严重程度的步骤，帮助用户判断应先排查哪类问题。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合手上已有包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志，希望先形成事故线索，再压缩内容并判断排查优先级的个人用户或小团队。",
+      "useCase": "GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。",
+      "testMethod": "用80条固定服务日志运行 GT-Office 的活动、Git 状态、超时和变更错误相关模型功能，不启动桌面界面；再将其实际产出交给 headroom 0.31.0 的 SmartCrusher，检查后者是否确实使用该产出、保留错误码并按严重程度确定优先级。",
+      "testOutcome": "GT-Office 成功生成事故排查材料，headroom 成功生成优先级结果；SQLSTATE 错误码得到保留，严重程度被优先处理，5项检查全部通过。",
+      "tools": [
+        {
+          "name": "GT-Office",
+          "url": "https://github.com/Laplace-bit/GT-Office",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:31.658519+08:00"
+          },
+          "hub": {
+            "score": 37,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 36,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "Headroom",
+          "url": "https://github.com/chopratejas/headroom",
+          "role": "处理/理解",
+          "inputs": [
+            "mcp json output",
+            "tool output",
+            "logs",
+            "code search results",
+            "rag chunks"
+          ],
+          "outputs": [
+            "compressed context",
+            "structured compressed json",
+            "retained retrieval signals"
+          ],
+          "interface": "Python library / CLI / proxy / MCP",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "检索"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:31.658519+08:00"
+          },
+          "hub": {
+            "score": 97,
+            "level": "核心枢纽",
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
+            "categoryCount": 4,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 GT-Office 后人工整理",
+          "type": "手工替代方案",
+          "fit": "适合日志量较小、愿意自行审阅 GT-Office 产出的用户。",
+          "tradeoff": "需要人工删减重复内容、保留 SQLSTATE 错误码，并按严重程度排列排查顺序。"
+        }
+      ],
+      "whyComboStillMatters": "GT-Office 负责从活动、Git 状态、超时和变更错误信息中形成事故排查材料，headroom 负责压缩这些内容、保留检索线索并突出高严重度问题。只用 GT-Office 仍需人工删减和排序；只用 headroom 则没有 GT-Office 生成的上游排查材料可处理。",
+      "category": "部署运维与安全",
+      "primaryCategory": "部署运维与安全",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "检索",
+        "交付",
+        "采集",
+        "分析"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "桌面应用",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "仅测试80条固定服务日志",
+        "未启动桌面界面",
+        "需显式安装 httpx",
+        "未验证大规模与实时场景",
+        "安装摩擦",
+        "UI 未验证",
+        "业务输出打折"
+      ],
+      "suitableFor": "适合手上已有包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志，希望先形成事故线索，再压缩内容并判断排查优先级的个人用户或小团队。",
+      "notFor": "不适合要求已验证桌面界面、实时终端、桌面桥接网络、外部代理命令行、大规模日志、实时流或多服务关联处理的场景。",
+      "maxBenefit": "GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。",
+      "maxLimit": "本次只在未启动 Tauri 桌面界面的情况下测试了 GT-Office 的活动、Git 状态、超时和变更错误相关模型功能。使用的是80条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；没有覆盖实时终端、桌面桥接网络、外部代理命令行、百万行日志、实时流和多服务关联。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，因此测试时需要显式安装并预检 httpx。测试环境并非全新环境，也没有进行规模测试；其他规模和环境均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 36,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          },
+          {
+            "label": "业务输出打折",
+            "weight": 16
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:15:31.658519+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 5,
+        "checksTotal": 5
+      },
+      "reportUrl": "reports/fresh-gt-office-headroom-worker-smoke.html"
     },
     {
       "id": "fresh-hermes-ecosystem-caveman-worker-smoke",
@@ -11251,14 +12105,14 @@
             "verifiedAt": "2026-08-06T10:42:00.134896+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -11342,8 +12196,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 4,
-        "summary": "距最近一次测试约 4 天。"
+        "daysSinceTest": 5,
+        "summary": "距最近一次测试约 5 天。"
       },
       "verification": {
         "testedAt": "2026-08-06T10:42:00.134896+08:00",
@@ -11463,12 +12317,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -11553,8 +12407,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 16,
-        "summary": "距最近一次测试约 16 天。"
+        "daysSinceTest": 17,
+        "summary": "距最近一次测试约 17 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T18:30:44.014854+08:00",
@@ -11780,8 +12634,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:26:26.172566+08:00",
@@ -11995,8 +12849,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T12:28:06.229284+08:00",
@@ -12007,6 +12861,213 @@
         "checksTotal": 2
       },
       "reportUrl": "reports/fresh-knowledgeops-agent-codex-plugin-cc-worker-smoke.html"
+    },
+    {
+      "id": "fresh-kubernaut-caveman-worker-smoke",
+      "title": "kubernaut + caveman",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一份 Helm 架构参考生成要求和待分析的项目代码。、想得到一份经过压缩的 Helm 架构参考回复及其 token 指标。时，省去手工精简 kubernaut 产出内容的步骤，并帮助用户根据 token 指标判断回复体量。",
+      "readerScenario": {
+        "input": "一份 Helm 架构参考生成要求和待分析的项目代码。",
+        "outcome": "一份经过压缩的 Helm 架构参考回复及其 token 指标。",
+        "value": "省去手工精简 kubernaut 产出内容的步骤，并帮助用户根据 token 指标判断回复体量。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "手上已有 Helm 架构参考要求和项目代码，希望先生成参考内容、再压缩回复并查看 token 指标的开发者。",
+      "useCase": "用户提供 Helm 架构参考生成要求和待分析的项目代码后，kubernaut 先生成架构参考内容，caveman 再接手压缩该内容并给出 token 指标，省去用户手工精简回复的步骤，也便于判断回复体量。",
+      "testMethod": "运行 kubernaut 仓库自带的 Helm 架构参考生成器，将其实际产出交给 caveman，再检查前一步产出是否非空以及压缩是否成功。",
+      "testOutcome": "两个工具均成功运行；caveman 使用了 kubernaut 生成的非空架构参考内容并完成压缩，2 项检查全部通过。",
+      "tools": [
+        {
+          "name": "kubernaut",
+          "url": "https://github.com/jordigilh/kubernaut",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:09.753434+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:09.753434+08:00"
+          },
+          "hub": {
+            "score": 98,
+            "level": "核心枢纽",
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 kubernaut",
+          "type": "单工具加手工精简",
+          "fit": "只需要生成 Helm 架构参考内容，不要求由 caveman 压缩时可采用。",
+          "tradeoff": "用户需要自行精简 kubernaut 的产出，也不会获得 caveman 提供的 token 指标。"
+        }
+      ],
+      "whyComboStillMatters": "kubernaut 负责生成 Helm 架构参考内容，caveman 负责压缩这份内容并提供 token 指标。只用 kubernaut 需要用户自行精简产出；只用 caveman 则没有前置的架构参考内容可供处理。",
+      "category": "部署运维与安全",
+      "primaryCategory": "部署运维与安全",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "不部署 Kubernetes",
+        "不连接集群",
+        "非洁净环境验证",
+        "规模未验证",
+        "外部 API Key"
+      ],
+      "suitableFor": "手上已有 Helm 架构参考要求和项目代码，希望先生成参考内容、再压缩回复并查看 token 指标的开发者。",
+      "notFor": "需要实际部署 Kubernetes、连接集群，或要求已验证洁净环境和大规模处理能力的用户。",
+      "maxBenefit": "用户提供 Helm 架构参考生成要求和待分析的项目代码后，kubernaut 先生成架构参考内容，caveman 再接手压缩该内容并给出 token 指标，省去用户手工精简回复的步骤，也便于判断回复体量。",
+      "maxLimit": "目前只验证了 kubernaut 仓库自带的 Helm 架构参考生成器与 caveman 的压缩衔接；不会部署 Kubernetes，也不会连接 Kubernetes 集群。测试环境并非洁净环境，处理规模以及其他环境下的表现均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:15:09.753434+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-kubernaut-caveman-worker-smoke.html"
     },
     {
       "id": "fresh-lamprey-harness-caveman-worker-smoke",
@@ -12110,14 +13171,14 @@
             "verifiedAt": "2026-08-07T11:32:30.489463+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -12210,8 +13271,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 3,
-        "summary": "距最近一次测试约 3 天。"
+        "daysSinceTest": 4,
+        "summary": "距最近一次测试约 4 天。"
       },
       "verification": {
         "testedAt": "2026-08-07T11:32:30.489463+08:00",
@@ -12327,12 +13388,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12417,8 +13478,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 17,
-        "summary": "距最近一次测试约 17 天。"
+        "daysSinceTest": 18,
+        "summary": "距最近一次测试约 18 天。"
       },
       "verification": {
         "testedAt": "2026-07-24T09:24:27.893397+08:00",
@@ -12429,6 +13490,212 @@
         "checksTotal": 7
       },
       "reportUrl": "reports/fresh-llm4ad-next-headroom-worker-smoke.html"
+    },
+    {
+      "id": "fresh-mcplex-caveman-worker-smoke",
+      "title": "mcplex + caveman",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有用户手上已有一份待分析的程序代码，以及希望了解其架构的具体文字要求。、想得到用户最终获得一份压缩后的架构分析答复，以及对应的 token 数量指标。时，这套组合帮助用户完成从程序代码生成架构说明、再压缩成精简答复的接力，省去自行删减长篇说明并另行统计 token 数量的步骤。",
+      "readerScenario": {
+        "input": "用户手上已有一份待分析的程序代码，以及希望了解其架构的具体文字要求。",
+        "outcome": "用户最终获得一份压缩后的架构分析答复，以及对应的 token 数量指标。",
+        "value": "这套组合帮助用户完成从程序代码生成架构说明、再压缩成精简答复的接力，省去自行删减长篇说明并另行统计 token 数量的步骤。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "适合希望从现有程序代码获得精简架构分析答复，并同时查看 token 数量指标的个人用户和小团队。",
+      "useCase": "用户把待分析的程序代码和具体分析要求交给 mcplex，由它生成架构分析说明；caveman 接收这份说明并压缩，交付精简版架构分析答复和 token 数量指标，省去用户自行压缩长篇架构说明并另行统计文本用量的步骤。",
+      "testMethod": "先让 mcplex 根据程序代码和分析要求生成架构分析说明，再把这份说明交给 caveman 压缩，最后逐项核对架构说明的传递、精简答复和 token 数量指标。",
+      "testOutcome": "mcplex 与 caveman 均成功运行，caveman 确实使用了 mcplex 生成的架构分析说明；架构说明传递和内容压缩两项检查全部通过。",
+      "tools": [
+        {
+          "name": "mcplex",
+          "url": "https://github.com/ModernOps888/mcplex",
+          "role": "采集/输入",
+          "inputs": [
+            "prompt",
+            "source code",
+            "json"
+          ],
+          "outputs": [
+            "json",
+            "report",
+            "logs"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:17.806820+08:00"
+          },
+          "hub": {
+            "score": 40,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 14,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "caveman",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "role": "输出/交付",
+          "inputs": [
+            "json",
+            "report",
+            "draft response"
+          ],
+          "outputs": [
+            "compressed response",
+            "token metrics"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "交付"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:17.806820+08:00"
+          },
+          "hub": {
+            "score": 98,
+            "level": "核心枢纽",
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "单独使用 mcplex",
+          "type": "单工具加人工整理",
+          "fit": "适合只需要程序架构说明、不要求自动压缩和 token 数量指标的情况。",
+          "tradeoff": "用户需要自行精简 mcplex 生成的架构说明，也无法获得本次已验证的 caveman 压缩结果和 token 数量指标。"
+        }
+      ],
+      "whyComboStillMatters": "mcplex 负责从程序代码和分析要求形成架构分析说明，caveman 负责压缩这份说明并给出 token 数量指标。只用 mcplex 不能获得已验证的压缩交付，只用 caveman 则缺少由 mcplex 生成并已成功传入的架构分析说明。",
+      "category": "开发与 Agent",
+      "primaryCategory": "开发与 Agent",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "交付",
+        "采集",
+        "分析",
+        "协作"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "需要公网下载",
+        "系统与处理器范围有限",
+        "规模及全新环境未验证",
+        "外部 API Key"
+      ],
+      "suitableFor": "适合希望从现有程序代码获得精简架构分析答复，并同时查看 token 数量指标的个人用户和小团队。",
+      "notFor": "不适合无法访问公网、使用未覆盖的操作系统或处理器架构，或者要求大规模处理能力及全新环境表现已有验证的用户。",
+      "maxBenefit": "用户把待分析的程序代码和具体分析要求交给 mcplex，由它生成架构分析说明；caveman 接收这份说明并压缩，交付精简版架构分析答复和 token 数量指标，省去用户自行压缩长篇架构说明并另行统计文本用量的步骤。",
+      "maxLimit": "需要通过公网下载固定的 mcplex v0.7.1；已覆盖的发布包只有 macOS arm64、macOS x86_64 和 Linux x86_64。此次测试并非在全新环境中完成，处理规模上限以及其他操作系统和处理器架构均未验证。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 14,
+        "level": "低摩擦",
+        "factors": [
+          {
+            "label": "外部 API Key",
+            "weight": 14
+          }
+        ],
+        "summary": "安装和配置成本相对可控。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:15:17.806820+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-mcplex-caveman-worker-smoke.html"
     },
     {
       "id": "fresh-meshmonitor-headroom-worker-smoke",
@@ -12539,12 +13806,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -12632,8 +13899,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 3,
-        "summary": "距最近一次测试约 3 天。"
+        "daysSinceTest": 4,
+        "summary": "距最近一次测试约 4 天。"
       },
       "verification": {
         "testedAt": "2026-08-07T11:31:53.115347+08:00",
@@ -12841,8 +14108,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 13,
-        "summary": "距最近一次测试约 13 天。"
+        "daysSinceTest": 14,
+        "summary": "距最近一次测试约 14 天。"
       },
       "verification": {
         "testedAt": "2026-07-28T19:29:26.051112+08:00",
@@ -13050,8 +14317,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:52:36.908454+08:00",
@@ -13165,14 +14432,14 @@
             "verifiedAt": "2026-07-21T20:39:28.528586+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -13262,8 +14529,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:39:28.528586+08:00",
@@ -13379,14 +14646,14 @@
             "verifiedAt": "2026-08-03T12:31:34.322686+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -13470,8 +14737,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 7,
-        "summary": "距最近一次测试约 7 天。"
+        "daysSinceTest": 8,
+        "summary": "距最近一次测试约 8 天。"
       },
       "verification": {
         "testedAt": "2026-08-03T12:31:34.322686+08:00",
@@ -13592,12 +14859,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -13682,8 +14949,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 20,
-        "summary": "距最近一次测试约 20 天。"
+        "daysSinceTest": 21,
+        "summary": "距最近一次测试约 21 天。"
       },
       "verification": {
         "testedAt": "2026-07-21T20:43:50.133852+08:00",
@@ -13895,8 +15162,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 4,
-        "summary": "距最近一次测试约 4 天。"
+        "daysSinceTest": 5,
+        "summary": "距最近一次测试约 5 天。"
       },
       "verification": {
         "testedAt": "2026-08-06T10:42:12.282963+08:00",
@@ -14016,12 +15283,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -14111,8 +15378,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 4,
-        "summary": "距最近一次测试约 4 天。"
+        "daysSinceTest": 5,
+        "summary": "距最近一次测试约 5 天。"
       },
       "verification": {
         "testedAt": "2026-08-06T10:42:01.827191+08:00",
@@ -14229,12 +15496,12 @@
           "hub": {
             "score": 97,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
+            "verifiedComboCount": 12,
+            "partnerCount": 12,
             "categoryCount": 4,
             "deepTestSuccessRate": 100,
-            "averageFriction": 29,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 30,
+            "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
           }
         }
       ],
@@ -14327,8 +15594,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 16,
-        "summary": "距最近一次测试约 16 天。"
+        "daysSinceTest": 17,
+        "summary": "距最近一次测试约 17 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T20:13:59.063896+08:00",
@@ -14339,6 +15606,220 @@
         "checksTotal": 6
       },
       "reportUrl": "reports/fresh-twiligent-headroom-worker-smoke.html"
+    },
+    {
+      "id": "fresh-usecli-deeptrans-studio-worker-smoke",
+      "title": "deeptrans-studio + usecli",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "有一份需要提取文字的 PDF 文档，以及一份供 usecli 使用的配置。、想得到一份由 usecli 根据既定配置生成、内容源自该 PDF 的文本。时，省去用户先手工提取 PDF 文字、再复制给 usecli 的步骤，并通过两项检查确认 PDF 文字已被正确传入并产生了对应文本。",
+      "readerScenario": {
+        "input": "一份需要提取文字的 PDF 文档，以及一份供 usecli 使用的配置。",
+        "outcome": "一份由 usecli 根据既定配置生成、内容源自该 PDF 的文本。",
+        "value": "省去用户先手工提取 PDF 文字、再复制给 usecli 的步骤，并通过两项检查确认 PDF 文字已被正确传入并产生了对应文本。"
+      },
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "手上已有 PDF 文档和 usecli 配置，希望把 PDF 文字提取与配置化文本执行连接起来的个人用户或小团队。",
+      "useCase": "用户准备一份 PDF 文档和 usecli 配置；deeptrans-studio 先从 PDF 生成文本，usecli 再接收这份文本并依据配置产出新的文本内容，省去人工提取和复制 PDF 文字的步骤，并可确认两个工具之间确实完成了内容传递。",
+      "testMethod": "先让 deeptrans-studio 处理 PDF 并生成实际文本，再将同一份文本交给 usecli 配合配置执行，最后分别核对文本是否成功传入，以及 usecli 是否产出了对应内容。",
+      "testOutcome": "deeptrans-studio 与 usecli 均成功运行，usecli 确实使用了 deeptrans-studio 生成的文本，两项结果检查全部通过。",
+      "tools": [
+        {
+          "name": "deeptrans-studio",
+          "url": "https://github.com/hint-lab/deeptrans-studio",
+          "role": "采集/输入",
+          "inputs": [
+            "pdf"
+          ],
+          "outputs": [
+            "markdown",
+            "text",
+            "json"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "文档与知识",
+          "domains": [
+            "文档与知识",
+            "开发与 Agent"
+          ],
+          "tasks": [
+            "测试",
+            "采集"
+          ],
+          "audiences": [
+            "知识工作者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:43.161979+08:00"
+          },
+          "hub": {
+            "score": 38,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "usecli",
+          "url": "https://github.com/thememium/usecli",
+          "role": "自动执行",
+          "inputs": [
+            "text",
+            "configuration"
+          ],
+          "outputs": [
+            "text",
+            "json"
+          ],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-08-11T12:15:43.161979+08:00"
+          },
+          "hub": {
+            "score": 38,
+            "level": "有潜力",
+            "verifiedComboCount": 1,
+            "partnerCount": 1,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 30,
+            "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "deeptrans-studio 加手工整理",
+          "type": "单工具替代",
+          "fit": "只需要从 PDF 提取文字，不需要 usecli 配置化执行的用户。",
+          "tradeoff": "可不安装 usecli，但用户需要自行复制、整理并保存 deeptrans-studio 提取出的文字。"
+        }
+      ],
+      "whyComboStillMatters": "deeptrans-studio 负责把 PDF 转成 usecli 可以接收的文本，usecli 负责结合配置继续执行并产出文本内容。只用 deeptrans-studio 会停在 PDF 文字提取阶段；只用 usecli，则没有证据表明它能直接接收 PDF，因此仍需先准备文本。",
+      "category": "文档与知识",
+      "primaryCategory": "文档与知识",
+      "domains": [
+        "开发与 Agent",
+        "文档与知识",
+        "团队协作与沟通",
+        "科研与教育"
+      ],
+      "tasks": [
+        "测试",
+        "采集",
+        "分析",
+        "协作",
+        "交付"
+      ],
+      "audiences": [
+        "开发者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "强推荐",
+      "caveatTags": [
+        "仅验证 Node.js 26",
+        "需要访问公共包源",
+        "未在干净环境验证",
+        "未做规模测试",
+        "安装摩擦",
+        "PDF 表格风险",
+        "大文件未验证"
+      ],
+      "suitableFor": "手上已有 PDF 文档和 usecli 配置，希望把 PDF 文字提取与配置化文本执行连接起来的个人用户或小团队。",
+      "notFor": "需要离线安装依赖、要求在全新干净环境中已有验证，或准备批量处理大量 PDF 的用户；这些情形目前没有得到验证。",
+      "maxBenefit": "用户准备一份 PDF 文档和 usecli 配置；deeptrans-studio 先从 PDF 生成文本，usecli 再接收这份文本并依据配置产出新的文本内容，省去人工提取和复制 PDF 文字的步骤，并可确认两个工具之间确实完成了内容传递。",
+      "maxLimit": "目前要求 Node.js 支持“--experimental-strip-types”，只在 Node.js 26 上完成过验证，其他版本未验证。每次在新建的独立环境中运行时，还需要连接公共包源以安装 usecli 声明的依赖。此次并非在干净环境中验证，也没有测试批量规模、其他操作系统或更多环境组合。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+      "demandValidation": {
+        "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+        "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+        "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+        "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+        "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 86,
+        "missingProof": [
+          "缺少为什么不用单体工具的解释"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 30,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "安装摩擦",
+            "weight": 14
+          },
+          {
+            "label": "PDF 表格风险",
+            "weight": 8
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 0,
+        "summary": "距最近一次测试约 0 天。"
+      },
+      "verification": {
+        "testedAt": "2026-08-11T12:15:43.161979+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 2,
+        "checksTotal": 2
+      },
+      "reportUrl": "reports/fresh-usecli-deeptrans-studio-worker-smoke.html"
     },
     {
       "id": "fresh-vault-operator-caveman-worker-smoke",
@@ -14442,14 +15923,14 @@
             "verifiedAt": "2026-07-26T09:23:08.880020+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -14538,8 +16019,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 15,
-        "summary": "距最近一次测试约 15 天。"
+        "daysSinceTest": 16,
+        "summary": "距最近一次测试约 16 天。"
       },
       "verification": {
         "testedAt": "2026-07-26T09:23:08.880020+08:00",
@@ -14747,8 +16228,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T01:52:01.192064+08:00",
@@ -14864,14 +16345,14 @@
             "verifiedAt": "2026-07-25T19:04:44.476265+08:00"
           },
           "hub": {
-            "score": 97,
+            "score": 98,
             "level": "核心枢纽",
-            "verifiedComboCount": 11,
-            "partnerCount": 11,
-            "categoryCount": 4,
+            "verifiedComboCount": 15,
+            "partnerCount": 15,
+            "categoryCount": 5,
             "deepTestSuccessRate": 100,
-            "averageFriction": 26,
-            "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+            "averageFriction": 24,
+            "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
           }
         }
       ],
@@ -14956,8 +16437,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 16,
-        "summary": "距最近一次测试约 16 天。"
+        "daysSinceTest": 17,
+        "summary": "距最近一次测试约 17 天。"
       },
       "verification": {
         "testedAt": "2026-07-25T19:04:44.476265+08:00",
@@ -15152,8 +16633,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 28,
-        "summary": "距最近一次测试约 28 天。"
+        "daysSinceTest": 29,
+        "summary": "距最近一次测试约 29 天。"
       },
       "verification": {
         "testedAt": "2026-07-13T18:27:40.076712+08:00",
@@ -15385,8 +16866,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T23:56:43.452063+08:00",
@@ -15604,8 +17085,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 25,
-        "summary": "距最近一次测试约 25 天。"
+        "daysSinceTest": 26,
+        "summary": "距最近一次测试约 26 天。"
       },
       "verification": {
         "testedAt": "2026-07-16T16:15:47.687264+08:00",
@@ -15807,8 +17288,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T19:43:46.948849+08:00",
@@ -16008,8 +17489,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:17:37.166519+08:00",
@@ -16211,8 +17692,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:18:32.190203+08:00",
@@ -16416,8 +17897,8 @@
       },
       "retestFreshness": {
         "status": "新鲜",
-        "daysSinceTest": 27,
-        "summary": "距最近一次测试约 27 天。"
+        "daysSinceTest": 28,
+        "summary": "距最近一次测试约 28 天。"
       },
       "verification": {
         "testedAt": "2026-07-14T18:20:16.846346+08:00",
@@ -16428,16 +17909,225 @@
         "checksTotal": 2
       },
       "reportUrl": "reports/ui5-mcp-playwright-fresh-deep-worker-smoke.html"
+    },
+    {
+      "id": "yt-dlp-chattts-public-seed-worker-smoke",
+      "title": "yt-dlp + ChatTTS",
+      "publicFeatured": false,
+      "publicFeaturedRank": null,
+      "summary": "下载视频及其说明文字后生成一份可听的语音复习稿，适合课程、访谈和公开视频资料的二次整理。",
+      "readerScenario": {},
+      "evidenceScore": 85,
+      "evidenceLevel": "L3-caveat",
+      "audience": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+      "useCase": "公开视频资料下载、说明文字留档和语音复习稿生成。",
+      "testMethod": "先用 yt-dlp 2026.7.4 从本地确定性视频页下载视频和说明文字，再把当次下载得到的文字交给 ChatTTS 合成为 WAV 音频。",
+      "testOutcome": "yt-dlp 成功生成视频、元数据和文字交接文件，ChatTTS 成功读取该文字并生成 WAV；4 项交接与结果检查全部通过。",
+      "tools": [
+        {
+          "name": "yt-dlp",
+          "url": "https://github.com/yt-dlp/yt-dlp",
+          "role": "采集/输入",
+          "inputs": [],
+          "outputs": [],
+          "interface": "",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "开发与 Agent",
+          "domains": [
+            "开发与 Agent",
+            "内容与媒体",
+            "文档与知识",
+            "团队协作与沟通"
+          ],
+          "tasks": [
+            "测试",
+            "采集",
+            "生成"
+          ],
+          "audiences": [
+            "开发者"
+          ],
+          "traits": [
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-15T10:27:06.791084+08:00"
+          },
+          "hub": {
+            "score": 57,
+            "level": "高适配",
+            "verifiedComboCount": 3,
+            "partnerCount": 3,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 63,
+            "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+          }
+        },
+        {
+          "name": "ChatTTS",
+          "url": "https://github.com/2noise/ChatTTS",
+          "role": "自动执行",
+          "inputs": [
+            "text"
+          ],
+          "outputs": [
+            "audio",
+            "wav"
+          ],
+          "interface": "CLI, SDK",
+          "setup": "",
+          "readme": "",
+          "evidenceLevel": "L3-caveat",
+          "primaryCategory": "内容与媒体",
+          "domains": [
+            "内容与媒体",
+            "开发与 Agent",
+            "团队协作与沟通",
+            "文档与知识"
+          ],
+          "tasks": [
+            "测试",
+            "生成"
+          ],
+          "audiences": [
+            "内容创作者"
+          ],
+          "traits": [
+            "CLI",
+            "已全链路实测"
+          ],
+          "testResults": {
+            "verifiedAt": "2026-07-15T10:27:06.791084+08:00"
+          },
+          "hub": {
+            "score": 68,
+            "level": "高适配",
+            "verifiedComboCount": 4,
+            "partnerCount": 4,
+            "categoryCount": 1,
+            "deepTestSuccessRate": 100,
+            "averageFriction": 65,
+            "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
+          }
+        }
+      ],
+      "alternatives": [
+        {
+          "name": "浏览器下载 + 系统朗读",
+          "type": "轻量替代",
+          "fit": "只偶尔处理一个公开视频，不需要批量、留档和中间产物的人",
+          "tradeoff": "操作更简单，但自动化、格式复查和批量处理能力较弱。"
+        }
+      ],
+      "whyComboStillMatters": "yt-dlp 负责可靠获取视频与元数据，ChatTTS 负责把确认后的文字变成音频；两者组合后才形成从在线资料到可听复习稿的交付链。",
+      "category": "内容与媒体",
+      "primaryCategory": "内容与媒体",
+      "domains": [
+        "内容与媒体",
+        "开发与 Agent",
+        "团队协作与沟通",
+        "文档与知识"
+      ],
+      "tasks": [
+        "测试",
+        "生成",
+        "采集",
+        "分析",
+        "交付"
+      ],
+      "audiences": [
+        "内容创作者",
+        "团队与企业"
+      ],
+      "traits": [
+        "CLI",
+        "已全链路实测"
+      ],
+      "collections": [
+        "已实测"
+      ],
+      "taxonomyVersion": "2026-07-multifacet-v1",
+      "recommendationLevel": "适合特定人群",
+      "caveatTags": [
+        "外部账号",
+        "大文件未验证",
+        "UI 未验证",
+        "业务输出打折"
+      ],
+      "suitableFor": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
+      "notFor": "需要绕过登录或版权限制、只想在线播放，或要求专业配音质量和自动生成完整视频字幕的人。",
+      "maxBenefit": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
+      "maxLimit": "使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。",
+      "retestStatus": "",
+      "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+      "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+      "demandValidation": {
+        "targetUser": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
+        "currentAlternative": "浏览器下载 + 系统朗读：操作更简单，但自动化、格式复查和批量处理能力较弱。",
+        "painPoint": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
+        "switchingReason": "yt-dlp 负责可靠获取视频与元数据，ChatTTS 负责把确认后的文字变成音频；两者组合后才形成从在线资料到可听复习稿的交付链。",
+        "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+        "confidence": "需求判断较强",
+        "confidenceScore": 90,
+        "missingProof": [
+          "还需要真实用户反馈确认是否愿意长期使用"
+        ]
+      },
+      "longTermUse": {
+        "summary": "",
+        "steps": [],
+        "tested": false
+      },
+      "installFrictionIndex": {
+        "score": 40,
+        "level": "中摩擦",
+        "factors": [
+          {
+            "label": "外部账号",
+            "weight": 10
+          },
+          {
+            "label": "大文件未验证",
+            "weight": 8
+          },
+          {
+            "label": "UI 未验证",
+            "weight": 6
+          },
+          {
+            "label": "业务输出打折",
+            "weight": 16
+          }
+        ],
+        "summary": "可试，但建议先按报告准备依赖和配置。"
+      },
+      "retestFreshness": {
+        "status": "新鲜",
+        "daysSinceTest": 27,
+        "summary": "距最近一次测试约 27 天。"
+      },
+      "verification": {
+        "testedAt": "2026-07-15T10:27:06.791084+08:00",
+        "method": "全链路实测",
+        "cleanEnvironment": false,
+        "scaleTested": false,
+        "checksPassed": 4,
+        "checksTotal": 4
+      },
+      "reportUrl": "reports/yt-dlp-chattts-public-seed-worker-smoke.html"
     }
   ],
   "evidence": {
-    "generatedAt": "2026-08-10T09:05:54.926191+08:00",
+    "generatedAt": "2026-08-11T12:22:47.669622+08:00",
     "summary": {
-      "total": 76,
+      "total": 84,
       "publicFeatured": 12,
-      "withReports": 76,
-      "withCaveatTags": 76,
-      "withInstallFrictionIndex": 76
+      "withReports": 84,
+      "withCaveatTags": 84,
+      "withInstallFrictionIndex": 84
     },
     "items": [
       {
@@ -16531,8 +18221,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 16,
-          "summary": "距最近一次测试约 16 天。"
+          "daysSinceTest": 17,
+          "summary": "距最近一次测试约 17 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16651,8 +18341,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16787,8 +18477,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -16927,8 +18617,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 16,
-          "summary": "距最近一次测试约 16 天。"
+          "daysSinceTest": 17,
+          "summary": "距最近一次测试约 17 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17037,8 +18727,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -17157,8 +18847,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17264,8 +18954,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17384,8 +19074,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17487,8 +19177,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -17608,8 +19298,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -17718,8 +19408,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -17747,29 +19437,29 @@
         }
       },
       {
-        "id": "yt-dlp-chattts-public-seed-worker-smoke",
-        "title": "yt-dlp + ChatTTS",
+        "id": "fresh-engram-gitsocial-worker-smoke",
+        "title": "engram + gitsocial",
         "tools": [
-          "yt-dlp",
-          "ChatTTS"
+          "engram",
+          "gitsocial"
         ],
         "evidenceScore": 85,
         "evidenceLevel": "L3-caveat",
-        "useCase": "公开视频资料下载、说明文字留档和语音复习稿生成。",
+        "useCase": "用户准备一组放在本地待导入区的媒体占位文件和相关配置后，engram 先扫描并分类，gitsocial 再使用它产生的文字创建一条本地社交帖子。这套组合省去在 gitsocial 中重新录入同一段文字，并帮助用户判断媒体分类内容能否衔接到本地帖子创建。",
         "category": "内容与媒体",
         "primaryCategory": "内容与媒体",
         "domains": [
           "内容与媒体",
-          "团队协作与沟通",
+          "开发与 Agent",
           "自动化与业务流程",
           "部署运维与安全"
         ],
         "tasks": [
-          "生成",
           "测试",
-          "交付",
           "采集",
-          "分析"
+          "交付",
+          "分析",
+          "编排"
         ],
         "audiences": [
           "内容创作者",
@@ -17783,73 +19473,66 @@
           "已实测"
         ],
         "taxonomyVersion": "2026-07-multifacet-v1",
-        "recommendationLevel": "适合特定人群",
-        "suitableFor": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
-        "notFor": "需要绕过登录或版权限制、只想在线播放，或要求专业配音质量和自动生成完整视频字幕的人。",
-        "maxBenefit": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
-        "maxLimit": "使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "手头已有本地媒体占位文件和相关配置，想验证扫描分类内容能否用于创建一条本地社交帖子的个人用户或小团队。",
+        "notFor": "需要读取真实光学设备、调用外部元数据服务、登录远端平台、推送或拉取内容、衔接其他工作流，或者要求已有大规模使用验证的人。",
+        "maxBenefit": "用户准备一组放在本地待导入区的媒体占位文件和相关配置后，engram 先扫描并分类，gitsocial 再使用它产生的文字创建一条本地社交帖子。这套组合省去在 gitsocial 中重新录入同一段文字，并帮助用户判断媒体分类内容能否衔接到本地帖子创建。",
+        "maxLimit": "本次只使用固定预置的媒体占位文件测试了 engram 的本地待导入扫描与分类，并用 gitsocial 创建了一条本地社交帖子；未接入光学设备或外部元数据服务，也未验证推送、拉取、登录认证及其他工作流。测试环境并非全新环境，未进行规模测试，因此更多帖子、真实媒体和其他环境下的表现均未验证。",
         "caveatTags": [
-          "外部账号",
-          "大文件未验证",
-          "UI 未验证",
-          "业务输出打折"
+          "仅使用媒体占位文件",
+          "仅创建一条本地帖子",
+          "未验证远端推送与登录认证",
+          "未在全新环境中进行规模测试",
+          "外部账号"
         ],
         "alternatives": [
           {
-            "name": "浏览器下载 + 系统朗读",
-            "type": "轻量替代",
-            "fit": "只偶尔处理一个公开视频，不需要批量、留档和中间产物的人",
-            "tradeoff": "操作更简单，但自动化、格式复查和批量处理能力较弱。"
+            "name": "只用 gitsocial 手工建帖",
+            "type": "单工具手工方案",
+            "fit": "适合不需要 engram 扫描分类、只想根据手头文字创建一条本地社交帖子的人。",
+            "tradeoff": "需要自行整理并录入帖子文字，无法利用 engram 的本地待导入扫描与分类结果。"
           }
         ],
         "hasReport": true,
-        "reportUrl": "reports/yt-dlp-chattts-public-seed-worker-smoke.html",
+        "reportUrl": "reports/fresh-engram-gitsocial-worker-smoke.html",
         "verifiedAt": "",
-        "installFriction": [],
+        "installFriction": [
+          "测试环境并非全新环境",
+          "因此更多帖子、真实媒体和其他环境下的表现均未验证"
+        ],
         "installFrictionIndex": {
-          "score": 40,
-          "level": "中摩擦",
+          "score": 10,
+          "level": "低摩擦",
           "factors": [
             {
               "label": "外部账号",
               "weight": 10
-            },
-            {
-              "label": "大文件未验证",
-              "weight": 8
-            },
-            {
-              "label": "UI 未验证",
-              "weight": 6
-            },
-            {
-              "label": "业务输出打折",
-              "weight": 16
             }
           ],
-          "summary": "可试，但建议先按报告准备依赖和配置。"
+          "summary": "安装和配置成本相对可控。"
         },
         "caveats": [
-          "使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。"
+          "Exercises Engram’s local staging-import scan and classification path using deterministic seeded media placeholders; it does not access optical hardware, external metadata servic..."
         ],
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 26,
-          "summary": "距最近一次测试约 26 天。"
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
-        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
         "demandValidation": {
-          "targetUser": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
-          "currentAlternative": "浏览器下载 + 系统朗读：操作更简单，但自动化、格式复查和批量处理能力较弱。",
-          "painPoint": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
-          "switchingReason": "yt-dlp 负责可靠获取视频与元数据，ChatTTS 负责把确认后的文字变成音频；两者组合后才形成从在线资料到可听复习稿的交付链。",
-          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
-          "confidence": "需求判断较强",
-          "confidenceScore": 90,
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "部署和维护成本偏高，只适合强需求用户。",
+          "confidence": "需求判断中等",
+          "confidenceScore": 66,
           "missingProof": [
-            "还需要真实用户反馈确认是否愿意长期使用"
+            "缺少为什么不用单体工具的解释",
+            "上手成本较高，需要确认用户是否愿意折腾"
           ]
         },
         "longTermUse": {
@@ -17954,8 +19637,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 14,
+          "summary": "距最近一次测试约 14 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18055,8 +19738,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -18196,8 +19879,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18316,8 +19999,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18458,8 +20141,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 40,
-          "summary": "距最近一次测试约 40 天。"
+          "daysSinceTest": 41,
+          "summary": "距最近一次测试约 41 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18597,8 +20280,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18704,8 +20387,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 26,
-          "summary": "距最近一次测试约 26 天。"
+          "daysSinceTest": 27,
+          "summary": "距最近一次测试约 27 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -18824,8 +20507,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -18971,8 +20654,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19110,8 +20793,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19242,8 +20925,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19369,8 +21052,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19488,8 +21171,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19613,8 +21296,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 28,
-          "summary": "距最近一次测试约 28 天。"
+          "daysSinceTest": 29,
+          "summary": "距最近一次测试约 29 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19732,8 +21415,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19858,8 +21541,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -19984,8 +21667,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20099,11 +21782,11 @@
           "最新版 shadcn registry 在本轮环境里出现 `Connect Timeout Error`，需要重试、代理或使用稳定旧版本。",
           "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
         ],
-        "retestStatus": "新鲜",
+        "retestStatus": "需复查",
         "retestFreshness": {
-          "status": "新鲜",
-          "daysSinceTest": 30,
-          "summary": "距最近一次测试约 30 天。"
+          "status": "需复查",
+          "daysSinceTest": 31,
+          "summary": "距最近一次测试约 31 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20221,8 +21904,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20335,8 +22018,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 28,
-          "summary": "距最近一次测试约 28 天。"
+          "daysSinceTest": 29,
+          "summary": "距最近一次测试约 29 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20481,8 +22164,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20608,8 +22291,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20741,8 +22424,8 @@
         "retestStatus": "需复查",
         "retestFreshness": {
           "status": "需复查",
-          "daysSinceTest": 38,
-          "summary": "距最近一次测试约 38 天。"
+          "daysSinceTest": 39,
+          "summary": "距最近一次测试约 39 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20872,8 +22555,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 19,
-          "summary": "距最近一次测试约 19 天。"
+          "daysSinceTest": 20,
+          "summary": "距最近一次测试约 20 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -20992,8 +22675,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21113,8 +22796,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21129,6 +22812,132 @@
           "missingProof": [
             "缺少为什么不用单体工具的解释",
             "缺少完整组合闭环证据"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "comfyui-chattts-worker-smoke",
+        "title": "ComfyUI + ChatTTS",
+        "tools": [
+          "ComfyUI",
+          "ChatTTS"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "把一段需要转成语音的文字交给 ComfyUI 的 Markdown 导出节点，再由 ChatTTS 读取导出的文字并合成 WAV 音频。它省去手工复制这段文字到语音工具的步骤，也帮助用户判断两者能否实际衔接。",
+        "category": "内容与媒体",
+        "primaryCategory": "内容与媒体",
+        "domains": [
+          "内容与媒体",
+          "团队协作与沟通",
+          "设计与创意",
+          "文档与知识"
+        ],
+        "tasks": [
+          "生成",
+          "测试",
+          "交付",
+          "分析",
+          "采集"
+        ],
+        "audiences": [
+          "内容创作者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "高配置需求",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "手上有一段需要转成语音的文字，并希望验证 ComfyUI 导出内容能否交给 ChatTTS 生成短 WAV 音频的个人用户或小团队。",
+        "notFor": "需要验证图片生成、长篇文字完整合成、离线运行、大批量处理、不同硬件表现或正式业务环境的人。",
+        "maxBenefit": "把一段需要转成语音的文字交给 ComfyUI 的 Markdown 导出节点，再由 ChatTTS 读取导出的文字并合成 WAV 音频。它省去手工复制这段文字到语音工具的步骤，也帮助用户判断两者能否实际衔接。",
+        "maxLimit": "每次在新目录运行都需要通过公共网络安装 PyAV 16.0.1 和缺少的 Python 软件包，并下载 ChatTTS 模型权重。本次只验证了 ComfyUI 的真实 Markdown 导出节点，以及 ChatTTS 在 CPU 上把 Markdown 中前 240 个规范化后的可朗读字符合成为 WAV；图片生成不在验证范围内。测试并非在全新洁净环境完成，也没有验证处理规模、长文本、其他硬件或其他环境。",
+        "caveatTags": [
+          "仅处理前 240 个可朗读字符",
+          "每次新运行均需公共网络",
+          "仅验证 CPU 上的 Markdown 转 WAV",
+          "未验证图片生成与处理规模",
+          "安装摩擦",
+          "依赖缺失",
+          "模型下载大",
+          "大文件未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 ChatTTS",
+            "type": "手工处理",
+            "fit": "已经有 Markdown 文件，只需要把其中一小段文字合成为 WAV 音频。",
+            "tradeoff": "需要手工提取和整理可朗读文字，也无法验证 ChatTTS 与 ComfyUI Markdown 导出节点之间的衔接。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/comfyui-chattts-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "每次在新目录运行都需要通过公共网络安装 PyAV 16.0.1 和缺少的 Python 软件包",
+          "测试并非在全新洁净环境完成",
+          "也没有验证处理规模、长文本、其他硬件或其他环境"
+        ],
+        "installFrictionIndex": {
+          "score": 64,
+          "level": "高摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "依赖缺失",
+              "weight": 18
+            },
+            {
+              "label": "模型下载大",
+              "weight": 24
+            },
+            {
+              "label": "大文件未验证",
+              "weight": 8
+            }
+          ],
+          "summary": "需要预留安装、账号、依赖或机器配置成本。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "一体化剪辑或内容生产套件：上手更快，但自动化、批处理和局部替换能力较弱。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "值得排进候选或低成本试用，但还不适合作为主推。",
+          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 76,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
           ]
         },
         "longTermUse": {
@@ -21237,8 +23046,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21368,8 +23177,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 28,
-          "summary": "距最近一次测试约 28 天。"
+          "daysSinceTest": 29,
+          "summary": "距最近一次测试约 29 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21483,8 +23292,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21607,8 +23416,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21717,8 +23526,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 16,
-          "summary": "距最近一次测试约 16 天。"
+          "daysSinceTest": 17,
+          "summary": "距最近一次测试约 17 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -21845,8 +23654,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -21958,8 +23767,123 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 3,
-          "summary": "距最近一次测试约 3 天。"
+          "daysSinceTest": 4,
+          "summary": "距最近一次测试约 4 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-bansos-caveman-worker-smoke",
+        "title": "bansos + caveman",
+        "tools": [
+          "bansos",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "用户把一段待分析的程序代码和明确的分析要求交给 bansos，由它生成分析报告；caveman 接收这份报告，生成压缩后的答复和词元用量指标，省去用户自行精简报告的步骤，并帮助判断答复是否足够精简。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "团队协作与沟通",
+          "自动化与业务流程"
+        ],
+        "tasks": [
+          "交付",
+          "分析",
+          "测试",
+          "生成",
+          "协作"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "CLI",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "需要把程序代码的分析报告进一步压缩成简短答复，并查看词元用量指标的个人用户和小团队。",
+        "notFor": "无法提供 Node.js 20 或更高版本，或者必须先确认大体量代码、长报告及不同环境下表现的用户。",
+        "maxBenefit": "用户把一段待分析的程序代码和明确的分析要求交给 bansos，由它生成分析报告；caveman 接收这份报告，生成压缩后的答复和词元用量指标，省去用户自行精简报告的步骤，并帮助判断答复是否足够精简。",
+        "maxLimit": "必须安装 Node.js 20 或更高版本，并确保能从命令行直接调用。本次测试不是在干净环境中完成的，其他系统和依赖环境未验证；也未进行规模测试，可处理的程序代码长度、报告长度和任务数量上限均未验证。",
+        "caveatTags": [
+          "需 Node.js 20 或更高版本",
+          "未在干净环境中验证",
+          "未进行规模测试",
+          "安装摩擦",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 bansos 后人工精简",
+            "type": "手工替代",
+            "fit": "适合只需要程序代码分析报告、不要求自动生成压缩答复和词元用量指标的情况。",
+            "tradeoff": "需要用户自行删减和改写分析报告，也无法直接获得 caveman 提供的词元用量指标。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-bansos-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "必须安装 Node.js 20 或更高版本",
+          "本次测试不是在干净环境中完成的",
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "installFrictionIndex": {
+          "score": 28,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "Requires Node.js 20 or newer on PATH."
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22079,8 +24003,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22193,8 +24117,113 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-claude-code-agent-monitor-caveman-worker-smoke",
+        "title": "Claude-Code-Agent-Monitor + caveman",
+        "tools": [
+          "Claude-Code-Agent-Monitor",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "Claude-Code-Agent-Monitor 先处理用户已有的任务说明和相关程序文件，生成结构化记录与检查说明；caveman 接收同一份产物，给出压缩后的回复和词元统计。这套组合省去在两个工具之间手工重录前段产物的步骤，并帮助用户查看回复压缩后的词元用量。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "获取与监测",
+          "数据与分析",
+          "部署运维与安全"
+        ],
+        "tasks": [
+          "测试",
+          "监测",
+          "交付",
+          "分析",
+          "生成"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合手上已有任务说明和相关程序文件，希望先取得结构化记录，再获得压缩回复与词元统计的个人用户或小团队。",
+        "notFor": "不适合必须确认全新环境表现、最大处理规模，或需要大规模使用证据的用户。",
+        "maxBenefit": "Claude-Code-Agent-Monitor 先处理用户已有的任务说明和相关程序文件，生成结构化记录与检查说明；caveman 接收同一份产物，给出压缩后的回复和词元统计。这套组合省去在两个工具之间手工重录前段产物的步骤，并帮助用户查看回复压缩后的词元用量。",
+        "maxLimit": "现有验证没有列出明确的功能限制，但测试并非在全新环境中完成，也没有进行规模测试；最大可处理规模以及其他环境中的表现均未验证。",
+        "caveatTags": [
+          "未在全新环境验证",
+          "未进行规模测试",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 Claude-Code-Agent-Monitor 后手工整理",
+            "type": "单工具加人工处理",
+            "fit": "适合只需要结构化记录与检查说明，且愿意自行整理简短回复的用户。",
+            "tradeoff": "用户需要手工压缩回复并另行计算词元用量，无法获得本次已验证的两工具接力。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-claude-code-agent-monitor-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "但测试并非在全新环境中完成",
+          "最大可处理规模以及其他环境中的表现均未验证"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22319,8 +24348,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22432,8 +24461,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 18,
-          "summary": "距最近一次测试约 18 天。"
+          "daysSinceTest": 19,
+          "summary": "距最近一次测试约 19 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22540,8 +24569,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 4,
-          "summary": "距最近一次测试约 4 天。"
+          "daysSinceTest": 5,
+          "summary": "距最近一次测试约 5 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22664,8 +24693,131 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-gt-office-headroom-worker-smoke",
+        "title": "GT-Office + headroom",
+        "tools": [
+          "GT-Office",
+          "headroom"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。",
+        "category": "部署运维与安全",
+        "primaryCategory": "部署运维与安全",
+        "domains": [
+          "数据与分析",
+          "部署运维与安全",
+          "开发与 Agent",
+          "文档与知识"
+        ],
+        "tasks": [
+          "测试",
+          "交付",
+          "分析",
+          "检索",
+          "生成"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "CLI",
+          "桌面应用",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "适合手上已有包含 INFO、WARN 和 SQLSTATE ERROR 的服务日志，希望先形成事故线索，再压缩内容并判断排查优先级的个人用户或小团队。",
+        "notFor": "不适合要求已验证桌面界面、实时终端、桌面桥接网络、外部代理命令行、大规模日志、实时流或多服务关联处理的场景。",
+        "maxBenefit": "GT-Office 先处理用户已有的80条固定服务日志，包括 INFO、WARN 和 SQLSTATE ERROR 记录；headroom 再接收其产出，生成按严重程度优先排列、保留 SQLSTATE 错误码和检索线索的精简排查上下文，省去人工逐条筛选记录、摘取错误码和排序问题优先级的步骤。",
+        "maxLimit": "本次只在未启动 Tauri 桌面界面的情况下测试了 GT-Office 的活动、Git 状态、超时和变更错误相关模型功能。使用的是80条固定服务日志，覆盖 INFO、WARN 和 SQLSTATE ERROR；没有覆盖实时终端、桌面桥接网络、外部代理命令行、百万行日志、实时流和多服务关联。headroom 0.31.0 的 SmartCrusher 会间接导入 httpx，但安装包未声明该依赖，因此测试时需要显式安装并预检 httpx。测试环境并非全新环境，也没有进行规模测试；其他规模和环境均未验证。",
+        "caveatTags": [
+          "仅测试80条固定服务日志",
+          "未启动桌面界面",
+          "需显式安装 httpx",
+          "未验证大规模与实时场景",
+          "安装摩擦",
+          "UI 未验证",
+          "业务输出打折"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 GT-Office 后人工整理",
+            "type": "手工替代方案",
+            "fit": "适合日志量较小、愿意自行审阅 GT-Office 产出的用户。",
+            "tradeoff": "需要人工删减重复内容、保留 SQLSTATE 错误码，并按严重程度排列排查顺序。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-gt-office-headroom-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "因此测试时需要显式安装并预检 httpx",
+          "测试环境并非全新环境",
+          "其他规模和环境均未验证",
+          "自动测试程序 会显式安装并预检 httpx"
+        ],
+        "installFrictionIndex": {
+          "score": 36,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
+            },
+            {
+              "label": "业务输出打折",
+              "weight": 16
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -22771,8 +24923,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 4,
-          "summary": "距最近一次测试约 4 天。"
+          "daysSinceTest": 5,
+          "summary": "距最近一次测试约 5 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -22881,8 +25033,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 16,
-          "summary": "距最近一次测试约 16 天。"
+          "daysSinceTest": 17,
+          "summary": "距最近一次测试约 17 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23011,8 +25163,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -23126,8 +25278,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -23139,6 +25291,115 @@
           "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
           "confidence": "需求判断较强",
           "confidenceScore": 78,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-kubernaut-caveman-worker-smoke",
+        "title": "kubernaut + caveman",
+        "tools": [
+          "kubernaut",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "用户提供 Helm 架构参考生成要求和待分析的项目代码后，kubernaut 先生成架构参考内容，caveman 再接手压缩该内容并给出 token 指标，省去用户手工精简回复的步骤，也便于判断回复体量。",
+        "category": "部署运维与安全",
+        "primaryCategory": "部署运维与安全",
+        "domains": [
+          "开发与 Agent",
+          "部署运维与安全",
+          "自动化与业务流程",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "测试",
+          "生成",
+          "部署",
+          "分析",
+          "交付"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "手上已有 Helm 架构参考要求和项目代码，希望先生成参考内容、再压缩回复并查看 token 指标的开发者。",
+        "notFor": "需要实际部署 Kubernetes、连接集群，或要求已验证洁净环境和大规模处理能力的用户。",
+        "maxBenefit": "用户提供 Helm 架构参考生成要求和待分析的项目代码后，kubernaut 先生成架构参考内容，caveman 再接手压缩该内容并给出 token 指标，省去用户手工精简回复的步骤，也便于判断回复体量。",
+        "maxLimit": "目前只验证了 kubernaut 仓库自带的 Helm 架构参考生成器与 caveman 的压缩衔接；不会部署 Kubernetes，也不会连接 Kubernetes 集群。测试环境并非洁净环境，处理规模以及其他环境下的表现均未验证。",
+        "caveatTags": [
+          "不部署 Kubernetes",
+          "不连接集群",
+          "非洁净环境验证",
+          "规模未验证",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 kubernaut",
+            "type": "单工具加手工精简",
+            "fit": "只需要生成 Helm 架构参考内容，不要求由 caveman 压缩时可采用。",
+            "tradeoff": "用户需要自行精简 kubernaut 的产出，也不会获得 caveman 提供的 token 指标。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-kubernaut-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "测试环境并非洁净环境",
+          "处理规模以及其他环境下的表现均未验证"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "Executes Kubernaut’s repository-owned Helm architecture-reference generator; it does not deploy or contact a Kubernetes cluster."
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
           "missingProof": [
             "缺少为什么不用单体工具的解释"
           ]
@@ -23242,8 +25503,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 3,
-          "summary": "距最近一次测试约 3 天。"
+          "daysSinceTest": 4,
+          "summary": "距最近一次测试约 4 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -23352,8 +25613,115 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 17,
-          "summary": "距最近一次测试约 17 天。"
+          "daysSinceTest": 18,
+          "summary": "距最近一次测试约 18 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-mcplex-caveman-worker-smoke",
+        "title": "mcplex + caveman",
+        "tools": [
+          "mcplex",
+          "caveman"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "用户把待分析的程序代码和具体分析要求交给 mcplex，由它生成架构分析说明；caveman 接收这份说明并压缩，交付精简版架构分析答复和 token 数量指标，省去用户自行压缩长篇架构说明并另行统计文本用量的步骤。",
+        "category": "开发与 Agent",
+        "primaryCategory": "开发与 Agent",
+        "domains": [
+          "开发与 Agent",
+          "数据与分析",
+          "部署运维与安全",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "分析",
+          "测试",
+          "交付",
+          "生成",
+          "采集"
+        ],
+        "audiences": [
+          "开发者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "适合希望从现有程序代码获得精简架构分析答复，并同时查看 token 数量指标的个人用户和小团队。",
+        "notFor": "不适合无法访问公网、使用未覆盖的操作系统或处理器架构，或者要求大规模处理能力及全新环境表现已有验证的用户。",
+        "maxBenefit": "用户把待分析的程序代码和具体分析要求交给 mcplex，由它生成架构分析说明；caveman 接收这份说明并压缩，交付精简版架构分析答复和 token 数量指标，省去用户自行压缩长篇架构说明并另行统计文本用量的步骤。",
+        "maxLimit": "需要通过公网下载固定的 mcplex v0.7.1；已覆盖的发布包只有 macOS arm64、macOS x86_64 和 Linux x86_64。此次测试并非在全新环境中完成，处理规模上限以及其他操作系统和处理器架构均未验证。",
+        "caveatTags": [
+          "需要公网下载",
+          "系统与处理器范围有限",
+          "规模及全新环境未验证",
+          "外部 API Key"
+        ],
+        "alternatives": [
+          {
+            "name": "单独使用 mcplex",
+            "type": "单工具加人工整理",
+            "fit": "适合只需要程序架构说明、不要求自动压缩和 token 数量指标的情况。",
+            "tradeoff": "用户需要自行精简 mcplex 生成的架构说明，也无法获得本次已验证的 caveman 压缩结果和 token 数量指标。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-mcplex-caveman-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "此次测试并非在全新环境中完成"
+        ],
+        "installFrictionIndex": {
+          "score": 14,
+          "level": "低摩擦",
+          "factors": [
+            {
+              "label": "外部 API Key",
+              "weight": 14
+            }
+          ],
+          "summary": "安装和配置成本相对可控。"
+        },
+        "caveats": [
+          "Requires public network access to download the pinned mcplex v0.7.1 release.；Supports macOS arm64/x86_64 and Linux x86_64 release assets."
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23463,8 +25831,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 3,
-          "summary": "距最近一次测试约 3 天。"
+          "daysSinceTest": 4,
+          "summary": "距最近一次测试约 4 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23572,8 +25940,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 13,
-          "summary": "距最近一次测试约 13 天。"
+          "daysSinceTest": 14,
+          "summary": "距最近一次测试约 14 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23680,8 +26048,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23795,8 +26163,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -23903,8 +26271,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 7,
-          "summary": "距最近一次测试约 7 天。"
+          "daysSinceTest": 8,
+          "summary": "距最近一次测试约 8 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24011,8 +26379,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 20,
-          "summary": "距最近一次测试约 20 天。"
+          "daysSinceTest": 21,
+          "summary": "距最近一次测试约 21 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24120,8 +26488,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 4,
-          "summary": "距最近一次测试约 4 天。"
+          "daysSinceTest": 5,
+          "summary": "距最近一次测试约 5 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24235,8 +26603,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 4,
-          "summary": "距最近一次测试约 4 天。"
+          "daysSinceTest": 5,
+          "summary": "距最近一次测试约 5 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24350,8 +26718,128 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 16,
-          "summary": "距最近一次测试约 16 天。"
+          "daysSinceTest": 17,
+          "summary": "距最近一次测试约 17 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
+        "demandValidation": {
+          "targetUser": "需要快速筛选 AI 工具组合的个人用户和小团队。",
+          "currentAlternative": "IDE / Agent 平台内置能力：集成更顺，但跨工具、跨 Agent 复用空间较小。",
+          "painPoint": "自动 Worker 发现该组合具备基础可运行与衔接条件，适合进入下一轮深测。",
+          "switchingReason": "主要服务开发者或内部 Agent 流程，不面向普通用户直接推荐。",
+          "complexityFit": "上手成本低，适合先试用再决定是否迁移。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 86,
+          "missingProof": [
+            "缺少为什么不用单体工具的解释"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "fresh-usecli-deeptrans-studio-worker-smoke",
+        "title": "deeptrans-studio + usecli",
+        "tools": [
+          "deeptrans-studio",
+          "usecli"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "用户准备一份 PDF 文档和 usecli 配置；deeptrans-studio 先从 PDF 生成文本，usecli 再接收这份文本并依据配置产出新的文本内容，省去人工提取和复制 PDF 文字的步骤，并可确认两个工具之间确实完成了内容传递。",
+        "category": "文档与知识",
+        "primaryCategory": "文档与知识",
+        "domains": [
+          "文档与知识",
+          "开发与 Agent",
+          "部署运维与安全",
+          "团队协作与沟通"
+        ],
+        "tasks": [
+          "测试",
+          "转换",
+          "交付",
+          "分析",
+          "生成"
+        ],
+        "audiences": [
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "CLI",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "强推荐",
+        "suitableFor": "手上已有 PDF 文档和 usecli 配置，希望把 PDF 文字提取与配置化文本执行连接起来的个人用户或小团队。",
+        "notFor": "需要离线安装依赖、要求在全新干净环境中已有验证，或准备批量处理大量 PDF 的用户；这些情形目前没有得到验证。",
+        "maxBenefit": "用户准备一份 PDF 文档和 usecli 配置；deeptrans-studio 先从 PDF 生成文本，usecli 再接收这份文本并依据配置产出新的文本内容，省去人工提取和复制 PDF 文字的步骤，并可确认两个工具之间确实完成了内容传递。",
+        "maxLimit": "目前要求 Node.js 支持“--experimental-strip-types”，只在 Node.js 26 上完成过验证，其他版本未验证。每次在新建的独立环境中运行时，还需要连接公共包源以安装 usecli 声明的依赖。此次并非在干净环境中验证，也没有测试批量规模、其他操作系统或更多环境组合。",
+        "caveatTags": [
+          "仅验证 Node.js 26",
+          "需要访问公共包源",
+          "未在干净环境验证",
+          "未做规模测试",
+          "安装摩擦",
+          "PDF 表格风险",
+          "大文件未验证"
+        ],
+        "alternatives": [
+          {
+            "name": "deeptrans-studio 加手工整理",
+            "type": "单工具替代",
+            "fit": "只需要从 PDF 提取文字，不需要 usecli 配置化执行的用户。",
+            "tradeoff": "可不安装 usecli，但用户需要自行复制、整理并保存 deeptrans-studio 提取出的文字。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/fresh-usecli-deeptrans-studio-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [
+          "每次在新建的独立环境中运行时",
+          "此次并非在干净环境中验证",
+          "也没有测试批量规模、其他操作系统或更多环境组合"
+        ],
+        "installFrictionIndex": {
+          "score": 30,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "安装摩擦",
+              "weight": 14
+            },
+            {
+              "label": "PDF 表格风险",
+              "weight": 8
+            },
+            {
+              "label": "大文件未验证",
+              "weight": 8
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "需要按工具说明安装本地依赖；建议固定版本后再长期使用。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 0,
+          "summary": "距最近一次测试约 0 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24463,8 +26951,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 15,
-          "summary": "距最近一次测试约 15 天。"
+          "daysSinceTest": 16,
+          "summary": "距最近一次测试约 16 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24581,8 +27069,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24690,8 +27178,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 16,
-          "summary": "距最近一次测试约 16 天。"
+          "daysSinceTest": 17,
+          "summary": "距最近一次测试约 17 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -24809,8 +27297,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 28,
-          "summary": "距最近一次测试约 28 天。"
+          "daysSinceTest": 29,
+          "summary": "距最近一次测试约 29 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -24941,8 +27429,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -25055,8 +27543,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 25,
-          "summary": "距最近一次测试约 25 天。"
+          "daysSinceTest": 26,
+          "summary": "距最近一次测试约 26 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -25162,8 +27650,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
@@ -25271,8 +27759,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -25376,8 +27864,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -25491,8 +27979,8 @@
         "retestStatus": "新鲜",
         "retestFreshness": {
           "status": "新鲜",
-          "daysSinceTest": 27,
-          "summary": "距最近一次测试约 27 天。"
+          "daysSinceTest": 28,
+          "summary": "距最近一次测试约 28 天。"
         },
         "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
         "recommendationExplanation": "证据强、场景清楚、限制少，可以优先尝试。",
@@ -25507,6 +27995,123 @@
           "missingProof": [
             "缺少为什么不用单体工具的解释",
             "缺少完整组合闭环证据"
+          ]
+        },
+        "longTermUse": {
+          "summary": "从工具拼接升级为低维护的个人/小团队日常流程。",
+          "steps": [
+            "把用户每天会重复提供的输入做成固定模板。",
+            "只自动化最稳定的 1-2 个步骤，保留关键人工确认点。",
+            "给失败状态写清楚原因和下一步动作，不把错误藏在日志里。",
+            "准备手动兜底路径，避免自动化失败后任务停摆。"
+          ],
+          "tested": false
+        }
+      },
+      {
+        "id": "yt-dlp-chattts-public-seed-worker-smoke",
+        "title": "yt-dlp + ChatTTS",
+        "tools": [
+          "yt-dlp",
+          "ChatTTS"
+        ],
+        "evidenceScore": 85,
+        "evidenceLevel": "L3-caveat",
+        "useCase": "公开视频资料下载、说明文字留档和语音复习稿生成。",
+        "category": "内容与媒体",
+        "primaryCategory": "内容与媒体",
+        "domains": [
+          "内容与媒体",
+          "团队协作与沟通",
+          "自动化与业务流程",
+          "部署运维与安全"
+        ],
+        "tasks": [
+          "生成",
+          "测试",
+          "交付",
+          "采集",
+          "分析"
+        ],
+        "audiences": [
+          "内容创作者",
+          "团队与企业"
+        ],
+        "traits": [
+          "可自托管",
+          "已全链路实测"
+        ],
+        "collections": [
+          "已实测"
+        ],
+        "taxonomyVersion": "2026-07-multifacet-v1",
+        "recommendationLevel": "适合特定人群",
+        "suitableFor": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
+        "notFor": "需要绕过登录或版权限制、只想在线播放，或要求专业配音质量和自动生成完整视频字幕的人。",
+        "maxBenefit": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
+        "maxLimit": "使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。",
+        "caveatTags": [
+          "外部账号",
+          "大文件未验证",
+          "UI 未验证",
+          "业务输出打折"
+        ],
+        "alternatives": [
+          {
+            "name": "浏览器下载 + 系统朗读",
+            "type": "轻量替代",
+            "fit": "只偶尔处理一个公开视频，不需要批量、留档和中间产物的人",
+            "tradeoff": "操作更简单，但自动化、格式复查和批量处理能力较弱。"
+          }
+        ],
+        "hasReport": true,
+        "reportUrl": "reports/yt-dlp-chattts-public-seed-worker-smoke.html",
+        "verifiedAt": "",
+        "installFriction": [],
+        "installFrictionIndex": {
+          "score": 40,
+          "level": "中摩擦",
+          "factors": [
+            {
+              "label": "外部账号",
+              "weight": 10
+            },
+            {
+              "label": "大文件未验证",
+              "weight": 8
+            },
+            {
+              "label": "UI 未验证",
+              "weight": 6
+            },
+            {
+              "label": "业务输出打折",
+              "weight": 16
+            }
+          ],
+          "summary": "可试，但建议先按报告准备依赖和配置。"
+        },
+        "caveats": [
+          "使用本地确定性视频页验证下载、元数据交接与语音合成；未覆盖需要登录的平台、长视频字幕、版权受限内容和发布级音质。"
+        ],
+        "retestStatus": "新鲜",
+        "retestFreshness": {
+          "status": "新鲜",
+          "daysSinceTest": 27,
+          "summary": "距最近一次测试约 27 天。"
+        },
+        "evidenceExplanation": "组合闭环已经跑通，但存在明确限制，适合按条件使用。",
+        "recommendationExplanation": "不是人人都需要，但命中场景时价值很高。",
+        "demandValidation": {
+          "targetUser": "需要批量整理公开课程、访谈或公开视频，并愿意先检查文字再生成音频草稿的人。",
+          "currentAlternative": "浏览器下载 + 系统朗读：操作更简单，但自动化、格式复查和批量处理能力较弱。",
+          "painPoint": "同时保留原视频、下载元数据、可编辑文字和 WAV 音频，便于逐步校对或替换其中一个环节。",
+          "switchingReason": "yt-dlp 负责可靠获取视频与元数据，ChatTTS 负责把确认后的文字变成音频；两者组合后才形成从在线资料到可听复习稿的交付链。",
+          "complexityFit": "需要一定配置，但命中场景时仍可能值得投入。",
+          "confidence": "需求判断较强",
+          "confidenceScore": 90,
+          "missingProof": [
+            "还需要真实用户反馈确认是否愿意长期使用"
           ]
         },
         "longTermUse": {
@@ -25857,12 +28462,12 @@
       "hub": {
         "score": 97,
         "level": "核心枢纽",
-        "verifiedComboCount": 11,
-        "partnerCount": 11,
+        "verifiedComboCount": 12,
+        "partnerCount": 12,
         "categoryCount": 4,
         "deepTestSuccessRate": 100,
-        "averageFriction": 29,
-        "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+        "averageFriction": 30,
+        "summary": "已在 12 条实测组合中连接 12 个不同搭档，覆盖 4 类场景。"
       }
     },
     {
@@ -25992,37 +28597,62 @@
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 97,
+        "score": 98,
         "level": "核心枢纽",
-        "verifiedComboCount": 11,
-        "partnerCount": 11,
-        "categoryCount": 4,
+        "verifiedComboCount": 15,
+        "partnerCount": 15,
+        "categoryCount": 5,
         "deepTestSuccessRate": 100,
-        "averageFriction": 26,
-        "summary": "已在 11 条实测组合中连接 11 个不同搭档，覆盖 4 类场景。"
+        "averageFriction": 24,
+        "summary": "已在 15 条实测组合中连接 15 个不同搭档，覆盖 5 类场景。"
       }
     },
     {
-      "name": "ChatTTS",
-      "url": "https://github.com/2noise/ChatTTS",
-      "role": "自动执行",
+      "name": "engram",
+      "url": "https://github.com/Jsakkos/engram",
+      "role": "采集/输入",
       "inputs": [
-        "text"
+        "text",
+        "configuration"
       ],
       "outputs": [
-        "audio",
-        "wav"
+        "text",
+        "json"
       ],
       "evidenceLevel": "L3-caveat",
       "hub": {
-        "score": 56,
-        "level": "高适配",
-        "verifiedComboCount": 3,
-        "partnerCount": 3,
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
-        "averageFriction": 65,
-        "summary": "已在 3 条实测组合中连接 3 个不同搭档，覆盖 1 类场景。"
+        "averageFriction": 10,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "gitsocial",
+      "url": "https://github.com/gitsocial-org/gitsocial",
+      "role": "存储/检索",
+      "inputs": [
+        "text",
+        "configuration"
+      ],
+      "outputs": [
+        "text",
+        "json"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 10,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
@@ -26214,6 +28844,24 @@
         "deepTestSuccessRate": 100,
         "averageFriction": 76,
         "summary": "已在 2 条实测组合中连接 2 个不同搭档，覆盖 2 类场景。"
+      }
+    },
+    {
+      "name": "ChatTTS",
+      "url": "https://github.com/2noise/ChatTTS",
+      "role": "自动执行",
+      "inputs": "text",
+      "outputs": "audio, wav",
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 68,
+        "level": "高适配",
+        "verifiedComboCount": 4,
+        "partnerCount": 4,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 65,
+        "summary": "已在 4 条实测组合中连接 4 个不同搭档，覆盖 1 类场景。"
       }
     },
     {
@@ -26442,6 +29090,24 @@
       }
     },
     {
+      "name": "ComfyUI",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "role": "采集/输入",
+      "inputs": "text, image, prompt",
+      "outputs": "video, image",
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 35,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 64,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "Crawl4AI",
       "url": "https://github.com/unclecode/crawl4ai",
       "role": "采集/输入",
@@ -26612,6 +29278,32 @@
       }
     },
     {
+      "name": "bansos",
+      "url": "https://github.com/wauputr4/bansos",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 38,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 28,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "bluerock",
       "url": "https://github.com/bluerock-io/bluerock",
       "role": "采集/输入",
@@ -26655,6 +29347,32 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 28,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "Claude-Code-Agent-Monitor",
+      "url": "https://github.com/hoangsonww/Claude-Code-Agent-Monitor",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
@@ -26787,6 +29505,32 @@
       }
     },
     {
+      "name": "GT-Office",
+      "url": "https://github.com/Laplace-bit/GT-Office",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 37,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 36,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "hermes-ecosystem",
       "url": "https://github.com/ksimback/hermes-ecosystem",
       "role": "采集/输入",
@@ -26891,6 +29635,32 @@
       }
     },
     {
+      "name": "kubernaut",
+      "url": "https://github.com/jordigilh/kubernaut",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
       "name": "Lamprey-Harness",
       "url": "https://github.com/USS-Parks/Lamprey-Harness",
       "role": "采集/输入",
@@ -26919,6 +29689,32 @@
     {
       "name": "LLM4AD_Next",
       "url": "https://github.com/Optima-CityU/LLM4AD_Next",
+      "role": "采集/输入",
+      "inputs": [
+        "prompt",
+        "source code",
+        "json"
+      ],
+      "outputs": [
+        "json",
+        "report",
+        "logs"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 40,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 14,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "mcplex",
+      "url": "https://github.com/ModernOps888/mcplex",
       "role": "采集/输入",
       "inputs": [
         "prompt",
@@ -27143,6 +29939,54 @@
         "categoryCount": 1,
         "deepTestSuccessRate": 100,
         "averageFriction": 28,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "deeptrans-studio",
+      "url": "https://github.com/hint-lab/deeptrans-studio",
+      "role": "采集/输入",
+      "inputs": [
+        "pdf"
+      ],
+      "outputs": [
+        "markdown",
+        "text",
+        "json"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 38,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 30,
+        "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
+      }
+    },
+    {
+      "name": "usecli",
+      "url": "https://github.com/thememium/usecli",
+      "role": "自动执行",
+      "inputs": [
+        "text",
+        "configuration"
+      ],
+      "outputs": [
+        "text",
+        "json"
+      ],
+      "evidenceLevel": "L3-caveat",
+      "hub": {
+        "score": 38,
+        "level": "有潜力",
+        "verifiedComboCount": 1,
+        "partnerCount": 1,
+        "categoryCount": 1,
+        "deepTestSuccessRate": 100,
+        "averageFriction": 30,
         "summary": "已在 1 条实测组合中连接 1 个不同搭档，覆盖 1 类场景。"
       }
     },
